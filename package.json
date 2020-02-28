@@ -1,0 +1,28 @@
+{
+  "name": "grid",
+  "version": "1.0.0",
+  "description": "Grid Cheatsheet",
+  "main": "index.html",
+  "scripts": {
+    "start": "gulp serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yoksel",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yoksel/grid-cheatsheet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yoksel/grid-cheatsheet/issues"
+  },
+  "homepage": "https://github.com/yoksel/grid-cheatsheet",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-ruby-sass": "^2.0.6",
+    "lodash": "^4.17.13"
+  }
+}

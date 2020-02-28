@@ -1,0 +1,14 @@
+.l-wrapper {
+  display: flex;
+  min-height: 100%;
+}
+
+.l-main {
+  flex: 1;
+}
+
+.l-aside {
+  position: relative;
+  @include aside-width;
+  order: -1;
+}

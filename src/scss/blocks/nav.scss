@@ -1,0 +1,80 @@
+.nav {
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  @include aside-width;
+  height: 100%;
+  overflow: hidden;
+  padding: 1.5rem 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  background: #DDD;
+
+  @media ( min-width: 1200px ) {
+    padding-left: 1rem;
+  }
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 2px;
+    background: #000;
+  }
+
+  &__subheader {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    padding: 0 1rem;
+    font-size: 1.3rem;
+    line-height: 1;
+
+    @media ( min-width: 1130px ) {
+      font-size: 1.45rem;
+    }
+  }
+
+  &__item {
+    margin-bottom: .4rem;
+
+    @media ( min-width: 900px ) {
+      margin-bottom: .6rem;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    margin-left: 2rem;
+    padding: 0 1rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__item--current &__link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+  }
+}
+
+/* Marker
+--------------------------------------------- */
+.nav__marker {
+  position: absolute;
+  margin-top: -.45rem;
+  right: -1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #000;
+  background: #FFF;
+  transition: top .5s;
+}

@@ -1,0 +1,73 @@
+BODY {
+  background: #FFF;
+  font: 16px/1.4 Georgia, serif;
+  color: #111;
+}
+
+A {
+  color: hsl(225, 90%, 40%);
+}
+
+UL {
+  list-style-type: none;
+}
+
+H1,
+H2,
+H3,
+H4 {
+  margin-top: 0;
+  font-weight: normal;
+}
+
+LI,
+Ul {
+  margin: 0;
+  padding: 0;
+}
+
+MARK {
+  background: #333;
+  box-shadow: 0 0 0 2px #333;
+  color: #FFF;
+}
+
+
+.hidden-content {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* CONTENT
+--------------------------------------------- */
+
+.content {
+
+  &__item {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    padding: 1rem 2em;
+    box-sizing: border-box;
+    border-bottom: 1px dotted;
+  }
+
+}
+/* Values */
+.content-values__term {
+  font-weight: bold;
+}
+
+.content-values__desc {
+  margin-bottom: 1rem;
+}
