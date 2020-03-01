@@ -8,7 +8,7 @@ var head = $.get('head');
 
 var navHolder = $.create('ul').addClass('nav');
 var contentHolder = $.create('div').addClass('content');
-var stylesHolder = $.create('style').attr({'id':'flex'});
+var stylesHolder = $.create('style').attr({'id':'grid'});
 
 var navMarker = $.create('li').addClass('nav__marker');
 var projectLinks = $.create('li')
@@ -25,8 +25,9 @@ var codeWrapper = $.get('.code-wrapper');
 var demoValueClassCurrent = 'demo-values__control--current';
 var codeOffset = '  ';
 var demoElemClasses = {
-  'flex containers': '.parent' ,
-  'flex items': '.child--featured'
+  'demos': '.parent' ,
+  'grid containers': '.parent' ,
+  'grid items': '.child--featured'
 };
 var navItemCurrentClass = 'nav__item--current';
 var localStorThemeKey = 'fbchTheme';
@@ -230,9 +231,13 @@ Item.prototype.contentItemDemo = function () {
 
     this.demoElem = $.get('.demo', this.demoWrapper);
     this.targetElemSelector = demoElemClasses[ this.dataItem.targetForDemo ];
+    var view = $.get('.demo__view', this.demoWrapper);
 
-    if ( this.dataItem.demoBefore ) {
-      var view = $.get('.demo__view', this.demoWrapper);
+    if (this.dataItem.htmlMarkup) {
+      view.html(this.dataItem.htmlMarkup)
+    }
+
+    if (this.dataItem.demoBefore) {
       view.html( this.dataItem.demoBefore + view.html() );
     }
 
