@@ -1,6 +1,293 @@
 var accentColor = 'khaki';
 var data = [];
 
+
+data[data.length] = {
+    name: 'display',
+
+    link: 'https://www.w3.org/TR/css-flexbox-1/#display-property',
+
+    initValue: '',
+
+    target: '',
+
+    targetForDemo: 'grid containers',
+    appliesTo: 'grid containers',
+
+    desc: '<p>A <dfn >grid container</dfn> establishes a new <dfn >grid formatting context</dfn> for its contents. This is the same as establishing a block formatting context, except that grid layout is used instead of block layout: floats do not intrude into the grid container, and the grid container’s margins do not collapse with the margins of its contents. The contents of a <i>grid container</i> are laid out into a <i>grid</i>, with <i>grid lines</i> forming the boundaries of each <i>grid items</i>’ containing block. The <a href=\'https://www.w3.org/TR/css-overflow-3/#propdef-overflow\' >overflow</a> property applies to <i>grid containers</i>.</p><p>Grid containers are not block containers, and so some properties that were designed with the assumption of block layout don’t apply in the context of grid layout. In particular:</p><p>If an element’s specified <a href=\'https://www.w3.org/TR/css-ruby-1/#propdef-display\' >display</a> is <i>inline-grid</i> and the element is floated or absolutely positioned, the computed value of <a href=\'https://www.w3.org/TR/css-ruby-1/#propdef-display\' >display</a> is <i>grid</i>. The table in <a href=\'https://www.w3.org/TR/CSS2/visuren.html#dis-pos-flo\'>CSS 2.1 Chapter 9.7</a> is thus amended to contain an additional row, with <i>inline-grid</i> in the \'Specified Value\' column and <i>grid</i> in the \'Computed Value\' column.</p>',
+
+    values: [
+    {
+        'name': 'grid',
+        'desc': 'This value causes an element to generate a block-level <i>grid container</i> box.'
+    },
+    {
+        'name': 'inline-grid',
+        'desc': 'This value causes an element to generate an inline-level <i>grid container</i> box.'
+    }
+]
+};
+
+data[data.length] = {
+    name: 'grid-template-columns, grid-template-rows',
+
+    link: 'https://www.w3.org/TR/css-flexbox-1/#grid-template-columns, grid-template-rows-property',
+
+    initValue: 'none',
+
+    target: 'grid containers',
+
+    targetForDemo: 'grid containers',
+    appliesTo: 'grid containers',
+
+    desc: '<p>These properties specify, as a space-separated <dfn >track list</dfn>, the line names and <i>track sizing functions</i> of the <i>grid</i>. The <i>grid-template-columns</i> property specifies the <i>track list</i> for the grid’s columns, while <i>grid-template-rows</i> specifies the <i>track list</i> for the grid’s rows.</p><p>Values have the following meanings:</p><p>The syntax of a <i>track list</i> is:</p><p>Where:</p><p role=\'note\'><span>Note:</span> The size of the grid is not purely the sum of the track sizes, as <a href=\'https://www.w3.org/TR/css3-align/#propdef-row-gap\' >row-gap</a>, <a href=\'https://www.w3.org/TR/css3-align/#propdef-column-gap\' >column-gap</a> and <a href=\'https://www.w3.org/TR/css3-align/#propdef-justify-content\' >justify-content</a>, <a href=\'https://www.w3.org/TR/css3-align/#propdef-align-content\' >align-content</a> can add additional space between tracks.</p>',
+
+    values: [
+    {
+        'name': 'none',
+        'desc': 'Indicates that no <i>explicit</i> grid tracks are created by this property (though <i>explicit grid</i> tracks could still be created by <i>grid-template-areas</i>). <p role=\'note\'><span>Note:</span> In the absence of an <i>explicit grid</i> any rows/columns will be <i>implicitly generated</i>, and their size will be determined by the <i>grid-auto-rows</i> and <i>grid-auto-columns</i> properties.</p>'
+    },
+    {
+        'name': '<track-list> | <auto-track-list>',
+        'desc': 'Specifies the <i>track list</i> as a series of <i>track sizing functions</i> and line names. Each <dfn >track sizing function</dfn> can be specified as a length, a percentage of the <i>grid container</i>’s size, a measurement of the contents occupying the column or row, or a fraction of the free space in the grid. It can also be specified as a range using the <i>minmax()</i> notation, which can combine any of the previously mentioned mechanisms to specify separate <i>min</i> and <i>max track sizing functions</i> for the column or row.'
+    }
+]
+};
+
+data[data.length] = {
+    name: 'grid-template-areas',
+
+    link: 'https://www.w3.org/TR/css-flexbox-1/#grid-template-areas-property',
+
+    initValue: 'none',
+
+    target: 'grid containers',
+
+    targetForDemo: 'grid containers',
+    appliesTo: 'grid containers',
+
+    desc: '<p>This property specifies <dfn >named grid areas</dfn>, which are not associated with any particular <i>grid item</i>, but can be referenced from the <i>grid-placement properties</i>. The syntax of the <i>grid-template-areas</i> property also provides a visualization of the structure of the <i>grid</i>, making the overall layout of the <i>grid container</i> easier to understand.</p><p>Values have the following meanings:</p>',
+
+    values: [
+    {
+        'name': 'none',
+        'desc': 'Indicates that no <i>named grid areas</i>, and likewise no <i>explicit grid</i> tracks, are defined by this property (though <i>explicit grid</i> tracks could still be created by <i>grid-template-columns</i> or <i>grid-template-rows</i>). <p role=\'note\'><span>Note:</span> In the absence of an <i>explicit grid</i> any rows/columns will be <i>implicitly generated</i>, and their size will be determined by the <i>grid-auto-rows</i> and <i>grid-auto-columns</i> properties.</p>'
+    },
+    {
+        'name': '<string>+',
+        'desc': 'A row is created for every separate string listed for the <i>grid-template-areas</i> property, and a column is created for each cell in the string, when parsed as follows: <p>Tokenize the string into a list of the following tokens, using longest-match semantics:</p> <ul> <li> A sequence of <a href=\'https://www.w3.org/TR/css-syntax-3/#name-code-point\' >name code points</a>, representing a <dfn >named cell token</dfn> with a name consisting of its code points. </li><li> A sequence of one or more \'.\' (U+002E FULL STOP), representing a <dfn >null cell token</dfn>. </li><li> A sequence of <a href=\'https://www.w3.org/TR/css-syntax-3/#whitespace\' >whitespace</a>, representing nothing (do not produce a token). </li><li> A sequence of any other characters, representing a <dfn >trash token</dfn>. </li></ul> <p role=\'note\'><span>Note:</span> These rules can produce cell names that do not match the <a href=\'https://www.w3.org/TR/css3-values/#typedef-ident\' >&lt;ident&gt;</a> syntax, such as \'1st 2nd 3rd\', which requires escaping when referencing those areas by name in other properties, like <i>grid-row: \31st;</i> to reference the area named <span >1st</span>.</p> <ul> <li> A <i>null cell token</i> represents an unnamed area in the <i>grid container</i>. </li><li> A <i>named cell token</i> creates a <i>named grid area</i> with the same name. Multiple <i>named cell tokens</i> within and between rows create a single <i>named grid area</i> that spans the corresponding <i>grid cells</i>. </li><li> A <i>trash token</i> is a syntax error, and makes the declaration invalid. </li></ul> <p>All strings must have the same number of columns, or else the declaration is invalid. If a <i>named grid area</i> spans multiple <i>grid cells</i>, but those cells do not form a single filled-in rectangle, the declaration is invalid.</p> <p role=\'note\'><span>Note:</span> Non-rectangular or disconnected regions may be permitted in a future version of this module.</p>'
+    }
+]
+};
+
+data[data.length] = {
+    name: 'grid-template',
+
+    link: 'https://www.w3.org/TR/css-flexbox-1/#grid-template-property',
+
+    initValue: 'see individual properties',
+
+    target: 'grid containers',
+
+    targetForDemo: 'grid containers',
+    appliesTo: 'grid containers',
+
+    desc: '<p>The <i>grid-template</i> property is a <a href=\'https://www.w3.org/TR/css-cascade-4/#shorthand-property\' >shorthand</a> for setting <i>grid-template-columns</i>, <i>grid-template-rows</i>, and <i>grid-template-areas</i> in a single declaration. It has several distinct syntax forms:</p><p role=\'note\'><span>Note:</span> The <i>grid</i> shorthand accepts the same syntax, but also resets the implicit grid properties to their initial values. Unless authors want those to cascade in separately, it is therefore recommended to use <i>grid</i> instead of <i>grid-template</i>.</p>',
+
+    values: [
+      {
+          'name': 'none',
+          'desc': 'Sets all three properties to their initial values (<i>none</i>).'
+      },
+      {
+          'name': '<‘grid-template-rows’> / <‘grid-template-columns’>',
+          'desc': 'Sets <i>grid-template-rows</i> and <i>grid-template-columns</i> to the specified values, respectively, and sets <i>grid-template-areas</i> to <i>none</i>. <div >    <pre>grid-template: auto 1fr / auto 1fr auto;</pre> <p>is equivalent to</p> <pre>grid-template-rows: auto 1fr; grid-template-columns: auto 1fr auto; grid-template-areas: none; </pre> </div>'
+      },
+      {
+          'name': '[ <line-names>? <string> <track-size>? <line-names>? ]+ [ / <explicit-track-list> ]?',
+          'desc': `<ul> <li>
+            <p>Sets <i>grid-template-areas</i> to the strings listed.</p> </li>
+              <li> <p>Sets <i>grid-template-rows</i> to the <i>&lt;track-size&gt;</i>s following each string (filling in <i>auto</i> for any missing sizes), and splicing in the named lines defined before/after each size.</p> </li>
+              <li > <p>Sets <i>grid-template-columns</i> to the track listing specified after the slash (or <i>none</i>, if not specified).</p> </li>
+            </ul>
+            <p>This syntax allows the author to align track names and sizes inline with their respective grid areas.</p>
+            <div >
+            <pre>
+              grid-template: [header-top] \'a a a\' [header-bottom] [main-top] \'b b b\' 1fr [main-bottom] / auto 1fr auto;
+            </pre> <p>is equivalent to</p>
+            <pre>
+            grid-template-areas: \'a a a\' \'b b b\';
+            grid-template-rows: [header-top] auto [header-bottom main-top] 1fr [main-bottom];
+            grid-template-columns: auto 1fr auto;
+            </pre>
+            <p>and creates the following grid:</p>
+            <figure> <object data=\'images/grid-shorthand.svg\' type=\'image/svg+xml\'></object>
+            <ul>
+              <li>
+                Three columns, sized <i>auto</i>, <span >1fr</span>, and <i>auto</i>, respectively
+              </li>
+              <li>
+                Two rows sized as <i>auto</i> and <span >1fr</span>, respectively.
+              </li>
+              <li>
+                A line named both “header-top” and “a-start” at the top, a line with four names—<wbr>“header-bottom”, “main-top”, “a-end”, and “b-start”—<wbr>in the middle, a line named “main-bottom” and “b-end” at the bottom.
+              </li>
+              <li>A line named “a-start” and “b-start” on the left edge, and a line named “a-end” and “b-end” on the right edge.
+              </li>
+              </ul>
+              <figcaption>
+
+              The grid created by the declarations above. (The “a/b-start/end” names are created <i>implicitly</i> by the <i>named grid areas</i>.) </figcaption> </figure> </div> <p role=\'note\'><span>Note:</span> Note that the <i>repeat()</i> function isn’t allowed in these track listings, as the tracks are intended to visually line up one-to-one with the rows/columns in the “ASCII art”.</p>`
+      }
+  ]
+};
+
+// Normal below
+
+data[data.length] = {
+    name: 'grid-auto-columns, grid-auto-rows',
+
+    link: 'https://www.w3.org/TR/css-flexbox-1/#grid-auto-columns, grid-auto-rows-property',
+
+    initValue: 'auto',
+
+    target: 'grid containers',
+
+    targetForDemo: 'grid containers',
+    appliesTo: 'grid containers',
+
+    desc: '<p>If a grid item is positioned into a row or column that is not explicitly sized by <i>grid-template-rows</i> or <i>grid-template-columns</i>, <i>implicit grid tracks</i> are created to hold it. This can happen either by explicitly positioning into a row or column that is out of range, or by the <i>auto-placement algorithm</i> creating additional rows or columns. The <i>grid-auto-columns</i> and <i>grid-auto-rows</i> properties specify the size of such implicitly-created tracks.</p><p>If multiple track sizes are given, the pattern is repeated as necessary to find the size of the implicit tracks. The first <i>implicit grid track</i> after the <i>explicit grid</i> receives the first specified size, and so on forwards; and the last <i>implicit grid track</i> before the <i>explicit grid</i> receives the last specified size, and so on backwards.</p>',
+
+    values: []
+};
+
+data[data.length] = {
+    name: 'grid-auto-flow',
+
+    link: 'https://www.w3.org/TR/css-flexbox-1/#grid-auto-flow-property',
+
+    initValue: 'row',
+
+    target: 'grid containers',
+
+    targetForDemo: 'grid containers',
+    appliesTo: 'grid containers',
+
+    desc: '<p><i>Grid items</i> that aren’t explicitly placed are automatically placed into an unoccupied space in the <i>grid container</i> by the <i>auto-placement algorithm</i>. <i>grid-auto-flow</i> controls how the <i>auto-placement algorithm</i> works, specifying exactly how auto-placed items get flowed into the grid. See <i>§8.5 Grid Item Placement Algorithm</i> for details on precisely how the auto-placement algorithm works.</p><p role=\'note\'><span>Note:</span> A future level of this module is expected to add a value that flows auto-positioned items together into a single “default” cell.</p><p>Auto-placement takes <i>grid items</i> in <a href=\'https://www.w3.org/TR/css-flexbox-1/#order-modified-document-order\' >order-modified document order</a>.</p>',
+
+    values: [
+    {
+        'name': 'row',
+        'desc': 'The <i>auto-placement algorithm</i> places items by filling each row in turn, adding new rows as necessary. If neither <i>row</i> nor <i>column</i> is provided, <i>row</i> is assumed.'
+    },
+    {
+        'name': 'column',
+        'desc': 'The <i>auto-placement algorithm</i> places items by filling each column in turn, adding new columns as necessary.'
+    },
+    {
+        'name': 'dense',
+        'desc': 'If specified, the <i>auto-placement algorithm</i> uses a “dense” packing algorithm, which attempts to fill in holes earlier in the grid if smaller items come up later. This may cause items to appear out-of-order, when doing so would fill in holes left by larger items. <p>If omitted, a “sparse” algorithm is used, where the placement algorithm only ever moves “forward” in the grid when placing items, never backtracking to fill holes. This ensures that all of the auto-placed items appear “in order”, even if this leaves holes that could have been filled by later items.</p>'
+    }
+]
+};
+
+data[data.length] = {
+    name: 'grid',
+
+    link: 'https://www.w3.org/TR/css-flexbox-1/#grid-property',
+
+    initValue: 'see individual properties',
+
+    target: 'grid containers',
+
+    targetForDemo: 'grid containers',
+    appliesTo: 'grid containers',
+
+    desc: '<p>The <i>grid</i> property is a <a href=\'https://www.w3.org/TR/css-cascade-4/#shorthand-property\' >shorthand</a> that sets all of the <i>explicit grid properties</i> (<i>grid-template-rows</i>, <i>grid-template-columns</i>, and <i>grid-template-areas</i>), and all the <i>implicit grid properties</i> (<i>grid-auto-rows</i>, <i>grid-auto-columns</i>, and <i>grid-auto-flow</i>), in a single declaration. (It does not reset the <a href=\'https://www.w3.org/TR/css3-align/#gutter\' >gutter</a> properties.) Its syntax matches <i>grid-template</i>, plus an additional syntax form for defining auto-flow grids:</p><p role=\'note\'><span>Note:</span> Note that you can only specify the explicit <em>or</em> the implicit grid properties in a single <i>grid</i> declaration. The sub-properties you don’t specify are set to their initial value, as normal for <a href=\'https://www.w3.org/TR/css-cascade-4/#shorthand-property\' >shorthands</a>.</p>',
+
+    values: [
+    {
+        'name': '<‘grid-template-rows’> / [ auto-flow && dense? ] <‘grid-auto-columns’>?'
+    },
+    {
+        'name': '[ auto-flow && dense? ] <‘grid-auto-rows’>? / <‘grid-template-columns’>',
+        'desc': 'Sets up auto-flow, by setting the tracks in one axis explicitly (setting either <i>grid-template-rows</i> or <i>grid-template-columns</i> as specified, and setting the other to <i>none</i>), and specifying how to auto-repeat the tracks in the other axis (setting either <i>grid-auto-rows</i> or <i>grid-auto-columns</i> as specified, and setting the other to <span >auto</span>). <i>grid-auto-flow</i> is also set to either <i>row</i> or <i>column</i> accordingly, with <i>dense</i> if it’s specified. <p>All other <i>grid</i> <a href=\'https://www.w3.org/TR/css-cascade-4/#longhand\' >sub-properties</a> are reset to their initial values.</p>'
+    }
+]
+};
+
+data[data.length] = {
+    name: 'grid-row-start, grid-column-start, grid-row-end, grid-column-end',
+
+    link: 'https://www.w3.org/TR/css-flexbox-1/#grid-row-start, grid-column-start, grid-row-end, grid-column-end-property',
+
+    initValue: 'auto',
+
+    target: 'grid items',
+
+    targetForDemo: 'grid items',
+    appliesTo: 'grid items',
+
+    desc: '<p>The <i>grid-row-start</i>, <i>grid-column-start</i>, <i>grid-row-end</i>, and <i>grid-column-end</i> properties determine a <i>grid item</i>’s size and location within the <i>grid</i> by contributing a line, a span, or nothing (automatic) to its <i>grid placement</i>, thereby specifying the <a href=\'https://www.w3.org/TR/css-writing-modes-3/#inline-start\' >inline-start</a>, <a href=\'https://www.w3.org/TR/css-writing-modes-3/#block-start\' >block-start</a>, <a href=\'https://www.w3.org/TR/css-writing-modes-3/#inline-end\' >inline-end</a>, and <a href=\'https://www.w3.org/TR/css-writing-modes-3/#block-end\' >block-end</a> edges of its <i>grid area</i>.</p><p>Values have the following meanings:</p><p>In all the above productions, the <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a> additionally excludes the keyword <span >span</span>.</p>',
+
+    values: [
+    {
+        'name': '<custom-ident>',
+        'desc': 'First attempt to match the <i>grid area</i>’s edge to a <i>named grid area</i>: if there is a <i>named line</i> with the name \'WHAT\'<a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>-start<span > (for <a >grid-*-start</a>) / </span><a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>-end \'WHAT\' (for <i>grid item</i>’s <i>placement</i>. <p role=\'note\'><span>Note:</span> <i>Named grid areas</i> automatically generate <i>implicit named lines</i> of this form, so specifying <i>grid-row-start: foo</i> will choose the start edge of that <i>named grid area</i> (unless another line named <span >foo-start</span> was explicitly specified before it).</p> <p>Otherwise, treat this as if the integer <span >1</span> had been specified along with the <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>.</p>'
+    },
+    {
+        'name': '<integer> && <custom-ident>?',
+        'desc': 'Contributes the <var>N</var>th <i>grid line</i> to the <i>grid item</i>’s <i>placement</i>. If a negative integer is given, it instead counts in reverse, starting from the end edge of the <i>explicit grid</i>. <p>If a name is given as a <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>, only lines with that name are counted. If not enough lines with that name exist, all <i>implicit grid lines</i> are assumed to have that name for the purpose of finding this position.</p> <p>An <a href=\'https://www.w3.org/TR/css3-values/#integer-value\' >&lt;integer&gt;</a> value of zero makes the declaration invalid.</p>'
+    },
+    {
+        'name': 'span && [ <integer> || <custom-ident> ]',
+        'desc': 'Contributes a <i>grid span</i> to the <i>grid item</i>’s <i>placement</i> such that the corresponding edge of the <i>grid item</i>’s <i>grid area</i> is <var>N</var> lines from its opposite edge in the corresponding direction. For example, <i>grid-column-end: span 2</i> indicates the second grid line in the endward direction from the <i>grid-column-start</i> line. <p>If a name is given as a <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>, only lines with that name are counted. If not enough lines with that name exist, all <i>implicit grid lines</i> on the side of the <i>explicit grid</i> corresponding to the search direction are assumed to have that name for the purpose of counting this span.</p> <div >    For example, given the following declarations: <pre ><span >.grid </span><span >{</span> <span >grid-template-columns</span><span >:</span> <span >100</span><span >px</span><span >;</span> <span >}</span> <span >.griditem </span><span >{</span> <span >grid-column</span><span >:</span> span foo <span >/</span> <span >4</span><span >;</span> <span >}</span> </pre> <p>The <i>grid container</i> has an <i>explicit grid</i> with two grid lines, numbered 1 and 2. The <i>grid item’s</i> column-end edge is specified to be at line 4, so two lines are generated in the endward side of the <i>implicit grid</i>.</p> <p>Its column-start edge must be the first \'foo\' line it can find startward of that. There is no \'foo\' line in the grid, though, so the only possibility is a line in the <i>implicit grid</i>. Line 3 is not a candidate, because it’s on the endward side of the <i>explicit grid</i>, while the <i>grid-column-start</i> span forces it to search startward. So, the only option is for the <i>implicit grid</i> to generate a line on the startward side of the <i>explicit grid</i>.</p> <figure> <img src=\'images/implicit-lines-search.svg\' width=\'600\'> <figcaption>An illustration of the result. </figcaption> </figure> </div> <p>If the <a href=\'https://www.w3.org/TR/css3-values/#integer-value\' >&lt;integer&gt;</a> is omitted, it defaults to <span >1</span>. Negative integers or zero are invalid.</p>'
+    },
+    {
+        'name': 'auto',
+        'desc': 'The property contributes nothing to the <i>grid item</i>’s <i>placement</i>, indicating <i>auto-placement</i> or a default span of one. (See <i>§8 Placing Grid Items</i>, above.)'
+    }
+]
+};
+
+data[data.length] = {
+    name: 'grid-row, grid-column',
+
+    link: 'https://www.w3.org/TR/css-flexbox-1/#grid-row, grid-column-property',
+
+    initValue: 'see individual properties',
+
+    target: 'grid items',
+
+    targetForDemo: 'grid items',
+    appliesTo: 'grid items',
+
+    desc: '<p>The <i>grid-row</i> and <i>grid-column</i> properties are shorthands for <i>grid-row-start</i>/<i>grid-row-end</i> and <i>grid-column-start</i>/<i>grid-column-end</i>, respectively.</p><p>If two <i> | auto | span &amp;&amp; [ <integer> || <custom-ident> ] | <integer> &amp;&amp; <custom-ident>?\'>&lt;grid-line&gt;</i> values are specified, the <i>grid-row-start</i>/<i>grid-column-start</i> longhand is set to the value before the slash, and the <i>grid-row-end</i>/<i>grid-column-end</i> longhand is set to the value after the slash.</p><p>When the second value is omitted, if the first value is a <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>, the <i>grid-row-end</i>/<i>grid-column-end</i> longhand is also set to that <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>; otherwise, it is set to <i>auto</i>.</p><p>If four <i> | auto | span &amp;&amp; [ <integer> || <custom-ident> ] | <integer> &amp;&amp; <custom-ident>?\'>&lt;grid-line&gt;</i> values are specified, <i>grid-row-start</i> is set to the first value, <i>grid-column-start</i> is set to the second value, <i>grid-row-end</i> is set to the third value, and <i>grid-column-end</i> is set to the fourth value.</p><p>When <i>grid-column-end</i> is omitted, if <i>grid-column-start</i> is a <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>, <i>grid-column-end</i> is set to that <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>; otherwise, it is set to <i>auto</i>.</p><p>When <i>grid-row-end</i> is omitted, if <i>grid-row-start</i> is a <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>, <i>grid-row-end</i> is set to that <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>; otherwise, it is set to <i>auto</i>.</p><p>When <i>grid-column-start</i> is omitted, if <i>grid-row-start</i> is a <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>, all four longhands are set to that value. Otherwise, it is set to <i>auto</i>.</p><p role=\'note\'><span>Note:</span> The resolution order for this shorthand is row-start/column-start/row-end/column-end, which goes CCW for LTR pages, the opposite direction of the related 4-edge properties using physical directions, like <a href=\'https://www.w3.org/TR/CSS21/box.html#propdef-margin\' >margin</a>.</p>',
+
+    values: []
+};
+
+data[data.length] = {
+    name: 'grid-area',
+
+    link: 'https://www.w3.org/TR/css-flexbox-1/#grid-area-property',
+
+    initValue: 'see individual properties',
+
+    target: 'grid items',
+
+    targetForDemo: 'grid items',
+    appliesTo: 'grid items',
+
+    desc: '<p>If four <i> | auto | span &amp;&amp; [ <integer> || <custom-ident> ] | <integer> &amp;&amp; <custom-ident>?\'>&lt;grid-line&gt;</i> values are specified, <i>grid-row-start</i> is set to the first value, <i>grid-column-start</i> is set to the second value, <i>grid-row-end</i> is set to the third value, and <i>grid-column-end</i> is set to the fourth value.</p><p>When <i>grid-column-end</i> is omitted, if <i>grid-column-start</i> is a <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>, <i>grid-column-end</i> is set to that <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>; otherwise, it is set to <i>auto</i>.</p><p>When <i>grid-row-end</i> is omitted, if <i>grid-row-start</i> is a <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>, <i>grid-row-end</i> is set to that <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>; otherwise, it is set to <i>auto</i>.</p><p>When <i>grid-column-start</i> is omitted, if <i>grid-row-start</i> is a <a href=\'https://www.w3.org/TR/css3-values/#identifier-value\' >&lt;custom-ident&gt;</a>, all four longhands are set to that value. Otherwise, it is set to <i>auto</i>.</p><p role=\'note\'><span>Note:</span> The resolution order for this shorthand is row-start/column-start/row-end/column-end, which goes CCW for LTR pages, the opposite direction of the related 4-edge properties using physical directions, like <a href=\'https://www.w3.org/TR/CSS21/box.html#propdef-margin\' >margin</a>.</p>',
+
+    values: []
+};
+
+
+
+// -------------------------
+
 data[data.length] = {
   name: 'demos',
   title: 'Demos',

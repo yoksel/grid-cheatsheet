@@ -97,10 +97,16 @@ Item.prototype.navItemElem = function () {
                        .html(this.dataItem.title);
     }
 
-    var classList = ['nav__item', 'nav__item--' + this.dataItem.name];
+    var classList = ['nav__item'];
+
+    const namesList = this.dataItem.name.split(',');
+
+    for(let name of namesList) {
+      classList.push('nav__item--' + name.trim())
+    };
 
     var elem = $.create('li')
-                .addClass( classList )
+                .addClass(classList )
                 .attr( {'data-name' : this.dataItem.name} )
                 .append( elemContent );
 
@@ -241,11 +247,15 @@ Item.prototype.contentItemDemo = function () {
       view.html( this.dataItem.demoBefore + view.html() );
     }
 
-    // Class-marker
-    this.demoClassName = 'demo--prop-' + this.dataItem.name;
-    this.demoClass = '.' + this.demoClassName;
+    var classList = [];
+    const namesList = this.dataItem.name.split(',');
 
-    this.demoElem.addClass( this.demoClassName );
+    for(let name of namesList) {
+      classList.push('demo--prop-' + name.trim())
+    };
+
+    // Class-marker
+    this.demoElem.addClass( this.classList );
 
     if ( this.targetElemSelector.search('featured') > -1 ) {
       this.demoElem.addClass( 'demo--has-featured' );
