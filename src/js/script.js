@@ -35,7 +35,6 @@ var localStorThemeKey = 'fbchTheme';
 //---------------------------------------------
 
 function createContent () {
-
     for (var i = 0; i < data.length; i++) {
         var item = new Item( data[i], i );
     }
@@ -255,7 +254,10 @@ Item.prototype.contentItemDemo = function () {
     };
 
     // Class-marker
-    this.demoElem.addClass( this.classList );
+    this.demoClassName = 'demo--prop-' + this.dataItem.name;
+    this.demoClass = '.' + this.demoClassName;
+
+    this.demoElem.addClass( this.demoClassName );
 
     if ( this.targetElemSelector.search('featured') > -1 ) {
       this.demoElem.addClass( 'demo--has-featured' );
@@ -452,30 +454,33 @@ Item.prototype.contentItemValues = function () {
 function DemoControl( parentObj, value ) {
 
     var valName = value.name;
-    var that = this;
 
     this.elemSet = $.create('button')
                     .addClass('demo-values__control')
                     .html(valName)
                     .attr({'name': valName});
 
-    this.elemSet.elem.onclick = function( ) {
-        parentObj.currentValue = this.innerHTML;
-        parentObj.contentItemChangeCSSProp();
-
-        if ( !parentObj.currentElem ) {
-          parentObj.currentElem = $.get('.' + demoValueClassCurrent, this.parentNode);
-        }
-
-        if ( parentObj.currentElem ) {
-          parentObj.currentElem.removeClass( demoValueClassCurrent );
-        }
-
-        parentObj.currentElem = that.elemSet;
-        that.elemSet.addClass( demoValueClassCurrent );
+    this.elemSet.elem.onclick = (ev) => {
+      parentObj.changeCurrentControl(ev, this);
     };
 
     return this.elemSet;
+}
+
+Item.prototype.changeCurrentControl = function ({target}, context) {
+    this.currentValue = target.innerHTML;
+    this.contentItemChangeCSSProp();
+
+    if ( !this.currentElem ) {
+      this.currentElem = $.get('.' + demoValueClassCurrent, target.parentNode);
+    }
+
+    if ( this.currentElem ) {
+      this.currentElem.removeClass( demoValueClassCurrent );
+    }
+
+    this.currentElem = context.elemSet;
+    context.elemSet.addClass( demoValueClassCurrent );
 }
 
 //---------------------------------------------
