@@ -32,6 +32,10 @@ BODY[data-theme="seagreen"] {
   &__title {
     color: $col-4;
   }
+
+  CODE {
+    background: lighten($col-3, 10%);
+  }
 }
 /* Values */
 [data-theme="seagreen"] .content-values__term {

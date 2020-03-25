@@ -65,6 +65,16 @@ PRE {
     border-bottom: 1px dotted;
   }
 
+  &__desc UL {
+    list-style-type: disc;
+    padding-left: 2em;
+  }
+
+  CODE {
+    padding: 0 2px;
+    border-radius: 3px;
+    background: #DDD;
+  }
 }
 /* Values */
 .content-values__term {
