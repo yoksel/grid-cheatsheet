@@ -44,9 +44,12 @@ BODY[data-theme="seagreen"] {
 
 /* NAV
 --------------------------------------------- */
+[data-theme="seagreen"] .l-aside {
+  background: $col-5;
+}
+
 [data-theme="seagreen"] .nav {
   overflow: hidden;
-  background: $col-5;
 
   &:before {
     width: 10px;

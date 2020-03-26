@@ -1,15 +1,12 @@
 .nav {
-  position: fixed;
+  // position: fixed;
   z-index: 1;
   display: flex;
   flex-direction: column;
   @include aside-width;
-  height: 100%;
-  overflow: hidden;
   padding: 1.5rem 0;
   box-sizing: border-box;
   list-style-type: none;
-  background: #DDD;
 
   @media ( min-width: 1200px ) {
     padding-left: 1rem;
@@ -29,7 +26,7 @@
 
   &__subheader {
     margin-top: 1rem;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
     padding: 0 1rem;
     font-size: 1.3rem;
     line-height: 1;
@@ -69,6 +66,7 @@
 --------------------------------------------- */
 .nav__marker {
   position: absolute;
+  z-index: 2;
   margin-top: -.45rem;
   right: -1rem;
   width: 2rem;

@@ -1,5 +1,6 @@
 .l-wrapper {
   display: flex;
+  width: 100%;
   min-height: 100%;
 }
 
@@ -9,6 +10,8 @@
 
 .l-aside {
   position: relative;
-  @include aside-width;
   order: -1;
+  @include aside-width;
+  overflow: hidden;
+  background: #DDD;
 }
