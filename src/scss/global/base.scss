@@ -71,9 +71,15 @@ PRE {
   }
 
   CODE {
+    display: inline-block;
     padding: 0 2px;
     border-radius: 3px;
     background: #DDD;
+  }
+
+  PRE {
+    margin: 0;
+    padding: 4px;
   }
 }
 /* Values */

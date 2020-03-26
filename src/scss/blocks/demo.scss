@@ -24,7 +24,7 @@
 .demo__view {
   width: 50%;
   flex-grow: 1;
-  height: 250px;
+  min-height: 275px;
   margin: 0 1rem 1rem 0;
   padding: .5rem;
   box-sizing: border-box;
@@ -83,4 +83,10 @@ $svgFill: 000;
 
 .child:nth-child(4) {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.25em' style='font: 30px/1 Georgia, serif' fill='%23#{$svgFill}' fill-opacity='.6'%3E 4 %3C/text%3E%3C/svg%3E");
+}
+.child:nth-child(5) {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.25em' style='font: 30px/1 Georgia, serif' fill='%23#{$svgFill}' fill-opacity='.6'%3E 5 %3C/text%3E%3C/svg%3E");
+}
+.child:nth-child(6) {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.25em' style='font: 30px/1 Georgia, serif' fill='%23#{$svgFill}' fill-opacity='.6'%3E 6 %3C/text%3E%3C/svg%3E");
 }
