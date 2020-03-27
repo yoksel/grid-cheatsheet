@@ -1,21 +1,17 @@
-import {createElement} from './helpers/index.js';
-const demoTmpl = document.querySelector('#demo-tmpl').content.firstElementChild;
-
-const demoElemClasses = {
-  'demos': '.parent' ,
-  'grid containers': '.parent' ,
-  'grid items': '.child--featured'
-};
+import { createElement } from './helpers/index.js';
+import { Demo } from './Demo.js';
 
 export class DataSection {
   constructor(data) {
     this.data = data;
 
-    this.targetElemSelector = demoElemClasses[ this.data.targetForDemo ];
+    this.demo = new Demo(data);
+    this.demoWrapper = this.demo.wrapper;
 
     const elems = [
       this.getTitle(),
       this.getLink(),
+      this.demoWrapper,
       this.getDesc(),
       this.getTarget(),
       this.getInitialValue(),
