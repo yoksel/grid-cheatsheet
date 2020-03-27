@@ -31,13 +31,13 @@ data[data.length] = {
 
     values: [
       {
-        'name': 'grid',
-        'desc': 'This value causes an element to generate a block-level <i>grid container</i> box.',
+        name: 'grid',
+        desc: 'This value causes an element to generate a block-level <i>grid container</i> box.',
         current: true
       },
       {
-        'name': 'inline-grid',
-        'desc': 'This value causes an element to generate an inline-level <i>grid container</i> box.'
+        name: 'inline-grid',
+        desc: 'This value causes an element to generate an inline-level <i>grid container</i> box.'
       }
     ],
 
@@ -48,9 +48,9 @@ data[data.length] = {
     // </div>`,
 
     cssRules: [{
-      'selector': '.parent',
-      'rules': {
-        'display': 'grid',
+      selector: '.parent',
+      props: {
+        display: 'grid'
       }
     }],
 
@@ -76,12 +76,12 @@ data[data.length] = {
 
     values: [
       {
-        'name': 'none',
-        'desc': 'Sets all three properties to their initial values (<i>none</i>).'
+        name: 'none',
+        desc: 'Sets all three properties to their initial values (<i>none</i>).'
       },
       {
-        'name': '<‘grid-template-rows’> / <‘grid-template-columns’>',
-        'desc': `<p>Sets <i>grid-template-rows</i> and <i>grid-template-columns</i> to the specified values, respectively, and sets <i>grid-template-areas</i> to <i>none</i>.</p>
+        name: '<‘grid-template-rows’> / <‘grid-template-columns’>',
+        desc: `<p>Sets <i>grid-template-rows</i> and <i>grid-template-columns</i> to the specified values, respectively, and sets <i>grid-template-areas</i> to <i>none</i>.</p>
 
           <code>
             <pre>grid-template: auto 1fr / auto 1fr auto;</pre>
@@ -96,8 +96,8 @@ data[data.length] = {
           </code>`
       },
       {
-        'name': '[ <line-names>? <string> <track-size>? <line-names>? ]+ [ / <explicit-track-list> ]?',
-        'desc': `<ul> <li>
+        name: '[ <line-names>? <string> <track-size>? <line-names>? ]+ [ / <explicit-track-list> ]?',
+        desc: `<ul> <li>
           <p>Sets <i>grid-template-areas</i> to the strings listed.</p> </li>
             <li> <p>Sets <i>grid-template-rows</i> to the <i>&lt;track-size&gt;</i>s following each string (filling in <i>auto</i> for any missing sizes), and splicing in the named lines defined before/after each size.</p> </li>
             <li > <p>Sets <i>grid-template-columns</i> to the track listing specified after the slash (or <i>none</i>, if not specified).</p> </li>
@@ -140,15 +140,16 @@ data[data.length] = {
       }
     ],
 
-    customValues: [{
-      id: 'autofr',
-      name: 'auto 1fr / auto 1fr',
-      current: true
+    customValues: [
+      {
+        id: 'autofr',
+        name: 'auto 1fr / auto 1fr',
+        current: true
       },
       {
         id: 'named-areas-template',
-        name: `[header-top] 'a a a' [header-bottom] [main-top] 'b b b' 1fr [main-bottom] / auto 1fr auto;`
-      },
+        name: '[header-top] \'a a a\' [header-bottom] [main-top] \'b b b\' 1fr [main-bottom] / auto 1fr auto;'
+      }
     ],
 
     htmlMarkup: `<div class="parent">
@@ -162,36 +163,35 @@ data[data.length] = {
 
     cssRules: [
       {
-        'selector': '.parent',
-        'rules': {
-          'display': 'grid',
+        selector: '.parent',
+        props: {
+          display: 'grid',
           'grid-template': 'auto 1fr / auto 1fr'
         }
       },
       {
-        'selector': '.child:nth-child(1)',
-        'rules': {
+        selector: '.child:nth-child(1)',
+        props: {
           'background-color': 'gold',
-          'grid-area': 'header-top',
+          'grid-area': 'header-top'
         },
-        'valueId': 'named-areas-template',
+        valueId: 'named-areas-template'
       },
       {
-        'selector': '.child:nth-child(2)',
-        'rules': {
+        selector: '.child:nth-child(2)',
+        props: {
           'background-color': 'green',
           'grid-area': 'header-bottom'
         },
-        'valueId': 'named-areas-template',
+        valueId: 'named-areas-template'
       },
       {
-        'selector': '.child:nth-child(3)',
-        'rules': {
+        selector: '.child:nth-child(3)',
+        props: {
           'background-color': 'gold',
           'grid-area': 'main-top'
         },
-        'valueId': 'named-areas-template',
+        valueId: 'named-areas-template'
       }
-    ],
+    ]
 };
-

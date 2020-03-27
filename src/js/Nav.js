@@ -1,7 +1,7 @@
-import {createElement} from './helpers/index.js';
+import { createElement } from './helpers/index.js';
 
 export class Nav {
-  constructor({
+  constructor ({
     groups,
     data,
     targetElem
@@ -14,7 +14,7 @@ export class Nav {
     const navMarkup = this.fillNav();
 
     this.navElem = createElement(`<nav class="nav">${navMarkup}</nav>`);
-    this.markerElem = createElement(`<span class="nav__marker"></span>`);
+    this.markerElem = createElement('<span class="nav__marker"></span>');
 
     targetElem.prepend(this.navElem);
     targetElem.prepend(this.markerElem);
@@ -24,41 +24,41 @@ export class Nav {
     this.navElem.addEventListener('click', (ev) => {
       const navItem = ev.target.closest('.nav__item');
 
-      if(!navItem) {
+      if (!navItem) {
         return;
       }
       this.setCurrentItem(navItem);
-    })
+    });
   }
 
-  moveListsToGroups() {
+  moveListsToGroups () {
     return this.data.reduce((prev, item) => {
-      let {group} = item;
+      let { group } = item;
 
-      if(!group) {
-        group = 'none'
+      if (!group) {
+        group = 'none';
       }
 
-      if(!prev[group]) {
+      if (!prev[group]) {
         prev[group] = [];
       }
 
       prev[group].push(item);
 
       return prev;
-    }, {})
+    }, {});
   }
 
-  fillNav() {
+  fillNav () {
     return Object.entries(this.groups)
-      .map(([id, {title}]) => {
-        if(!this.listsByGroups[id]) {
+      .map(([id, { title }]) => {
+        if (!this.listsByGroups[id]) {
           return;
         }
 
         let markup = '';
 
-        if(title) {
+        if (title) {
           markup += `<h2 class="nav__subheader">${title}</h2>`;
         }
         const itemsMarkup = this.getListMarkup(id);
@@ -68,10 +68,10 @@ export class Nav {
       });
   }
 
-  getListMarkup(id) {
+  getListMarkup (id) {
     const items = this.listsByGroups[id];
 
-    return items.map(({name}) => {
+    return items.map(({ name }) => {
       const itemClass = this.getItemClass(name);
 
       return `<li
@@ -81,28 +81,28 @@ export class Nav {
             href="#${name}"
             data-parent-nav-item="${name}"
             class="nav__link"
-          >${name}</a></li>`
+          >${name}</a></li>`;
     });
   }
 
-  getItemClass(name) {
-    let classList = ['nav__item'];
+  getItemClass (name) {
+    const classList = ['nav__item'];
 
     const namesList = name.split(',');
 
-    for(let name of namesList) {
-      classList.push('nav__item--' + name.trim())
+    for (const name of namesList) {
+      classList.push('nav__item--' + name.trim());
     }
 
     return classList.join(' ');
   }
 
-  setCurrentItem(elem) {
-    if(!elem) {
+  setCurrentItem (elem) {
+    if (!elem) {
       elem = document.querySelector('.nav__item');
     }
 
-    if(this.currentElem) {
+    if (this.currentElem) {
       this.currentElem.classList.remove('nav__item--current');
     }
 
@@ -111,6 +111,5 @@ export class Nav {
     elem.classList.add('nav__item--current');
 
     this.currentElem = elem;
-
   }
 }

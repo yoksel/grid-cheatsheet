@@ -2,7 +2,7 @@ import { createElement } from './helpers/index.js';
 import { Demo } from './Demo.js';
 
 export class DataSection {
-  constructor(data) {
+  constructor (data) {
     this.data = data;
 
     this.demo = new Demo(data);
@@ -18,73 +18,73 @@ export class DataSection {
       this.getValues()
     ];
 
-    this.sectionElem = createElement(`<section class="content__item"></section>`);
+    this.sectionElem = createElement('<section class="content__item"></section>');
 
     elems.forEach(elem => this.sectionElem.append(elem));
   }
 
-  //---------------------------------------------
+  // ---------------------------------------------
 
-  getTitle() {
+  getTitle () {
     return createElement(`<h2
       class="contebt__title"
       id="${this.data.name}"
       >${this.data.name}</h2>`);
   }
 
-  //---------------------------------------------
+  // ---------------------------------------------
 
-  getLink() {
-    if ( !this.data.link ) {
+  getLink () {
+    if (!this.data.link) {
         return;
     }
 
-    var text = this.data.link.replace('http://www.','');
+    var text = this.data.link.replace('http://www.', '');
 
     return createElement(`<a href="${this.data.link}">${text}</a>`);
   }
 
-  //---------------------------------------------
+  // ---------------------------------------------
 
-  getDesc() {
-    if ( !this.data.desc ) {
+  getDesc () {
+    if (!this.data.desc) {
         return;
     }
 
     return createElement(`<div class="content__desc">${this.data.desc}</div>`);
   }
 
-  //---------------------------------------------
+  // ---------------------------------------------
 
-  getTarget() {
-    if ( !this.data.appliesTo ){
+  getTarget () {
+    if (!this.data.appliesTo) {
         return;
     }
 
     return createElement(`<p class="content__initial-value"><b>Applies to</b>: ${this.data.appliesTo}.</p>`);
   }
 
-  //---------------------------------------------
+  // ---------------------------------------------
 
-  getInitialValue() {
-    if ( !this.data.initValue ){
+  getInitialValue () {
+    if (!this.data.initValue) {
         return;
     }
 
     return createElement(`<p class="content__initial-value"><b>Initial</b>: ${this.data.initValue}.</p>`);
   }
 
-  //---------------------------------------------
+  // ---------------------------------------------
 
-  getValues() {
-    if ( !this.data.values ) {
+  getValues () {
+    if (!this.data.values) {
         return;
     }
 
     let markup = '';
 
-    for(let {name, desc} of this.data.values) {
-      let id = this.data.name + '__' + name;
+    for (const { name, desc } of this.data.values) {
+      const id = this.data.name + '__' + name;
       const dt = `<dt id="${id}" class="content-values__term">${name}</dt>`;
       const dd = `<dd class="content-values__desc">${desc}</dd>`;
 

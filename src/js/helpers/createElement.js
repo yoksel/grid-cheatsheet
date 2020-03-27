@@ -3,7 +3,7 @@
 const hasSupport = 'content' in document.createElement('template');
 
 const createElement = (str) => {
-  if(hasSupport) {
+  if (hasSupport) {
     const template = document.createElement('template');
     template.innerHTML = str;
     return template.content.firstElementChild;
@@ -12,7 +12,6 @@ const createElement = (str) => {
   const template = document.createElement('div');
   template.innerHTML = str;
   return template.firstElementChild;
-
-}
+};
 
 export default createElement;

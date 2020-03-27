@@ -1,8 +1,8 @@
 export const groups = {
-  'none': {
+  none: {
     title: ''
   },
-  'alignment': {
+  alignment: {
     title: 'Alignment'
   }
 };
