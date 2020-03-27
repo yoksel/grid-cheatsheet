@@ -2,25 +2,61 @@ import { data } from './js/data/specs.js';
 import { groups } from './js/data/groups.js';
 import { Nav } from './js/Nav.js';
 import { DataSection } from './js/DataSection.js';
+import { ThemeSwitcher } from './js/ThemeSwitcher.js';
+import { createElement, isVisible, debounce } from './js/helpers/index.js';
+
 import './scss/styles.scss';
 
-const doc = document;
+const sections = [];
+let nav;
 
-new Nav({
-  groups,
-  data,
-  targetElem: doc.querySelector('.l-aside')
-});
+init();
 
-fillContent();
+// ---------------------------------------------
+
+function init() {
+  new ThemeSwitcher();
+
+  nav = new Nav({
+    groups,
+    data,
+    targetElem: document.querySelector('.l-aside__content')
+  });
+
+  fillContent();
+  addNavMarkerMove();
+}
+
+// ---------------------------------------------
 
 function fillContent () {
-  const main = doc.querySelector('.l-main');
+  const main = document.querySelector('.l-main');
 
   for (const item of data) {
     const section = new DataSection(item);
+    sections.push(section.sectionElem);
+
     main.append(section.sectionElem);
   }
 }
 
-// const localStorThemeKey = 'fbchTheme';
+// ---------------------------------------------
+
+function addNavMarkerMove() {
+  const navItems = document.querySelectorAll('.nav__item');
+navItems.reduce = [].reduce;
+  const navItemsById = navItems.reduce((prev, item)=> {
+    prev[item.id] = item
+    return prev;
+  }, {});
+
+  const moveNavMarker = debounce(function () {
+    for(let section of sections) {
+      if (isVisible(section) && navItemsById[section.id]) {
+          nav.setCurrentItem(navItemsById[section.id]);
+      }
+    }
+  }, 100);
+
+  window.addEventListener('scroll', moveNavMarker);
+}

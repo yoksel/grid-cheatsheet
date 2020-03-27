@@ -12,6 +12,11 @@
   position: relative;
   order: -1;
   @include aside-width;
-  overflow: hidden;
   background: #DDD;
+}
+
+.l-aside__content {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
 }

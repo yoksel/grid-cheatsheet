@@ -1,4 +1,4 @@
-// // https://grrr.tech/posts/create-dom-node-from-html-string/
+// https://grrr.tech/posts/create-dom-node-from-html-string/
 
 const hasSupport = 'content' in document.createElement('template');
 
