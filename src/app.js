@@ -2,6 +2,7 @@ import './js/tinylib.js';
 import {data} from './js/data/specs.js';
 import {groups} from './js/data/groups.js';
 import {Nav} from './js/Nav.js';
+import {DataSection} from './js/DataSection.js';
 import './scss/styles.scss';
 
 // console.log(data)
@@ -15,8 +16,18 @@ new Nav({
   targetElem: doc.querySelector('.l-aside')
 });
 
+fillContent();
+
+function fillContent() {
+  const main = doc.querySelector('.l-main');
+
+  for(let item of data){
+    let section = new DataSection(item);
+    main.append(section.sectionElem);
+  }
+}
+
 const body = $.get('body');
-const main = $.get('.l-main');
 const head = $.get('head');
 
 const navHolder = $.create('ul').addClass('nav');

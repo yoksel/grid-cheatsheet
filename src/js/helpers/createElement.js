@@ -6,12 +6,12 @@ const createElement = (str) => {
   if(hasSupport) {
     const template = document.createElement('template');
     template.innerHTML = str;
-    return template.content.firstChild;
+    return template.content.firstElementChild;
   }
 
   const template = document.createElement('div');
   template.innerHTML = str;
-  return template.firstChild;
+  return template.firstElementChild;
 
 }
 
