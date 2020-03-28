@@ -2,7 +2,7 @@ export class ThemeSwitcher {
   constructor() {
     this.control = document.querySelector('.theme-control');
     this.theme = this.getTheme();
-    this.lsKey = 'fbchTheme';
+    this.lsKey = 'gdchTheme';
 
     this.control.addEventListener('click', () => {
       this.theme = this.theme === 'seagreen' ? 'default' : 'seagreen';
