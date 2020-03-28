@@ -12,11 +12,13 @@
   position: relative;
   order: -1;
   @include aside-width;
-  background: #DDD;
+  flex-shrink: 0;
+  background: var(--col-5);
 }
 
 .l-aside__content {
   position: fixed;
   overflow: hidden;
+  @include aside-width;
   height: 100%;
 }

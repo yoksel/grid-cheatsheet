@@ -1,13 +1,13 @@
 BODY {
   display: flex;
   min-height: 100vh;
-  background: #FFF;
+  background: var(--col-1);
   font: 16px/1.4 Georgia, serif;
-  color: #111;
+  color: var(--col-5-dark-8);
 }
 
 A {
-  color: hsl(225, 90%, 40%);
+  color: var(--col-5);
 }
 
 UL {
@@ -29,9 +29,9 @@ Ul {
 }
 
 MARK {
-  background: #333;
-  box-shadow: 0 0 0 2px #333;
-  color: #FFF;
+  box-shadow: 0 0 0 2px var(--col-4-dark-5);
+  background: var(--col-4-dark-5);
+  color: var(--col-2-lght-10);
 }
 
 PRE {
@@ -64,7 +64,11 @@ PRE {
     min-height: 100vh;
     padding: 1rem 2em;
     box-sizing: border-box;
-    border-bottom: 1px dotted;
+    border-bottom: 1px dotted var(--col-4);
+  }
+
+  &__title {
+    color: var(--col-4);
   }
 
   &__desc UL {
@@ -76,7 +80,7 @@ PRE {
     display: inline-block;
     padding: 0 2px;
     border-radius: 3px;
-    background: #DDD;
+    background: var(--col-3-lght-10);
   }
 
   PRE {
@@ -87,6 +91,7 @@ PRE {
 /* Values */
 .content-values__term {
   font-weight: bold;
+  color: var(--col-4-dark-10);
 }
 
 .content-values__desc {

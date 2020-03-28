@@ -1,29 +1,60 @@
-$col-1: #CFF09E;
-$col-2: #A8DBA8;
-$col-3: #79BD9A;
-$col-4: #3B8686;
-$col-5: #0B486B;
+// $col-1: #CFF09E;
+// $col-2: #A8DBA8;
+// $col-3: #79BD9A;
+// $col-4: #3B8686;
+// $col-5: #0B486B;
+
+:root {
+  --col-1: hsl(84, 0%, 100%);
+  --col-2: hsl(120, 0%, 76%);
+  --col-2-lght-10: hsl(120, 0%, 86%); // lighten($col-2, 10%)
+  --col-3: hsl(149, 0%, 61%);
+  --col-3-lght-10: hsl(149, 0%, 71%); // lighten($col-3, 10%)
+  --col-4: hsl(180, 0%, 38%);
+  --col-4-dark-5: hsl(180, 0%, 33%); // darken($col-4, 5%)
+  --col-4-dark-10: hsl(180, 0%, 28%); // darken($col-4, 10%)
+  --col-5: hsl(202, 0%, 23%);
+  --col-5-dark-8: hsl(202, 0%, 15%); // darken($col-5, 8%)
+  --col-5-dark-15: hsl(203, 0%, 8%); // darken($col-5, 15%)
+  --col-5-dark-20: hsl(201, 0%, 3%); // darken($col-5, 20%)
+  // --col-5: hsl(225, 90%, 40%);
+}
+
+[data-theme='seagreen'] {
+  --col-1: hsl(84, 73%, 78%);
+  --col-2: hsl(120, 42%, 76%);
+  --col-2-lght-10: hsl(120, 42%, 86%); // lighten($col-2, 10%)
+  --col-3: hsl(149, 34%, 61%);
+  --col-3-lght-10: hsl(149, 34%, 71%); // lighten($col-3, 10%)
+  --col-4: hsl(180, 39%, 38%);
+  --col-4-dark-5: hsl(180, 39%, 33%); // darken($col-4, 5%)
+  --col-4-dark-10: hsl(180, 39%, 28%); // darken($col-4, 10%)
+  --col-5: hsl(202, 82%, 23%);
+  --col-5-dark-8: hsl(202, 82%, 15%); // darken($col-5, 8%)
+  --col-5-dark-15: hsl(203, 83%, 8%); // darken($col-5, 15%)
+  --col-5-dark-20: hsl(201, 92%, 3%); // darken($col-5, 20%)
+}
+
+.pal-wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+}
+
+.palette {
+  display: flex;
+
+  LI {
+    width: 5rem;
+    height: 5rem;
+  }
+}
 
 @mixin aside-width {
     width: 23%;
     min-width: 230px;
     max-width: 300px;
-}
-
-/// Replace `$search` with `$replace` in `$string`
-/// @author Hugo Giraudel
-/// @param {String} $string - Initial string
-/// @param {String} $search - Substring to replace
-/// @param {String} $replace ('') - New value
-/// @return {String} - Updated string
-@function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
-
-  @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-  }
-
-  @return $string;
 }
 
 @import 'normalize';
@@ -33,5 +64,3 @@ $col-5: #0B486B;
 @import 'blocks/nav';
 @import 'blocks/project-links';
 @import 'blocks/theme-control';
-
-@import 'themes/seagreen';
