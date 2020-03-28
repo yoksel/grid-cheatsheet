@@ -1,9 +1,9 @@
 export class ThemeSwitcher {
   constructor() {
-    this.control = document.querySelector('.theme-control');
-    this.theme = this.getTheme();
     this.lsKey = 'gdchTheme';
+    this.theme = this.getTheme();
 
+    this.control = document.querySelector('.theme-control');
     this.control.addEventListener('click', () => {
       this.theme = this.theme === 'seagreen' ? 'default' : 'seagreen';
 
@@ -12,7 +12,7 @@ export class ThemeSwitcher {
   }
 
   getTheme() {
-    let theme = localStorage[this.lsKey];
+    let theme = localStorage.getItem(this.lsKey);
     theme = theme || 'seagreen';
 
     return theme;
@@ -20,6 +20,6 @@ export class ThemeSwitcher {
 
   setTheme() {
     document.body.dataset.theme = this.theme;
-    localStorage[this.lsKey] = this.theme;
+    localStorage.setItem(this.lsKey, this.theme);
   }
 }

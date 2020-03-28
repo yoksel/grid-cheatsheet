@@ -15,7 +15,8 @@ init();
 // ---------------------------------------------
 
 function init() {
-  new ThemeSwitcher();
+  const themeSwitcher = new ThemeSwitcher();
+  themeSwitcher.setTheme();
 
   nav = new Nav({
     groups,
