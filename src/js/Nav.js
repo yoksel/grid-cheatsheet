@@ -11,7 +11,7 @@ export class Nav {
     this.current = null;
 
     this.listsByGroups = this.moveListsToGroups();
-    const navMarkup = this.fillNav();
+    const navMarkup = this.getNavMarkup();
 
     this.navElem = createElement(`<nav class="nav">${navMarkup}</nav>`);
     this.markerElem = createElement('<span class="nav__marker"></span>');
@@ -49,8 +49,8 @@ export class Nav {
     }, {});
   }
 
-  fillNav () {
-    return Object.entries(this.groups)
+  getNavMarkup () {
+    const itemsList = Object.entries(this.groups)
       .map(([id, { title }]) => {
         if (!this.listsByGroups[id]) {
           return;
@@ -65,7 +65,9 @@ export class Nav {
         markup += `<ul class="nav__list">${itemsMarkup.join('')}</ul>`;
 
         return markup;
-      });
+      })
+
+    return itemsList.join('');
   }
 
   getListMarkup (id) {
