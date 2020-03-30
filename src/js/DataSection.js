@@ -27,7 +27,7 @@ export class DataSection {
 
   getTitle () {
     return createElement(`<h2
-      class="contebt__title"
+      class="content__title"
       id="${this.data.name}"
       >${this.data.name}</h2>`);
   }
