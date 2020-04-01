@@ -23,7 +23,7 @@ export default {
       current: true
     },
     {
-      name: '10px 50px',
+      name: '150px 20px',
     },
     {
       name: '10%',

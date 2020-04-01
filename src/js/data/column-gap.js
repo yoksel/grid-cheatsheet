@@ -15,11 +15,11 @@ export default {
 
   customValues: [
     {
-      name: '50px',
+      name: '100px',
       current: true
     },
     {
-      name: '10%',
+      name: '50%',
     },
     {
       name: 'normal',
@@ -31,7 +31,7 @@ export default {
     props: {
       display: 'grid',
       'grid-template': '1fr 1fr/ 1fr 1fr',
-      'row-gap': '20px'
+      'column-gap': '20px'
     }
   }],
 };
