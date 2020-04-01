@@ -3,7 +3,7 @@ import { groups } from './js/data/groups.js';
 import { Nav } from './js/Nav.js';
 import { DataSection } from './js/DataSection.js';
 import { ThemeSwitcher } from './js/ThemeSwitcher.js';
-import { createElement, isVisible, debounce } from './js/helpers/index.js';
+import { isVisible, debounce } from './js/helpers/index.js';
 
 import './scss/styles.scss';
 
@@ -14,7 +14,7 @@ init();
 
 // ---------------------------------------------
 
-function init() {
+function init () {
   const themeSwitcher = new ThemeSwitcher();
   themeSwitcher.setTheme();
 
@@ -43,16 +43,16 @@ function fillContent () {
 
 // ---------------------------------------------
 
-function addNavMarkerMove() {
+function addNavMarkerMove () {
   const navItems = document.querySelectorAll('.nav__item');
 navItems.reduce = [].reduce;
-  const navItemsById = navItems.reduce((prev, item)=> {
-    prev[item.id] = item
+  const navItemsById = navItems.reduce((prev, item) => {
+    prev[item.id] = item;
     return prev;
   }, {});
 
   const moveNavMarker = debounce(function () {
-    for(let section of sections) {
+    for (const section of sections) {
       if (isVisible(section) && navItemsById[section.id]) {
           nav.setCurrentItem(navItemsById[section.id]);
       }

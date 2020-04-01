@@ -1,6 +1,5 @@
 export default function isVisible (elem) {
   const coords = elem.getBoundingClientRect();
-  const koeff = 300;
 
   const windowHeight = document.documentElement.clientHeight;
 

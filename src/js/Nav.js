@@ -65,7 +65,7 @@ export class Nav {
         markup += `<ul class="nav__list">${itemsMarkup.join('')}</ul>`;
 
         return markup;
-      })
+      });
 
     return itemsList.join('');
   }

@@ -8,7 +8,7 @@ const themes = [
 ];
 
 export class ThemeSwitcher {
-  constructor() {
+  constructor () {
     this.lsKey = 'gdchTheme';
     this.counter = 0;
     this.theme = this.getTheme();
@@ -17,7 +17,7 @@ export class ThemeSwitcher {
     this.control.addEventListener('click', () => {
       this.counter++;
 
-      if(this.counter > themes.length - 1) {
+      if (this.counter > themes.length - 1) {
         this.counter = 0;
       }
 
@@ -27,7 +27,7 @@ export class ThemeSwitcher {
     });
   }
 
-  getTheme() {
+  getTheme () {
     let theme = localStorage.getItem(this.lsKey);
     theme = theme || 'seagreen';
     this.counter = themes.indexOf(theme);
@@ -35,7 +35,7 @@ export class ThemeSwitcher {
     return theme;
   }
 
-  setTheme() {
+  setTheme () {
     document.body.dataset.theme = this.theme;
     localStorage.setItem(this.lsKey, this.theme);
   }

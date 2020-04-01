@@ -12,7 +12,7 @@ data[data.length] = {
     targetForDemo: 'grid containers',
     appliesTo: 'all elements',
 
-    desc: `<p>A <dfn >grid container</dfn> establishes a new <dfn >grid formatting context</dfn> for its contents. This is the same as establishing a block formatting context, except that grid layout is used instead of block layout: floats do not intrude into the grid container, and the grid container’s margins do not collapse with the margins of its contents. The contents of a <i>grid container</i> are laid out into a <i>grid</i>, with <i>grid lines</i> forming the boundaries of each <i>grid items</i>’ containing block. The <a href=\'https://www.w3.org/TR/css-overflow-3/#propdef-overflow\' >overflow</a> property applies to <i>grid containers</i>.</p>
+    desc: `<p>A <dfn >grid container</dfn> establishes a new <dfn >grid formatting context</dfn> for its contents. This is the same as establishing a block formatting context, except that grid layout is used instead of block layout: floats do not intrude into the grid container, and the grid container’s margins do not collapse with the margins of its contents. The contents of a <i>grid container</i> are laid out into a <i>grid</i>, with <i>grid lines</i> forming the boundaries of each <i>grid items</i>’ containing block. The <a href='https://www.w3.org/TR/css-overflow-3/#propdef-overflow' >overflow</a> property applies to <i>grid containers</i>.</p>
       <p>Grid containers are not block containers, and so some properties that were designed with the assumption of block layout don’t apply in the context of grid layout. In particular:</p>
 
       <ul>
@@ -70,9 +70,9 @@ data[data.length] = {
     targetForDemo: 'grid containers',
     appliesTo: 'grid containers',
 
-    desc: `<p>The <i>grid-template</i> property is a <a href=\'https://www.w3.org/TR/css-cascade-4/#shorthand-property\' >shorthand</a> for setting <i>grid-template-columns</i>,
+    desc: `<p>The <i>grid-template</i> property is a <a href='https://www.w3.org/TR/css-cascade-4/#shorthand-property' >shorthand</a> for setting <i>grid-template-columns</i>,
     <i>grid-template-rows</i>, and <i>grid-template-areas</i> in a single declaration. It has several distinct syntax forms:</p>
-      <p role=\'note\'><span>Note:</span> The <i>grid</i> shorthand accepts the same syntax, but also resets the implicit grid properties to their initial values. Unless authors want those to cascade in separately, it is therefore recommended to use <i>grid</i> instead of <i>grid-template</i>.</p>`,
+      <p role='note'><span>Note:</span> The <i>grid</i> shorthand accepts the same syntax, but also resets the implicit grid properties to their initial values. Unless authors want those to cascade in separately, it is therefore recommended to use <i>grid</i> instead of <i>grid-template</i>.</p>`,
 
     values: [
       {
@@ -107,20 +107,20 @@ data[data.length] = {
           <code>
             <pre>
               grid-template:
-                [header-top] \'a a a\' [header-bottom]
-                [main-top] \'b b b\' 1fr [main-bottom] / auto 1fr auto;
+                [header-top] 'a a a' [header-bottom]
+                [main-top] 'b b b' 1fr [main-bottom] / auto 1fr auto;
             </pre>
           </code>
           <p>is equivalent to</p>
           <code>
             <pre>
-              grid-template-areas: \'a a a\' \'b b b\';
+              grid-template-areas: 'a a a' 'b b b';
               grid-template-rows: [header-top] auto [header-bottom main-top] 1fr [main-bottom];
               grid-template-columns: auto 1fr auto;
             </pre>
           </code>
           <p>and creates the following grid:</p>
-          <figure> <object data=\'images/grid-shorthand.svg\' type=\'image/svg+xml\'></object>
+          <figure> <object data='images/grid-shorthand.svg' type='image/svg+xml'></object>
           <ul>
             <li>
               Three columns, sized <i>auto</i>, <span >1fr</span>, and <i>auto</i>, respectively
@@ -136,7 +136,7 @@ data[data.length] = {
             </ul>
             <figcaption>
 
-            The grid created by the declarations above. (The “a/b-start/end” names are created <i>implicitly</i> by the <i>named grid areas</i>.) </figcaption> </figure> </div> <p role=\'note\'><span>Note:</span> Note that the <i>repeat()</i> function isn’t allowed in these track listings, as the tracks are intended to visually line up one-to-one with the rows/columns in the “ASCII art”.</p>`
+            The grid created by the declarations above. (The “a/b-start/end” names are created <i>implicitly</i> by the <i>named grid areas</i>.) </figcaption> </figure> </div> <p role='note'><span>Note:</span> Note that the <i>repeat()</i> function isn’t allowed in these track listings, as the tracks are intended to visually line up one-to-one with the rows/columns in the “ASCII art”.</p>`
       }
     ],
 
