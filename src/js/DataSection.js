@@ -35,7 +35,7 @@ export class DataSection {
 
   getLink () {
     if (!this.data.link) {
-        return;
+        return '';
     }
 
     var text = this.data.link.replace('http://www.', '');
@@ -47,7 +47,7 @@ export class DataSection {
 
   getDesc () {
     if (!this.data.desc) {
-        return;
+        return '';
     }
 
     return createElement(`<div class="prop__desc">${this.data.desc}</div>`);
@@ -57,7 +57,7 @@ export class DataSection {
 
   getTarget () {
     if (!this.data.appliesTo) {
-        return;
+        return '';
     }
 
     return createElement(`<p class="prop__initial-value"><b>Applies to</b>: ${this.data.appliesTo}.</p>`);
@@ -67,7 +67,7 @@ export class DataSection {
 
   getInitialValue () {
     if (!this.data.initValue) {
-        return;
+        return '';
     }
 
     return createElement(`<p class="prop__initial-value"><b>Initial</b>: ${this.data.initValue}.</p>`);
@@ -77,7 +77,7 @@ export class DataSection {
 
   getValues () {
     if (!this.data.values) {
-        return;
+        return '';
     }
 
     let markup = '';
