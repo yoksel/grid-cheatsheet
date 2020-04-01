@@ -18,7 +18,9 @@ export class DataSection {
       this.getValues()
     ];
 
-    this.sectionElem = createElement('<section class="content__item"></section>');
+    this.sectionElem = createElement(`<section
+      id="${this.data.name}"
+      class="prop container"></section>`);
 
     elems.forEach(elem => this.sectionElem.append(elem));
   }
@@ -26,10 +28,7 @@ export class DataSection {
   // ---------------------------------------------
 
   getTitle () {
-    return createElement(`<h2
-      class="content__title"
-      id="${this.data.name}"
-      >${this.data.name}</h2>`);
+    return createElement(`<h3 class="prop__title">${this.data.name}</h3>`);
   }
 
   // ---------------------------------------------
@@ -51,7 +50,7 @@ export class DataSection {
         return;
     }
 
-    return createElement(`<div class="content__desc">${this.data.desc}</div>`);
+    return createElement(`<div class="prop__desc">${this.data.desc}</div>`);
   }
 
   // ---------------------------------------------
@@ -61,7 +60,7 @@ export class DataSection {
         return;
     }
 
-    return createElement(`<p class="content__initial-value"><b>Applies to</b>: ${this.data.appliesTo}.</p>`);
+    return createElement(`<p class="prop__initial-value"><b>Applies to</b>: ${this.data.appliesTo}.</p>`);
   }
 
   // ---------------------------------------------
@@ -71,7 +70,7 @@ export class DataSection {
         return;
     }
 
-    return createElement(`<p class="content__initial-value"><b>Initial</b>: ${this.data.initValue}.</p>`);
+    return createElement(`<p class="prop__initial-value"><b>Initial</b>: ${this.data.initValue}.</p>`);
   }
 
   // ---------------------------------------------
@@ -85,12 +84,12 @@ export class DataSection {
 
     for (const { name, desc } of this.data.values) {
       const id = this.data.name + '__' + name;
-      const dt = `<dt id="${id}" class="content-values__term">${name}</dt>`;
-      const dd = `<dd class="content-values__desc">${desc}</dd>`;
+      const dt = `<dt id="${id}" class="prop-values__term">${name}</dt>`;
+      const dd = `<dd class="prop-values__desc">${desc}</dd>`;
 
       markup += dt + dd;
     }
 
-    return createElement(`<dl class="content-values">${markup}</dl>`);
+    return createElement(`<dl class="prop-values">${markup}</dl>`);
   }
 }

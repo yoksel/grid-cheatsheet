@@ -1,0 +1,11 @@
+.group {
+  &__intro {
+    display: grid;
+    // margin-bottom: .5em;
+  }
+
+  &__title {
+    margin: 1em 0 0em;
+    font-size: 1.75em;
+  }
+}

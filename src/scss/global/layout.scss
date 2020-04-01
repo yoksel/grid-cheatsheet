@@ -29,3 +29,13 @@
   background: var(--aside-bg);
   height: 100%;
 }
+
+.container {
+  padding-left: 1em;
+  padding-right: 1em;
+
+  @media(min-width: 800px) {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}

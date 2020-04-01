@@ -1,15 +1,14 @@
-.content {
-
-  &__item {
-    display: block;
-    width: 100%;
-    min-height: 100vh;
-    padding: 1rem 2em;
-    box-sizing: border-box;
-    border-bottom: 1px dotted var(--col-4);
-  }
+.prop {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  box-sizing: border-box;
+  border-bottom: 1px dotted var(--col-4);
 
   &__title {
+    font-size: 1.5em;
     color: var(--col-4);
   }
 
@@ -31,11 +30,11 @@
   }
 }
 /* Values */
-.content-values__term {
+.prop-values__term {
   font-weight: bold;
   color: var(--term-color);
 }
 
-.content-values__desc {
+.prop-values__desc {
   margin-bottom: 1rem;
 }

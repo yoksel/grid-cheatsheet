@@ -1,5 +1,6 @@
 import { groups } from './js/data/groups.js';
 import { Nav } from './js/Nav.js';
+import { Group } from './js/Group.js';
 import { DataSection } from './js/DataSection.js';
 import { ThemeSwitcher } from './js/ThemeSwitcher.js';
 import { isVisible, debounce } from './js/helpers/index.js';
@@ -30,17 +31,19 @@ function init () {
 
 function fillContent () {
   const main = document.querySelector('.l-main');
-  const items = Object.values(groups)
-    .reduce((prev, {items}) => {
-      prev = prev.concat(items);
-      return prev;
-    }, []);
 
-  for (const item of items) {
-    const section = new DataSection(item);
-    sections.push(section.sectionElem);
+  for(let [id, data] of Object.entries(groups)) {
+    const groupElem = new Group({id, ...data}).elem;
 
-    main.append(section.sectionElem);
+    for (const item of data.items) {
+      const section = new DataSection(item);
+      sections.push(section.sectionElem);
+
+      groupElem.append(section.sectionElem);
+    }
+
+    sections.push(groupElem);
+    main.append(groupElem);
   }
 }
 

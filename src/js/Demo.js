@@ -52,11 +52,11 @@ export class Demo {
     const namesList = this.data.name.split(',');
 
     for (const name of namesList) {
-      classList.push('demo--prop-' + name.trim());
+      classList.push('demo__content--prop-' + name.trim());
     }
 
     if (this.targetElemSelector.search('featured') > -1) {
-      classList.push('demo--has-featured');
+      classList.push('demo__content--has-featured');
     }
 
     return classList;

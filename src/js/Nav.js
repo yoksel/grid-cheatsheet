@@ -14,7 +14,7 @@ export class Nav {
     this.markerElem = createElement('<span class="nav__marker"></span>');
 
     targetElem.prepend(this.navElem);
-    targetElem.prepend(this.markerElem);
+    this.navElem.prepend(this.markerElem);
 
     this.setCurrentItem();
 
