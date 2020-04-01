@@ -56,3 +56,10 @@ PRE {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.note {
+  padding: 1em;
+  background: var(--note-bg);
+  border-left: 10px solid var(--note-border);
+  border-radius: 3px;
+}
