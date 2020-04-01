@@ -50,7 +50,9 @@ export class DataSection {
         return '';
     }
 
-    return createElement(`<div class="prop__desc">${this.data.desc}</div>`);
+    return createElement(`<div
+      class="prop__desc"
+      id="desc-${this.data.name}">${this.data.desc}</div>`);
   }
 
   // ---------------------------------------------
