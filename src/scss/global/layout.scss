@@ -26,5 +26,6 @@
   position: fixed;
   overflow: hidden;
   @include aside-width;
+  background: var(--aside-bg);
   height: 100%;
 }

@@ -45,9 +45,13 @@
   padding: 1rem;
   background: var(--code-bg);
   border-radius: .75rem;
-  white-space: pre;
+  white-space: pre-wrap;
   font-family: monospace;
   color: var(--code-color);
+}
+
+.demo__code-prop {
+  margin-left: 1rem;
 }
 
 .parent {

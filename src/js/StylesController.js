@@ -36,8 +36,8 @@ export class StylesController {
     }
 
     for (const { selector, props, valueId } of rules) {
-      let propsListHidden = '';
-      let propsListVisible = '';
+      let propsListHidden = [];
+      let propsListVisible = [];
       const hiddenSelector = [parentClass, selector].join(' ');
 
       if (valueId && valueId !== this.current.id) {
@@ -51,17 +51,24 @@ export class StylesController {
 
         let propString = `${name}: ${value};\n`;
 
-        propsListHidden += codeOffset + propString;
+        propsListHidden.push(propString);
 
         if (name === this.data.name) {
           propString = `<mark>${propString}</mark>`;
         }
 
-        propsListVisible += codeOffset + propString;
+        propsListVisible.push(propString);
       }
 
-      hiddenStyles += `${hiddenSelector} {\n${propsListHidden}}\n`;
-      visibleStyles += `${selector} {\n${propsListVisible}}\n`;
+      propsListVisible = propsListVisible
+        .map(prop => {
+          return (
+            `<div class="demo__code-prop">${prop}</div>`
+          )
+        });
+
+      hiddenStyles += `${hiddenSelector} {\n${propsListHidden.join('')}}\n`;
+      visibleStyles += `${selector} {${propsListVisible.join('')}}<br><br>`;
     }
 
     return {
