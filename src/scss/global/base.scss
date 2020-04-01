@@ -1,13 +1,17 @@
 BODY {
   display: flex;
   min-height: 100vh;
-  background: var(--col-1);
+  background: var(--body-bg);
   font: 16px/1.4 Georgia, serif;
-  color: var(--col-5-dark-8);
+  color: var(--body-color);
 }
 
 A {
-  color: var(--col-5);
+  color: var(--link-color);
+
+  &:hover {
+    color: var(--link-color-hover);
+  }
 }
 
 UL {
@@ -29,9 +33,9 @@ Ul {
 }
 
 MARK {
-  box-shadow: 0 0 0 2px var(--col-4-dark-5);
-  background: var(--col-4-dark-5);
-  color: var(--col-2-lght-10);
+  box-shadow: 0 0 0 2px var(--mark-bg);
+  background: var(--mark-bg);
+  color: var(--mark-color);
 }
 
 PRE {

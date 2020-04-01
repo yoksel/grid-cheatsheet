@@ -1,3 +1,9 @@
+@mixin aside-width {
+  width: 23%;
+  min-width: 230px;
+  max-width: 300px;
+}
+
 .l-wrapper {
   display: flex;
   width: 100%;
@@ -13,7 +19,7 @@
   order: -1;
   @include aside-width;
   flex-shrink: 0;
-  background: var(--col-5);
+  background: var(--aside-bg);
 }
 
 .l-aside__content {

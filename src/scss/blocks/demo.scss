@@ -7,12 +7,12 @@
   padding: .3rem .7rem;
   border: 0;
   border-radius: 3px;
-  background: var(--col-4);
-  color: var(--col-2);
+  background: var(--control-bg);
+  color: var(--control-color);
 
   &--current {
-    background: var(--col-5);
-    color: var(--col-1);
+    background: var(--control-current-bg);
+    color: var(--control-current-color);
   }
 }
 
@@ -43,15 +43,15 @@
   flex-shrink: 0;
   margin-bottom: 1rem;
   padding: 1rem;
-  background: var(--col-2);
+  background: var(--code-bg);
   border-radius: .75rem;
   white-space: pre;
   font-family: monospace;
-  color: var(--col-5);
+  color: var(--code-color);
 }
 
 .parent {
-  border: 1px dashed var(--col-4);
+  border: 1px dashed var(--parent-border);
 }
 
 .child {
@@ -59,10 +59,10 @@
   min-width: 2.5rem;
   min-height: 2.5rem;
   padding: .5rem;
-  background-color: var(--col-3);
+  background-color: var(--child-bg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  border: 1px solid var(--col-1);
+  border: 1px solid var(--child-border);
 }
 
 .child::before {
@@ -72,13 +72,13 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: var(--col-5);
+  background: var(--child-color);
   mask-repeat: no-repeat;
   mask-position: 50% 50%;
 }
 
 .demo--has-featured .child--featured {
-  background-color: var(--col-4);
+  background-color: var(--child-featured-bg);
 }
 
 .child:nth-child(1)::before {

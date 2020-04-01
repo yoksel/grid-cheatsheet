@@ -1,11 +1,27 @@
+const themes = [
+  'default',
+  'seagreen',
+  'winter',
+  'warm',
+  'sunny',
+  'brown'
+];
+
 export class ThemeSwitcher {
   constructor() {
     this.lsKey = 'gdchTheme';
+    this.counter = 0;
     this.theme = this.getTheme();
-
     this.control = document.querySelector('.theme-control');
+
     this.control.addEventListener('click', () => {
-      this.theme = this.theme === 'seagreen' ? 'default' : 'seagreen';
+      this.counter++;
+
+      if(this.counter > themes.length - 1) {
+        this.counter = 0;
+      }
+
+      this.theme = themes[this.counter];
 
       this.setTheme();
     });
@@ -14,6 +30,7 @@ export class ThemeSwitcher {
   getTheme() {
     let theme = localStorage.getItem(this.lsKey);
     theme = theme || 'seagreen';
+    this.counter = themes.indexOf(theme);
 
     return theme;
   }
