@@ -1,15 +1,10 @@
 .nav {
-  position: fixed;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  @include aside-width;
-  height: 100%;
-  overflow: hidden;
   padding: 1.5rem 0;
   box-sizing: border-box;
   list-style-type: none;
-  background: #DDD;
 
   @media ( min-width: 1200px ) {
     padding-left: 1rem;
@@ -23,16 +18,20 @@
     top: 0;
     bottom: 0;
     height: 100%;
-    width: 2px;
-    background: #000;
+    width: 10px;
+    background: var(--nav-marker-border);
   }
 
   &__subheader {
     margin-top: 1rem;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
     padding: 0 1rem;
     font-size: 1.3rem;
     line-height: 1;
+
+    color: var(--aside-header-color);
+    text-shadow: 2px 2px 0 var(--aside-bg),
+      3px 3px 0 var(--aside-header-color);
 
     @media ( min-width: 1130px ) {
       font-size: 1.45rem;
@@ -52,16 +51,17 @@
     display: block;
     margin-left: 2rem;
     padding: 0 1rem;
+    color: var(--nav-link);
 
     &:hover {
       text-decoration: none;
+      color: var(--nav-link-hover);
     }
   }
 
   &__item--current &__link {
     text-decoration: none;
-    font-weight: bold;
-    color: #000;
+    color: var(--nav-link-current);
   }
 }
 
@@ -69,12 +69,13 @@
 --------------------------------------------- */
 .nav__marker {
   position: absolute;
+  z-index: 2;
   margin-top: -.45rem;
   right: -1rem;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  box-shadow: 0 0 0 2px #000;
-  background: #FFF;
+  background: var(--nav-marker-bg);
+  box-shadow: 0 0 0 10px var(--nav-marker-border);
   transition: top .5s;
 }

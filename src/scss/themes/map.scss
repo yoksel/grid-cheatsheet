@@ -1,0 +1,39 @@
+BODY {
+  --body-bg: var(--col-1);
+  --body-color: var(--col-5-darker);
+  --link-color: var(--col-5);
+  --link-color-hover: var(--col-5-light);
+
+  --aside-bg: var(--col-5);
+  --aside-header-color: var(--col-6-dark);
+
+  --nav-marker-bg: var(--body-bg);
+  --nav-marker-border: var(--col-4);
+
+  --nav-link: var(--col-3-lighter);
+  --nav-link-hover: var(--col-2);
+  --nav-link-current: var(--col-1);
+
+  --mark-bg: var(--col-4-dark);
+  --mark-color: var(--col-2-lighter);
+
+  --code-bg: var(--col-2);
+  --code-color: var(--col-5);
+
+  --term-color: var(--col-4-darker);
+
+  --control-bg: var(--col-4);
+  --control-color: var(--col-2);
+
+  --control-current-bg: var(--col-5);
+  --control-current-color: var(--col-1);
+
+  --parent-border: var(--col-4);
+
+  --child-bg: var(--col-3);
+  --child-featured-bg: var(--col-4);
+  --child-border: var(--col-1);
+  --child-color: var(--col-5);
+
+  --project-icon: var(--col-5-darkest);
+}

@@ -1,11 +1,17 @@
 BODY {
-  background: #FFF;
+  display: flex;
+  min-height: 100vh;
+  background: var(--body-bg);
   font: 16px/1.4 Georgia, serif;
-  color: #111;
+  color: var(--body-color);
 }
 
 A {
-  color: hsl(225, 90%, 40%);
+  color: var(--link-color);
+
+  &:hover {
+    color: var(--link-color-hover);
+  }
 }
 
 UL {
@@ -27,9 +33,9 @@ Ul {
 }
 
 MARK {
-  background: #333;
-  box-shadow: 0 0 0 2px #333;
-  color: #FFF;
+  box-shadow: 0 0 0 2px var(--mark-bg);
+  background: var(--mark-bg);
+  color: var(--mark-color);
 }
 
 PRE {
@@ -49,44 +55,4 @@ PRE {
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-/* CONTENT
---------------------------------------------- */
-
-.content {
-
-  &__item {
-    display: block;
-    width: 100%;
-    min-height: 100vh;
-    padding: 1rem 2em;
-    box-sizing: border-box;
-    border-bottom: 1px dotted;
-  }
-
-  &__desc UL {
-    list-style-type: disc;
-    padding-left: 2em;
-  }
-
-  CODE {
-    display: inline-block;
-    padding: 0 2px;
-    border-radius: 3px;
-    background: #DDD;
-  }
-
-  PRE {
-    margin: 0;
-    padding: 4px;
-  }
-}
-/* Values */
-.content-values__term {
-  font-weight: bold;
-}
-
-.content-values__desc {
-  margin-bottom: 1rem;
 }
