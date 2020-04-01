@@ -1,21 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = () => {
-  const env = dotenv.config({
-    path: './.public.env'
-  }).parsed;
-  let envKeys = [];
-
-  if(env) {
-    envKeys = Object.keys(env).reduce((prev, next) => {
-      prev[`process.env.${next}`] = JSON.stringify(env[next]);
-      return prev;
-    }, {});
-  }
-
   return {
     mode: 'development',
     entry: './src/app.js',
@@ -51,9 +38,7 @@ module.exports = () => {
       port: 9000
     },
     plugins: [
-      new webpack.DefinePlugin(envKeys),
       new HtmlWebpackPlugin({
-        title: 'Shop admin page',
         filename: 'index.html',
         template: 'src/index-tmpl.html'
       }),
