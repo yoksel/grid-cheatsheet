@@ -3,14 +3,11 @@ import { createElement } from './helpers/index.js';
 export class Nav {
   constructor ({
     groups,
-    data,
     targetElem
   }) {
-    this.data = data;
     this.groups = groups;
     this.current = null;
 
-    this.listsByGroups = this.moveListsToGroups();
     const navMarkup = this.getNavMarkup();
 
     this.navElem = createElement(`<nav class="nav">${navMarkup}</nav>`);
@@ -31,37 +28,15 @@ export class Nav {
     });
   }
 
-  moveListsToGroups () {
-    return this.data.reduce((prev, item) => {
-      let { group } = item;
-
-      if (!group) {
-        group = 'none';
-      }
-
-      if (!prev[group]) {
-        prev[group] = [];
-      }
-
-      prev[group].push(item);
-
-      return prev;
-    }, {});
-  }
-
   getNavMarkup () {
     const itemsList = Object.entries(this.groups)
-      .map(([id, { title }]) => {
-        if (!this.listsByGroups[id]) {
-          return;
-        }
-
+      .map(([id, { title, items }]) => {
         let markup = '';
 
         if (title) {
           markup += `<h2 class="nav__subheader">${title}</h2>`;
         }
-        const itemsMarkup = this.getListMarkup(id);
+        const itemsMarkup = this.getListMarkup(items);
         markup += `<ul class="nav__list">${itemsMarkup.join('')}</ul>`;
 
         return markup;
@@ -70,9 +45,7 @@ export class Nav {
     return itemsList.join('');
   }
 
-  getListMarkup (id) {
-    const items = this.listsByGroups[id];
-
+  getListMarkup (items) {
     return items.map(({ name }) => {
       const itemClass = this.getItemClass(name);
 

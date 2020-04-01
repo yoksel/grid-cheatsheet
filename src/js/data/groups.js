@@ -1,8 +1,17 @@
+import display from './display.js';
+import gridTemplate from './gridTemplate.js';
+
 export const groups = {
   none: {
-    title: ''
+    title: '',
+    items: [
+      display
+    ]
   },
   alignment: {
-    title: 'Alignment'
+    title: 'Alignment',
+    items: [
+      gridTemplate
+    ]
   }
 };
