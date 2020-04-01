@@ -6,12 +6,12 @@ export class DataSection {
     this.data = data;
 
     this.demo = new Demo(data);
-    this.demoWrapper = this.demo.wrapper;
+    this.demoElem = this.demo.elem;
 
     const elems = [
       this.getTitle(),
       this.getLink(),
-      this.demoWrapper,
+      this.demoElem,
       this.getDesc(),
       this.getTarget(),
       this.getInitialValue(),

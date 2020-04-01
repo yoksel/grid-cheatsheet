@@ -1,4 +1,4 @@
-.demo-wrapper {
+.demo {
   margin: 2rem 0;
 }
 
@@ -16,7 +16,7 @@
   }
 }
 
-.demo {
+.demo__content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

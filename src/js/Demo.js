@@ -14,8 +14,8 @@ export class Demo {
     this.targetElemSelector = demoElemClasses[this.data.targetForDemo];
     this.values = this.data.customValues || this.data.values;
     this.classList = this.getClassList();
-    this.wrapper = this.getWrapper();
-    this.codesElem = this.wrapper.querySelector('.demo__code');
+    this.elem = this.getElem();
+    this.codesElem = this.elem.querySelector('.demo__code');
     this.current = this.getCurrent();
 
     this.stylesController = new StylesController({
@@ -28,11 +28,11 @@ export class Demo {
     this.addControls();
   }
 
-  getWrapper () {
-    const demoWrapper = demoTmpl.cloneNode(true);
-    const demoElem = demoWrapper.querySelector('.demo');
-    demoElem.classList.add(...this.classList);
-    const viewElem = demoWrapper.querySelector('.demo__view');
+  getElem () {
+    const demo = demoTmpl.cloneNode(true);
+    const demoContentElem = demo.querySelector('.demo__content');
+    demoContentElem.classList.add(...this.classList);
+    const viewElem = demo.querySelector('.demo__view');
 
     if (this.data.htmlMarkup) {
       viewElem.innerHTML = this.data.htmlMarkup;
@@ -42,7 +42,7 @@ export class Demo {
       viewElem.insertAdjacentHTML('afterbegin', this.data.demoBefore);
     }
 
-    return demoWrapper;
+    return demo;
   }
 
   // ---------------------------------------------
@@ -73,7 +73,7 @@ export class Demo {
       this.controlsOnClick(ev);
     });
 
-    this.wrapper.prepend(elem);
+    this.elem.prepend(elem);
     this.current.control = elem.querySelector('.demo__control--current');
   }
 
