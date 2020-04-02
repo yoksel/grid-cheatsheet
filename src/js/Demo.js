@@ -49,11 +49,12 @@ export class Demo {
 
   getClassList () {
     const classList = [];
-    const namesList = this.data.name.split(',');
+    const name = this.data.name
+      .trim()
+      .toLowerCase()
+      .replace(/ /g, '-');
 
-    for (const name of namesList) {
-      classList.push('demo__content--prop-' + name.trim());
-    }
+    classList.push('demo__content--prop-' + name);
 
     if (this.targetElemSelector.search('featured') > -1) {
       classList.push('demo__content--has-featured');
