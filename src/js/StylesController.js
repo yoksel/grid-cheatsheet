@@ -14,6 +14,7 @@ export class StylesController {
     this.classList = classList;
     this.stylesElem = this.getStylesElem();
     this.codesElem = codesElem;
+    this.propName = data.propDemoName || data.name;
 
     this.setStyles();
   }
@@ -45,7 +46,7 @@ export class StylesController {
       }
 
       for (let [name, value] of Object.entries(props)) {
-        if (name === this.data.name) {
+        if (name === this.propName) {
           value = this.current.value;
         }
 
@@ -53,7 +54,7 @@ export class StylesController {
 
         propsListHidden.push(propString);
 
-        if (name === this.data.name) {
+        if (name === this.propName) {
           propString = `<mark>${propString}</mark>`;
         }
 
