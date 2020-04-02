@@ -10,6 +10,7 @@ A {
   color: var(--link-color);
 
   &:hover {
+    text-decoration: none;
     color: var(--link-color-hover);
   }
 }
