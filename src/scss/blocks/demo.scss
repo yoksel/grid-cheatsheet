@@ -38,11 +38,11 @@
 }
 
 .demo__code {
-  box-sizing: border-box;
   flex-grow: 1;
   flex-shrink: 0;
   margin-bottom: 1rem;
   padding: 1rem;
+  box-sizing: border-box;
   background: var(--code-bg);
   border-radius: .75rem;
   white-space: pre-wrap;
@@ -80,6 +80,10 @@
   background: var(--child-color);
   mask-repeat: no-repeat;
   mask-position: 50% 50%;
+
+  .parent--fade-children & {
+    opacity: .15;
+  }
 }
 
 .demo--has-featured .child--featured {
