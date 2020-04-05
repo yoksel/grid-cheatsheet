@@ -90,10 +90,10 @@ export default {
       name: '1fr 3fr',
     },
     {
-      name: 'repeat(7, 1fr)',
+      name: '1fr auto',
     },
     {
-      name: '1fr auto',
+      name: 'repeat(7, 1fr)',
     },
     {
       name: 'repeat(3, 1fr auto)',
