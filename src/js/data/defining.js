@@ -2,6 +2,7 @@ import gridTemplateRows from './props/grid-template-rows.js';
 import gridTemplateColumns from './props/grid-template-columns.js';
 import gridTemplate from './props/grid-template.js';
 import gridTemplateValues from './props/grid-template-values.js';
+import repeat from './props/repeat.js';
 
 export default {
   title: 'Defining the grid',
@@ -30,6 +31,7 @@ whereas the <a href="#grid-template">grid-template</a> property leaves them unch
     gridTemplateRows,
     gridTemplateColumns,
     gridTemplate,
-    gridTemplateValues
+    gridTemplateValues,
+    repeat
   ]
 };
