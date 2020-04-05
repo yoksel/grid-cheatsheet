@@ -47,7 +47,7 @@ export default {
       name: '1fr 1fr',
     },
     {
-      name: '1fr 3fr',
+      name: '150px 1fr',
     },
     {
       name: '1fr max-content',
