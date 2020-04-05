@@ -1,3 +1,5 @@
+import gridTemplateRows from './props/grid-template-rows.js';
+import gridTemplateColumns from './props/grid-template-columns.js';
 import gridTemplate from './props/grid-template.js';
 import gridTemplateValues from './props/grid-template-values.js';
 
@@ -25,6 +27,8 @@ at the same time.
 The <a href="#grid">grid</a> shorthand also resets properties controlling the <a href="https://www.w3.org/TR/css3-grid-layout/#implicit-grid">implicit grid</a>,
 whereas the <a href="#grid-template">grid-template</a> property leaves them unchanged.</p>`,
   items: [
+    gridTemplateRows,
+    gridTemplateColumns,
     gridTemplate,
     gridTemplateValues
   ]
