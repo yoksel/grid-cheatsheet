@@ -17,16 +17,13 @@
 }
 
 .demo__content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
 }
 
 .demo__view {
-  width: 50%;
-  flex-grow: 1;
   min-height: 275px;
-  margin: 0 1rem 1rem 0;
   padding: .5rem;
   box-sizing: border-box;
   border: 2px solid var(--col-3);
@@ -38,9 +35,6 @@
 }
 
 .demo__code {
-  flex-grow: 1;
-  flex-shrink: 0;
-  margin-bottom: 1rem;
   padding: 1rem;
   box-sizing: border-box;
   background: var(--code-bg);
