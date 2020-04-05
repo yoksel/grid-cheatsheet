@@ -52,7 +52,8 @@ export class Demo {
     const name = this.data.name
       .trim()
       .toLowerCase()
-      .replace(/ /g, '-');
+      .replace(/ /g, '-')
+      .replace(/\(\)/g, '');
 
     classList.push('demo__content--prop-' + name);
 
