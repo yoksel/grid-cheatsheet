@@ -8,6 +8,7 @@
   border: 0;
   border-radius: 3px;
   background: var(--control-bg);
+  white-space: pre-line;
   color: var(--control-color);
 
   &--current {
