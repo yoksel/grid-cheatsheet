@@ -8,4 +8,16 @@
     margin: 1em 0 0em;
     font-size: 1.75em;
   }
+
+  TABLE {
+    margin: auto;
+  }
+
+  TH, TD {
+    padding: .5em;
+  }
+
+  TR:not(:last-child) {
+    border-bottom: 1px solid var(--col-3);
+  }
 }
