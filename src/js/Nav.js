@@ -1,4 +1,4 @@
-import { createElement } from './helpers/index.js';
+import { createElement } from './helpers';
 
 export class Nav {
   constructor ({

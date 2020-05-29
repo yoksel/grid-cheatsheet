@@ -1,4 +1,4 @@
-import { createElement } from './helpers/index.js';
+import { createElement } from './helpers';
 import { StylesController } from './StylesController.js';
 
 const demoTmpl = document.querySelector('#demo-tmpl').content.firstElementChild;

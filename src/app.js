@@ -3,7 +3,7 @@ import { Nav } from './js/Nav.js';
 import { Group } from './js/Group.js';
 import { DataSection } from './js/DataSection.js';
 import { ThemeSwitcher } from './js/ThemeSwitcher.js';
-import { isVisible, debounce } from './js/helpers/index.js';
+import { isVisible, debounce } from './js/helpers';
 
 import './scss/styles.scss';
 

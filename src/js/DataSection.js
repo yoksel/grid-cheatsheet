@@ -1,4 +1,4 @@
-import { createElement } from './helpers/index.js';
+import { createElement } from './helpers';
 import { Demo } from './Demo.js';
 
 export class DataSection {
