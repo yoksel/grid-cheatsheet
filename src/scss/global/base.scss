@@ -33,6 +33,10 @@ Ul {
   padding: 0;
 }
 
+DD + DT {
+  margin-top: 1rem;
+}
+
 MARK {
   box-shadow: 0 0 0 2px var(--mark-bg);
   background: var(--mark-bg);
@@ -41,6 +45,10 @@ MARK {
 
 PRE {
   white-space: pre-line;
+}
+
+DFN {
+  font-weight: bold;
 }
 
 .hidden-content {
