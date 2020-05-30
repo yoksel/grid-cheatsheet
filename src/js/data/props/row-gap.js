@@ -26,11 +26,11 @@ export default {
       current: true
     },
     {
-      name: '10%',
+      name: '10%'
     },
     {
-      name: 'normal',
-    },
+      name: 'normal'
+    }
   ],
 
   cssRules: [{
@@ -40,5 +40,5 @@ export default {
       'grid-template': '1fr 1fr/ 1fr 1fr',
       'row-gap': '20px'
     }
-  }],
+  }]
 };

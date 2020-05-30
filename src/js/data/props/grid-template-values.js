@@ -1,18 +1,18 @@
 export default {
-  name: `Size values`,
+  name: 'grid-template values',
   propDemoName: 'grid-template-columns',
 
   // link: `https://www.w3.org/TR/css3-grid-layout/#track-sizing`,
 
   // target: `grid containers`,
 
-  targetForDemo: `grid containers`,
+  targetForDemo: 'grid containers',
 
   values: [
     {
-      name: `&lt;length-percentage&gt;`,
+      name: '&lt;length-percentage&gt;',
 
-      'desc': `A non-negative length or percentage, as defined by CSS3 Values. <a href="#biblio-css3val">[CSS3VAL]</a>
+      desc: `A non-negative length or percentage, as defined by CSS3 Values. <a href="#biblio-css3val">[CSS3VAL]</a>
      <p><a href="https://www.w3.org/TR/css3-values/#percentage-value">&lt;percentage&gt;</a> values are relative to the <a href="https://www.w3.org/TR/css-writing-modes-3/#inline-size">inline size</a> of the <a href="#grid-container">grid container</a> in column <a href="#grid-track">grid tracks</a>,
       and the <a href="https://www.w3.org/TR/css-writing-modes-3/#block-size">block size</a> of the <a href="#grid-container">grid container</a> in row <a href="#grid-track">grid tracks</a>.
       If the size of the <a href="#grid-container">grid container</a> depends on the size of its tracks,
@@ -22,10 +22,9 @@ export default {
     },
 
     {
-      name: `&lt;flex&gt;`,
+      name: '&lt;flex&gt;',
 
-
-      'desc': `A non-negative dimension with the unit <a href="#valdef-flex-fr">fr</a> specifying the track’s <dfn>flex factor</dfn>.
+      desc: `A non-negative dimension with the unit <a href="#valdef-flex-fr">fr</a> specifying the track’s <dfn>flex factor</dfn>.
       Each <a href="https://www.w3.org/TR/css3-grid-layout/#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a>-sized track takes a share of the remaining space in proportion to its <a href="#grid-template-columns-flex-factor">flex factor</a>.
       See <a href="https://www.w3.org/TR/css3-grid-layout/#fr-unit">Flexible Lengths</a> for more details.
      <p>When appearing outside a <a href="#valdef-grid-template-columns-minmax">minmax()</a> notation,
@@ -33,23 +32,21 @@ export default {
     },
 
     {
-      name: `max-content`,
+      name: 'max-content',
 
-      'desc': `Represents the largest <a href="https://www.w3.org/TR/css-sizing-3/#max-content-contribution">max-content contribution</a> of the <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid items</a> occupying the <a href="#grid-track">grid track</a>.`
+      desc: 'Represents the largest <a href="https://www.w3.org/TR/css-sizing-3/#max-content-contribution">max-content contribution</a> of the <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid items</a> occupying the <a href="#grid-track">grid track</a>.'
     },
 
     {
-      name: `min-content`,
+      name: 'min-content',
 
-
-      'desc': `Represents the largest <a href="https://www.w3.org/TR/css-sizing-3/#min-content-contribution">min-content contribution</a> of the <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid items</a> occupying the <a href="#grid-track">grid track</a>.`
+      desc: 'Represents the largest <a href="https://www.w3.org/TR/css-sizing-3/#min-content-contribution">min-content contribution</a> of the <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid items</a> occupying the <a href="#grid-track">grid track</a>.'
     },
 
     {
-      name: `minmax(<var>min</var>, <var>max</var>)`,
+      name: 'minmax(<var>min</var>, <var>max</var>)',
 
-
-      'desc': `Defines a size range
+      desc: `Defines a size range
       greater than or equal to <var>min</var> and less than or equal to <var>max</var>.
       If <var>max</var> &lt; <var>min</var>,
       then <var>max</var> is ignored and <span class="css">minmax(min,max)</span> is treated as <var>min</var>.
@@ -60,9 +57,9 @@ export default {
     },
 
     {
-      name: `auto`,
+      name: 'auto',
 
-      'desc': `As a maximum, identical to <a href="#valdef-grid-template-columns-max-content">max-content</a>.
+      desc: `As a maximum, identical to <a href="#valdef-grid-template-columns-max-content">max-content</a>.
       As a minimum, represents the largest minimum size (as specified by <a href="https://www.w3.org/TR/CSS21/visudet.html#min-width">min-width</a>/<a href="https://www.w3.org/TR/CSS21/visudet.html#min-height">min-height</a>)
       of the <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid items</a> occupying the <a href="#grid-track">grid track</a>.
      <p class="note" role="note"><span>Note:</span> <a href="#valdef-grid-template-columns-auto">auto</a> track sizes (and only <a href="#valdef-grid-template-columns-auto">auto</a> track sizes)
@@ -70,9 +67,9 @@ export default {
     },
 
     {
-      name: `fit-content(&lt;length-percentage&gt;)`,
+      name: 'fit-content(&lt;length-percentage&gt;)',
 
-    'desc': `Represents the formula <code>min(<a href="#valdef-grid-template-columns-max-content">max-content</a>, max(<a href="#valdef-grid-template-columns-auto">auto</a>, <var>argument</var>))</code>,
+    desc: `Represents the formula <code>min(<a href="#valdef-grid-template-columns-max-content">max-content</a>, max(<a href="#valdef-grid-template-columns-auto">auto</a>, <var>argument</var>))</code>,
       which is calculated like <span class="css">minmax(auto, max-content)</span>,
       except that the track size is clamped at <var>argument</var> if it is greater than the <a href="#valdef-grid-template-columns-auto">auto</a> minimum.`
     }
@@ -87,29 +84,29 @@ export default {
       name: '10% 30% 50% 10%'
     },
     {
-      name: '1fr 3fr',
+      name: '1fr 3fr'
     },
     {
-      name: '1fr auto',
+      name: '1fr auto'
     },
     {
-      name: 'repeat(7, 1fr)',
+      name: 'repeat(7, 1fr)'
     },
     {
-      name: 'repeat(3, 1fr auto)',
+      name: 'repeat(3, 1fr auto)'
     },
     {
-      name: '1fr minmax(min-content, 3fr)',
+      name: '1fr minmax(min-content, 3fr)'
     },
     {
-      name: '2fr max-content',
+      name: '2fr max-content'
     },
     {
-      name: 'max-content max-content',
+      name: 'max-content max-content'
     },
     {
-      name: 'fit-content(10%) fit-content(50%)',
-    },
+      name: 'fit-content(10%) fit-content(50%)'
+    }
     // {
     //   name: '100px repeat(2, 1fr auto minmax(30%, 1fr))'
     // },
@@ -133,7 +130,5 @@ export default {
       display: 'grid',
       'grid-template-columns': '20px'
     }
-  }],
-}
-
-
+  }]
+};

@@ -1,7 +1,5 @@
 import { createElement } from './helpers';
 
-const codeOffset = '  ';
-
 export class StylesController {
   constructor ({
     data,
@@ -37,7 +35,7 @@ export class StylesController {
     }
 
     for (const { selector, props, valueId } of rules) {
-      let propsListHidden = [];
+      const propsListHidden = [];
       let propsListVisible = [];
       const hiddenSelector = [parentClass, selector].join(' ');
 
@@ -65,7 +63,7 @@ export class StylesController {
         .map(prop => {
           return (
             `<div class="demo__code-prop">${prop}</div>`
-          )
+          );
         });
 
       hiddenStyles += `${hiddenSelector} {\n${propsListHidden.join('')}}\n`;

@@ -1,12 +1,12 @@
 export default {
-  name: `repeat()`,
+  name: 'repeat()',
   propDemoName: 'grid-template-columns',
 
-  link: `https://www.w3.org/TR/css3-grid-layout/#repeat-notation`,
+  link: 'https://www.w3.org/TR/css3-grid-layout/#repeat-notation',
 
   // target: `grid containers`,
 
-  targetForDemo: `grid containers`,
+  targetForDemo: 'grid containers',
 
   desc: `<p>The generic form of the <a href="#funcdef-repeat">repeat()</a> syntax is, approximately:</p>
 
@@ -51,11 +51,11 @@ export default {
       current: true
     },
     {
-      name: 'repeat(auto-fill, minmax(75px, 1fr))',
+      name: 'repeat(auto-fill, minmax(75px, 1fr))'
     },
     {
-      name: 'repeat(auto-fit, minmax(75px, 1fr))',
-    },
+      name: 'repeat(auto-fit, minmax(75px, 1fr))'
+    }
   ],
 
   cssRules: [{
@@ -64,7 +64,5 @@ export default {
       display: 'grid',
       'grid-template-columns': 'repeat(4, 1fr)'
     }
-  }],
-}
-
-
+  }]
+};

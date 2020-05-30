@@ -1,14 +1,14 @@
 export default {
-  name: `grid-template-columns`,
+  name: 'grid-template-columns',
 
-  link: `https://www.w3.org/TR/css3-grid-layout/#track-sizing`,
+  link: 'https://www.w3.org/TR/css3-grid-layout/#track-sizing',
 
-  initValue: `none`,
+  initValue: 'none',
 
-  target: `grid containers`,
+  target: 'grid containers',
 
-  targetForDemo: `grid containers`,
-  appliesTo: `grid containers`,
+  targetForDemo: 'grid containers',
+  appliesTo: 'grid containers',
 
   desc: `<p>These properties specify,
     as a space-separated <dfn>track list</dfn>,
@@ -18,16 +18,16 @@ export default {
 
   values: [
     {
-      'name': `none`,
-      'desc': `<p>Indicates that no <a href="#explicit-grid">explicit</a> grid tracks are created by this property
+      name: 'none',
+      desc: `<p>Indicates that no <a href="#explicit-grid">explicit</a> grid tracks are created by this property
     (though <a href="#explicit-grid">explicit grid</a> tracks could still be created by <a href="#grid-template-areas">grid-template-areas</a>).</p>
 
      <p class="note" role="note"><span>Note:</span> In the absence of an <a href="#explicit-grid">explicit grid</a> any rows/columns will be <a href="#implicit-grids">implicitly generated</a>,
       and their size will be determined by the <a href="#grid-auto-rows">grid-auto-rows</a> and <a href="#grid-auto-columns">grid-auto-columns</a> properties.</p>`
     },
     {
-      'name': `&lt;track-list> | &lt;auto-track-list>`,
-      'desc': `Specifies the <a href="#track-list">track list</a> as a series of <a href="#grid-template-rows-track-sizing-function">track sizing functions</a> and line names.
+      name: '&lt;track-list> | &lt;auto-track-list>',
+      desc: `Specifies the <a href="#track-list">track list</a> as a series of <a href="#grid-template-rows-track-sizing-function">track sizing functions</a> and line names.
       Each <dfn data-lt="track sizing function|sizing function">track sizing function</dfn> can be specified as a length,
       a percentage of the <a href="#grid-container">grid container</a>’s size,
       a measurement of the contents occupying the column or row,
@@ -44,20 +44,20 @@ export default {
       current: true
     },
     {
-      name: '1fr 1fr',
+      name: '1fr 1fr'
     },
     {
-      name: '150px 1fr',
+      name: '150px 1fr'
     },
     {
-      name: '1fr max-content',
+      name: '1fr max-content'
     },
     {
-      name: 'repeat(2, 1fr auto)',
+      name: 'repeat(2, 1fr auto)'
     },
     {
-      name: 'none',
-    },
+      name: 'none'
+    }
   ],
 
   htmlMarkup: `<div class="parent parent--fade-children">
@@ -75,5 +75,5 @@ export default {
       display: 'grid',
       'grid-template-columns': '1fr auto'
     }
-  }],
-}
+  }]
+};

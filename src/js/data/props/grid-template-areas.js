@@ -1,14 +1,14 @@
 export default {
-  name: `grid-template-areas`,
+  name: 'grid-template-areas',
 
-  link: `https://www.w3.org/TR/css3-grid-layout/#grid-template-areas-property`,
+  link: 'https://www.w3.org/TR/css3-grid-layout/#grid-template-areas-property',
 
-  initValue: `none`,
+  initValue: 'none',
 
-  target: `grid containers`,
+  target: 'grid containers',
 
-  targetForDemo: `grid containers`,
-  appliesTo: `grid containers`,
+  targetForDemo: 'grid containers',
+  appliesTo: 'grid containers',
 
   desc: `<p>This property specifies <dfn>named grid areas</dfn>,
   which are not associated with any particular <a href="#grid-item">grid item</a>,
@@ -19,8 +19,8 @@ export default {
 
   values: [
     {
-      'name': `none`,
-      'desc': `<p>Indicates that no <a href="#named-grid-area">named grid areas</a>,
+      name: 'none',
+      desc: `<p>Indicates that no <a href="#named-grid-area">named grid areas</a>,
       and likewise no <a href="#explicit-grid">explicit grid</a> tracks,
       are defined by this property
       (though <a href="#explicit-grid">explicit grid</a> tracks could still be created by <a href="#grid-template-columns">grid-template-columns</a> or <a href="#grid-template-rows">grid-template-rows</a>).</p>
@@ -30,8 +30,8 @@ export default {
     `
     },
     {
-      'name': `&lt;string&gt;+`,
-      'desc': `<p>A row is created for every separate string listed for the <a href="#grid-template-areas">grid-template-areas</a> property,
+      name: '&lt;string&gt;+',
+      desc: `<p>A row is created for every separate string listed for the <a href="#grid-template-areas">grid-template-areas</a> property,
       and a column is created for each cell in the string,
       when parsed as follows:</p>
 
@@ -91,22 +91,22 @@ export default {
     {
       name: `"head aside"
              "main main"
-             "foot foot"`,
+             "foot foot"`
     },
     {
       name: `"head aside"
              "main aside"
-             "foot aside"`,
+             "foot aside"`
     },
     {
       name: `"head"
              "main"
              "aside"
-             "foot"`,
+             "foot"`
     },
     {
-      name: `none`,
-    },
+      name: 'none'
+    }
   ],
 
   htmlMarkup: `<div class="parent parent--fade-children">
@@ -129,26 +129,26 @@ export default {
     {
       selector: '.header',
       props: {
-       'grid-area': `head`
+       'grid-area': 'head'
       }
     },
     {
       selector: '.aside',
       props: {
-       'grid-area': `aside`
+       'grid-area': 'aside'
       }
     },
     {
       selector: '.main',
       props: {
-       'grid-area': `main`
+       'grid-area': 'main'
       }
     },
     {
       selector: '.footer',
       props: {
-       'grid-area': `foot`
+       'grid-area': 'foot'
       }
-    },
-  ],
-}
+    }
+  ]
+};

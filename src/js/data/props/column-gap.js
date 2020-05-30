@@ -19,11 +19,11 @@ export default {
       current: true
     },
     {
-      name: '50%',
+      name: '50%'
     },
     {
-      name: 'normal',
-    },
+      name: 'normal'
+    }
   ],
 
   cssRules: [{
@@ -33,5 +33,5 @@ export default {
       'grid-template': '1fr 1fr/ 1fr 1fr',
       'column-gap': '20px'
     }
-  }],
+  }]
 };
