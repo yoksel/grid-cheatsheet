@@ -37,8 +37,13 @@
     }
   }
 
+  &__list--inner {
+    margin-top: .4rem;
+  }
+
   &__item {
     margin-bottom: .4rem;
+    margin-left: 1.5rem;
 
     @media ( min-width: 900px ) {
       margin-bottom: .6rem;
@@ -48,8 +53,6 @@
   &__link {
     position: relative;
     display: block;
-    margin-left: 2rem;
-    padding: 0 1rem;
     color: var(--nav-link);
 
     &:hover {

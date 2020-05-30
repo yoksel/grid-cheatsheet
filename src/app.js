@@ -32,14 +32,23 @@ function init () {
 function fillContent () {
   const main = document.querySelector('.l-main');
 
-  for(let [id, data] of Object.entries(groups)) {
-    const groupElem = new Group({id, ...data}).elem;
+  for (const [id, data] of Object.entries(groups)) {
+    const groupElem = new Group({ id, ...data }).elem;
 
     for (const item of data.items) {
       const section = new DataSection(item);
       sections.push(section.sectionElem);
 
       groupElem.append(section.sectionElem);
+
+      if (item.items) {
+        for (const innerItem of item.items) {
+          const innerSection = new DataSection(innerItem);
+          sections.push(innerSection.sectionElem);
+
+          groupElem.append(innerSection.sectionElem);
+        }
+      }
     }
 
     sections.push(groupElem);

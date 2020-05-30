@@ -36,8 +36,8 @@ export class Nav {
         if (title) {
           markup += `<h2 class="nav__subheader">${title}</h2>`;
         }
-        const itemsMarkup = this.getListMarkup(items);
-        markup += `<ul class="nav__list">${itemsMarkup.join('')}</ul>`;
+
+        markup += this.getListMarkup(items);
 
         return markup;
       });
@@ -45,9 +45,14 @@ export class Nav {
     return itemsList.join('');
   }
 
-  getListMarkup (items) {
-    return items.map(({ name }) => {
+  getListMarkup (items, customClass = '') {
+    const itemsList = items.map(({ name, items }) => {
       const itemClass = this.getItemClass(name);
+      let itemsMarkup = '';
+
+      if (items) {
+        itemsMarkup = this.getListMarkup(items, 'nav__list--inner');
+      }
 
       return `<li
           class="${itemClass}"
@@ -56,8 +61,10 @@ export class Nav {
             href="#${name}"
             data-parent-nav-item="${name}"
             class="nav__link"
-          >${name}</a></li>`;
+          >${name}</a>${itemsMarkup}</li>`;
     });
+
+    return `<ul class="nav__list ${customClass}">${itemsList.join('')}</ul>`;
   }
 
   getItemClass (name) {
