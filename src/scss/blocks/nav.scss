@@ -29,11 +29,23 @@
     line-height: 1;
 
     color: var(--aside-header-color);
-    text-shadow: 2px 2px 0 var(--aside-bg),
-      3px 3px 0 var(--aside-header-color);
 
     @media ( min-width: 1130px ) {
       font-size: 1.45rem;
+    }
+  }
+
+  &__subheader-link {
+    text-decoration: none;
+    text-shadow: 2px 2px 0 var(--aside-bg),
+      3px 3px 0 var(--aside-header-color);
+    color: inherit;
+    transition: all .15s;
+
+    &:hover {
+      color: inherit;
+      text-shadow: -2px -2px 0 var(--aside-bg),
+        -3px -3px 0 var(--aside-header-color);
     }
   }
 

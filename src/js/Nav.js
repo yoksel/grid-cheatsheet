@@ -34,7 +34,12 @@ export class Nav {
         let markup = '';
 
         if (title) {
-          markup += `<h2 class="nav__subheader">${title}</h2>`;
+          markup += `<h2 class="nav__subheader">
+            <a
+              class="nav__subheader-link"
+              href="#group-${id}"
+              >${title}</a>
+          </h2>`;
         }
 
         markup += this.getListMarkup(items);
