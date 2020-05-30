@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Grid Cheatsheet",
   "scripts": {
-    "test": "npm run js:lint && npm run css:lint && jest",
+    "test": "npm run js:lint && npm run css:lint",
     "build": "webpack --config prod.config.js",
     "start": "webpack-dev-server --open",
     "deploy": "npm run build && gh-pages -d dist",
