@@ -1,13 +1,14 @@
 import gridTemplateRows from './props/grid-template-rows.js';
 import gridTemplateColumns from './props/grid-template-columns.js';
+import gridAutoRows from './props/grid-auto-rows.js';
+import gridAutoColums from './props/grid-auto-columns.js';
+import gridAutoFlow from './props/grid-auto-flow.js';
 import gridTemplateAreas from './props/grid-template-areas.js';
 import gridTemplate from './props/grid-template.js';
-import gridTemplateValues from './props/grid-template-values.js';
-import repeat from './props/repeat.js';
 
 export default {
   title: 'Defining the grid',
-  desc: `<p>The three properties <a href="#grid-template-rows">grid-template-rows</a>, <a href="#grid-template-columns">grid-template-columns</a>, and <a href="#grid-template-areas">grid-template-areas</a> together define the <dfn>explicit grid</dfn> of a <a href="#grid-container">grid container</a>.
+  desc: `<p>The three properties <a href="#grid-template-rows">grid-template-rows</a>, <a href="#grid-template-columns">grid-template-columns</a>, and <a href="#grid-template-areas">grid-template-areas</a> together define the <dfn id="explicit-grid">explicit grid</dfn> of a <a href="#grid-container">grid container</a>.
 The final grid may end up larger due to <a href="#grid-item">grid items</a> placed outside the <a href="https://www.w3.org/TR/css3-grid-layout/#explicit-grid">explicit grid</a>;
 in this case implicit tracks will be created,
 these implicit tracks will be sized by the <a href="#grid-auto-rows">grid-auto-rows</a> and <a href="#grid-auto-columns">grid-auto-columns</a> properties.</p>
@@ -30,10 +31,11 @@ The <a href="#grid">grid</a> shorthand also resets properties controlling the <a
 whereas the <a href="#grid-template">grid-template</a> property leaves them unchanged.</p>`,
   items: [
     gridTemplateRows,
+    gridAutoRows,
     gridTemplateColumns,
+    gridAutoColums,
+    gridAutoFlow,
     gridTemplateAreas,
-    gridTemplate,
-    gridTemplateValues,
-    repeat
+    gridTemplate
   ]
 };
