@@ -17,16 +17,19 @@ export default {
 
   customValues: [
     {
-      name: '75px',
+      name: '100px',
       current: true
     },
     {
       name: '150px'
+    },
+    {
+      name: '1fr'
     }
 
   ],
 
-  htmlMarkup: `<div class="parent parent--fade-children">
+  htmlMarkup: `<div class="parent">
     <div class="child"></div>
     <div class="child"></div>
     <div class="child"></div>
@@ -36,8 +39,8 @@ export default {
     selector: '.parent',
     props: {
       display: 'grid',
-      'grid-template-rows': '30px',
-      'grid-auto-rows': '75px'
+      'grid-template-rows': '50px',
+      'grid-auto-rows': '100px'
     }
   }]
 };

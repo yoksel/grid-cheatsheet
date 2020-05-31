@@ -40,17 +40,14 @@ export default {
 
   customValues: [
     {
-      name: '1fr auto',
+      name: '1fr 1fr',
       current: true
     },
     {
-      name: '1fr 1fr'
+      name: '1fr 2fr'
     },
     {
-      name: '150px 1fr'
-    },
-    {
-      name: '1fr max-content'
+      name: '50px 100px 1fr'
     },
     {
       name: 'repeat(2, 1fr auto)'
@@ -60,13 +57,13 @@ export default {
     }
   ],
 
-  htmlMarkup: `<div class="parent parent--fade-children">
-    <div class="child">Ut enim ad minim veniam</div>
-    <div class="child">Quis nostrud exercitation ullamco laboris nisi ut aliquip</div>
-    <div class="child">Duis aute irure dolor</div>
-    <div class="child">Excepteur</div>
-    <div class="child">Commodo consequat</div>
-    <div class="child">Fugiat nulla pariatur</div>
+  htmlMarkup: `<div class="parent">
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
   </div>`,
 
   cssRules: [{

@@ -40,40 +40,37 @@ export default {
 
   customValues: [
     {
-      name: '1fr auto',
+      name: '1fr 1fr',
       current: true
     },
     {
-      name: '1fr 1fr'
+      name: '1fr 150px'
     },
     {
-      name: '150px 1fr'
-    },
-    {
-      name: '1fr max-content'
-    },
-    {
-      name: 'repeat(2, 3fr 1fr)'
+      name: 'repeat(2, 2fr  1fr)'
     },
     {
       name: 'none'
     }
   ],
 
-  htmlMarkup: `<div class="parent parent--fade-children">
-    <div class="child">Ut enim ad minim veniam</div>
-    <div class="child">Quis nostrud exercitation ullamco laboris nisi ut aliquip</div>
-    <div class="child">Duis aute irure dolor</div>
-    <div class="child">Excepteur</div>
-    <div class="child">Commodo consequat</div>
-    <div class="child">Fugiat nulla pariatur</div>
+  htmlMarkup: `<div class="parent">
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
   </div>`,
 
   cssRules: [{
     selector: '.parent',
     props: {
       display: 'grid',
-      'grid-template-columns': '1fr 1fr',
+      'grid-template-columns': 'repeat(3, 1fr)',
       'grid-template-rows': '1fr auto'
     }
   }]

@@ -45,7 +45,7 @@ export default {
     }
   ],
 
-  htmlMarkup: `<div class="parent parent--fade-children">
+  htmlMarkup: `<div class="parent">
     <div class="child"></div>
     <div class="child"></div>
     <div class="child child--featured"></div>

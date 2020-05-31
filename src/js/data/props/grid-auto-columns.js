@@ -22,11 +22,14 @@ export default {
     },
     {
       name: '150px'
+    },
+    {
+      name: '1fr'
     }
 
   ],
 
-  htmlMarkup: `<div class="parent parent--fade-children">
+  htmlMarkup: `<div class="parent">
     <div class="child"></div>
     <div class="child"></div>
     <div class="child"></div>
@@ -36,7 +39,7 @@ export default {
     selector: '.parent',
     props: {
       display: 'grid',
-      'grid-template-columns': '30px',
+      'grid-template-columns': '50px',
       'grid-auto-columns': '75px',
       'grid-auto-flow': 'column'
     }
