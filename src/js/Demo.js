@@ -1,5 +1,5 @@
 import { createElement } from './helpers';
-import { StylesController } from './StylesController.js';
+import { StylesController } from './StylesController';
 
 const demoTmpl = document.querySelector('#demo-tmpl').content.firstElementChild;
 const demoElemClasses = {

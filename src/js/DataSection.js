@@ -1,5 +1,5 @@
 import { createElement } from './helpers';
-import { Demo } from './Demo.js';
+import { Demo } from './Demo';
 
 export class DataSection {
   constructor (data) {

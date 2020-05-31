@@ -1,6 +1,6 @@
-import rowGap from './props/row-gap.js';
-import columnGap from './props/column-gap.js';
-import gap from './props/gap.js';
+import rowGap from './props/row-gap';
+import columnGap from './props/column-gap';
+import gap from './props/gap';
 
 export default {
   title: 'Spacing',
