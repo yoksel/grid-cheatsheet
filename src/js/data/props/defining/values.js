@@ -1,5 +1,5 @@
 export default {
-  name: 'grid-template values',
+  name: 'values',
   propDemoName: 'grid-template-columns',
 
   // link: `https://www.w3.org/TR/css3-grid-layout/#track-sizing`,

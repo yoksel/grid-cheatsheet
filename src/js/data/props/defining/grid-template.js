@@ -1,3 +1,6 @@
+import gridTemplateValues from './values';
+import repeat from './repeat';
+
 export default {
   name: 'grid-template',
   group: 'alignment',
@@ -89,8 +92,7 @@ export default {
     },
     {
       id: 'named-areas-template',
-      name: `
-  [header-top] 'a a a' [header-bottom]
+      name: `[header-top] 'a a a' [header-bottom]
   [main-top] 'b b b' 1fr
   [main-bottom] / auto 1fr auto`
     }
@@ -161,5 +163,9 @@ export default {
       },
       valueId: 'named-areas-template'
     }
+  ],
+  items: [
+    gridTemplateValues,
+    repeat
   ]
 };
