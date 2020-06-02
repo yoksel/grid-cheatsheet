@@ -1,7 +1,3 @@
-import gridTemplateValues from './values';
-import repeat from './repeat';
-import namedLines from './named-lines';
-
 export default {
   name: 'grid-template',
   group: 'alignment',
@@ -131,10 +127,5 @@ export default {
       },
       valueId: 'named-areas-template'
     }
-  ],
-  items: [
-    gridTemplateValues,
-    repeat,
-    namedLines
   ]
 };

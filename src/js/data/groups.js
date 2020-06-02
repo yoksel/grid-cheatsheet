@@ -8,6 +8,7 @@ import alignment from './alignment';
 export const groups = {
   declaring,
   defining,
+  gridSizing,
   placing,
   alignment,
   spacing
