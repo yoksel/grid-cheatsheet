@@ -1,4 +1,4 @@
-import display from './props/display.js';
+import display from './props/display';
 
 export default {
   title: 'Declaring the Grid',
