@@ -124,10 +124,10 @@ export default {
       selector: '.child:nth-child(3)',
       props: {
         'grid-row': 'a-start / b-end',
-        'grid-column': 3,
+        'grid-column': 3
       },
       valueId: 'named-areas-template'
-    },
+    }
   ],
   items: [
     gridTemplateValues,

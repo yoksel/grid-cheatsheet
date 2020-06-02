@@ -77,7 +77,7 @@ export default {
         display: 'grid',
         'grid-template-columns': 'repeat(3, 1fr)',
         'grid-template-rows': '1fr auto'
-      },
+      }
     },
     {
       selector: '.child:nth-child(1)',
