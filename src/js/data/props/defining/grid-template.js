@@ -1,5 +1,6 @@
 import gridTemplateValues from './values';
 import repeat from './repeat';
+import namedLines from './named-lines';
 
 export default {
   name: 'grid-template',
@@ -103,6 +104,8 @@ export default {
     <div class="child"></div>
     <div class="child"></div>
     <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
   </div>`,
 
   cssRules: [
@@ -131,6 +134,7 @@ export default {
   ],
   items: [
     gridTemplateValues,
-    repeat
+    repeat,
+    namedLines
   ]
 };

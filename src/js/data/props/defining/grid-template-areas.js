@@ -84,8 +84,8 @@ export default {
   customValues: [
     {
       name: `"head head"
-             "aside main"
-             "foot foot"`,
+            "aside main"
+            "foot foot"`,
       current: true
     },
     {
@@ -122,8 +122,8 @@ export default {
       props: {
         display: 'grid',
         'grid-template-areas': `"head head"
-                               "aside main"
-                               "foot foot"`
+                                "aside main"
+                                "foot foot"`
       }
     },
     {
