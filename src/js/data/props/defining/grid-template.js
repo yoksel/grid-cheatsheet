@@ -93,14 +93,12 @@ export default {
     {
       id: 'named-areas-template',
       name: `[header-top] 'a a a' [header-bottom]
-  [main-top] 'b b b' 1fr
-  [main-bottom] / auto 1fr auto`
+  [main-top] 'b b b' 1fr [main-bottom]
+  / auto 1fr auto`
     }
   ],
 
   htmlMarkup: `<div class="parent">
-    <div class="child"></div>
-    <div class="child"></div>
     <div class="child"></div>
     <div class="child"></div>
     <div class="child"></div>
@@ -118,51 +116,18 @@ export default {
     {
       selector: '.child:nth-child(1)',
       props: {
-        'background-color': 'crimson',
-        'grid-area': 'header-top'
-      },
-      valueId: 'named-areas-template'
-    },
-    {
-      selector: '.child:nth-child(2)',
-      props: {
-        'background-color': 'crimson',
-        'grid-area': 'a'
+        'grid-row': 'header-top / main-bottom'
       },
       valueId: 'named-areas-template'
     },
     {
       selector: '.child:nth-child(3)',
       props: {
-        'background-color': 'gold',
-        'grid-area': 'header-bottom'
+        'grid-row': 'a-start / b-end',
+        'grid-column': 3,
       },
       valueId: 'named-areas-template'
     },
-    {
-      selector: '.child:nth-child(4)',
-      props: {
-        'background-color': 'green',
-        'grid-area': 'main-top'
-      },
-      valueId: 'named-areas-template'
-    },
-    {
-      selector: '.child:nth-child(5)',
-      props: {
-        'background-color': 'blue',
-        'grid-area': 'main-bottom'
-      },
-      valueId: 'named-areas-template'
-    },
-    {
-      selector: '.child:nth-child(6)',
-      props: {
-        'background-color': 'teal',
-        'grid-area': 'b'
-      },
-      valueId: 'named-areas-template'
-    }
   ],
   items: [
     gridTemplateValues,

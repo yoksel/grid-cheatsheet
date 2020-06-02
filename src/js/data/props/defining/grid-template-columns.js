@@ -53,6 +53,10 @@ export default {
       name: 'repeat(2, 1fr auto)'
     },
     {
+      id: 'named-lines',
+      name: '[aside-start] 1fr [aside-end content-start] 3fr [content-end]'
+    },
+    {
       name: 'none'
     }
   ],
@@ -66,11 +70,27 @@ export default {
     <div class="child"></div>
   </div>`,
 
-  cssRules: [{
-    selector: '.parent',
-    props: {
-      display: 'grid',
-      'grid-template-columns': '1fr auto'
+  cssRules: [
+    {
+      selector: '.parent',
+      props: {
+        display: 'grid',
+        'grid-template-columns': '1fr auto'
+      }
+    },
+    {
+      selector: '.child:nth-child(1)',
+      props: {
+        'grid-column': 'aside-start / content-end'
+      },
+      valueId: 'named-lines'
+    },
+    {
+      selector: '.child:nth-child(2)',
+      props: {
+        'grid-column': 'content'
+      },
+      valueId: 'named-lines'
     }
-  }]
+  ]
 };
