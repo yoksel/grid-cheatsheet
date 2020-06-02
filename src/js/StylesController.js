@@ -48,6 +48,12 @@ export class StylesController {
           value = this.current.value;
         }
 
+        if (typeof value === 'string' && value.includes('\n')) {
+          const spaces = '  ';
+          value = value.replace(/\s{2,}/g, `\n${spaces}`);
+          value = `\n${spaces}${value}`;
+        }
+
         let propString = `${name}: ${value};\n`;
 
         propsListHidden.push(propString);

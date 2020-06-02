@@ -38,7 +38,9 @@ DD + DT {
 }
 
 MARK {
-  box-shadow: 0 0 0 2px var(--mark-bg);
+  box-shadow:
+    0 0 0 2px var(--mark-bg),
+    0 0 0 2px var(--mark-bg) inset;
   background: var(--mark-bg);
   color: var(--mark-color);
 }
