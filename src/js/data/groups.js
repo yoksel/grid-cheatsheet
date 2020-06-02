@@ -1,12 +1,14 @@
-import declaring from './declaring.js';
-import defining from './defining.js';
-import placing from './placing.js';
-import spacing from './spacing.js';
-import alignment from './alignment.js';
+import declaring from './declaring';
+import defining from './defining';
+import gridSizing from './grid-sizing';
+import placing from './placing';
+import spacing from './spacing';
+import alignment from './alignment';
 
 export const groups = {
   declaring,
   defining,
+  gridSizing,
   placing,
   alignment,
   spacing

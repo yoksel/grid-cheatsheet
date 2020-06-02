@@ -1,10 +1,10 @@
-import gridTemplateRows from './props/grid-template-rows.js';
-import gridTemplateColumns from './props/grid-template-columns.js';
-import gridAutoRows from './props/grid-auto-rows.js';
-import gridAutoColums from './props/grid-auto-columns.js';
-import gridAutoFlow from './props/grid-auto-flow.js';
-import gridTemplateAreas from './props/grid-template-areas.js';
-import gridTemplate from './props/grid-template.js';
+import gridTemplateRows from './props/defining/grid-template-rows';
+import gridTemplateColumns from './props/defining/grid-template-columns';
+import gridAutoRows from './props/defining/grid-auto-rows';
+import gridAutoColums from './props/defining/grid-auto-columns';
+import gridAutoFlow from './props/defining/grid-auto-flow';
+import gridTemplateAreas from './props/defining/grid-template-areas';
+import gridTemplate from './props/defining/grid-template';
 
 export default {
   title: 'Defining the grid',
