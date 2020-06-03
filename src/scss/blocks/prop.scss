@@ -5,12 +5,12 @@
   padding-top: 1em;
   padding-bottom: 1em;
   box-sizing: border-box;
-  border-bottom: 1px dotted var(--col-4);
+  border-bottom: 1px dotted var(--prop-border);
 
   &__title {
     font-size: 1.7em;
     font-weight: 470;
-    color: var(--col-4);
+    color: var(--prop-title-color);
   }
 
   UL {

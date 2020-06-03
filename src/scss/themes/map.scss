@@ -35,6 +35,9 @@ BODY {
 
   --group-title-color: var(--col-5);
 
+  --prop-border: var(--col-4);
+  --prop-title-color: var(--col-4);
+
   --demo-bg: var(--col-3);
   --demo-featured-bg: var(--col-4);
   --demo-border: var(--col-1);
@@ -44,4 +47,6 @@ BODY {
   --note-border: var(--col-3);
 
   --project-icon: var(--col-5-darkest);
+
+  --theme-control-color: var(--col-4);
 }
