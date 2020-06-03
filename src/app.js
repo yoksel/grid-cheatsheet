@@ -62,7 +62,7 @@ function addNavMarkerMove () {
   const navItems = document.querySelectorAll('.nav__item');
 navItems.reduce = [].reduce;
   const navItemsById = navItems.reduce((prev, item) => {
-    prev[item.id] = item;
+    prev[item.dataset.name] = item;
     return prev;
   }, {});
 
