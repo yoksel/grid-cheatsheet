@@ -19,18 +19,6 @@
   order: -1;
   @include aside-width;
   flex-shrink: 0;
-
-  &:before {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 10px;
-    background: var(--nav-marker-border);
-  }
 }
 
 .l-aside__content {
@@ -40,9 +28,13 @@
   bottom: 0;
   overflow: auto;
   background: var(--aside-bg);
+  background-image: linear-gradient(to left,
+    var(--nav-marker-border) 10px,
+    transparent 0);
+  background-repeat: no-repeat;
 
   &::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
   }
   & {
     scrollbar-width: thin;
