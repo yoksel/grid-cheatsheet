@@ -25,6 +25,8 @@ function init () {
 
   fillContent();
   addNavMarkerMove();
+
+  checkLinks();
 }
 
 // ---------------------------------------------
@@ -75,4 +77,24 @@ navItems.reduce = [].reduce;
   }, 100);
 
   window.addEventListener('scroll', moveNavMarker);
+}
+
+// ---------------------------------------------
+
+function checkLinks() {
+  const elemsWithId = Array.from(document.querySelectorAll('[id]'));
+  const elemsById = elemsWithId.reduce((prev, item) => {
+    prev[item.id] = item;
+    return prev;
+  }, {})
+  const links = document.querySelectorAll('a[href^="#"]');
+
+  links.forEach((link) => {
+    const hrefTail = link.getAttribute('href').slice(1);
+    if (!elemsById[hrefTail]) {
+      console.log(hrefTail);
+      console.log('\n');
+      link.classList.add('marked-link');
+    }
+  });
 }

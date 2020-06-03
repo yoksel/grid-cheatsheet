@@ -85,7 +85,7 @@ export class DataSection {
     let markup = '';
 
     for (const { name, desc } of this.data.values) {
-      const id = this.data.name + '__' + name;
+      const id = this.data.name + '-' + name;
       const dt = `<dt id="${id}" class="prop-values__term">${name}</dt>`;
       const dd = `<dd class="prop-values__desc">${desc}</dd>`;
 
