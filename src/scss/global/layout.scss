@@ -20,15 +20,45 @@
   @include aside-width;
   flex-shrink: 0;
   background: var(--aside-bg);
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 10px;
+    background: var(--nav-marker-border);
+  }
 }
 
 .l-aside__content {
   position: fixed;
-  overflow: hidden;
   @include aside-width;
-  background: var(--aside-bg);
-  height: 100%;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  & {
+    scrollbar-width: thin;
+    scrollbar-color: var(--nav-thumb-bg) var(--nav-scrollbar-bg);
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--nav-scrollbar-bg);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--nav-thumb-bg) ;
+    border-radius: 6px;
+    border: 3px solid var(--nav-scrollbar-bg);
+  }
 }
+
+
 
 .container {
   padding-left: 1em;

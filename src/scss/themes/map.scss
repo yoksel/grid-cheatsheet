@@ -14,6 +14,9 @@ BODY {
   --nav-link-hover: var(--col-2);
   --nav-link-current: var(--col-1);
 
+  --nav-scrollbar-bg: var(--nav-marker-border);
+  --nav-thumb-bg: var(--nav-link);
+
   --mark-bg: var(--col-4-dark);
   --mark-color: var(--col-2-lighter);
 

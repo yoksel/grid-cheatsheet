@@ -16,7 +16,9 @@ export class Nav {
     targetElem.prepend(this.navElem);
     this.navElem.prepend(this.markerElem);
 
-    this.setCurrentItem();
+    const firstNavItem = this.navElem.querySelector('.nav__item');
+
+    this.setCurrentItem(firstNavItem);
 
     this.navElem.addEventListener('click', (ev) => {
       const navItem = ev.target.closest('.nav__item');
@@ -85,10 +87,6 @@ export class Nav {
   }
 
   setCurrentItem (elem) {
-    if (!elem) {
-      elem = document.querySelector('.nav__item');
-    }
-
     if (this.currentElem) {
       this.currentElem.classList.remove('nav__item--current');
     }
