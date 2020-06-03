@@ -10,13 +10,13 @@ export default {
   targetForDemo: 'grid containers',
   appliesTo: 'all elements',
 
-  desc: `<p>A <dfn>grid container</dfn> establishes a new <dfn>grid formatting context</dfn> for its contents.
+  desc: `<p>A <dfn id="grid-container">grid container</dfn> establishes a new <dfn>grid formatting context</dfn> for its contents.
   This is the same as establishing a block formatting context,
   except that grid layout is used instead of block layout:
   floats do not intrude into the grid container,
   and the grid container’s margins do not collapse with the margins of its contents.
   The contents of a <a href="#grid-container">grid container</a> are laid out into a <a href="#grid">grid</a>,
-  with <a href="#grid-line">grid lines</a> forming the boundaries of each <a href="#grid-item">grid items</a>’ containing block.
+  with <a href="https://www.w3.org/TR/css3-grid-layout/#grid-line">grid lines</a> forming the boundaries of each <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid items</a>’ containing block.
   The <a href="https://www.w3.org/TR/css-overflow-3/#overflow">overflow</a> property applies to <a href="#grid-container">grid containers</a>.</p>
 
   <p>Grid containers are not block containers,
@@ -25,9 +25,9 @@ export default {
   In particular:</p>
 
   <ul>
-    <li> <a href="https://www.w3.org/TR/CSS22/visuren.html#float">float</a> and <a href="https://www.w3.org/TR/CSS22/visuren.html#clear">clear</a> have no effect on a <a href="#grid-item">grid item</a>.
+    <li> <a href="https://www.w3.org/TR/CSS22/visuren.html#float">float</a> and <a href="https://www.w3.org/TR/CSS22/visuren.html#clear">clear</a> have no effect on a <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid item</a>.
       However, the <a href="https://www.w3.org/TR/CSS22/visuren.html#float">float</a> property still affects the computed value of <a href="https://www.w3.org/TR/css-ruby-1/#display">display</a> on children of a grid container,
-      as this occurs <em>before</em> <a href="#grid-item">grid items</a> are determined.
+      as this occurs <em>before</em> <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid items</a> are determined.
     </li>
     <li> <a href="https://www.w3.org/TR/css-inline-3/#vertical-align">vertical-align</a> has no effect on a grid item.
     </li>

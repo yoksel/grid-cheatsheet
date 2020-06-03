@@ -14,7 +14,7 @@ export default {
   </pre></code>
 
   <p>The first argument specifies the number of repetitions.
-    The second argument is a <a href="#track-list">track list</a>,
+    The second argument is a <a href="https://www.w3.org/TR/css3-grid-layout/#track-list">track list</a>,
     which is repeated that number of times.
     However, there are some restrictions:</p>
 
@@ -31,13 +31,13 @@ export default {
   <p>When <code>auto-fill</code> is given as the repetition number,
   if the <a href="#grid-container">grid container</a> has a <a href="https://www.w3.org/TR/css-sizing-3/#definite">definite</a> size or max size in the relevant axis,
   then the number of repetitions is the largest possible positive integer
-  that does not cause the <a href="#grid">grid</a> to overflow its <a href="#grid-container">grid container</a> (treating each track as its <a href="#max-track-sizing-function">max track sizing function</a> if that is <a href="https://www.w3.org/TR/css-sizing-3/#definite">definite</a> or as its minimum track sizing function otherwise,
+  that does not cause the <a href="#grid">grid</a> to overflow its <a href="#grid-container">grid container</a> (treating each track as its <a href="https://www.w3.org/TR/css3-grid-layout/#max-track-sizing-function">max track sizing function</a> if that is <a href="https://www.w3.org/TR/css-sizing-3/#definite">definite</a> or as its minimum track sizing function otherwise,
   and taking <a href="https://www.w3.org/TR/css3-align/#gap">gap</a> into account);
   if any number of repetitions would overflow,
   then 1 repetition.
   Otherwise, if the <a href="#grid-container">grid container</a> has a <a href="https://www.w3.org/TR/css-sizing-3/#definite">definite</a> min size in the relevant axis,
   the number of repetitions is the smallest possible positive integer that fulfills that minimum requirement.
-  Otherwise, the specified <a href="#track-list">track list</a> repeats only once.</p>
+  Otherwise, the specified <a href="https://www.w3.org/TR/css3-grid-layout/#track-list">track list</a> repeats only once.</p>
 
   <p>The <code>auto-fit</code> keyword behaves the same as <code>auto-fill</code>,
   except that after <a href="#auto-placement-algo">grid item placement</a> any empty repeated tracks are <a href="#collapsed-track">collapsed</a>.

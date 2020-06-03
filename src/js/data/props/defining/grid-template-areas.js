@@ -11,7 +11,7 @@ export default {
   appliesTo: 'grid containers',
 
   desc: `<p>This property specifies <dfn>named grid areas</dfn>,
-  which are not associated with any particular <a href="#grid-item">grid item</a>,
+  which are not associated with any particular <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid item</a>,
   but can be referenced from the <a href="#grid-placement-property">grid-placement properties</a>.
   The syntax of the <a href="#grid-template-areas">grid-template-areas</a> property also provides a visualization
   of the structure of the <a href="#grid">grid</a>,
