@@ -59,10 +59,10 @@
   min-height: 2.5rem;
   padding: .5rem;
   box-sizing: border-box;
-  background-color: var(--child-bg);
+  background-color: var(--demo-bg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  border: 1px solid var(--child-border);
+  border: 1px solid var(--demo-border);
 }
 
 .child::before {
@@ -72,7 +72,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: var(--child-color);
+  background: var(--demo-color);
   mask-repeat: no-repeat;
   mask-position: 50% 50%;
 
@@ -82,7 +82,7 @@
 }
 
 .demo--has-featured .child--featured {
-  background-color: var(--child-featured-bg);
+  background-color: var(--demo-featured-bg);
 }
 
 .child:nth-child(1)::before {
