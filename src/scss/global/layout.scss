@@ -19,7 +19,6 @@
   order: -1;
   @include aside-width;
   flex-shrink: 0;
-  background: var(--aside-bg);
 
   &:before {
     content: '';
@@ -40,6 +39,7 @@
   top: 0;
   bottom: 0;
   overflow: auto;
+  background: var(--aside-bg);
 
   &::-webkit-scrollbar {
     width: 12px;
@@ -57,8 +57,6 @@
     border: 3px solid var(--nav-scrollbar-bg);
   }
 }
-
-
 
 .container {
   padding-left: 1em;
