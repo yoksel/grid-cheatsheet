@@ -4,7 +4,9 @@ import namedLines from './props/defining/named-lines';
 
 export default {
   title: 'Explicit grid sizing',
-  desc: 'hello',
+  desc: '',
+
+  link: 'https://www.w3.org/TR/css3-grid-layout/#track-sizing',
 
   items: [
     gridTemplateValues,

@@ -11,12 +11,12 @@ export default {
   appliesTo: 'grid containers',
 
   desc: `<p><a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">Grid items</a> that aren’t explicitly placed are automatically placed into an unoccupied space in the <a href="#grid-container">grid container</a> by the <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item-placement-algorithm">auto-placement algorithm</a>. <a href="#grid-auto-flow">grid-auto-flow</a> controls how the <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item-placement-algorithm">auto-placement algorithm</a> works, specifying exactly how auto-placed items get flowed into the grid.
-  See <a href="#auto-placement-algo">§8.5 Grid Item Placement Algorithm</a> for details on precisely how the auto-placement algorithm works.</p>`,
+  See <a href="https://www.w3.org/TR/css3-grid-layout/#auto-placement-algo">§8.5 Grid Item Placement Algorithm</a> for details on precisely how the auto-placement algorithm works.</p>`,
 
   values: [
     {
       name: 'row',
-      desc: 'The <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item-placement-algorithm">auto-placement algorithm</a> places items by filling each row in turn, adding new rows as necessary. If neither <a href="#valdef-grid-auto-flow-row">row</a> nor <a href="#valdef-grid-auto-flow-column">column</a> is provided, <a href="#valdef-grid-auto-flow-row">row</a> is assumed.'
+      desc: 'The <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item-placement-algorithm">auto-placement algorithm</a> places items by filling each row in turn, adding new rows as necessary. If neither <a href="#grid-auto-flow-row">row</a> nor <a href="#grid-auto-flow-column">column</a> is provided, <a href="#grid-auto-flow-row">row</a> is assumed.'
     },
     {
       name: 'column',

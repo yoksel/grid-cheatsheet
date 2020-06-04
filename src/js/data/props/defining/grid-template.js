@@ -22,6 +22,7 @@ export default {
     },
     {
       name: '<‘grid-template-rows’> / <‘grid-template-columns’>',
+      alias: 'rowcol',
       desc: `<p>Sets <i>grid-template-rows</i> and <i>grid-template-columns</i> to the specified values, respectively, and sets <i>grid-template-areas</i> to <i>none</i>.</p>
 
         <code>
@@ -38,6 +39,7 @@ export default {
     },
     {
       name: '[ <line-names>? <string> <track-size>? <line-names>? ]+ [ / <explicit-track-list> ]?',
+      alias: 'line-names',
       desc: `<ul> <li>
         <p>Sets <i>grid-template-areas</i> to the strings listed.</p> </li>
           <li> <p>Sets <i>grid-template-rows</i> to the <i>&lt;track-size&gt;</i>s following each string (filling in <i>auto</i> for any missing sizes), and splicing in the named lines defined before/after each size.</p> </li>

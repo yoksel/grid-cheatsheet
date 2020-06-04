@@ -15,7 +15,7 @@ export default {
   except that grid layout is used instead of block layout:
   floats do not intrude into the grid container,
   and the grid container’s margins do not collapse with the margins of its contents.
-  The contents of a <a href="#grid-container">grid container</a> are laid out into a <a href="#grid">grid</a>,
+  The contents of a <a href="#grid-container">grid container</a> are laid out into a <a href="https://www.w3.org/TR/css3-grid-layout/#grid">grid</a>,
   with <a href="https://www.w3.org/TR/css3-grid-layout/#grid-line">grid lines</a> forming the boundaries of each <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid items</a>’ containing block.
   The <a href="https://www.w3.org/TR/css-overflow-3/#overflow">overflow</a> property applies to <a href="#grid-container">grid containers</a>.</p>
 
@@ -36,12 +36,12 @@ export default {
      </li>
   </ul>
 
-  <p>If an element’s specified <a href="https://www.w3.org/TR/css-ruby-1/#display">display</a> is <a href="#valdef-display-inline-grid">inline-grid</a> and the element is floated or absolutely positioned,
-  the computed value of <a href="https://www.w3.org/TR/css-ruby-1/#display">display</a> is <a href="#valdef-display-grid">grid</a>.
+  <p>If an element’s specified <a href="https://www.w3.org/TR/css-ruby-1/#display">display</a> is <a href="#display-inline-grid">inline-grid</a> and the element is floated or absolutely positioned,
+  the computed value of <a href="https://www.w3.org/TR/css-ruby-1/#display">display</a> is <a href="#display-grid">grid</a>.
   The table in <a href="https://www.w3.org/TR/CSS2/visuren.html#dis-pos-flo">CSS 2.1 Chapter 9.7</a> is thus amended
   to contain an additional row,
-  with <a href="#valdef-display-inline-grid">inline-grid</a> in the "Specified Value" column
-  and <a href="#valdef-display-grid">grid</a> in the "Computed Value" column.</p>`,
+  with <a href="#display-inline-grid">inline-grid</a> in the "Specified Value" column
+  and <a href="#display-grid">grid</a> in the "Computed Value" column.</p>`,
 
   values: [
     {
