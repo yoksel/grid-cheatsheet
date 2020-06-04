@@ -84,12 +84,12 @@ export class DataSection {
 
     let markup = '';
 
-    for (const { name, desc } of this.data.values) {
-      const id = this.data.name + '-' + name;
-      const dt = `<dt id="${id}" class="prop-values__term">${name}</dt>`;
-      const dd = `<dd class="prop-values__desc">${desc}</dd>`;
-
-      markup += dt + dd;
+    for (const { name, alias, desc } of this.data.values) {
+      const id = alias || name;
+      console.log(this.data.name, 'id', id);
+      const idAttr = `${this.data.name}-${id}`;
+      markup += `<dt id="${idAttr}" class="prop-values__term">${name}</dt>
+        <dd class="prop-values__desc">${desc}</dd>`;
     }
 
     return createElement(`<dl class="prop-values">${markup}</dl>`);
