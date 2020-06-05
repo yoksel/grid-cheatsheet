@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --open",
     "deploy": "npm run build && gh-pages -d dist",
     "lint": "npm run js:lint && npm run css:lint",
-    "fix": "npm run js:fix && npm run css:fix",
+    "lint:fix": "npm run js:fix && npm run css:fix",
     "js:lint": "eslint src",
     "js:fix": "eslint src --fix",
     "css:lint": "stylelint src/**/*.scss",
