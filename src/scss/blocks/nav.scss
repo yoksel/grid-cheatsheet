@@ -41,8 +41,8 @@
   }
 
   &__item {
+    margin: 0 1.5rem;
     margin-bottom: .4rem;
-    margin-left: 1.5rem;
 
     @media ( min-width: 900px ) {
       margin-bottom: .6rem;
