@@ -1,5 +1,8 @@
 import gridTemplateRows from './grid-template-rows';
 import gridTemplateColumns from './grid-template-columns';
+import gridTemplateValues from './values';
+import repeat from './repeat';
+import namedLines from './named-lines';
 
 export default {
   name: 'grid-template-columns, grid-template-rows',
@@ -42,7 +45,12 @@ export default {
       to specify separate <a href="https://www.w3.org/TR/css3-grid-layout/#min-track-sizing-function">min</a> and <a href="https://www.w3.org/TR/css3-grid-layout/#max-track-sizing-function">max track sizing functions</a> for the column or row.`
     }
   ],
-  items: [
+  children: [
+    gridTemplateValues,
+    repeat,
+    namedLines
+  ],
+  demos: [
     gridTemplateRows,
     gridTemplateColumns
   ]

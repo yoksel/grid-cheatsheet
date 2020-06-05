@@ -6,7 +6,7 @@ export class PropSection {
     this.data = data;
     const { isChild } = params;
     const id = data.alias || data.name;
-    this.hasChildren = this.data.items && this.data.items.length > 0;
+    this.hasChildren = this.data.children && this.data.children.length > 0;
 
     this.demoElem = this.getDemoElement();
 

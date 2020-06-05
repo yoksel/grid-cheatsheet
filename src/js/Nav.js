@@ -53,9 +53,14 @@ export class Nav {
   }
 
   getListMarkup (items, customClass = '') {
-    const itemsList = items.map(({ alias, name }) => {
+    const itemsList = items.map(({ alias, name, children }) => {
       const itemClass = this.getItemClass(name);
+      let itemsMarkup = '';
       const id = alias || name;
+
+      if (children) {
+        itemsMarkup = this.getListMarkup(children, 'nav__list--inner');
+      }
 
       return `<li
           class="${itemClass}"
@@ -64,7 +69,7 @@ export class Nav {
             href="#${id}"
             data-parent-nav-item="${name}"
             class="nav__link"
-          >${name}</a></li>`;
+          >${name}</a>${itemsMarkup}</li>`;
     });
 
     return `<ul class="nav__list ${customClass}">${itemsList.join('')}</ul>`;

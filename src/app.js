@@ -1,7 +1,7 @@
 import { groups } from './js/data/groups';
 import { Nav } from './js/Nav';
 import { Group } from './js/Group';
-import { PropSection } from './js/propSection';
+import { PropSection } from './js/PropSection';
 import { ThemeSwitcher } from './js/ThemeSwitcher';
 import { isVisible, debounce } from './js/helpers';
 
@@ -43,9 +43,18 @@ function fillContent () {
 
       groupElem.append(section.sectionElem);
 
-      if (item.items) {
-        for (const innerItem of item.items) {
-          const innerSection = new PropSection(innerItem, { isChild: true });
+      if (item.demos) {
+        for (const innerDemo of item.demos) {
+          const innerSection = new PropSection(innerDemo, { isChild: true });
+          sections.push(innerSection.sectionElem);
+
+          groupElem.append(innerSection.sectionElem);
+        }
+      }
+
+      if (item.children) {
+        for (const child of item.children) {
+          const innerSection = new PropSection(child, { isChild: true });
           sections.push(innerSection.sectionElem);
 
           groupElem.append(innerSection.sectionElem);

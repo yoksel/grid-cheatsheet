@@ -48,7 +48,7 @@ export default {
     }
   }],
 
-  items: [
+  demos: [
     gridAutoRows,
     gridAutoColumns
   ]
