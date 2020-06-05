@@ -66,7 +66,7 @@ export class Nav {
           class="${itemClass}"
           data-name="${name}"
         ><a
-            href="#${id}"
+            href="#section-${id}"
             data-parent-nav-item="${name}"
             class="nav__link"
           >${name}</a>${itemsMarkup}</li>`;

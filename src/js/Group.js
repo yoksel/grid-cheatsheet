@@ -1,17 +1,18 @@
 import { createElement } from './helpers';
 
 export class Group {
-  constructor ({ id, title, hideTitle, desc, items }) {
-    const titleMarkup = this.getTitleMarkup(title, hideTitle);
-    const descMarkup = this.getDescMarkup(desc);
-    const intro = this.getIntroMarkup(titleMarkup, descMarkup);
+  constructor (data) {
+    this.data = data;
+    const id = this.data.id;
 
     this.elem = createElement(`<section class="group" id="group-${id}">
-      ${intro}
+      ${this.getIntroMarkup()}
     </section>`);
   }
 
-  getTitleMarkup (title, hideTitle) {
+  getTitle () {
+    const { title, hideTitle } = this.data;
+
     if (!title) {
       return '';
     }

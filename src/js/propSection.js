@@ -29,7 +29,7 @@ export class PropSection {
     }
 
     this.sectionElem = createElement(`<section
-      id="${this.id}"
+      id="section-${this.id}"
       class="${className} container"></section>`);
 
     elems.forEach(elem => this.sectionElem.append(elem));
