@@ -7,7 +7,7 @@ export class PropSection {
     const { isChild } = params;
     this.id = data.alias || data.name;
     this.hasChildren = this.data.children && this.data.children.length > 0;
-
+    this.hasDemos = this.data.demos && this.data.demos.length > 0;
     this.demoElem = this.getDemoElement();
 
     const elems = [
@@ -24,7 +24,7 @@ export class PropSection {
     if (isChild) {
       className += ' prop--child';
     }
-    if (this.hasChildren) {
+    if (this.hasDemos || this.hasChildren) {
       className += ' prop--has-children';
     }
 
@@ -38,7 +38,7 @@ export class PropSection {
   // ---------------------------------------------
 
   getDemoElement () {
-    if (this.hasChildren) {
+    if (this.hasDemos || this.hasChildren) {
       return '';
     }
 
