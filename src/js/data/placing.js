@@ -7,16 +7,16 @@ export default {
   defined in <a href="https://www.w3.org/TR/css3-grid-layout/#layout-algorithm">§11 Grid Sizing</a>.</p>
 
   <p>The location of a <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid item’s</a> <a href="https://www.w3.org/TR/css3-grid-layout/#grid-area">grid area</a> within the <a href="https://www.w3.org/TR/css3-grid-layout/#grid">grid</a> is defined by its <dfn id="grid-placement">placement</dfn>,
-  which consists of a <a href="#grid-position">grid position</a> and a <a href="https://www.w3.org/TR/css3-grid-layout/#grid-span">grid span</a>:</p>
+  which consists of a <a href="#grid-position">grid position</a> and a <a href="#grid-span">grid span</a>:</p>
 
   <dl>
     <dt><dfn id="grid-position">grid position</dfn>
     </dt><dd> The <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid item</a>’s location in the <a href="https://www.w3.org/TR/css3-grid-layout/#grid">grid</a> in each axis.
       A <a href="#grid-position">grid position</a> can be either <dfn>definite</dfn> (explicitly specified)
-      or <dfn>automatic</dfn> (determined by <a href="#auto-placement">auto-placement</a>).
-    </dd><dt><dfn id="grid span">grid span</dfn>
+      or <dfn>automatic</dfn> (determined by <a href="#grid-auto-flow">auto-placement</a>).
+    </dd><dt><dfn id="grid-span">grid span</dfn>
     </dt><dd> How many <a href="https://www.w3.org/TR/css3-grid-layout/#grid-track">grid tracks</a> the <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid item</a> occupies in each axis.
-      A <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid item</a>’s <a href="https://www.w3.org/TR/css3-grid-layout/#grid-span">grid span</a> is always <dfn>definite</dfn>,
+      A <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid item</a>’s <a href="#grid-span">grid span</a> is always <dfn>definite</dfn>,
       defaulting to 1 in each axis if it can’t be otherwise determined for that axis.
    </dd></dl>
 
