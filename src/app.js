@@ -45,7 +45,7 @@ function fillContent () {
 
       if (item.items) {
         for (const innerItem of item.items) {
-          const innerSection = new DataSection(innerItem);
+          const innerSection = new DataSection(innerItem, { isChild: true });
           sections.push(innerSection.sectionElem);
 
           groupElem.append(innerSection.sectionElem);

@@ -2,11 +2,13 @@ import { createElement } from './helpers';
 import { Demo } from './Demo';
 
 export class DataSection {
-  constructor (data) {
+  constructor (data, params = {}) {
     this.data = data;
+    const { isChild } = params;
+    const id = data.alias || data.name;
+    this.hasChildren = this.data.items && this.data.items.length > 0;
 
-    this.demo = new Demo(data);
-    this.demoElem = this.demo.elem;
+    this.demoElem = this.getDemoElement();
 
     const elems = [
       this.getTitle(),
@@ -18,11 +20,30 @@ export class DataSection {
       this.getValues()
     ];
 
+    let className = 'prop';
+    if (isChild) {
+      className += ' prop--child';
+    }
+    if (this.hasChildren) {
+      className += ' prop--has-children';
+    }
+
     this.sectionElem = createElement(`<section
-      id="${this.data.name}"
-      class="prop container"></section>`);
+      id="${id}"
+      class="${className} container"></section>`);
 
     elems.forEach(elem => this.sectionElem.append(elem));
+  }
+
+  // ---------------------------------------------
+
+  getDemoElement () {
+    if (this.hasChildren) {
+      return '';
+    }
+
+    const demo = new Demo(this.data);
+    return demo.elem;
   }
 
   // ---------------------------------------------

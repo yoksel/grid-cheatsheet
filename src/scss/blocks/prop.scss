@@ -7,10 +7,19 @@
   box-sizing: border-box;
   border-bottom: 1px dotted var(--prop-border);
 
+  &--child,
+  &--has-children {
+    min-height: 0;
+  }
+
   &__title {
     font-size: 1.7em;
     font-weight: 470;
     color: var(--prop-title-color);
+  }
+
+  &--child &__title {
+    font-size: 1.4em;
   }
 
   UL {
