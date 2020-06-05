@@ -111,10 +111,10 @@ export default {
   ],
 
   htmlMarkup: `<div class="parent parent--fade-children">
-    <header class="child header">Header</header>
-    <main class="child main">Main</main>
-    <aside class="child aside">Aside</aside>
-    <footer class="child footer">Footer</footer>
+    <div class="child header">Header</div>
+    <div class="child main">Main</div>
+    <div class="child aside">Aside</div>
+    <div class="child footer">Footer</div>
   </div>`,
 
   cssRules: [
