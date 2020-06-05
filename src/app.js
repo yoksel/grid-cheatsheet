@@ -1,7 +1,7 @@
 import { groups } from './js/data/groups';
 import { Nav } from './js/Nav';
 import { Group } from './js/Group';
-import { DataSection } from './js/DataSection';
+import { PropSection } from './js/propSection';
 import { ThemeSwitcher } from './js/ThemeSwitcher';
 import { isVisible, debounce } from './js/helpers';
 
@@ -38,14 +38,14 @@ function fillContent () {
     const groupElem = new Group({ id, ...data }).elem;
 
     for (const item of data.items) {
-      const section = new DataSection(item);
+      const section = new PropSection(item);
       sections.push(section.sectionElem);
 
       groupElem.append(section.sectionElem);
 
       if (item.items) {
         for (const innerItem of item.items) {
-          const innerSection = new DataSection(innerItem, { isChild: true });
+          const innerSection = new PropSection(innerItem, { isChild: true });
           sections.push(innerSection.sectionElem);
 
           groupElem.append(innerSection.sectionElem);

@@ -1,7 +1,7 @@
 import { createElement } from './helpers';
 import { Demo } from './Demo';
 
-export class DataSection {
+export class PropSection {
   constructor (data, params = {}) {
     this.data = data;
     const { isChild } = params;
