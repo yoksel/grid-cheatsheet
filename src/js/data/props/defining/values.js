@@ -97,6 +97,9 @@ export default {
       name: '2fr max-content'
     },
     {
+      name: 'min-content min-content'
+    },
+    {
       name: 'max-content max-content'
     },
     {
