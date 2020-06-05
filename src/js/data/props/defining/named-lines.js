@@ -1,5 +1,6 @@
 export default {
   name: 'named lines',
+  alias: 'named-lines',
   propDemoName: 'grid-template-columns',
 
   link: 'https://www.w3.org/TR/css3-grid-layout/#named-lines',

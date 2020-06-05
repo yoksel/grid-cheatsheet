@@ -17,7 +17,7 @@ export default {
       name: 'repeat(2, 2fr  1fr)'
     },
     {
-      id: 'named-lines',
+      id: 'rows-named-lines',
       name: '[header-start] 1fr [header-end content-start] min-content [content-end footer-start] 1fr [footer-end]'
     },
     {
@@ -51,14 +51,14 @@ export default {
       props: {
         'grid-row': 'header-start / footer-end'
       },
-      valueId: 'named-lines'
+      valueId: 'rows-named-lines'
     },
     {
       selector: '.child:nth-child(2)',
       props: {
         'grid-row': 'header-start / content-end'
       },
-      valueId: 'named-lines'
+      valueId: 'rows-named-lines'
     }
   ]
 };

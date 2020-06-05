@@ -5,7 +5,7 @@ export class PropSection {
   constructor (data, params = {}) {
     this.data = data;
     const { isChild } = params;
-    const id = data.alias || data.name;
+    this.id = data.alias || data.name;
     this.hasChildren = this.data.children && this.data.children.length > 0;
 
     this.demoElem = this.getDemoElement();
@@ -29,7 +29,7 @@ export class PropSection {
     }
 
     this.sectionElem = createElement(`<section
-      id="${id}"
+      id="${this.id}"
       class="${className} container"></section>`);
 
     elems.forEach(elem => this.sectionElem.append(elem));
@@ -72,8 +72,7 @@ export class PropSection {
     }
 
     return createElement(`<div
-      class="prop__desc"
-      id="desc-${this.data.name}">${this.data.desc}</div>`);
+      class="prop__desc">${this.data.desc}</div>`);
   }
 
   // ---------------------------------------------
@@ -107,8 +106,7 @@ export class PropSection {
 
     for (const { name, alias, desc } of this.data.values) {
       const id = alias || name;
-      console.log(this.data.name, 'id', id);
-      const idAttr = `${this.data.name}-${id}`;
+      const idAttr = `${this.id}-${id}`;
       markup += `<dt id="${idAttr}" class="prop-values__term">${name}</dt>
         <dd class="prop-values__desc">${desc}</dd>`;
     }

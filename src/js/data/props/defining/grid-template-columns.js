@@ -20,7 +20,7 @@ export default {
       name: 'repeat(2, 1fr auto)'
     },
     {
-      id: 'named-lines',
+      id: 'columns-named-lines',
       name: '[aside-start] 1fr [aside-end content-start] 3fr [content-end]'
     },
     {
@@ -50,14 +50,14 @@ export default {
       props: {
         'grid-column': 'aside-start / content-end'
       },
-      valueId: 'named-lines'
+      valueId: 'columns-named-lines'
     },
     {
       selector: '.child:nth-child(2)',
       props: {
         'grid-column': 'content'
       },
-      valueId: 'named-lines'
+      valueId: 'columns-named-lines'
     }
   ]
 };

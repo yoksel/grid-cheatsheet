@@ -1,5 +1,6 @@
 export default {
   name: 'repeat()',
+  alias: 'repeat',
   propDemoName: 'grid-template-columns',
 
   link: 'https://www.w3.org/TR/css3-grid-layout/#repeat-notation',

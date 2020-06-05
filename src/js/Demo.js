@@ -11,8 +11,9 @@ const demoElemClasses = {
 export class Demo {
   constructor (data) {
     this.data = data;
+    this.id = this.data.alias || this.data.name;
     this.targetElemSelector = demoElemClasses[this.data.targetForDemo];
-    this.values = this.data.customValues || this.data.values;
+    this.values = this.getValues();
     this.classList = this.getClassList();
     this.elem = this.getElem();
     this.codesElem = this.elem.querySelector('.demo__code');
@@ -47,15 +48,22 @@ export class Demo {
 
   // ---------------------------------------------
 
+  getValues () {
+    const values = this.data.customValues || this.data.values;
+
+    return values.map((item, index) => {
+      return {
+        ...item,
+        id: item.id || `${this.id}-control-${index}`
+      };
+    });
+  }
+
+  // ---------------------------------------------
+
   getClassList () {
     const classList = [];
-    const name = this.data.name
-      .trim()
-      .toLowerCase()
-      .replace(/ /g, '-')
-      .replace(/\(\)/g, '');
-
-    classList.push('demo__content--prop-' + name);
+    classList.push('demo__content--prop-' + this.id);
 
     if (this.targetElemSelector.search('featured') > -1) {
       classList.push('demo__content--has-featured');
@@ -98,7 +106,7 @@ export class Demo {
       controlsList.push(`<button
         type="button"
         class="${classList.join(' ')}"
-        data-value-id="${id || name}">${name}</button>`);
+        id="${id}">${name}</button>`);
     }
 
     return controlsList.join(' ');
@@ -116,13 +124,13 @@ export class Demo {
 
     for (const { id, name, current } of this.values) {
       if (current) {
-        currentValueId = id || name;
+        currentValueId = id;
         currentValue = name;
       }
     }
 
     if (!currentValueId) {
-      currentValueId = this.values[0].id || this.values[0].name;
+      currentValueId = this.values[0].id;
       currentValue = this.values[0].name;
     }
 
@@ -146,7 +154,7 @@ export class Demo {
     control.classList.add('demo__control--current');
 
     this.current.control = control;
-    this.current.id = control.dataset.valueId;
+    this.current.id = control.id;
     this.current.value = control.innerHTML;
 
     this.stylesController.update(this.current);
