@@ -1,10 +1,8 @@
-import gridTemplateRows from './props/defining/grid-template-rows';
-import gridTemplateColumns from './props/defining/grid-template-columns';
-import gridAutoRows from './props/defining/grid-auto-rows';
-import gridAutoColums from './props/defining/grid-auto-columns';
+import explicitGridSizing from './props/defining/explicit-grid-sizing';
 import gridAutoFlow from './props/defining/grid-auto-flow';
 import gridTemplateAreas from './props/defining/grid-template-areas';
 import gridTemplate from './props/defining/grid-template';
+import gridAutoTracks from './props/defining/grid-auto-tracks';
 
 export default {
   title: 'Defining the grid',
@@ -30,10 +28,8 @@ at the same time.
 The <a href="https://www.w3.org/TR/css3-grid-layout/#grid">grid</a> shorthand also resets properties controlling the <a href="https://www.w3.org/TR/css3-grid-layout/#implicit-grid">implicit grid</a>,
 whereas the <a href="#grid-template">grid-template</a> property leaves them unchanged.</p>`,
   items: [
-    gridTemplateRows,
-    gridAutoRows,
-    gridTemplateColumns,
-    gridAutoColums,
+    explicitGridSizing,
+    gridAutoTracks,
     gridAutoFlow,
     gridTemplateAreas,
     gridTemplate
