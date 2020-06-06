@@ -22,6 +22,11 @@
     font-size: 1.4em;
   }
 
+  &__link {
+    display: inline-block;
+    margin: 0 0 2em;
+  }
+
   UL {
     list-style-type: disc;
     padding-left: 2em;

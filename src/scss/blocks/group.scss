@@ -1,7 +1,4 @@
 .group {
-  &__intro {
-    display: grid;
-  }
 
   &__title {
     margin: 1em 0 1em;
@@ -11,6 +8,7 @@
   }
 
   &__link {
+    display: inline-block;
     margin: 0 0 2em;
   }
 
