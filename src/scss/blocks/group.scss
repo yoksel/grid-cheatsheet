@@ -4,10 +4,14 @@
   }
 
   &__title {
-    margin: 1em 0 0em;
+    margin: 1em 0 1em;
     font-size: 2em;
     font-weight: 500;
     color: var(--group-title-color);
+  }
+
+  &__link {
+    margin: 0 0 2em;
   }
 
   TABLE {

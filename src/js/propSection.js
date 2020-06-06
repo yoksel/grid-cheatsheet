@@ -61,7 +61,7 @@ export class PropSection {
 
     var text = this.data.link.replace('http://www.', '');
 
-    return createElement(`<a href="${this.data.link}">${text}</a>`);
+    return createElement(`<a class="prop__link" href="${this.data.link}">${text}</a>`);
   }
 
   // ---------------------------------------------

@@ -74,6 +74,10 @@ DFN {
   font-weight: bold;
 }
 
+P:first-child {
+  margin-top: 0;
+}
+
 .hidden-content {
   display: none;
 }
