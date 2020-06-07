@@ -44,7 +44,20 @@
     padding: 4px;
   }
 }
+
 /* Values */
+
+.prop-values__title {
+  margin-bottom: 0;
+  margin-top: 1em;
+  font-size: 1.4em;
+  color: var(--prop-values-title-color);
+}
+
+.prop-values__list {
+  margin-left: 1rem;
+}
+
 .prop-values__term {
   font-weight: bold;
   color: var(--term-color);

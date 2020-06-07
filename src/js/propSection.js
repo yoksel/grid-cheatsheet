@@ -1,4 +1,4 @@
-import { createElement } from './helpers';
+import { createElement, getPlurals } from './helpers';
 import { Demo } from './Demo';
 
 export class PropSection {
@@ -103,6 +103,7 @@ export class PropSection {
     }
 
     let markup = '';
+    const title = getPlurals(this.data.values.length, ['Value', 'Values']);
 
     for (const { name, alias, desc } of this.data.values) {
       const id = alias || name;
@@ -111,6 +112,10 @@ export class PropSection {
         <dd class="prop-values__desc">${desc}</dd>`;
     }
 
-    return createElement(`<dl class="prop-values">${markup}</dl>`);
+    return createElement(`<div class="prop-values">
+      <h4 class="prop-values__title">${title}</h4>
+      <dl class="prop-values__list">${markup}</dl>
+    </div>
+    `);
   }
 }
