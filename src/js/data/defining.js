@@ -6,8 +6,11 @@ import gridAutoTracks from './props/defining/grid-auto-tracks';
 
 export default {
   title: 'Defining the grid',
+
+  link: 'https://www.w3.org/TR/css3-grid-layout/#grid-definition',
+
   desc: `<p>The three properties <a href="#grid-template-rows">grid-template-rows</a>, <a href="#grid-template-columns">grid-template-columns</a>, and <a href="#grid-template-areas">grid-template-areas</a> together define the <dfn id="explicit-grid">explicit grid</dfn> of a <a href="#grid-container">grid container</a>.
-The final grid may end up larger due to <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid items</a> placed outside the <a href="#explicit-grid">explicit grid</a>;
+The final grid may end up larger due to <a href="#grid-item">grid items</a> placed outside the <a href="#explicit-grid">explicit grid</a>;
 in this case implicit tracks will be created,
 these implicit tracks will be sized by the <a href="#grid-auto-rows">grid-auto-rows</a> and <a href="#grid-auto-columns">grid-auto-columns</a> properties.</p>
 
@@ -15,7 +18,7 @@ these implicit tracks will be sized by the <a href="#grid-auto-rows">grid-auto-r
 the number of rows/columns defined by <a href="#grid-template-areas">grid-template-areas</a> and the number of rows/columns sized by <a href="#grid-template-rows">grid-template-rows</a>/<a href="#grid-template-columns">grid-template-columns</a>.
 Any rows/columns defined by <a href="#grid-template-areas">grid-template-areas</a> but not sized by <a href="#grid-template-rows">grid-template-rows</a>/<a href="#grid-template-columns">grid-template-columns</a> take their size from the <a href="#grid-auto-rows">grid-auto-rows</a>/<a href="#grid-auto-columns">grid-auto-columns</a> properties.
 If these properties don’t define <em>any</em> <a href="#explicit-grid">explicit</a> tracks
-the <a href="#explicit-grid">explicit grid</a> still contains one <a href="https://www.w3.org/TR/css3-grid-layout/#grid-line">grid line</a> in each axis.</p>
+the <a href="#explicit-grid">explicit grid</a> still contains one <a href="#grid-line">grid line</a> in each axis.</p>
 
 <p>Numeric indexes in the <a href="#grid-placement-property">grid-placement properties</a> count from the edges of the <a href="#explicit-grid">explicit grid</a>.
 Positive indexes count from the <a href="https://www.w3.org/TR/css-writing-modes-3/#start">start</a> side
@@ -23,9 +26,9 @@ Positive indexes count from the <a href="https://www.w3.org/TR/css-writing-modes
 while negative indexes count from the <a href="https://www.w3.org/TR/css-writing-modes-3/#end">end</a> side
 (starting from -1 for the <a href="https://www.w3.org/TR/css-writing-modes-3/#end">end</a>-most <a href="#explicit-grid">explicit</a> line).</p>
 
-<p>The <a href="https://www.w3.org/TR/css3-grid-layout/#grid">grid</a> and <a href="#grid-template">grid-template</a> properties are a <a href="https://www.w3.org/TR/css-cascade-4/#shorthand-property">shorthands</a> that can be used to set all three <dfn>explicit grid properties</dfn> (<a href="#grid-template-rows">grid-template-rows</a>, <a href="#grid-template-columns">grid-template-columns</a>, and <a href="#grid-template-areas">grid-template-areas</a>)
+<p>The <a href="#grid">grid</a> and <a href="#grid-template">grid-template</a> properties are a <a href="https://www.w3.org/TR/css-cascade-4/#shorthand-property">shorthands</a> that can be used to set all three <dfn id="explicit-grid-properties">explicit grid properties</dfn> (<a href="#grid-template-rows">grid-template-rows</a>, <a href="#grid-template-columns">grid-template-columns</a>, and <a href="#grid-template-areas">grid-template-areas</a>)
 at the same time.
-The <a href="https://www.w3.org/TR/css3-grid-layout/#grid">grid</a> shorthand also resets properties controlling the <a href="https://www.w3.org/TR/css3-grid-layout/#implicit-grid">implicit grid</a>,
+The <a href="#grid">grid</a> shorthand also resets properties controlling the <a href="#implicit-grid">implicit grid</a>,
 whereas the <a href="#grid-template">grid-template</a> property leaves them unchanged.</p>`,
   items: [
     explicitGridSizing,

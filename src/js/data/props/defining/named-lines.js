@@ -1,5 +1,5 @@
 export default {
-  name: 'named lines',
+  name: 'Named lines',
   alias: 'named-lines',
   propDemoName: 'grid-template-columns',
 
@@ -9,7 +9,13 @@ export default {
 
   targetForDemo: 'grid containers',
 
-  desc: '<p>While <a href="https://www.w3.org/TR/css3-grid-layout/#grid-line">grid lines</a> can always be referred to by their numerical index, <dfn>named lines</dfn> can make the <a href="#grid-placement-property">grid-placement properties</a> easier to understand and maintain. Lines can be explicitly named in the <a href="#grid-template-rows">grid-template-rows</a> and <a href="#grid-template-columns">grid-template-columns</a> properties, or <a href="https://www.w3.org/TR/css3-grid-layout/#implicit-named-lines">implicitly named</a> by creating <a href="#named-grid-area">named grid areas</a> with the <a href="#grid-template-areas">grid-template-areas</a> property.</p>',
+  desc: `<p>While <a href="#grid-line">grid lines</a> can always be referred to by their numerical index, <dfn id="named-line">named lines</dfn> can make the <a href="#grid-placement-property">grid-placement properties</a> easier to understand and maintain.
+Lines can be explicitly named in the <a href="#grid-template-rows">grid-template-rows</a> and <a href="#grid-template-columns">grid-template-columns</a> properties,
+or <a href="#implicit-named-lines">implicitly named</a> by creating <a href="#named-grid-area">named grid areas</a> with the <a href="#grid-template-areas">grid-template-areas</a> property.</p>
+
+<p>A line name cannot be <span class="css">span</span>,
+i.e. the <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a> in the <a href="#typedef-line-names">&lt;line-names&gt;</a> production
+excludes the keyword <span class="css">span</span>.</p>`,
 
   htmlMarkup: `<div class="parent">
     <div class="child"></div>
