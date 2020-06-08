@@ -1,6 +1,6 @@
 export default {
-  name: 'Units & functions',
-  alias: 'units-functions',
+  name: 'Track list values',
+  alias: 'track-list-values',
 
   propDemoName: 'grid-template-columns',
 
