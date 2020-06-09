@@ -60,7 +60,7 @@
     }
   }
 
-  &__item--current &__link {
+  &__item--current > &__link {
     text-decoration: none;
     color: var(--nav-link-current);
   }
