@@ -54,7 +54,7 @@ export class Nav {
 
   getListMarkup (items, customClass = '') {
     const itemsList = items.map(({ alias, name, children }) => {
-      const itemClass = this.getItemClass(name);
+      const itemClass = 'nav__item';
       let itemsMarkup = '';
       const id = alias || name;
 
@@ -67,24 +67,11 @@ export class Nav {
           data-name="section-${id}"
         ><a
             href="#section-${id}"
-            data-parent-nav-item="${id}"
             class="nav__link"
           >${name}</a>${itemsMarkup}</li>`;
     });
 
     return `<ul class="nav__list ${customClass}">${itemsList.join('')}</ul>`;
-  }
-
-  getItemClass (name) {
-    const classList = ['nav__item'];
-
-    const namesList = name.split(',');
-
-    for (const name of namesList) {
-      classList.push('nav__item--' + name.trim());
-    }
-
-    return classList.join(' ');
   }
 
   setCurrentItem (elem) {
