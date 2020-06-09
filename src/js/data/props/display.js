@@ -5,9 +5,6 @@ export default {
 
   initValue: '',
 
-  target: 'grid containers',
-
-  targetForDemo: 'grid containers',
   appliesTo: 'all elements',
 
   desc: `<p>A <dfn id="grid-container">grid container</dfn> establishes a new <dfn id="grid-formatting-context">grid formatting context</dfn> for its contents.

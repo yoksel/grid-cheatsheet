@@ -5,8 +5,6 @@ export default {
 
   link: 'https://www.w3.org/TR/css3-grid-layout/#repeat-notation',
 
-  targetForDemo: 'grid containers',
-
   desc: `<p>The <dfn id="funcdef-repeat">repeat()</dfn> notation represents a repeated fragment of the <a href="#track-list">track list</a>,
 allowing a large number of columns or rows that exhibit a recurring pattern
 to be written in a more compact form.</p>

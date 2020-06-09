@@ -1,10 +1,6 @@
 export default {
   name: 'grid-auto-rows',
 
-  target: 'grid containers',
-
-  targetForDemo: 'grid containers',
-
   customValues: [
     {
       name: '100px',

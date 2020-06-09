@@ -1,10 +1,6 @@
 export default {
   name: 'grid-template-rows',
 
-  target: 'grid containers',
-
-  targetForDemo: 'grid containers',
-
   customValues: [
     {
       name: '1fr 1fr',

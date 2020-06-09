@@ -30,6 +30,7 @@ while negative indexes count from the <a href="https://www.w3.org/TR/css-writing
 at the same time.
 The <a href="#grid">grid</a> shorthand also resets properties controlling the <a href="#implicit-grid">implicit grid</a>,
 whereas the <a href="#grid-template">grid-template</a> property leaves them unchanged.</p>`,
+
   items: [
     explicitGridSizing,
     gridAutoTracks,

@@ -5,10 +5,7 @@ export default {
 
   initValue: 'none',
 
-  target: 'grid containers',
-
-  targetForDemo: 'grid containers',
-  appliesTo: 'grid containers',
+  appliesTo: 'container',
 
   desc: `<p>This property specifies <dfn id="named-grid-area">named grid areas</dfn>,
 which are not associated with any particular <a href="#grid-item">grid item</a>,
@@ -30,7 +27,8 @@ and their size will be determined by the <a href="#grid-auto-rows">grid-auto-row
     },
     {
       name: '&lt;string&gt;+',
-      alias: `A row is created for every separate string listed for the <a href="#grid-template-areas">grid-template-areas</a> property,
+      alias: 'grid-template-areas-string',
+      desc: `A row is created for every separate string listed for the <a href="#grid-template-areas">grid-template-areas</a> property,
 and a column is created for each cell in the string,
 when parsed as follows:
      <p>Tokenize the string into a list of the following tokens,

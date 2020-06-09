@@ -6,10 +6,7 @@ export default {
 
   initValue: 'see individual properties',
 
-  target: 'grid containers',
-
-  targetForDemo: 'grid containers',
-  appliesTo: 'grid containers',
+  appliesTo: 'container',
 
   desc: `<p>The <i>grid-template</i> property is a <a href='https://www.w3.org/TR/css-cascade-4/#shorthand-property' >shorthand</a> for setting <i>grid-template-columns</i>,
   <i>grid-template-rows</i>, and <i>grid-template-areas</i> in a single declaration. It has several distinct syntax forms:</p>
@@ -62,8 +59,6 @@ export default {
             grid-template-columns: auto 1fr auto;
           </pre>
         </code>
-        <p>and creates the following grid:</p>
-        <figure> <object data='images/grid-shorthand.svg' type='image/svg+xml'></object>
         <ul>
           <li>
             Three columns, sized <i>auto</i>, <span >1fr</span>, and <i>auto</i>, respectively

@@ -6,8 +6,6 @@ export default {
 
   link: 'https://www.w3.org/TR/css3-grid-layout/#valdef-grid-template-columns-length-percentage',
 
-  targetForDemo: 'grid containers',
-
   values: [
     {
       name: '&lt;length-percentage&gt;',

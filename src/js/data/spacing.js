@@ -4,6 +4,7 @@ import gap from './props/gap';
 
 export default {
   title: 'Spacing',
+
   desc: `<p>While margin and padding can be used to specify visual spacing around individual boxes, it’s sometimes more convenient to globally specify spacing between adjacent boxes within a given layout context, particularly when the spacing is different between boxes as opposed to between the first/last box and the container’s edge.</p>
 
   <p>The <a href="#gap">gap</a> property, and its <a href="#row-gap">row-gap</a> and <a href="#column-gap">column-gap</a> sub-properties, provide this functionality for multi-column, flex, and grid layout.</p>
@@ -19,6 +20,7 @@ export default {
   <p>Gutters only appear between tracks of the <a href="https://www.w3.org/TR/css-grid-1/#implicit-grid">implicit grid</a>; there is no gutter before the first track or after the last track. (In particular, there is no gutter between the first/last track of the <a href="https://www.w3.org/TR/css-grid-1/#implicit-grid">implicit grid</a> and the “auto” lines in the augmented grid.)</p>
 
   <p>When a <a href="https://www.w3.org/TR/css-grid-1/#collapsed-track">collapsed track</a>’s gutters collapse, they coincide exactly—the two gutters overlap so that their start and end edges coincide. If one side of a <a href="https://www.w3.org/TR/css-grid-1/#collapsed-track">collapsed track</a> does not have a gutter (e.g. if it is the first or last track of the <a href="https://www.w3.org/TR/css-grid-1/#implicit-grid">implicit grid</a>), then collapsing its gutters results in no gutter on either “side” of the <a href="https://www.w3.org/TR/css-grid-1/#collapsed-track">collapsed track</a>.</p>`,
+
   items: [
     rowGap,
     columnGap,

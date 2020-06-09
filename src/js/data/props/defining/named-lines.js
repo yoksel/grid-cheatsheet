@@ -5,10 +5,6 @@ export default {
 
   link: 'https://www.w3.org/TR/css3-grid-layout/#named-lines',
 
-  // target: `grid containers`,
-
-  targetForDemo: 'grid containers',
-
   desc: `<p>While <a href="#grid-line">grid lines</a> can always be referred to by their numerical index, <dfn id="named-line">named lines</dfn> can make the <a href="#grid-placement-property">grid-placement properties</a> easier to understand and maintain.
 Lines can be explicitly named in the <a href="#grid-template-rows">grid-template-rows</a> and <a href="#grid-template-columns">grid-template-columns</a> properties,
 or <a href="#implicit-named-lines">implicitly named</a> by creating <a href="#named-grid-area">named grid areas</a> with the <a href="#grid-template-areas">grid-template-areas</a> property.</p>
