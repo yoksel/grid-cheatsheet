@@ -64,10 +64,10 @@ export class Nav {
 
       return `<li
           class="${itemClass}"
-          data-name="${name}"
+          data-name="section-${id}"
         ><a
             href="#section-${id}"
-            data-parent-nav-item="${name}"
+            data-parent-nav-item="${id}"
             class="nav__link"
           >${name}</a>${itemsMarkup}</li>`;
     });
