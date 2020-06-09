@@ -2,19 +2,13 @@ import { createElement } from './helpers';
 import { StylesController } from './StylesController';
 
 const demoTmpl = document.querySelector('#demo-tmpl').content.firstElementChild;
-const demoElemClasses = {
-  demos: '.parent',
-  'grid containers': '.parent',
-  'grid items': '.child--featured'
-};
 
 export class Demo {
   constructor (data) {
     this.data = data;
     this.id = this.data.alias || this.data.name;
-    this.targetElemSelector = demoElemClasses[this.data.targetForDemo];
     this.values = this.getValues();
-    this.classList = this.getClassList();
+    this.classList = [`demo__content--prop-${this.id}`];
     this.elem = this.getElem();
     this.codesElem = this.elem.querySelector('.demo__code');
     this.current = this.getCurrent();
@@ -57,19 +51,6 @@ export class Demo {
         id: item.id || `${this.id}-control-${index}`
       };
     });
-  }
-
-  // ---------------------------------------------
-
-  getClassList () {
-    const classList = [];
-    classList.push('demo__content--prop-' + this.id);
-
-    if (this.targetElemSelector.search('featured') > -1) {
-      classList.push('demo__content--has-featured');
-    }
-
-    return classList;
   }
 
   // ---------------------------------------------
