@@ -8,16 +8,17 @@ export class Demo {
     this.data = data;
     this.id = this.data.alias || this.data.name;
     this.values = this.getValues();
-    this.classList = [`demo__content--prop-${this.id}`];
+    this.isFeaturedHighlighted = this.data.isFeaturedHighlighted || false;
+    this.baseClass = `demo__content--prop-${this.id}`;
     this.elem = this.getElem();
-    this.codesElem = this.elem.querySelector('.demo__code');
     this.current = this.getCurrent();
+    const codesElem = this.elem.querySelector('.demo__code');
 
     this.stylesController = new StylesController({
       data,
       current: this.current,
-      codesElem: this.codesElem,
-      classList: this.classList
+      codesElem,
+      classList: [this.baseClass]
     });
 
     this.addControls();
@@ -26,7 +27,7 @@ export class Demo {
   getElem () {
     const demo = demoTmpl.cloneNode(true);
     const demoContentElem = demo.querySelector('.demo__content');
-    demoContentElem.classList.add(...this.classList);
+    demoContentElem.classList.add(...this.getClassList());
     const viewElem = demo.querySelector('.demo__view');
 
     if (this.data.htmlMarkup) {
@@ -51,6 +52,18 @@ export class Demo {
         id: item.id || `${this.id}-control-${index}`
       };
     });
+  }
+
+  // ---------------------------------------------
+
+  getClassList () {
+    const list = [`demo__content--prop-${this.id}`];
+
+    if (this.isFeaturedHighlighted) {
+      list.push('demo__content--highlight-featured');
+    }
+
+    return list;
   }
 
   // ---------------------------------------------
