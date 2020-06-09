@@ -3,25 +3,24 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 0;
+  padding: 1.5rem 1rem;
   box-sizing: border-box;
   overflow: hidden;
 
   @media ( min-width: 1200px ) {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   &__subheader {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding: 0 1rem;
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     line-height: 1;
     color: var(--aside-header-color);
 
     @media ( min-width: 1130px ) {
-      font-size: 1.45rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -36,12 +35,15 @@
     }
   }
 
+  &__list {
+    margin: 0 1.25rem;
+  }
+
   &__list--inner {
     margin-top: .4rem;
   }
 
   &__item {
-    margin: 0 1.5rem;
     margin-bottom: .4rem;
 
     @media ( min-width: 900px ) {
