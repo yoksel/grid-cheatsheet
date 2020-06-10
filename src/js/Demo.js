@@ -7,6 +7,7 @@ export class Demo {
   constructor (data) {
     this.data = data;
     this.id = this.data.alias || this.data.name;
+    this.propNames = this.getPropNames();
     this.values = this.getValues();
     this.isFeaturedHighlighted = this.data.isFeaturedHighlighted || false;
     this.baseClass = `demo__content--prop-${this.id}`;
@@ -108,6 +109,20 @@ export class Demo {
 
   // ---------------------------------------------
 
+  getPropNames () {
+    const propName = this.data.propDemoName || this.data.name;
+
+    if (!propName.includes('+')) {
+      return [propName];
+    }
+
+    return propName
+      .split('+')
+      .map(item => item.trim());
+  }
+
+  // ---------------------------------------------
+
   getCurrent () {
     if (!this.values) {
       return;
@@ -130,9 +145,29 @@ export class Demo {
 
     return {
       id: currentValueId,
-      value: currentValue,
-      control: null
+      propNames: this.propNames,
+      // Need for double props (prop + prop)
+      valuesByKey: this.getValuesByKey(currentValue)
     };
+  }
+
+  // ---------------------------------------------
+
+  getValuesByKey (currentValue) {
+    let valuesByKey = { [this.propNames[0]]: currentValue };
+
+    if (currentValue.includes('/')) {
+      const values = currentValue.split('/');
+
+      if (values.length === this.propNames.length) {
+        valuesByKey = this.propNames.reduce((prev, item, index) => {
+          prev[item] = values[index];
+          return prev;
+        }, {});
+      }
+    }
+
+    return valuesByKey;
   }
 
   // ---------------------------------------------
@@ -149,7 +184,7 @@ export class Demo {
 
     this.current.control = control;
     this.current.id = control.id;
-    this.current.value = control.innerHTML;
+    this.current.valuesByKey = this.getValuesByKey(control.innerHTML);
 
     this.stylesController.update(this.current);
   }

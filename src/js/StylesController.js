@@ -12,8 +12,7 @@ export class StylesController {
     this.classList = classList;
     this.stylesElem = this.getStylesElem();
     this.codesElem = codesElem;
-    this.propName = data.propDemoName || data.name;
-
+    this.propNames = this.current.propNames;
     this.setStyles();
   }
 
@@ -44,8 +43,10 @@ export class StylesController {
       }
 
       for (let [name, value] of Object.entries(props)) {
-        if (name === this.propName) {
-          value = this.current.value;
+        const valueByKey = this.current.valuesByKey[name];
+
+        if (valueByKey) {
+          value = valueByKey;
         }
 
         if (typeof value === 'string' && value.includes('\n')) {
@@ -58,7 +59,7 @@ export class StylesController {
 
         propsListHidden.push(propString);
 
-        if (name === this.propName) {
+        if (this.propNames.includes(name)) {
           propString = `<mark>${propString}</mark>`;
         }
 
