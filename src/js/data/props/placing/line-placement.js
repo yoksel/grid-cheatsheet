@@ -29,27 +29,6 @@ thereby specifying the <a href="https://www.w3.org/TR/css-writing-modes-3/#inlin
     }
   ],
 
-  customValues: [
-    {
-      name: 'center',
-      current: true
-    },
-    {
-      name: 'stretch'
-    }
-  ],
-
-  cssRules: [
-    {
-      selector: '.parent',
-      props: {
-        display: 'grid',
-        'grid-template-columns': '1fr 1fr',
-        'justify-items': 'auto'
-      }
-    }
-  ],
-
   demos: [
     gridRowStart,
     gridRowEnd,

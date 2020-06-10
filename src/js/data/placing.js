@@ -1,4 +1,6 @@
 import linePlacement from './props/placing/line-placement';
+import gridRowColumn from './props/placing/grid-row-column';
+import gridArea from './props/placing/grid-area';
 
 export default {
   title: 'Placing Grid Items',
@@ -15,26 +17,21 @@ defined in <a href="#layout-algorithm">§11 Grid Sizing</a>.</p>
 which consists of a <a href="#grid-position">grid position</a> and a <a href="#grid-span">grid span</a>:</p>
 
 <dl>
-
   <dt>
     <dfn id="grid-position">grid position</dfn>
-
   </dt>
   <dd>
     The <a href="#grid-item">grid item</a>’s location in the <a href="#grid">grid</a> in each axis.
 A <a href="#grid-position">grid position</a> can be either <dfn id="definite-grid-position">definite</dfn> (explicitly specified)
 or <dfn id="automatic-grid-position">automatic</dfn> (determined by <a href="#auto-placement">auto-placement</a>).
-
   </dd>
   <dt>
     <dfn id="grid-span">grid span</dfn>
-
   </dt>
   <dd>
     How many <a href="#grid-track">grid tracks</a> the <a href="#grid-item">grid item</a> occupies in each axis.
 A <a href="#grid-item">grid item</a>’s <a href="#grid-span">grid span</a> is always <dfn id="definite-grid-span">definite</dfn>,
 defaulting to 1 in each axis if it can’t be otherwise determined for that axis.
-
   </dd>
 </dl>
 
@@ -103,6 +100,8 @@ defaulting to 1 in each axis if it can’t be otherwise determined for that axis
    `,
 
   items: [
-    linePlacement
+    linePlacement,
+    gridRowColumn,
+    gridArea
   ]
 };
