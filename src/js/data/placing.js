@@ -1,5 +1,8 @@
+import linePlacement from './props/placing/line-placement';
+
 export default {
   title: 'Placing Grid Items',
+
   link: 'https://www.w3.org/TR/css-grid-1/#placement',
 
   desc: `<p>Every <a href="#grid-item">grid item</a> is associated with a <a href="#grid-area">grid area</a>,
@@ -80,6 +83,26 @@ defaulting to 1 in each axis if it can’t be otherwise determined for that axis
     </td><td>N/A
   </td></tr></tbody>
 </table>
+
+<p>The <a href="#grid-placement-property">grid-placement property</a> longhands are organized into three shorthands:</p>
+
+<table class="data" id="grid-property-breakdown">
+  <tbody>
+    <tr>
+    <td colspan="4"><a href="#grid-area">grid-area</a>
+    </td></tr><tr>
+    <td colspan="2"><a href="#grid-column">grid-column</a>
+    </td><td colspan="2"><a href="#grid-row">grid-row</a>
+    </td></tr><tr>
+    <td><a href="#grid-column-start">grid-column-start</a>
+    </td><td><a href="#grid-column-end">grid-column-end</a>
+    </td><td><a href="#grid-row-start">grid-row-start</a>
+    </td><td><a href="#grid-row-end">grid-row-end</a>
+  </td></tr></tbody>
+</table>
    `,
-  items: []
+
+  items: [
+    linePlacement
+  ]
 };
