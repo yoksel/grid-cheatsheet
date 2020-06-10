@@ -26,8 +26,17 @@ the opposite direction of the related 4-edge properties using physical direction
 
   customValues: [
     {
-      name: 'a',
+      name: '1',
       current: true
+    },
+    {
+      name: '2/2'
+    },
+    {
+      name: '1/2/3/4'
+    },
+    {
+      name: 'a',
     },
     {
       name: 'b'
