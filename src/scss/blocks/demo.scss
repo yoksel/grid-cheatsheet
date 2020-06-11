@@ -50,7 +50,20 @@
 }
 
 .parent {
+  position: relative;
   border: 1px dashed var(--parent-border);
+
+  &--grid-view {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 0;
+    justify-items: stretch !important;
+    grid-auto-flow: dense;
+  }
 }
 
 .child {
@@ -60,9 +73,17 @@
   padding: .5rem;
   box-sizing: border-box;
   background-color: var(--demo-bg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
   border: 1px solid var(--demo-border);
+
+  .parent--grid-view & {
+    grid-row: auto !important;
+    grid-column: auto !important;
+    background: none !important;
+    box-shadow: 0 0 0 1px var(--demo-color) inset;
+    border-color: transparent;
+    opacity: .25;
+    color: transparent;
+  }
 }
 
 .child::before {
@@ -78,6 +99,10 @@
 
   .parent--fade-children & {
     opacity: .15;
+  }
+
+  .parent--grid-view & {
+    content: none;
   }
 }
 

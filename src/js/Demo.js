@@ -1,4 +1,4 @@
-import { createElement } from './helpers';
+import { createElement, getCellsQuantity } from './helpers';
 import { StylesController } from './StylesController';
 
 const demoTmpl = document.querySelector('#demo-tmpl').content.firstElementChild;
@@ -13,6 +13,7 @@ export class Demo {
     this.elem = this.getElem();
     this.current = this.getCurrent();
     const codesElem = this.elem.querySelector('.demo__code');
+    this.cellsQuantity = 0;
 
     this.stylesController = new StylesController({
       data,
@@ -22,21 +23,28 @@ export class Demo {
     });
 
     this.addControls();
+
+    this.hightlightGrid = this.hightlightGrid.bind(this);
+
+    document.addEventListener('pageFilled', this.hightlightGrid);
   }
 
   getElem () {
     const demo = demoTmpl.cloneNode(true);
     const demoContentElem = demo.querySelector('.demo__content');
     demoContentElem.classList.add(...this.getClassList());
-    const viewElem = demo.querySelector('.demo__view');
+    this.viewElem = demo.querySelector('.demo__view');
 
     if (this.data.htmlMarkup) {
-      viewElem.innerHTML = this.data.htmlMarkup;
+      this.viewElem.innerHTML = this.data.htmlMarkup;
     }
 
     if (this.data.demoBefore) {
-      viewElem.insertAdjacentHTML('afterbegin', this.data.demoBefore);
+      this.viewElem.insertAdjacentHTML('afterbegin', this.data.demoBefore);
     }
+
+    this.parentElem = this.viewElem.querySelector('.parent');
+    this.parentElemMarkup = this.parentElem.outerHTML;
 
     return demo;
   }
@@ -186,5 +194,44 @@ export class Demo {
     this.current.valuesByKey = this.getValuesByKey(control.innerHTML);
 
     this.stylesController.update(this.current);
+
+    this.hightlightGrid();
+  }
+
+  // ---------------------------------------------
+
+  getHightlightedGridItems (quantity) {
+    let itemsMarkup = '';
+
+    for (let i = 0; i < quantity; i++) {
+      itemsMarkup += '<div class="child"></div>';
+    }
+
+    return itemsMarkup;
+  }
+
+  // ---------------------------------------------
+
+  hightlightGrid () {
+    const parentElemStyles = getComputedStyle(this.parentElem);
+    const oldCellsQuantity = this.cellsQuantity;
+    this.cellsQuantity = getCellsQuantity(parentElemStyles);
+
+    if (oldCellsQuantity === this.cellsQuantity) {
+      return;
+    }
+
+    const oldParentCopy = this.parentCopy;
+    this.parentCopy = createElement(this.parentElemMarkup);
+    this.parentCopy.classList.add('parent--grid-view');
+    const restCellsQuantity = this.cellsQuantity - this.parentCopy.children.length;
+    const parentItemsMarkup = this.getHightlightedGridItems(restCellsQuantity);
+    this.parentCopy.insertAdjacentHTML('beforeEnd', parentItemsMarkup);
+
+    if (oldParentCopy) {
+      oldParentCopy.replaceWith(this.parentCopy);
+    } else {
+      this.parentElem.append(this.parentCopy);
+    }
   }
 }
