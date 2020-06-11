@@ -36,7 +36,7 @@ the opposite direction of the related 4-edge properties using physical direction
       name: '1/2/3/4'
     },
     {
-      name: 'a',
+      name: 'a'
     },
     {
       name: 'b'
