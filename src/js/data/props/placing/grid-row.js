@@ -6,8 +6,11 @@ export default {
 
   customValues: [
     {
-      name: '1/2',
+      name: '2',
       current: true
+    },
+    {
+      name: '1/2'
     },
     {
       name: '1/4'
@@ -25,6 +28,9 @@ export default {
       name: '1/span 2'
     },
     {
+      name: 'b-start'
+    },
+    {
       name: 'a-start/b-end'
     },
     {
@@ -32,6 +38,9 @@ export default {
     },
     {
       name: 'b-start/c-end'
+    },
+    {
+      name: 'main-top'
     },
     {
       name: 'header-top/main-bottom'
