@@ -1,11 +1,4 @@
-import createElement from './createElement';
-import isVisible from './isVisible';
-import debounce from './debounce';
-import getPlurals from './getPlurals';
-
-export {
-  createElement,
-  isVisible,
-  debounce,
-  getPlurals
-};
+export { createElement } from './createElement';
+export { isVisible } from './isVisible';
+export { debounce } from './debounce';
+export { getPlurals } from './getPlurals';

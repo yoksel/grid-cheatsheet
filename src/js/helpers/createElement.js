@@ -2,7 +2,7 @@
 
 const hasSupport = 'content' in document.createElement('template');
 
-const createElement = (str) => {
+export const createElement = (str) => {
   if (hasSupport) {
     const template = document.createElement('template');
     template.innerHTML = str;
@@ -13,5 +13,3 @@ const createElement = (str) => {
   template.innerHTML = str;
   return template.firstElementChild;
 };
-
-export default createElement;

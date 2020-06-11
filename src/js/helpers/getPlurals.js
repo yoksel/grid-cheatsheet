@@ -1,4 +1,4 @@
-export default function getPlurals (count, variants) {
+export function getPlurals (count, variants) {
   if (count === 1) {
     return variants[0];
   }

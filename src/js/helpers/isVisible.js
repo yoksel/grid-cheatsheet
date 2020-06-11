@@ -1,4 +1,4 @@
-export default function isVisible (elem) {
+export function isVisible (elem) {
   const coords = elem.getBoundingClientRect();
 
   const windowHeight = document.documentElement.clientHeight;
