@@ -9,7 +9,6 @@ export class Demo {
     this.id = this.data.alias || this.data.name;
     this.propNames = this.getPropNames();
     this.values = this.getValues();
-    this.isFeaturedHighlighted = this.data.isFeaturedHighlighted || false;
     this.baseClass = `demo__content--prop-${this.id}`;
     this.elem = this.getElem();
     this.current = this.getCurrent();
@@ -60,7 +59,7 @@ export class Demo {
   getClassList () {
     const list = [`demo__content--prop-${this.id}`];
 
-    if (this.isFeaturedHighlighted) {
+    if (this.data.isFeaturedHighlighted) {
       list.push('demo__content--highlight-featured');
     }
 
