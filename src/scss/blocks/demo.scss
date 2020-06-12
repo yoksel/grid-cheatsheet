@@ -78,11 +78,20 @@
   .parent--grid-view & {
     grid-row: auto !important;
     grid-column: auto !important;
+    justify-self: stretch !important;
     background: none !important;
     box-shadow: 0 0 0 1px var(--demo-color) inset;
     border-color: transparent;
     opacity: .25;
     color: transparent;
+
+    CODE {
+      background: none !important;
+    }
+  }
+
+  &--rtl {
+    direction: rtl;
   }
 }
 
@@ -104,6 +113,14 @@
   .parent--grid-view & {
     content: none;
   }
+}
+
+.child CODE {
+  background: var(--demo-code-bg);
+}
+
+.child--featured CODE {
+  background: var(--demo-code-bg-featured);
 }
 
 .demo__content--highlight-featured .child--featured {
