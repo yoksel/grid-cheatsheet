@@ -1,19 +1,23 @@
 .project-links {
   display: flex;
-  margin: 0 0 2rem 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  justify-content: center;
 }
 .project-link {
   position: relative;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin: 0 1.5rem 0 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0 1rem;
   text-indent: -1000px;
   overflow: hidden;
-  opacity: .7;
-  transition: opacity .25s;
+  transition: color .25s;
+  color: var(--project-icon);
 
   &:hover {
-    opacity: 1;
+    color: var(--project-icon-hover);
   }
 
   &::before {
@@ -23,7 +27,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: var(--project-icon);
+    background: currentColor;
     mask-repeat: no-repeat;
     mask-position: 50% 50%;
   }
