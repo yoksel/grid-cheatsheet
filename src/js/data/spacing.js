@@ -1,29 +1,46 @@
-import rowGap from './props/row-gap';
-import columnGap from './props/column-gap';
-import gap from './props/gap';
+import gap from './props/spacing/gap';
+import rowColumnGap from './props/spacing/row-column-gap';
 
 export default {
   title: 'Spacing',
 
-  desc: `<p>While margin and padding can be used to specify visual spacing around individual boxes, it’s sometimes more convenient to globally specify spacing between adjacent boxes within a given layout context, particularly when the spacing is different between boxes as opposed to between the first/last box and the container’s edge.</p>
+  link: 'https://www.w3.org/TR/css3-grid-layout/#gutters',
 
-  <p>The <a href="#gap">gap</a> property, and its <a href="#row-gap">row-gap</a> and <a href="#column-gap">column-gap</a> sub-properties, provide this functionality for multi-column, flex, and grid layout.</p>
+  desc: `<p>The <a href="https://www.w3.org/TR/css3-align/#row-gap">row-gap</a> and <a href="https://www.w3.org/TR/css3-align/#column-gap">column-gap</a> properties
+(and their <a href="https://www.w3.org/TR/css3-align/#gap">gap</a> shorthand),
+when specified on a <a href="#grid-container">grid container</a>,
+define the <a href="https://www.w3.org/TR/css3-align/#gutter">gutters</a> between <a href="#grid-row">grid rows</a> and <a href="#grid-column">grid columns</a>.
+Their syntax is defined in <a href="https://www.w3.org/TR/css3-align/#gaps">CSS Box Alignment 3 §8 Gaps Between Boxes</a>.</p>
 
-  <p>The row-gap and column-gap properties (and their gap shorthand), when specified on a grid container, define the gutters between grid rows and grid columns. Their syntax is defined in <a href="https://www.w3.org/TR/css3-align/#gaps">CSS Box Alignment 3 §8 Gaps Between Boxes</a>.</p>
+<p>The effect of these properties
+is as though the affected <a href="#grid-line">grid lines</a> acquired thickness:
+the <a href="#grid-track">grid track</a> between two <a href="#grid-line">grid lines</a> is the space between the <a href="https://www.w3.org/TR/css3-align/#gutter">gutters</a> that represent them.
+For the purpose of <a href="#algo-track-sizing">track sizing</a>,
+each <a href="https://www.w3.org/TR/css3-align/#gutter">gutter</a> is treated as an extra, empty track of the specified size.</p>
 
-  <p>The effect of these properties is as though the affected <a href="https://www.w3.org/TR/css-grid-1/#grid-line">grid lines</a> acquired thickness: the grid track between two <a href="https://www.w3.org/TR/css-grid-1/#grid-line">grid lines</a> is the space between the gutters that represent them. For the purpose of track sizing, each gutter is treated as an extra, empty track of the specified size.</p>
+<p class="note" role="note"><span>Note:</span> Additional spacing may be added between tracks
+due to <a href="https://www.w3.org/TR/css3-align/#justify-content">justify-content</a>/<a href="https://www.w3.org/TR/css3-align/#align-content">align-content</a>.
+See <a href="#algo-overview">§11.1 Grid Sizing Algorithm</a>.
+This space effectively increases the size of the <a href="https://www.w3.org/TR/css3-align/#gutter">gutters</a>.</p>
 
-  <p class="note">Note: Additional spacing may be added between tracks due to justify-content/align-content. See <a href="https://www.w3.org/TR/css-grid-1/#algo-overview">§11.1 Grid Sizing Algorithm.</a> This space effectively increases the size of the gutters.</p>
+<p>If a <a href="#grid">grid</a> is <a href="https://www.w3.org/TR/css3-break/#fragment">fragmented</a> between tracks,
+the <a href="https://www.w3.org/TR/css3-align/#gutter">gutter</a> spacing between those tracks must be suppressed.</p>
 
-  <p>If a grid is fragmented between tracks, the gutter spacing between those tracks must be suppressed. Note that gutters are suppressed even after forced breaks, unlike margins.</p>
+<p class="note">Note that gutters are suppressed even after forced breaks, <a href="https://www.w3.org/TR/css-break-3/#break-margins">unlike margins</a>.</p>
 
-  <p>Gutters only appear between tracks of the <a href="https://www.w3.org/TR/css-grid-1/#implicit-grid">implicit grid</a>; there is no gutter before the first track or after the last track. (In particular, there is no gutter between the first/last track of the <a href="https://www.w3.org/TR/css-grid-1/#implicit-grid">implicit grid</a> and the “auto” lines in the augmented grid.)</p>
+<p><a href="https://www.w3.org/TR/css3-align/#gutter">Gutters</a> only appear <em>between</em> tracks of the <a href="#implicit-grid">implicit grid</a>;
+there is no gutter before the first track or after the last track.
+(In particular, there is no <a href="https://www.w3.org/TR/css3-align/#gutter">gutter</a> between the first/last track of the <a href="#implicit-grid">implicit grid</a> and the “auto” lines in the <a href="#augmented-grid">augmented grid</a>.)</p>
 
-  <p>When a <a href="https://www.w3.org/TR/css-grid-1/#collapsed-track">collapsed track</a>’s gutters collapse, they coincide exactly—the two gutters overlap so that their start and end edges coincide. If one side of a <a href="https://www.w3.org/TR/css-grid-1/#collapsed-track">collapsed track</a> does not have a gutter (e.g. if it is the first or last track of the <a href="https://www.w3.org/TR/css-grid-1/#implicit-grid">implicit grid</a>), then collapsing its gutters results in no gutter on either “side” of the <a href="https://www.w3.org/TR/css-grid-1/#collapsed-track">collapsed track</a>.</p>`,
+<p>When a <a href="#collapsed-track">collapsed track</a>’s gutters <dfn id="collapsed-gutter">collapse</dfn>,
+they coincide exactly—<wbr>the two gutters overlap so that their start and end edges coincide.
+If one side of a <a href="#collapsed-track">collapsed</a> track does not have a gutter
+(e.g. if it is the first or last track of the <a href="#implicit-grid">implicit grid</a>),
+then collapsing its gutters results in no gutter
+on either “side” of the <a href="#collapsed-track">collapsed track</a>.</p>`,
 
   items: [
-    rowGap,
-    columnGap,
+    rowColumnGap,
     gap
   ]
 };
