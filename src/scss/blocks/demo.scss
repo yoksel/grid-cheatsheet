@@ -63,6 +63,7 @@
     border: 0;
     justify-items: stretch !important;
     grid-auto-flow: dense;
+    pointer-events: none;
   }
 }
 

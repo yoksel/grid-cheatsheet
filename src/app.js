@@ -65,6 +65,9 @@ function fillContent () {
     sections.push(groupElem);
     main.append(groupElem);
   }
+
+  // Add semitransparent grids to demos
+  document.dispatchEvent(new Event('pageFilled'));
 }
 
 // ---------------------------------------------
