@@ -8,6 +8,7 @@ export class PropSection {
     this.id = data.alias || data.name;
     this.hasChildren = this.data.children && this.data.children.length > 0;
     this.hasDemos = this.data.demos && this.data.demos.length > 0;
+    this.hasCSS = !!this.data.cssRules;
     this.demoElem = this.getDemoElement();
 
     const elems = [
@@ -38,7 +39,7 @@ export class PropSection {
   // ---------------------------------------------
 
   getDemoElement () {
-    if (this.hasDemos || this.hasChildren) {
+    if (this.hasDemos || this.hasChildren || !this.hasCSS) {
       return '';
     }
 
@@ -104,6 +105,7 @@ export class PropSection {
 
     let markup = '';
     const title = getPlurals(this.data.values.length, ['Value', 'Values']);
+    const isTitleHidden = !this.data.desc;
 
     for (const { name, alias, desc } of this.data.values) {
       const id = alias || name;
@@ -112,8 +114,12 @@ export class PropSection {
         <dd class="prop-values__desc">${desc}</dd>`;
     }
 
-    return createElement(`<div class="prop-values">
-      <h4 class="prop-values__title">${title}</h4>
+    return createElement(`<div
+      class="prop-values">
+      <h4 class="
+        prop-values__title
+        ${isTitleHidden ? 'visually-hidden' : ''}
+      ">${title}</h4>
       <dl class="prop-values__list">${markup}</dl>
     </div>
     `);

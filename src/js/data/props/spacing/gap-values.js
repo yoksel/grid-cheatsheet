@@ -1,6 +1,3 @@
-import columnGap from './column-gap';
-import rowGap from './row-gap';
-
 export default {
   name: 'Gap values',
   alias: 'gap-values',
@@ -26,10 +23,5 @@ when laying out the box’s contents.</p>`
 a used value of <span class="css">1em</span> on <a href="https://www.w3.org/TR/css3-multicol/#multi-column-container">multi-column containers</a>,
 and a used value of <span class="css">0px</span> in all other contexts.</p>`
     }
-  ],
-
-  demos: [
-    rowGap,
-    columnGap
   ]
 };

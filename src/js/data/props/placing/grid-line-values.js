@@ -5,12 +5,6 @@ export default {
 
   link: 'https://www.w3.org/TR/css3-grid-layout/#grid-placement-slot',
 
-  initValue: 'auto',
-
-  appliesTo: '<a href="#grid-item">grid items</a> and absolutely-positioned boxes whose containing block is a <a href="#grid-container">grid container</a>',
-
-  desc: '',
-
   values: [
     {
       name: '&lt;custom-ident&gt;',
@@ -61,27 +55,6 @@ Negative integers or zero are invalid.</p>`
       desc: `The property contributes nothing to the <a href="#grid-item">grid item</a>’s <a href="#grid-placement">placement</a>,
 indicating <a href="#auto-placement">auto-placement</a> or a default span of one.
 (See <a href="#placement">§8 Placing Grid Items</a>, above.)`
-    }
-  ],
-
-  customValues: [
-    {
-      name: 'center',
-      current: true
-    },
-    {
-      name: 'stretch'
-    }
-  ],
-
-  cssRules: [
-    {
-      selector: '.parent',
-      props: {
-        display: 'grid',
-        'grid-template-columns': '1fr 1fr',
-        'justify-items': 'auto'
-      }
     }
   ]
 };
