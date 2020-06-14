@@ -6,8 +6,11 @@ export default {
 
   customValues: [
     {
-      name: '1/2',
+      name: '1',
       current: true
+    },
+    {
+      name: '2',
     },
     {
       name: '1/4'
