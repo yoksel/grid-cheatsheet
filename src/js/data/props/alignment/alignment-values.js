@@ -49,7 +49,10 @@ If the position of the <span id="ref-for-alignment-subject②②">alignment subj
 they are <a href="#fallback-alignment">fallback-aligned</a> insofar as possible while preserving their <span id="ref-for-baseline-alignment①">baseline alignment</span>.</p>
 
 <p>The baseline alignment keywords are represented with the <a href="#typedef-baseline-position" title="Expands to: last | baseline | first">&lt;baseline-position&gt;</a> grammar term:</p>
-<code>&lt;baseline-position&gt; = [ first | last ]? baseline</code>
+
+<pre>
+  <code>&lt;baseline-position&gt; = [ first | last ]? baseline</code>
+</pre>
 
       <p>The <a href="#justify-self-first-baseline">first</a> and <a href="#justify-self-last-baseline">last</a> values give a box a <dfn id="baseline-alignment-preference">baseline alignment preference</dfn>:
 either “first” or “last”, respectively,
@@ -117,7 +120,9 @@ The <span id="ref-for-fallback-alignment④">fallback alignment</span> is also u
     {
       name: '&lt;overflow-position&gt;',
       alias: 'overflow-position',
-      desc: `<code>&lt;overflow-position&gt;</dfn> = unsafe | safe</code>
+      desc: `<pre>
+  <code>&lt;overflow-position&gt;</dfn> = unsafe | safe</code>
+</pre>
 
 <dl>
   <dt>
@@ -156,7 +161,9 @@ by biasing any remaining overflow to the opposite side.
       desc: `This set is used by <a href="#justify-self">justify-self</a> and <a href="#align-self">align-self</a> to align the box within its <a href="#alignment-container">alignment container</a>,
 and also by <a href="#justify-items">justify-items</a> and <a href="#align-items">align-items</a> (to specify default values for <span class="property">justify-self</span> and <span class="property">align-self</span>).
 
-<pre><code><dfn id="self-position">&lt;self-position&gt;</dfn> = center | start | end | self-start | self-end | flex-start | flex-end</code></pre>`
+<pre>
+  <code><dfn id="self-position">&lt;self-position&gt;</dfn> = center | start | end | self-start | self-end | flex-start | flex-end</code>
+</pre>`
     },
     {
       name: '&lt;content-distribution&gt;',
@@ -221,7 +228,9 @@ so that the combined size exactly fills the <span>alignment container</span>.
 
 <p>These values are represented with the <a href="#typedef-content-distribution" title="Expands to: stretch | space-between | space-around | space-evenly">&lt;content-distribution&gt;</a> grammar term:</p>
 
-<pre><dfn id="typedef-content-distribution"><code>&lt;content-distribution&gt;</dfn> = space-between | space-around | space-evenly | stretch</code></pre>`
+<pre>
+  <code><dfn id="typedef-content-distribution">&lt;content-distribution&gt;</dfn> = space-between | space-around | space-evenly | stretch</code>
+</pre>`
     },
     {
       name: 'legacy',
