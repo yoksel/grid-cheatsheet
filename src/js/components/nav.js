@@ -36,23 +36,26 @@ export class Nav {
   }
 
   _getNavElement () {
-    const navMarkup = this._getNavMarkup();
+    const navMarkup = this._getNavContentMarkup();
 
-    return createElement(`<nav class="nav">${navMarkup}</nav>`);
+    return createElement(`<nav class="nav">
+      <h2 class="visually-hidden">Navigation</h2>
+      ${navMarkup}
+    </nav>`);
   }
 
-  _getNavMarkup () {
+  _getNavContentMarkup () {
     const itemsList = Object.entries(this._groups)
       .map(([id, { title, items }]) => {
         let markup = '';
 
         if (title) {
-          markup += `<h2 class="nav__subheader">
+          markup += `<h3 class="nav__subheader">
             <a
               class="nav__subheader-link"
               href="#group-${id}"
               >${title}</a>
-          </h2>`;
+          </h3>`;
         }
 
         markup += this._getListMarkup(items);
