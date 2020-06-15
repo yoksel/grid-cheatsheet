@@ -1,8 +1,8 @@
 import { groups } from './js/data/groups';
-import { Nav } from './js/Nav';
-import { Group } from './js/Group';
-import { PropSection } from './js/PropSection';
-import { ThemeSwitcher } from './js/ThemeSwitcher';
+import { Nav } from './js/components/nav';
+import { Group } from './js/components/group';
+import { PropSection } from './js/components/prop-section';
+import { ThemeSwitcher } from './js/components/theme-switcher';
 import { isVisible, debounce } from './js/helpers';
 
 import './scss/styles.scss';

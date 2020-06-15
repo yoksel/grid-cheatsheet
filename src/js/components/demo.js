@@ -1,5 +1,5 @@
-import { createElement, getCellsQuantity } from './helpers';
-import { StylesController } from './StylesController';
+import { createElement, getCellsQuantity } from '../helpers';
+import { StylesController } from './styles-controller';
 
 const demoTmpl = document.querySelector('#demo-tmpl').content.firstElementChild;
 

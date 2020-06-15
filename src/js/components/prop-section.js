@@ -1,5 +1,5 @@
-import { createElement, getPlurals } from './helpers';
-import { Demo } from './Demo';
+import { createElement, getPlurals } from '../helpers';
+import { Demo } from './demo';
 
 export class PropSection {
   constructor (data, params = {}) {
