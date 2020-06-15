@@ -22,17 +22,17 @@ export default {
       alias: 'rowcol',
       desc: `<p>Sets <i>grid-template-rows</i> and <i>grid-template-columns</i> to the specified values, respectively, and sets <i>grid-template-areas</i> to <i>none</i>.</p>
 
-        <code>
-          <pre>grid-template: auto 1fr / auto 1fr auto;</pre>
-        </code>
+        <pre>
+          <code>grid-template: auto 1fr / auto 1fr auto;</code>
+        </pre>
 
         <p>is equivalent to</p>
 
-        <code>
-          <pre>grid-template-rows: auto 1fr;
+        <pre>
+          <code>grid-template-rows: auto 1fr;
           grid-template-columns: auto 1fr auto;
-          grid-template-areas: none; </pre>
-        </code>`
+          grid-template-areas: none;</code>
+        </pre>`
     },
     {
       name: '[ <line-names>? <string> <track-size>? <line-names>? ]+ [ / <explicit-track-list> ]?',
@@ -44,21 +44,17 @@ export default {
         </ul>
         <p>This syntax allows the author to align track names and sizes inline with their respective grid areas.</p>
         <div>
-        <code>
-          <pre>
-            grid-template:
+        <pre>
+          <code>grid-template:
               [header-top] 'a a a' [header-bottom]
-              [main-top] 'b b b' 1fr [main-bottom] / auto 1fr auto;
-          </pre>
-        </code>
+              [main-top] 'b b b' 1fr [main-bottom] / auto 1fr auto;</code>
+        </pre>
         <p>is equivalent to</p>
-        <code>
-          <pre>
-            grid-template-areas: 'a a a' 'b b b';
+        <pre>
+          <code>grid-template-areas: 'a a a' 'b b b';
             grid-template-rows: [header-top] auto [header-bottom main-top] 1fr [main-bottom];
-            grid-template-columns: auto 1fr auto;
-          </pre>
-        </code>
+            grid-template-columns: auto 1fr auto;</code>
+        </pre>
         <ul>
           <li>
             Three columns, sized <i>auto</i>, <span >1fr</span>, and <i>auto</i>, respectively

@@ -42,7 +42,13 @@
 
   PRE {
     margin: 0;
-    padding: 4px;
+    white-space: normal;
+
+    CODE {
+      display: block;
+      white-space: pre-line;
+      padding: 4px;
+    }
   }
 }
 
@@ -64,5 +70,7 @@
 }
 
 .prop-values__desc {
+  margin-top: .5rem;
   margin-bottom: 1rem;
+  margin-left: 2rem;
 }

@@ -221,7 +221,7 @@ so that the combined size exactly fills the <span>alignment container</span>.
 
 <p>These values are represented with the <a href="#typedef-content-distribution" title="Expands to: stretch | space-between | space-around | space-evenly">&lt;content-distribution&gt;</a> grammar term:</p>
 
-<pre class="prod"><dfn id="typedef-content-distribution">&lt;content-distribution&gt;</dfn> = space-between | space-around | space-evenly | stretch</pre>`
+<pre><dfn id="typedef-content-distribution"><code>&lt;content-distribution&gt;</dfn> = space-between | space-around | space-evenly | stretch</code></pre>`
     },
     {
       name: 'legacy',

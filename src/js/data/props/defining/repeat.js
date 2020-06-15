@@ -11,7 +11,8 @@ to be written in a more compact form.</p>
 
 <p>The generic form of the <a href="#funcdef-repeat">repeat()</a> syntax is, approximately,</p>
 
-<pre class="prod">repeat( [ <a href="">&lt;positive-integer&gt;</a> <a href="https://www.w3.org/TR/css3-values/#comb-one">|</a> auto-fill <a href="https://www.w3.org/TR/css3-values/#comb-one">|</a> auto-fit ] <a href="https://www.w3.org/TR/css3-values/#comb-comma">,</a> <a href="#typedef-track-list">&lt;track-list&gt;</a> )
+<pre>
+  <code>repeat( [ <a href="">&lt;positive-integer&gt;</a> <a href="https://www.w3.org/TR/css3-values/#comb-one">|</a> auto-fill <a href="https://www.w3.org/TR/css3-values/#comb-one">|</a> auto-fit ] <a href="https://www.w3.org/TR/css3-values/#comb-comma">,</a> <a href="#typedef-track-list">&lt;track-list&gt;</a> )</code>
 </pre>
 
 <p>The first argument specifies the number of repetitions.
