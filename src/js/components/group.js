@@ -3,26 +3,22 @@ import { createElement } from '../helpers';
 export class Group {
   constructor (data) {
     this._data = data;
-    const id = this._data.id;
-    const title = this._getTitle();
-    const desc = this._getDesc();
-    const link = this._getLink();
     const container = createElement('<div class="group__intro container"></div>');
 
-    const elems = [
-      title,
-      link,
-      desc
+    const elements = [
+      this._getTitleElement(),
+      this._getLinkElement(),
+      this._getDescElement()
     ];
 
-    elems.forEach(elem => container.append(elem));
+    elements.forEach(element => container.append(element));
 
-    this.elem = createElement(`<section class="group" id="group-${id}"></section>`);
+    this.element = createElement(`<section class="group" id="group-${this._data.id}"></section>`);
 
-    this.elem.append(container);
+    this.element.append(container);
   }
 
-  _getTitle () {
+  _getTitleElement () {
     const { title, hideTitle } = this._data;
 
     if (!title) {
@@ -38,7 +34,7 @@ export class Group {
     return createElement(`<h2 class="${className}">${title}</h2>`);
   }
 
-  _getDesc () {
+  _getDescElement () {
     const { desc } = this._data;
 
     if (!desc) {
@@ -48,13 +44,15 @@ export class Group {
     return createElement(`<div class="group__desc">${desc}</div>`);
   }
 
-  _getLink () {
-    if (!this._data.link) {
+  _getLinkElement () {
+    const { link } = this._data;
+
+    if (!link) {
       return '';
     }
 
-    var text = this._data.link.replace('http://www.', '');
+    var text = link.replace('http://www.', '');
 
-    return createElement(`<a class="group__link" href="${this._data.link}">${text}</a>`);
+    return createElement(`<a class="group__link" href="${link}">${text}</a>`);
   }
 }

@@ -4,35 +4,41 @@ import { Demo } from './demo';
 export class PropSection {
   constructor (data, params = {}) {
     this._data = data;
-    const { isChild } = params;
     this._id = data.alias || data.name;
+    this._isChild = params.isChild;
     this._hasChildren = this._data.children && this._data.children.length > 0;
     this._hasDemos = this._data.demos && this._data.demos.length > 0;
     this._hasCSS = !!this._data.cssRules;
 
-    const elems = [
-      this._getTitle(),
-      this._getLink(),
+    const elements = [
+      this._getTitleElement(),
+      this._getLinkElement(),
       this._getDemoElement(),
-      this._getDesc(),
-      this._getTarget(),
-      this._getInitialValue(),
-      this._getValues()
+      this._getDescElement(),
+      this._getTargetElement(),
+      this._getInitialValueElement(),
+      this._getValuesElement()
     ];
 
+    this.sectionElement = this._getSectionElement();
+
+    elements.forEach(element => this.sectionElement.append(element));
+  }
+
+  _getSectionElement () {
     let className = 'prop';
-    if (isChild) {
+
+    if (this._isChild) {
       className += ' prop--child';
     }
     if (this._hasDemos || this._hasChildren) {
       className += ' prop--has-children';
     }
 
-    this.sectionElem = createElement(`<section
+    return createElement(`<section
       id="section-${this._id}"
-      class="${className} container"></section>`);
-
-    elems.forEach(elem => this.sectionElem.append(elem));
+      class="${className} container"></section>`
+    );
   }
 
   _getDemoElement () {
@@ -41,14 +47,14 @@ export class PropSection {
     }
 
     const demo = new Demo(this._data);
-    return demo.elem;
+    return demo.element;
   }
 
-  _getTitle () {
+  _getTitleElement () {
     return createElement(`<h3 class="prop__title">${this._data.name}</h3>`);
   }
 
-  _getLink () {
+  _getLinkElement () {
     if (!this._data.link) {
       return '';
     }
@@ -58,7 +64,7 @@ export class PropSection {
     return createElement(`<a class="prop__link" href="${this._data.link}">${text}</a>`);
   }
 
-  _getDesc () {
+  _getDescElement () {
     if (!this._data.desc) {
       return '';
     }
@@ -67,7 +73,7 @@ export class PropSection {
       class="prop__desc">${this._data.desc}</div>`);
   }
 
-  _getTarget () {
+  _getTargetElement () {
     if (!this._data.appliesTo) {
       return '';
     }
@@ -75,7 +81,7 @@ export class PropSection {
     return createElement(`<p class="prop__initial-value"><b>Applies to</b>: ${this._data.appliesTo}.</p>`);
   }
 
-  _getInitialValue () {
+  _getInitialValueElement () {
     if (!this._data.initValue) {
       return '';
     }
@@ -83,7 +89,7 @@ export class PropSection {
     return createElement(`<p class="prop__initial-value"><b>Initial</b>: ${this._data.initValue}.</p>`);
   }
 
-  _getValues () {
+  _getValuesElement () {
     if (!this._data.values) {
       return '';
     }

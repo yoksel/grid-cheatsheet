@@ -4,14 +4,14 @@ export class StylesController {
   constructor ({
     data,
     current,
-    codesElem,
+    codesElement,
     classList
   }) {
     this._data = data;
     this._current = current;
     this._classList = classList;
-    this._stylesElem = this._getStylesElement();
-    this._codesElem = codesElem;
+    this._stylesElement = this._getStylesElement();
+    this._codesElement = codesElement;
     this._propNames = this._current.propNames;
     this._setStyles();
   }
@@ -22,10 +22,10 @@ export class StylesController {
   }
 
   _getStylesElement () {
-    const elem = createElement(`<style id="style-${this._data.name}"></style>`);
-    document.head.append(elem);
+    const element = createElement(`<style id="style-${this._data.name}"></style>`);
+    document.head.append(element);
 
-    return elem;
+    return element;
   }
 
   _getStyles () {
@@ -90,7 +90,7 @@ export class StylesController {
 
   _setStyles () {
     this.styles = this._getStyles();
-    this._stylesElem.innerHTML = this.styles.hiddenStyles;
-    this._codesElem.innerHTML = this.styles.visibleStyles;
+    this._stylesElement.innerHTML = this.styles.hiddenStyles;
+    this._codesElement.innerHTML = this.styles.visibleStyles;
   }
 }

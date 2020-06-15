@@ -8,51 +8,52 @@ export class Demo {
     this._data = data;
     this._id = this._data.alias || this._data.name;
     this._propNames = this._getPropNames();
-    this._values = this._getValues();
+    this._values = this._getValuesList();
     this._baseClass = `demo__content--prop-${this._id}`;
     this._current = this._getCurrent();
     this._cellsQuantity = 0;
-    this._parentElem = null;
+    this._parentElement = null;
     this._parentCopy = null;
-    this._parentElemMarkup = '';
-    this.elem = this._getElement();
-    const codesElem = this.elem.querySelector('.demo__code');
+    this._parentElementMarkup = '';
+    this.element = this._getElement();
+    const codesElement = this.element.querySelector('.demo__code');
 
     this._stylesController = new StylesController({
       data,
       current: this._current,
-      codesElem,
+      codesElement,
       classList: [this._baseClass]
     });
 
-    this._addControls();
-
+    this._controlsClickHandler = this._controlsClickHandler.bind(this);
     this._hightlightGrid = this._hightlightGrid.bind(this);
+
+    this._addControls();
 
     document.addEventListener('pageFilled', this._hightlightGrid);
   }
 
   _getElement () {
     const demo = demoTmpl.cloneNode(true);
-    const demoContentElem = demo.querySelector('.demo__content');
-    demoContentElem.classList.add(...this._getClassList());
-    const viewElem = demo.querySelector('.demo__view');
+    const demoContentElement = demo.querySelector('.demo__content');
+    demoContentElement.classList.add(...this._getClassList());
+    const viewElement = demo.querySelector('.demo__view');
 
     if (this._data.htmlMarkup) {
-      viewElem.innerHTML = this._data.htmlMarkup;
+      viewElement.innerHTML = this._data.htmlMarkup;
     }
 
     if (this._data.demoBefore) {
-      viewElem.insertAdjacentHTML('afterbegin', this._data.demoBefore);
+      viewElement.insertAdjacentHTML('afterbegin', this._data.demoBefore);
     }
 
-    this._parentElem = viewElem.querySelector('.parent');
-    this._parentElemMarkup = this._parentElem.outerHTML;
+    this._parentElement = viewElement.querySelector('.parent');
+    this._parentElementMarkup = this._parentElement.outerHTML;
 
     return demo;
   }
 
-  _getValues () {
+  _getValuesList () {
     const values = this._data.customValues || this._data.values;
 
     return values.map((item, index) => {
@@ -74,19 +75,17 @@ export class Demo {
   }
 
   _addControls () {
-    const controls = this.getControlsMarkup();
+    const controls = this._getControlsMarkup();
 
-    const elem = createElement(`<div class="demo__controls">${controls}</div>`);
+    const element = createElement(`<div class="demo__controls">${controls}</div>`);
 
-    elem.addEventListener('click', (ev) => {
-      this._controlsOnClick(ev);
-    });
+    element.addEventListener('click', this._controlsClickHandler);
 
-    this.elem.prepend(elem);
-    this._current.control = elem.querySelector('.demo__control--current');
+    this.element.prepend(element);
+    this._current.control = element.querySelector('.demo__control--current');
   }
 
-  getControlsMarkup () {
+  _getControlsMarkup () {
     const controlsList = [];
 
     if (!this._values) {
@@ -166,7 +165,7 @@ export class Demo {
     return valuesByKey;
   }
 
-  _controlsOnClick (ev) {
+  _controlsClickHandler (ev) {
     const control = ev.target.closest('.demo__control');
 
     if (!control) {
@@ -185,7 +184,7 @@ export class Demo {
     this._hightlightGrid();
   }
 
-  _getHightlightedGridItems (quantity) {
+  _getHightlightedGridItemsMarkup (quantity) {
     let itemsMarkup = '';
 
     for (let i = 0; i < quantity; i++) {
@@ -196,7 +195,7 @@ export class Demo {
   }
 
   _hightlightGrid () {
-    const parentElemStyles = getComputedStyle(this._parentElem);
+    const parentElemStyles = getComputedStyle(this._parentElement);
     const oldCellsQuantity = this._cellsQuantity;
     this._cellsQuantity = getCellsQuantity(parentElemStyles);
 
@@ -205,16 +204,16 @@ export class Demo {
     }
 
     const oldParentCopy = this._parentCopy;
-    this._parentCopy = createElement(this._parentElemMarkup);
+    this._parentCopy = createElement(this._parentElementMarkup);
     this._parentCopy.classList.add('parent--grid-view');
     const restCellsQuantity = this._cellsQuantity - this._parentCopy.children.length;
-    const parentItemsMarkup = this._getHightlightedGridItems(restCellsQuantity);
+    const parentItemsMarkup = this._getHightlightedGridItemsMarkup(restCellsQuantity);
     this._parentCopy.insertAdjacentHTML('beforeEnd', parentItemsMarkup);
 
     if (oldParentCopy) {
       oldParentCopy.replaceWith(this._parentCopy);
     } else {
-      this._parentElem.append(this._parentCopy);
+      this._parentElement.append(this._parentCopy);
     }
   }
 }

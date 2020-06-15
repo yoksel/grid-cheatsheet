@@ -18,7 +18,7 @@ function init () {
 
   nav = new Nav({
     groups,
-    targetElem: document.querySelector('.l-aside__content')
+    targetElement: document.querySelector('.l-aside__content')
   });
 
   fillContent();
@@ -31,35 +31,35 @@ function fillContent () {
   const main = document.querySelector('.l-main');
 
   for (const [id, data] of Object.entries(groups)) {
-    const groupElem = new Group({ id, ...data }).elem;
+    const groupElement = new Group({ id, ...data }).element;
 
     for (const item of data.items) {
       const section = new PropSection(item);
-      sections.push(section.sectionElem);
+      sections.push(section.sectionElement);
 
-      groupElem.append(section.sectionElem);
+      groupElement.append(section.sectionElement);
 
       if (item.demos) {
         for (const innerDemo of item.demos) {
           const innerSection = new PropSection(innerDemo, { isChild: true });
-          sections.push(innerSection.sectionElem);
+          sections.push(innerSection.sectionElement);
 
-          groupElem.append(innerSection.sectionElem);
+          groupElement.append(innerSection.sectionElement);
         }
       }
 
       if (item.children) {
         for (const child of item.children) {
           const innerSection = new PropSection(child, { isChild: true });
-          sections.push(innerSection.sectionElem);
+          sections.push(innerSection.sectionElement);
 
-          groupElem.append(innerSection.sectionElem);
+          groupElement.append(innerSection.sectionElement);
         }
       }
     }
 
-    sections.push(groupElem);
-    main.append(groupElem);
+    sections.push(groupElement);
+    main.append(groupElement);
   }
 
   // Add semitransparent grids to demos

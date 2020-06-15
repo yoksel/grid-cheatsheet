@@ -3,43 +3,42 @@ import { createElement } from '../helpers';
 export class Nav {
   constructor ({
     groups,
-    targetElem
+    targetElement
   }) {
     this._groups = groups;
     this._current = null;
 
-    const navMarkup = this._getNavMarkup();
+    const navElement = this._getNavElement();
+    const firstNavItem = navElement.querySelector('.nav__item');
 
-    const navElem = createElement(`<nav class="nav">${navMarkup}</nav>`);
-    this._markerElem = createElement('<span class="nav__marker"></span>');
+    this._markerElement = createElement('<span class="nav__marker"></span>');
+    navElement.prepend(this._markerElement);
 
-    targetElem.prepend(navElem);
-    navElem.prepend(this._markerElem);
-
-    const firstNavItem = navElem.querySelector('.nav__item');
+    targetElement.prepend(navElement);
 
     this.setCurrentItem(firstNavItem);
 
-    navElem.addEventListener('click', (ev) => {
-      const navItem = ev.target.closest('.nav__item');
+    this._navClickHandler = this._navClickHandler.bind(this);
 
-      if (!navItem) {
-        return;
-      }
-      this.setCurrentItem(navItem);
-    });
+    navElement.addEventListener('click', this._navClickHandler);
   }
 
-  setCurrentItem (elem) {
-    if (this._currentElem) {
-      this._currentElem.classList.remove('nav__item--current');
+  setCurrentItem (element) {
+    if (this._currentElement) {
+      this._currentElement.classList.remove('nav__item--current');
     }
 
-    this._markerElem.style.top = `${elem.offsetTop}px`;
+    this._markerElement.style.top = `${element.offsetTop}px`;
 
-    elem.classList.add('nav__item--current');
+    element.classList.add('nav__item--current');
 
-    this._currentElem = elem;
+    this._currentElement = element;
+  }
+
+  _getNavElement () {
+    const navMarkup = this._getNavMarkup();
+
+    return createElement(`<nav class="nav">${navMarkup}</nav>`);
   }
 
   _getNavMarkup () {
@@ -84,5 +83,15 @@ export class Nav {
     });
 
     return `<ul class="nav__list ${customClass}">${itemsList.join('')}</ul>`;
+  }
+
+  _navClickHandler (ev) {
+    const navItem = ev.target.closest('.nav__item');
+
+    if (!navItem) {
+      return;
+    }
+
+    this.setCurrentItem(navItem);
   }
 }
