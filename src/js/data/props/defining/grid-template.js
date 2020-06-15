@@ -15,61 +15,36 @@ export default {
   values: [
     {
       name: 'none',
-      desc: 'Sets all three properties to their initial values (<i>none</i>).'
+      alias: 'valdef-grid-template-none',
+      desc: 'Sets all three properties to their initial values (<a href="#valdef-grid-template-rows-none">none</a>).'
     },
+
     {
-      name: '<‘grid-template-rows’> / <‘grid-template-columns’>',
-      alias: 'rowcol',
-      desc: `<p>Sets <i>grid-template-rows</i> and <i>grid-template-columns</i> to the specified values, respectively, and sets <i>grid-template-areas</i> to <i>none</i>.</p>
-
-        <pre>
-          <code>grid-template: auto 1fr / auto 1fr auto;</code>
-        </pre>
-
-        <p>is equivalent to</p>
-
-        <pre>
-          <code>grid-template-rows: auto 1fr;
-          grid-template-columns: auto 1fr auto;
-          grid-template-areas: none;</code>
-        </pre>`
+      name: '&lt;‘grid-template-rows’&gt; / &lt;‘grid-template-columns’&gt;',
+      alias: 'grid-template-rowcol',
+      desc: `Sets <a href="#grid-template-rows">grid-template-rows</a> and <a href="#grid-template-columns">grid-template-columns</a> to the specified values, respectively,
+and sets <a href="#grid-template-areas">grid-template-areas</a> to <a href="#valdef-grid-template-areas-none">none</a>.`
     },
-    {
-      name: '[ <line-names>? <string> <track-size>? <line-names>? ]+ [ / <explicit-track-list> ]?',
-      alias: 'line-names',
-      desc: `<ul> <li>
-        <p>Sets <i>grid-template-areas</i> to the strings listed.</p> </li>
-          <li> <p>Sets <i>grid-template-rows</i> to the <i>&lt;track-size&gt;</i>s following each string (filling in <i>auto</i> for any missing sizes), and splicing in the named lines defined before/after each size.</p> </li>
-          <li > <p>Sets <i>grid-template-columns</i> to the track listing specified after the slash (or <i>none</i>, if not specified).</p> </li>
-        </ul>
-        <p>This syntax allows the author to align track names and sizes inline with their respective grid areas.</p>
-        <div>
-        <pre>
-          <code>grid-template:
-              [header-top] 'a a a' [header-bottom]
-              [main-top] 'b b b' 1fr [main-bottom] / auto 1fr auto;</code>
-        </pre>
-        <p>is equivalent to</p>
-        <pre>
-          <code>grid-template-areas: 'a a a' 'b b b';
-            grid-template-rows: [header-top] auto [header-bottom main-top] 1fr [main-bottom];
-            grid-template-columns: auto 1fr auto;</code>
-        </pre>
-        <ul>
-          <li>
-            Three columns, sized <i>auto</i>, <span >1fr</span>, and <i>auto</i>, respectively
-          </li>
-          <li>
-            Two rows sized as <i>auto</i> and <span >1fr</span>, respectively.
-          </li>
-          <li>
-            A line named both “header-top” and “a-start” at the top, a line with four names—<wbr>“header-bottom”, “main-top”, “a-end”, and “b-start”—<wbr>in the middle, a line named “main-bottom” and “b-end” at the bottom.
-          </li>
-          <li>A line named “a-start” and “b-start” on the left edge, and a line named “a-end” and “b-end” on the right edge.
-          </li>
-          </ul>
 
-          <p role='note'><span>Note:</span> Note that the <i>repeat()</i> function isn’t allowed in these track listings, as the tracks are intended to visually line up one-to-one with the rows/columns in the “ASCII art”.</p>`
+    {
+      name: '[ &lt;line-names&gt;? &lt;string&gt; &lt;track-size&gt;? &lt;line-names&gt;? ]+ [ / &lt;explicit-track-list&gt; ]?',
+      alias: 'grid-template-ascii',
+      desc: `<ul>
+      <li>
+       <p>Sets <a href="#grid-template-areas">grid-template-areas</a> to the strings listed.</p>
+  </li><li>
+       <p>Sets <a href="#grid-template-rows">grid-template-rows</a> to the <a href="#typedef-track-size">&lt;track-size&gt;</a>s following each string
+(filling in <a href="#valdef-grid-template-columns-auto">auto</a> for any missing sizes),
+and splicing in the named lines defined before/after each size.</p>
+  </li><li>
+       <p>Sets <a href="#grid-template-columns">grid-template-columns</a> to the track listing specified after the slash
+(or <a href="#valdef-grid-template-rows-none">none</a>, if not specified).</p>
+  </li>
+</ul>
+     <p>This syntax allows the author to align track names and sizes inline with their respective grid areas.</p>
+
+     <p class="note" role="note"><span>Note:</span> Note that the <a href="#funcdef-repeat">repeat()</a> function isn’t allowed in these track listings,
+as the tracks are intended to visually line up one-to-one with the rows/columns in the “ASCII art”.</p>`
     }
   ],
 

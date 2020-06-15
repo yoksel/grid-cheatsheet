@@ -17,59 +17,61 @@ making the overall layout of the <a href="#grid-container">grid container</a> ea
   values: [
     {
       name: 'none',
+      alias: 'valdef-grid-template-areas-none',
       desc: `Indicates that no <a href="#named-grid-area">named grid areas</a>,
 and likewise no <a href="#explicit-grid">explicit grid</a> tracks,
 are defined by this property
 (though <a href="#explicit-grid">explicit grid</a> tracks could still be created by <a href="#grid-template-columns">grid-template-columns</a> or <a href="#grid-template-rows">grid-template-rows</a>).
      <p class="note" role="note"><span>Note:</span> In the absence of an <a href="#explicit-grid">explicit grid</a> any rows/columns will be <a href="#implicit-grids">implicitly generated</a>,
-and their size will be determined by the <a href="#grid-auto-rows">grid-auto-rows</a> and <a href="#grid-auto-columns">grid-auto-columns</a> properties.</p>
-    `
+and their size will be determined by the <a href="#grid-auto-rows">grid-auto-rows</a> and <a href="#grid-auto-columns">grid-auto-columns</a> properties.</p>`
     },
+
     {
       name: '&lt;string&gt;+',
-      alias: 'grid-template-areas-string',
+      alias: 'valdef-grid-template-areas-string',
       desc: `A row is created for every separate string listed for the <a href="#grid-template-areas">grid-template-areas</a> property,
 and a column is created for each cell in the string,
 when parsed as follows:
      <p>Tokenize the string into a list of the following tokens,
 using longest-match semantics:</p>
-     <ul>
-  <li>
-    A sequence of <a href="https://www.w3.org/TR/css-syntax-3/#name-code-point">name code points</a>,
-representing a <dfn id="grid-template-areas-named-cell-token">named cell token</dfn> with a name consisting of its code points.
-  </li>
-  <li>
-    A sequence of one or more "." (U+002E FULL STOP),
-representing a <dfn id="grid-template-areas-null-cell-token">null cell token</dfn>.
-  </li>
-  <li>
-    A sequence of <a href="https://www.w3.org/TR/css-syntax-3/#whitespace">whitespace</a>,
-representing nothing
-(do not produce a token).
-  </li>
-  <li>
-    A sequence of any other characters,
-representing a <dfn id="grid-template-areas-trash-token">trash token</dfn>.
-  </li>
-</ul>
-     <p class="note" role="note"><span>Note:</span> These rules can produce cell names that do not match the <a href="https://www.w3.org/TR/css3-values/#typedef-ident">&lt;ident&gt;</a> syntax,
-such as "1st 2nd 3rd",
-which requires escaping when referencing those areas by name in other properties,
-like <a href="#grid-row">grid-row: 1st;</a> to reference the area named <span class="css">1st</span>.</p>
-     <ul>
-  <li>
-    A <a href="#grid-template-areas-null-cell-token">null cell token</a> represents an unnamed area in the <a href="#grid-container">grid container</a>.
-  </li>
-  <li>
-    A <a href="#grid-template-areas-named-cell-token">named cell token</a> creates a <a href="#named-grid-area">named grid area</a> with the same name.
-Multiple <a href="#grid-template-areas-named-cell-token">named cell tokens</a> within and between rows
-create a single <a href="#named-grid-area">named grid area</a> that spans the corresponding <a href="#grid-cell">grid cells</a>.
-  </li>
-  <li>
-    A <a href="#grid-template-areas-trash-token">trash token</a> is a syntax error,
-and makes the declaration invalid.
-  </li>
-</ul>
+    <ul>
+      <li>
+        A sequence of <a href="https://www.w3.org/TR/css-syntax-3/#name-code-point">name code points</a>,
+    representing a <dfn id="grid-template-areas-named-cell-token">named cell token</dfn> with a name consisting of its code points.
+      </li>
+      <li>
+        A sequence of one or more "." (U+002E FULL STOP),
+    representing a <dfn id="grid-template-areas-null-cell-token">null cell token</dfn>.
+      </li>
+      <li>
+        A sequence of <a href="https://www.w3.org/TR/css-syntax-3/#whitespace">whitespace</a>,
+    representing nothing
+    (do not produce a token).
+      </li>
+      <li>
+        A sequence of any other characters,
+    representing a <dfn id="grid-template-areas-trash-token">trash token</dfn>.
+      </li>
+    </ul>
+        <p class="note" role="note"><span>Note:</span> These rules can produce cell names that do not match the <a href="https://www.w3.org/TR/css3-values/#typedef-ident">&lt;ident&gt;</a> syntax,
+    such as "1st 2nd 3rd",
+    which requires escaping when referencing those areas by name in other properties,
+    like <a href="#grid-row">grid-row: 1st;</a> to reference the area named <span class="css">1st</span>.</p>
+        <ul>
+      <li>
+        A <a href="#grid-template-areas-null-cell-token">null cell token</a> represents an unnamed area in the <a href="#grid-container">grid container</a>.
+      </li>
+      <li>
+        A <a href="#grid-template-areas-named-cell-token">named cell token</a> creates a <a href="#named-grid-area">named grid area</a> with the same name.
+    Multiple <a href="#grid-template-areas-named-cell-token">named cell tokens</a> within and between rows
+    create a single <a href="#named-grid-area">named grid area</a> that spans the corresponding <a href="#grid-cell">grid cells</a>.
+      </li>
+      <li>
+        A <a href="#grid-template-areas-trash-token">trash token</a> is a syntax error,
+    and makes the declaration invalid.
+      </li>
+    </ul>
+
      <p>All strings must have the same number of columns,
 or else the declaration is invalid.
 If a <a href="#named-grid-area">named grid area</a> spans multiple <a href="#grid-cell">grid cells</a>,
