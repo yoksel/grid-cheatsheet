@@ -1,7 +1,7 @@
 export default {
   name: 'display',
 
-  link: 'https://www.w3.org/TR/css-grid-1/#grid-model',
+  link: 'https://www.w3.org/TR/css-grid-1/#grid-containers',
 
   initValue: '',
 

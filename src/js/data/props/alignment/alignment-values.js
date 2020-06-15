@@ -2,7 +2,7 @@ export default {
   name: 'Align values',
   alias: 'align-values',
 
-  link: 'https://www.w3.org/TR/css-align-3/#justify-self-auto',
+  link: 'https://www.w3.org/TR/css-align-3/#valdef-justify-self-auto',
 
   values: [
     {

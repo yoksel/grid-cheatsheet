@@ -2,6 +2,8 @@ export default {
   name: 'grid-area',
   alias: 'grid-area',
 
+  link: 'https://www.w3.org/TR/css-grid-1/#propdef-grid-area',
+
   desc: `<p>If four <a href="#typedef-grid-row-start-grid-line" title="Expands to: <custom-ident> | auto | span &amp;&amp; [ <integer> || <custom-ident> ] | <integer> &amp;&amp; <custom-ident>?">&lt;grid-line&gt;</a> values are specified, <a href="#grid-row-start">grid-row-start</a> is set to the first value, <a href="#grid-column-start">grid-column-start</a> is set to the second value, <a href="#grid-row-end">grid-row-end</a> is set to the third value,
 and <a href="#grid-column-end">grid-column-end</a> is set to the fourth value.</p>
 
