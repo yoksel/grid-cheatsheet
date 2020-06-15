@@ -12,6 +12,7 @@ export default {
   values: [
     {
       name: 'normal | stretch | <baseline-position> | &lt;overflow-position&gt;? [ &lt;self-position&gt; | left | right ] | legacy | legacy && [ left | right | center ]',
+      alias: 'justify-items-value',
       desc: ''
     }
   ],

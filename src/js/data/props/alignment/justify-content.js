@@ -12,6 +12,7 @@ export default {
   values: [
     {
       name: 'normal | &lt;content-distribution> | &lt;overflow-position>? [ &lt;content-position> | left | right ]',
+      alias: 'justify-content-value',
       desc: ''
     }
   ],

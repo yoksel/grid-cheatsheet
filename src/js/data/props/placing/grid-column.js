@@ -10,7 +10,7 @@ export default {
       current: true
     },
     {
-      name: '2',
+      name: '2'
     },
     {
       name: '1/4'

@@ -21,6 +21,7 @@ take precedence over <a href="#align-self">align-self</a>.</p>`,
   values: [
     {
       name: 'auto | normal | stretch | &lt;baseline-position> | &lt;overflow-position>? &lt;self-position>',
+      alias: 'align-self-value',
       desc: ''
     }
   ],

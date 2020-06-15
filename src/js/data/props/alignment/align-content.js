@@ -12,6 +12,7 @@ export default {
   values: [
     {
       name: 'normal | &lt;baseline-position> | &lt;content-distribution> | &lt;overflow-position>? &lt;content-position>',
+      alias: 'align-content-value',
       desc: ''
     }
   ],

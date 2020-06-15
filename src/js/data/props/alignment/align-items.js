@@ -14,6 +14,7 @@ export default {
   values: [
     {
       name: 'normal | stretch | &lt;baseline-position> | [ &lt;overflow-position>? &lt;self-position> ]',
+      alias: 'align-items-value',
       desc: ''
     }
   ],

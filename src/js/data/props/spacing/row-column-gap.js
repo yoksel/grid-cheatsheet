@@ -5,6 +5,8 @@ import gapValues from './gap-values';
 export default {
   name: 'row-gap, column-gap',
 
+  alias: 'row-column-gap',
+
   link: 'https://www.w3.org/TR/css-align-3/#column-row-gap',
 
   initValue: 'normal',
@@ -28,6 +30,7 @@ Such additional space effectively increases the size of these <a href="#gutter">
   values: [
     {
       name: 'normal | &lt;length-percentage>',
+      alias: 'row-column-gap-values',
       desc: ''
     }
   ],

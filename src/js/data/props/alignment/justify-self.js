@@ -21,7 +21,7 @@ take precedence over <a href="#justify-self">justify-self</a>.</p>`,
   values: [
     {
       name: 'auto | normal | stretch | &lt;baseline-position&gt; | &lt;overflow-position&gt; ? [ &lt;self-position&gt; | left | right ]',
-      alias: 'justify-value',
+      alias: 'justify-self-value',
       desc: ''
     }
   ],
