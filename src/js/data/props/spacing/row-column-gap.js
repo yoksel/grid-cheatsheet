@@ -18,7 +18,7 @@ adding space between them—<wbr>in a manner to the <a href="#valdef-align-conte
 of the <a href="#content-distribution-properties">content-distribution properties</a>,
 but of a fixed size instead of as a fraction of remaining space.
 The <a href="#column-gap">column-gap</a> property specifies spacing between “columns”,
-separating boxes in the container’s <a href="https://www.w3.org/TR/css-writing-modes-4/#inline-axis">inline axis</a> similar to <span>inline-axis</span> margin;
+separating boxes in the container’s <a href="https://www.w3.org/TR/css-writing-modes-4/#inline-axis">inline axis</a> similar to inline-axis margin;
 while <a href="#row-gap">row-gap</a> indicates spacing between “rows”,
 separating boxes in the container’s <a href="https://www.w3.org/TR/css-writing-modes-4/#block-axis">block axis</a>.</p>
 

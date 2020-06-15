@@ -31,7 +31,7 @@ cannot be combined with <a href="#intrinsic-sizing-function">intrinsic</a> or <a
 
 <p>If the <a href="#funcdef-repeat">repeat()</a> function ends up placing two <a href="#typedef-line-names">&lt;line-names&gt;</a> adjacent to each other,
 the name lists are merged.
-For example, <span class="css">repeat(2, [a] 1fr [b])</span> is equivalent to <span class="css">[a] 1fr [b a] 1fr [b]</span>.</p>
+For example, <code>repeat(2, [a] 1fr [b])</code> is equivalent to <code>[a] 1fr [b a] 1fr [b]</code>.</p>
 
 <p>When <dfn id="valdef-repeat-auto-fill">auto-fill</dfn> is given as the repetition number,
 if the <a href="#grid-container">grid container</a> has a <a href="https://www.w3.org/TR/css-sizing-3/#definite">definite</a> size or max size in the relevant axis,
@@ -51,13 +51,13 @@ An empty track is one with no in-flow grid items placed into or spanning across 
 if they’re all empty.)</p>
 
 <p>A <dfn id="collapsed-track">collapsed track</dfn> is treated as having
-a fixed <a href="#grid-template-rows-track-sizing-function">track sizing function</a> of <span class="css">0px</span>,
+a fixed <a href="#grid-template-rows-track-sizing-function">track sizing function</a> of <code>0px</code>,
 and the <a href="https://www.w3.org/TR/css3-align/#gutter">gutters</a> on either side of it—<wbr>including any space allotted through <a href="https://www.w3.org/TR/css3-align/#distributed-alignment">distributed alignment</a>—<wbr><a href="#collapsed-gutter">collapse</a>.</p>
 
 <p>For the purpose of finding the number of auto-repeated tracks,
 the UA must floor the track size to a UA-specified value
 to avoid division by zero.
-It is suggested that this floor be <span class="css">1px</span>.</p>`,
+It is suggested that this floor be <code>1px</code>.</p>`,
 
   customValues: [
     {

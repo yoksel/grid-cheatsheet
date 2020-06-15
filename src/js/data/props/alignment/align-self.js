@@ -11,10 +11,10 @@ export default {
 
   desc: `<p>Aligns the box (as the <a href="#alignment-subject">alignment subject</a>)
 within its containing block (as the <a href="#alignment-container">alignment container</a>)
-along the block/column/cross axis of the <span>alignment container</span>:
-the box’s outer edges are aligned within its <span>alignment container</span> <a href="#alignment-values">as described by its alignment value</a></p>
+along the block/column/cross axis of the alignment container:
+the box’s outer edges are aligned within its alignment container <a href="#alignment-values">as described by its alignment value</a></p>
 
-<p class="note" role="note"><span>Note:</span> <span class="css">auto</span> margins,
+<p class="note" role="note"><span>Note:</span> <code>auto</code> margins,
 because they effectively adjust the size of the margin area,
 take precedence over <a href="#align-self">align-self</a>.</p>`,
 

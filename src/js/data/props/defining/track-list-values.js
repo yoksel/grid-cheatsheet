@@ -45,7 +45,7 @@ implies an automatic minimum (i.e. ''minmax(auto, <a href="#typedef-flex" title=
       desc: `Defines a size range
 greater than or equal to <var>min</var> and less than or equal to <var>max</var>.
 If <var>max</var> &lt; <var>min</var>,
-then <var>max</var> is ignored and <span class="css">minmax(min,max)</span> is treated as <var>min</var>.
+then <var>max</var> is ignored and <code>minmax(min,max)</code> is treated as <var>min</var>.
 As a maximum, a <a href="#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a> value sets the track’s <a href="#grid-template-columns-flex-factor">flex factor</a>;
 it is invalid as a minimum.
      <p class="note" role="note"><span>Note:</span> A future level of this spec may allow <a href="#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a> minimums,
@@ -65,7 +65,7 @@ can be stretched by the <a href="https://www.w3.org/TR/css3-align/#align-content
       name: 'fit-content(&lt;length-percentage&gt;)',
       alias: 'fit-content',
       desc: `Represents the formula <code>min(<a href="#valdef-grid-template-columns-max-content">max-content</a>, max(<a href="#valdef-grid-template-columns-auto">auto</a>, <var>argument</var>))</code>,
-which is calculated like <span class="css">minmax(auto, max-content)</span>,
+which is calculated like <code>minmax(auto, max-content)</code>,
 except that the track size is clamped at <var>argument</var> if it is greater than the <a href="#valdef-grid-template-columns-auto">auto</a> minimum.`
     }
   ],

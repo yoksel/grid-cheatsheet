@@ -56,7 +56,7 @@ using longest-match semantics:</p>
         <p class="note" role="note"><span>Note:</span> These rules can produce cell names that do not match the <a href="https://www.w3.org/TR/css3-values/#typedef-ident">&lt;ident&gt;</a> syntax,
     such as "1st 2nd 3rd",
     which requires escaping when referencing those areas by name in other properties,
-    like <a href="#grid-row">grid-row: 1st;</a> to reference the area named <span class="css">1st</span>.</p>
+    like <a href="#grid-row">grid-row: 1st;</a> to reference the area named <code>1st</code>.</p>
         <ul>
       <li>
         A <a href="#grid-template-areas-null-cell-token">null cell token</a> represents an unnamed area in the <a href="#grid-container">grid container</a>.

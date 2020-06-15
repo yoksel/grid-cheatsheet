@@ -20,8 +20,8 @@ when laying out the box’s contents.</p>`
       name: 'normal',
       alias: 'valdef-row-gap-normal',
       desc: `<p>The <a href="#valdef-row-gap-normal">normal</a> represents
-a used value of <span class="css">1em</span> on <a href="https://www.w3.org/TR/css3-multicol/#multi-column-container">multi-column containers</a>,
-and a used value of <span class="css">0px</span> in all other contexts.</p>`
+a used value of <code>1em</code> on <a href="https://www.w3.org/TR/css3-multicol/#multi-column-container">multi-column containers</a>,
+and a used value of <code>0px</code> in all other contexts.</p>`
     }
   ]
 };
