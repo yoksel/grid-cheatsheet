@@ -1,7 +1,12 @@
 .group {
+  padding-top: 1.75rem;
+
+  &--hidden-title {
+    padding-top: 0;
+  }
 
   &__title {
-    margin: 1em 0 1em;
+    margin: 0 0 1em;
     font-size: 2em;
     font-weight: 500;
     color: var(--group-title-color);

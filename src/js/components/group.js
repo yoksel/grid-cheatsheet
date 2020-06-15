@@ -13,9 +13,20 @@ export class Group {
 
     elements.forEach(element => container.append(element));
 
-    this.element = createElement(`<section class="group" id="group-${this._data.id}"></section>`);
+    this.element = this._getElement();
 
     this.element.append(container);
+  }
+
+  _getElement () {
+    const { hideTitle } = this._data;
+    let className = 'group';
+
+    if (hideTitle) {
+      className += ' group--hidden-title';
+    }
+
+    return createElement(`<section class="${className}" id="group-${this._data.id}"></section>`);
   }
 
   _getTitleElement () {

@@ -2,8 +2,8 @@
   display: block;
   width: 100%;
   min-height: 100vh;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   box-sizing: border-box;
   border-bottom: 1px dotted var(--prop-border);
 
@@ -13,24 +13,26 @@
   }
 
   &__title {
+    margin-top: .75rem;
     font-size: 1.7em;
     font-weight: 470;
     color: var(--prop-title-color);
   }
 
   &--child &__title {
+    margin-top: 1rem;
     font-size: 1.4em;
     color: var(--prop-values-title-color);
   }
 
   &__link {
     display: inline-block;
-    margin: 0 0 2em;
+    margin: 0 0 2rem;
   }
 
   UL {
     list-style-type: disc;
-    padding-left: 2em;
+    padding-left: 2rem;
   }
 
   CODE {
