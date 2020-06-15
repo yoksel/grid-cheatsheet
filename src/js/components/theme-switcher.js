@@ -9,34 +9,38 @@ const themes = [
 
 export class ThemeSwitcher {
   constructor () {
-    this.lsKey = 'gdchTheme';
-    this.counter = 0;
-    this.theme = this.getTheme();
-    this.control = document.querySelector('.theme-control');
+    this._lsKey = 'gdchTheme';
+    this._counter = 0;
+    this._theme = this._getTheme();
+    this._control = document.querySelector('.theme-control');
 
-    this.control.addEventListener('click', () => {
-      this.counter++;
+    this._controlOnClickHandler = this._controlOnClickHandler.bind(this);
 
-      if (this.counter > themes.length - 1) {
-        this.counter = 0;
-      }
-
-      this.theme = themes[this.counter];
-
-      this.setTheme();
-    });
-  }
-
-  getTheme () {
-    let theme = localStorage.getItem(this.lsKey);
-    theme = theme || 'seagreen';
-    this.counter = themes.indexOf(theme);
-
-    return theme;
+    this._control.addEventListener('click', this._controlOnClickHandler);
   }
 
   setTheme () {
-    document.body.dataset.theme = this.theme;
-    localStorage.setItem(this.lsKey, this.theme);
+    document.body.dataset.theme = this._theme;
+    localStorage.setItem(this._lsKey, this._theme);
+  }
+
+  _controlOnClickHandler () {
+    this._counter++;
+
+    if (this._counter > themes.length - 1) {
+      this._counter = 0;
+    }
+
+    this._theme = themes[this._counter];
+
+    this.setTheme();
+  }
+
+  _getTheme () {
+    let theme = localStorage.getItem(this._lsKey);
+    theme = theme || 'seagreen';
+    this._counter = themes.indexOf(theme);
+
+    return theme;
   }
 }

@@ -5,95 +5,98 @@ const demoTmpl = document.querySelector('#demo-tmpl').content.firstElementChild;
 
 export class Demo {
   constructor (data) {
-    this.data = data;
-    this.id = this.data.alias || this.data.name;
-    this.propNames = this.getPropNames();
-    this.values = this.getValues();
-    this.baseClass = `demo__content--prop-${this.id}`;
-    this.elem = this.getElem();
-    this.current = this.getCurrent();
+    this._data = data;
+    this._id = this._data.alias || this._data.name;
+    this._propNames = this._getPropNames();
+    this._values = this._getValues();
+    this._baseClass = `demo__content--prop-${this._id}`;
+    this._current = this._getCurrent();
+    this._cellsQuantity = 0;
+    this._parentElem = null;
+    this._parentCopy = null;
+    this._parentElemMarkup = '';
+    this.elem = this._getElement();
     const codesElem = this.elem.querySelector('.demo__code');
-    this.cellsQuantity = 0;
 
-    this.stylesController = new StylesController({
+    this._stylesController = new StylesController({
       data,
-      current: this.current,
+      current: this._current,
       codesElem,
-      classList: [this.baseClass]
+      classList: [this._baseClass]
     });
 
-    this.addControls();
+    this._addControls();
 
-    this.hightlightGrid = this.hightlightGrid.bind(this);
+    this._hightlightGrid = this._hightlightGrid.bind(this);
 
-    document.addEventListener('pageFilled', this.hightlightGrid);
+    document.addEventListener('pageFilled', this._hightlightGrid);
   }
 
-  getElem () {
+  _getElement () {
     const demo = demoTmpl.cloneNode(true);
     const demoContentElem = demo.querySelector('.demo__content');
-    demoContentElem.classList.add(...this.getClassList());
-    this.viewElem = demo.querySelector('.demo__view');
+    demoContentElem.classList.add(...this._getClassList());
+    const viewElem = demo.querySelector('.demo__view');
 
-    if (this.data.htmlMarkup) {
-      this.viewElem.innerHTML = this.data.htmlMarkup;
+    if (this._data.htmlMarkup) {
+      viewElem.innerHTML = this._data.htmlMarkup;
     }
 
-    if (this.data.demoBefore) {
-      this.viewElem.insertAdjacentHTML('afterbegin', this.data.demoBefore);
+    if (this._data.demoBefore) {
+      viewElem.insertAdjacentHTML('afterbegin', this._data.demoBefore);
     }
 
-    this.parentElem = this.viewElem.querySelector('.parent');
-    this.parentElemMarkup = this.parentElem.outerHTML;
+    this._parentElem = viewElem.querySelector('.parent');
+    this._parentElemMarkup = this._parentElem.outerHTML;
 
     return demo;
   }
 
-  getValues () {
-    const values = this.data.customValues || this.data.values;
+  _getValues () {
+    const values = this._data.customValues || this._data.values;
 
     return values.map((item, index) => {
       return {
         ...item,
-        id: item.id || `${this.id}-control-${index}`
+        id: item.id || `${this._id}-control-${index}`
       };
     });
   }
 
-  getClassList () {
-    const list = [`demo__content--prop-${this.id}`];
+  _getClassList () {
+    const list = [`demo__content--prop-${this._id}`];
 
-    if (this.data.isFeaturedHighlighted) {
+    if (this._data.isFeaturedHighlighted) {
       list.push('demo__content--highlight-featured');
     }
 
     return list;
   }
 
-  addControls () {
+  _addControls () {
     const controls = this.getControlsMarkup();
 
     const elem = createElement(`<div class="demo__controls">${controls}</div>`);
 
     elem.addEventListener('click', (ev) => {
-      this.controlsOnClick(ev);
+      this._controlsOnClick(ev);
     });
 
     this.elem.prepend(elem);
-    this.current.control = elem.querySelector('.demo__control--current');
+    this._current.control = elem.querySelector('.demo__control--current');
   }
 
   getControlsMarkup () {
     const controlsList = [];
 
-    if (!this.values) {
+    if (!this._values) {
       return;
     }
 
-    for (const { id, name, current } of this.values) {
+    for (const { id, name, current } of this._values) {
       const classList = ['demo__control'];
 
-      if (current || name === this.currentValueId) {
+      if (current || name === this._currentValueId) {
         classList.push('demo__control--current');
       }
 
@@ -106,8 +109,8 @@ export class Demo {
     return controlsList.join(' ');
   }
 
-  getPropNames () {
-    const propName = this.data.propDemoName || this.data.name;
+  _getPropNames () {
+    const propName = this._data.propDemoName || this._data.name;
 
     if (!propName.includes('+')) {
       return [propName];
@@ -118,15 +121,15 @@ export class Demo {
       .map(item => item.trim());
   }
 
-  getCurrent () {
-    if (!this.values) {
+  _getCurrent () {
+    if (!this._values) {
       return;
     }
 
     let currentValue;
     let currentValueId;
 
-    for (const { id, name, current } of this.values) {
+    for (const { id, name, current } of this._values) {
       if (current) {
         currentValueId = id;
         currentValue = name;
@@ -134,26 +137,26 @@ export class Demo {
     }
 
     if (!currentValueId) {
-      currentValueId = this.values[0].id;
-      currentValue = this.values[0].name;
+      currentValueId = this._values[0].id;
+      currentValue = this._values[0].name;
     }
 
     return {
       id: currentValueId,
-      propNames: this.propNames,
+      propNames: this._propNames,
       // Need for double props (prop + prop)
-      valuesByKey: this.getValuesByKey(currentValue)
+      valuesByKey: this._getValuesByKey(currentValue)
     };
   }
 
-  getValuesByKey (currentValue) {
-    let valuesByKey = { [this.propNames[0]]: currentValue };
+  _getValuesByKey (currentValue) {
+    let valuesByKey = { [this._propNames[0]]: currentValue };
 
     if (currentValue.includes('/')) {
       const values = currentValue.split('/');
 
-      if (values.length === this.propNames.length) {
-        valuesByKey = this.propNames.reduce((prev, item, index) => {
+      if (values.length === this._propNames.length) {
+        valuesByKey = this._propNames.reduce((prev, item, index) => {
           prev[item] = values[index];
           return prev;
         }, {});
@@ -163,26 +166,26 @@ export class Demo {
     return valuesByKey;
   }
 
-  controlsOnClick (ev) {
+  _controlsOnClick (ev) {
     const control = ev.target.closest('.demo__control');
 
     if (!control) {
       return;
     }
 
-    this.current.control.classList.remove('demo__control--current');
+    this._current.control.classList.remove('demo__control--current');
     control.classList.add('demo__control--current');
 
-    this.current.control = control;
-    this.current.id = control.id;
-    this.current.valuesByKey = this.getValuesByKey(control.innerHTML);
+    this._current.control = control;
+    this._current.id = control.id;
+    this._current.valuesByKey = this._getValuesByKey(control.innerHTML);
 
-    this.stylesController.update(this.current);
+    this._stylesController.updateStyles(this._current);
 
-    this.hightlightGrid();
+    this._hightlightGrid();
   }
 
-  getHightlightedGridItems (quantity) {
+  _getHightlightedGridItems (quantity) {
     let itemsMarkup = '';
 
     for (let i = 0; i < quantity; i++) {
@@ -192,26 +195,26 @@ export class Demo {
     return itemsMarkup;
   }
 
-  hightlightGrid () {
-    const parentElemStyles = getComputedStyle(this.parentElem);
-    const oldCellsQuantity = this.cellsQuantity;
-    this.cellsQuantity = getCellsQuantity(parentElemStyles);
+  _hightlightGrid () {
+    const parentElemStyles = getComputedStyle(this._parentElem);
+    const oldCellsQuantity = this._cellsQuantity;
+    this._cellsQuantity = getCellsQuantity(parentElemStyles);
 
-    if (oldCellsQuantity === this.cellsQuantity) {
+    if (oldCellsQuantity === this._cellsQuantity) {
       return;
     }
 
-    const oldParentCopy = this.parentCopy;
-    this.parentCopy = createElement(this.parentElemMarkup);
-    this.parentCopy.classList.add('parent--grid-view');
-    const restCellsQuantity = this.cellsQuantity - this.parentCopy.children.length;
-    const parentItemsMarkup = this.getHightlightedGridItems(restCellsQuantity);
-    this.parentCopy.insertAdjacentHTML('beforeEnd', parentItemsMarkup);
+    const oldParentCopy = this._parentCopy;
+    this._parentCopy = createElement(this._parentElemMarkup);
+    this._parentCopy.classList.add('parent--grid-view');
+    const restCellsQuantity = this._cellsQuantity - this._parentCopy.children.length;
+    const parentItemsMarkup = this._getHightlightedGridItems(restCellsQuantity);
+    this._parentCopy.insertAdjacentHTML('beforeEnd', parentItemsMarkup);
 
     if (oldParentCopy) {
-      oldParentCopy.replaceWith(this.parentCopy);
+      oldParentCopy.replaceWith(this._parentCopy);
     } else {
-      this.parentElem.append(this.parentCopy);
+      this._parentElem.append(this._parentCopy);
     }
   }
 }

@@ -7,25 +7,30 @@ export class StylesController {
     codesElem,
     classList
   }) {
-    this.data = data;
-    this.current = current;
-    this.classList = classList;
-    this.stylesElem = this.getStylesElem();
-    this.codesElem = codesElem;
-    this.propNames = this.current.propNames;
-    this.setStyles();
+    this._data = data;
+    this._current = current;
+    this._classList = classList;
+    this._stylesElem = this._getStylesElement();
+    this._codesElem = codesElem;
+    this._propNames = this._current.propNames;
+    this._setStyles();
   }
 
-  getStylesElem () {
-    const elem = createElement(`<style id="style-${this.data.name}"></style>`);
+  updateStyles (current) {
+    this._current = current;
+    this._setStyles();
+  }
+
+  _getStylesElement () {
+    const elem = createElement(`<style id="style-${this._data.name}"></style>`);
     document.head.append(elem);
 
     return elem;
   }
 
-  getStyles () {
-    const rules = this.data.cssRules;
-    const parentClass = `.${this.classList.join(' ')}`;
+  _getStyles () {
+    const rules = this._data.cssRules;
+    const parentClass = `.${this._classList.join(' ')}`;
     let visibleStyles = '';
     let hiddenStyles = '';
 
@@ -38,12 +43,12 @@ export class StylesController {
       let propsListVisible = [];
       const hiddenSelector = [parentClass, selector].join(' ');
 
-      if (valueId && valueId !== this.current.id) {
+      if (valueId && valueId !== this._current.id) {
         continue;
       }
 
       for (let [name, value] of Object.entries(props)) {
-        const valueByKey = this.current.valuesByKey[name];
+        const valueByKey = this._current.valuesByKey[name];
 
         if (valueByKey) {
           value = valueByKey;
@@ -59,7 +64,7 @@ export class StylesController {
 
         propsListHidden.push(propString);
 
-        if (this.propNames.includes(name)) {
+        if (this._propNames.includes(name)) {
           propString = `<mark>${propString}</mark>`;
         }
 
@@ -83,14 +88,9 @@ export class StylesController {
     };
   }
 
-  setStyles () {
-    this.styles = this.getStyles();
-    this.stylesElem.innerHTML = this.styles.hiddenStyles;
-    this.codesElem.innerHTML = this.styles.visibleStyles;
-  }
-
-  update (current) {
-    this.current = current;
-    this.setStyles();
+  _setStyles () {
+    this.styles = this._getStyles();
+    this._stylesElem.innerHTML = this.styles.hiddenStyles;
+    this._codesElem.innerHTML = this.styles.visibleStyles;
   }
 }

@@ -1,7 +1,7 @@
 export default {
   name: 'align-self',
 
-  link: 'https://www.w3.org/TR/css-align-3/#propdef-align-self',
+  link: 'https://www.w3.org/TR/css-align-3/#align-self-property',
 
   initValue: 'auto',
 

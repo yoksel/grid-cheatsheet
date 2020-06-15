@@ -5,22 +5,22 @@ export class Nav {
     groups,
     targetElem
   }) {
-    this.groups = groups;
-    this.current = null;
+    this._groups = groups;
+    this._current = null;
 
-    const navMarkup = this.getNavMarkup();
+    const navMarkup = this._getNavMarkup();
 
-    this.navElem = createElement(`<nav class="nav">${navMarkup}</nav>`);
-    this.markerElem = createElement('<span class="nav__marker"></span>');
+    const navElem = createElement(`<nav class="nav">${navMarkup}</nav>`);
+    this._markerElem = createElement('<span class="nav__marker"></span>');
 
-    targetElem.prepend(this.navElem);
-    this.navElem.prepend(this.markerElem);
+    targetElem.prepend(navElem);
+    navElem.prepend(this._markerElem);
 
-    const firstNavItem = this.navElem.querySelector('.nav__item');
+    const firstNavItem = navElem.querySelector('.nav__item');
 
     this.setCurrentItem(firstNavItem);
 
-    this.navElem.addEventListener('click', (ev) => {
+    navElem.addEventListener('click', (ev) => {
       const navItem = ev.target.closest('.nav__item');
 
       if (!navItem) {
@@ -30,8 +30,20 @@ export class Nav {
     });
   }
 
-  getNavMarkup () {
-    const itemsList = Object.entries(this.groups)
+  setCurrentItem (elem) {
+    if (this._currentElem) {
+      this._currentElem.classList.remove('nav__item--current');
+    }
+
+    this._markerElem.style.top = `${elem.offsetTop}px`;
+
+    elem.classList.add('nav__item--current');
+
+    this._currentElem = elem;
+  }
+
+  _getNavMarkup () {
+    const itemsList = Object.entries(this._groups)
       .map(([id, { title, items }]) => {
         let markup = '';
 
@@ -44,7 +56,7 @@ export class Nav {
           </h2>`;
         }
 
-        markup += this.getListMarkup(items);
+        markup += this._getListMarkup(items);
 
         return markup;
       });
@@ -52,14 +64,14 @@ export class Nav {
     return itemsList.join('');
   }
 
-  getListMarkup (items, customClass = '') {
+  _getListMarkup (items, customClass = '') {
     const itemsList = items.map(({ alias, name, children }) => {
       const itemClass = 'nav__item';
       let itemsMarkup = '';
       const id = alias || name;
 
       if (children) {
-        itemsMarkup = this.getListMarkup(children, 'nav__list--inner');
+        itemsMarkup = this._getListMarkup(children, 'nav__list--inner');
       }
 
       return `<li
@@ -72,17 +84,5 @@ export class Nav {
     });
 
     return `<ul class="nav__list ${customClass}">${itemsList.join('')}</ul>`;
-  }
-
-  setCurrentItem (elem) {
-    if (this.currentElem) {
-      this.currentElem.classList.remove('nav__item--current');
-    }
-
-    this.markerElem.style.top = `${elem.offsetTop}px`;
-
-    elem.classList.add('nav__item--current');
-
-    this.currentElem = elem;
   }
 }

@@ -3,99 +3,98 @@ import { Demo } from './demo';
 
 export class PropSection {
   constructor (data, params = {}) {
-    this.data = data;
+    this._data = data;
     const { isChild } = params;
-    this.id = data.alias || data.name;
-    this.hasChildren = this.data.children && this.data.children.length > 0;
-    this.hasDemos = this.data.demos && this.data.demos.length > 0;
-    this.hasCSS = !!this.data.cssRules;
-    this.demoElem = this.getDemoElement();
+    this._id = data.alias || data.name;
+    this._hasChildren = this._data.children && this._data.children.length > 0;
+    this._hasDemos = this._data.demos && this._data.demos.length > 0;
+    this._hasCSS = !!this._data.cssRules;
 
     const elems = [
-      this.getTitle(),
-      this.getLink(),
-      this.demoElem,
-      this.getDesc(),
-      this.getTarget(),
-      this.getInitialValue(),
-      this.getValues()
+      this._getTitle(),
+      this._getLink(),
+      this._getDemoElement(),
+      this._getDesc(),
+      this._getTarget(),
+      this._getInitialValue(),
+      this._getValues()
     ];
 
     let className = 'prop';
     if (isChild) {
       className += ' prop--child';
     }
-    if (this.hasDemos || this.hasChildren) {
+    if (this._hasDemos || this._hasChildren) {
       className += ' prop--has-children';
     }
 
     this.sectionElem = createElement(`<section
-      id="section-${this.id}"
+      id="section-${this._id}"
       class="${className} container"></section>`);
 
     elems.forEach(elem => this.sectionElem.append(elem));
   }
 
-  getDemoElement () {
-    if (this.hasDemos || this.hasChildren || !this.hasCSS) {
+  _getDemoElement () {
+    if (this._hasDemos || this._hasChildren || !this._hasCSS) {
       return '';
     }
 
-    const demo = new Demo(this.data);
+    const demo = new Demo(this._data);
     return demo.elem;
   }
 
-  getTitle () {
-    return createElement(`<h3 class="prop__title">${this.data.name}</h3>`);
+  _getTitle () {
+    return createElement(`<h3 class="prop__title">${this._data.name}</h3>`);
   }
 
-  getLink () {
-    if (!this.data.link) {
-        return '';
+  _getLink () {
+    if (!this._data.link) {
+      return '';
     }
 
-    var text = this.data.link.replace('http://www.', '');
+    var text = this._data.link.replace('http://www.', '');
 
-    return createElement(`<a class="prop__link" href="${this.data.link}">${text}</a>`);
+    return createElement(`<a class="prop__link" href="${this._data.link}">${text}</a>`);
   }
 
-  getDesc () {
-    if (!this.data.desc) {
-        return '';
+  _getDesc () {
+    if (!this._data.desc) {
+      return '';
     }
 
     return createElement(`<div
-      class="prop__desc">${this.data.desc}</div>`);
+      class="prop__desc">${this._data.desc}</div>`);
   }
 
-  getTarget () {
-    if (!this.data.appliesTo) {
-        return '';
+  _getTarget () {
+    if (!this._data.appliesTo) {
+      return '';
     }
 
-    return createElement(`<p class="prop__initial-value"><b>Applies to</b>: ${this.data.appliesTo}.</p>`);
+    return createElement(`<p class="prop__initial-value"><b>Applies to</b>: ${this._data.appliesTo}.</p>`);
   }
 
-  getInitialValue () {
-    if (!this.data.initValue) {
-        return '';
+  _getInitialValue () {
+    if (!this._data.initValue) {
+      return '';
     }
 
-    return createElement(`<p class="prop__initial-value"><b>Initial</b>: ${this.data.initValue}.</p>`);
+    return createElement(`<p class="prop__initial-value"><b>Initial</b>: ${this._data.initValue}.</p>`);
   }
 
-  getValues () {
-    if (!this.data.values) {
-        return '';
+  _getValues () {
+    if (!this._data.values) {
+      return '';
     }
 
     let markup = '';
-    const title = getPlurals(this.data.values.length, ['Value', 'Values']);
-    const isTitleHidden = !this.data.desc;
+    const title = getPlurals(this._data.values.length, ['Value', 'Values']);
+    const isTitleHidden = !this._data.desc;
 
-    for (const { name, alias, desc } of this.data.values) {
+    for (const { name, alias, desc } of this._data.values) {
       const id = alias || name;
-      const idAttr = `${this.id}-${id}`;
+      const idAttr = `${this._id}-${id}`;
       markup += `<dt id="${idAttr}" class="prop-values__term">${name}</dt>
         <dd class="prop-values__desc">${desc}</dd>`;
     }
