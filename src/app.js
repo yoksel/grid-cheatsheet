@@ -12,8 +12,6 @@ let nav;
 
 init();
 
-// ---------------------------------------------
-
 function init () {
   const themeSwitcher = new ThemeSwitcher();
   themeSwitcher.setTheme();
@@ -26,10 +24,8 @@ function init () {
   fillContent();
   addNavMarkerMove();
 
-  checkLinks();
+  // checkLinks();
 }
-
-// ---------------------------------------------
 
 function fillContent () {
   const main = document.querySelector('.l-main');
@@ -70,8 +66,6 @@ function fillContent () {
   document.dispatchEvent(new Event('pageFilled'));
 }
 
-// ---------------------------------------------
-
 function addNavMarkerMove () {
   const navItems = document.querySelectorAll('.nav__item');
 navItems.reduce = [].reduce;
@@ -90,8 +84,6 @@ navItems.reduce = [].reduce;
 
   window.addEventListener('scroll', moveNavMarker);
 }
-
-// ---------------------------------------------
 
 function checkLinks () {
   const elemsWithId = Array.from(document.querySelectorAll('[id]'));

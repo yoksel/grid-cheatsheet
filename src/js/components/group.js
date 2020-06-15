@@ -48,8 +48,6 @@ export class Group {
     return createElement(`<div class="group__desc">${desc}</div>`);
   }
 
-  // ---------------------------------------------
-
   getLink () {
     if (!this.data.link) {
       return '';

@@ -49,8 +49,6 @@ export class Demo {
     return demo;
   }
 
-  // ---------------------------------------------
-
   getValues () {
     const values = this.data.customValues || this.data.values;
 
@@ -62,8 +60,6 @@ export class Demo {
     });
   }
 
-  // ---------------------------------------------
-
   getClassList () {
     const list = [`demo__content--prop-${this.id}`];
 
@@ -73,8 +69,6 @@ export class Demo {
 
     return list;
   }
-
-  // ---------------------------------------------
 
   addControls () {
     const controls = this.getControlsMarkup();
@@ -88,8 +82,6 @@ export class Demo {
     this.elem.prepend(elem);
     this.current.control = elem.querySelector('.demo__control--current');
   }
-
-  // ---------------------------------------------
 
   getControlsMarkup () {
     const controlsList = [];
@@ -114,8 +106,6 @@ export class Demo {
     return controlsList.join(' ');
   }
 
-  // ---------------------------------------------
-
   getPropNames () {
     const propName = this.data.propDemoName || this.data.name;
 
@@ -127,8 +117,6 @@ export class Demo {
       .split('+')
       .map(item => item.trim());
   }
-
-  // ---------------------------------------------
 
   getCurrent () {
     if (!this.values) {
@@ -158,8 +146,6 @@ export class Demo {
     };
   }
 
-  // ---------------------------------------------
-
   getValuesByKey (currentValue) {
     let valuesByKey = { [this.propNames[0]]: currentValue };
 
@@ -176,8 +162,6 @@ export class Demo {
 
     return valuesByKey;
   }
-
-  // ---------------------------------------------
 
   controlsOnClick (ev) {
     const control = ev.target.closest('.demo__control');
@@ -198,8 +182,6 @@ export class Demo {
     this.hightlightGrid();
   }
 
-  // ---------------------------------------------
-
   getHightlightedGridItems (quantity) {
     let itemsMarkup = '';
 
@@ -209,8 +191,6 @@ export class Demo {
 
     return itemsMarkup;
   }
-
-  // ---------------------------------------------
 
   hightlightGrid () {
     const parentElemStyles = getComputedStyle(this.parentElem);

@@ -36,8 +36,6 @@ export class PropSection {
     elems.forEach(elem => this.sectionElem.append(elem));
   }
 
-  // ---------------------------------------------
-
   getDemoElement () {
     if (this.hasDemos || this.hasChildren || !this.hasCSS) {
       return '';
@@ -47,13 +45,9 @@ export class PropSection {
     return demo.elem;
   }
 
-  // ---------------------------------------------
-
   getTitle () {
     return createElement(`<h3 class="prop__title">${this.data.name}</h3>`);
   }
-
-  // ---------------------------------------------
 
   getLink () {
     if (!this.data.link) {
@@ -65,8 +59,6 @@ export class PropSection {
     return createElement(`<a class="prop__link" href="${this.data.link}">${text}</a>`);
   }
 
-  // ---------------------------------------------
-
   getDesc () {
     if (!this.data.desc) {
         return '';
@@ -76,8 +68,6 @@ export class PropSection {
       class="prop__desc">${this.data.desc}</div>`);
   }
 
-  // ---------------------------------------------
-
   getTarget () {
     if (!this.data.appliesTo) {
         return '';
@@ -86,8 +76,6 @@ export class PropSection {
     return createElement(`<p class="prop__initial-value"><b>Applies to</b>: ${this.data.appliesTo}.</p>`);
   }
 
-  // ---------------------------------------------
-
   getInitialValue () {
     if (!this.data.initValue) {
         return '';
@@ -95,8 +83,6 @@ export class PropSection {
 
     return createElement(`<p class="prop__initial-value"><b>Initial</b>: ${this.data.initValue}.</p>`);
   }
-
-  // ---------------------------------------------
 
   getValues () {
     if (!this.data.values) {
