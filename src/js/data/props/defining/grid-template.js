@@ -72,9 +72,8 @@ export default {
           <li>A line named “a-start” and “b-start” on the left edge, and a line named “a-end” and “b-end” on the right edge.
           </li>
           </ul>
-          <figcaption>
 
-          The grid created by the declarations above. (The “a/b-start/end” names are created <i>implicitly</i> by the <i>named grid areas</i>.) </figcaption> </figure> </div> <p role='note'><span>Note:</span> Note that the <i>repeat()</i> function isn’t allowed in these track listings, as the tracks are intended to visually line up one-to-one with the rows/columns in the “ASCII art”.</p>`
+          <p role='note'><span>Note:</span> Note that the <i>repeat()</i> function isn’t allowed in these track listings, as the tracks are intended to visually line up one-to-one with the rows/columns in the “ASCII art”.</p>`
     }
   ],
 

@@ -11,10 +11,10 @@ export default {
       name: '&lt;length-percentage&gt;',
       alias: 'length-percentage',
       desc: `A non-negative length or percentage, as defined by CSS3 Values. <a href="#biblio-css3val">[CSS3VAL]</a>
-     <p class="w3c-text-grabber__highlight"><a href="https://www.w3.org/TR/css3-values/#percentage-value"><percentage></a> values are relative to the <a href="https://www.w3.org/TR/css-writing-modes-3/#inline-size">inline size</a> of the <a href="#grid-container">grid container</a> in column <a href="#grid-track">grid tracks</a>,
+     <p><a href="https://www.w3.org/TR/css3-values/#percentage-value">&lt;percentage></a> values are relative to the <a href="https://www.w3.org/TR/css-writing-modes-3/#inline-size">inline size</a> of the <a href="#grid-container">grid container</a> in column <a href="#grid-track">grid tracks</a>,
 and the <a href="https://www.w3.org/TR/css-writing-modes-3/#block-size">block size</a> of the <a href="#grid-container">grid container</a> in row <a href="#grid-track">grid tracks</a>.
 If the size of the <a href="#grid-container">grid container</a> depends on the size of its tracks,
-then the <a href="https://www.w3.org/TR/css3-values/#percentage-value"><percentage></a> must be treated as <a href="">auto</a>,
+then the <a href="https://www.w3.org/TR/css3-values/#percentage-value">&lt;percentage></a> must be treated as <a href="">auto</a>,
 for the purpose of calculating the intrinsic sizes of the <a href="#grid-container">grid container</a> and then resolve against that resulting <a href="#grid-container">grid container</a> size
 for the purpose of laying out the <a href="#grid">grid</a> and its items.</p>`
     },
