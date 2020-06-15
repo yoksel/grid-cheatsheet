@@ -1,7 +1,7 @@
 export default {
   name: 'grid-auto-flow',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#grid-auto-flow-property',
+  link: 'https://www.w3.org/TR/css-grid-1/#grid-auto-flow-property',
 
   initValue: 'row',
 

@@ -5,7 +5,7 @@ export default {
   name: 'grid-auto-columns, grid-auto-rows',
   alias: 'auto-tracks',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#auto-tracks',
+  link: 'https://www.w3.org/TR/css-grid-1/#auto-tracks',
 
   initValue: 'auto',
 

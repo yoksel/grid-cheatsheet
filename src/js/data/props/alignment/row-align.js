@@ -6,7 +6,7 @@ export default {
   name: 'Row-axis: justify-self, justify-items',
   alias: 'row-align',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#row-align',
+  link: 'https://www.w3.org/TR/css-grid-1/#row-align',
 
   desc: `<p><a href="#grid-item">Grid items</a> can be aligned in the inline dimension
 by using the <a href="https://www.w3.org/TR/css3-align/#justify-self">justify-self</a> property on the <a href="#grid-item">grid item</a> or <a href="https://www.w3.org/TR/css3-align/#justify-items">justify-items</a> property on the <a href="#grid-container">grid container</a>,

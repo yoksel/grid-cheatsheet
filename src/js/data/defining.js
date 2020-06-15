@@ -7,7 +7,7 @@ import gridAutoTracks from './props/defining/grid-auto-tracks';
 export default {
   title: 'Defining the grid',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#grid-definition',
+  link: 'https://www.w3.org/TR/css-grid-1/#grid-definition',
 
   desc: `<p>The three properties <a href="#grid-template-rows">grid-template-rows</a>, <a href="#grid-template-columns">grid-template-columns</a>, and <a href="#grid-template-areas">grid-template-areas</a> together define the <dfn id="explicit-grid">explicit grid</dfn> of a <a href="#grid-container">grid container</a>.
 The final grid may end up larger due to <a href="#grid-item">grid items</a> placed outside the <a href="#explicit-grid">explicit grid</a>;

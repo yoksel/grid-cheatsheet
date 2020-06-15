@@ -5,7 +5,7 @@ export default {
   name: 'Aligning the grid: justify-content, align-content',
   alias: 'grid-align',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#grid-align',
+  link: 'https://www.w3.org/TR/css-grid-1/#grid-align',
 
   desc: `<p>If the <a href="#grid">grid</a>’s outer edges do not correspond to the <a href="#grid-container">grid container</a>’s content edges
 (for example, if no columns are flex-sized),

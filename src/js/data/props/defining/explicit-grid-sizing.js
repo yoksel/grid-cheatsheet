@@ -8,7 +8,7 @@ export default {
   name: 'grid-template-columns, grid-template-rows',
   alias: 'track-sizing',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#track-sizing',
+  link: 'https://www.w3.org/TR/css-grid-1/#track-sizing',
 
   initValue: 'none',
 

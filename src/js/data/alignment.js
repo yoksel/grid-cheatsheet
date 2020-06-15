@@ -5,7 +5,7 @@ import columnAlign from './props/alignment/column-align';
 export default {
   title: 'Alignment',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#alignment',
+  link: 'https://www.w3.org/TR/css-grid-1/#alignment',
 
   desc: `<p>After a <a href="#grid-container">grid container</a>’s <a href="#grid-track">grid tracks</a> have been sized,
 and the dimensions of all <a href="#grid-item">grid items</a> are finalized, <a href="#grid-item">grid items</a> can be aligned within their <a href="#grid-area">grid areas</a>.</p>

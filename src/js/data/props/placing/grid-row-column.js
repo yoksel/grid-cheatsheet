@@ -5,7 +5,7 @@ export default {
   name: 'grid-row, grid-column',
   alias: 'grid-row-column',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#placement-shorthands',
+  link: 'https://www.w3.org/TR/css-grid-1/#placement-shorthands',
 
   initValue: '123',
 

@@ -3,7 +3,7 @@ export default {
 
   alias: 'grid-line-values',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#grid-placement-slot',
+  link: 'https://www.w3.org/TR/css-grid-1/#grid-placement-slot',
 
   values: [
     {

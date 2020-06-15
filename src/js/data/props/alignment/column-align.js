@@ -5,7 +5,7 @@ export default {
   name: 'Column-axis: align-self, align-items',
   alias: 'column-align',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#column-align',
+  link: 'https://www.w3.org/TR/css-grid-1/#column-align',
 
   desc: `<p><a href="#grid-item">Grid items</a> can also be aligned in the block dimension
 (perpendicular to the inline dimension)

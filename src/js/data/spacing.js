@@ -4,7 +4,7 @@ import rowColumnGap from './props/spacing/row-column-gap';
 export default {
   title: 'Spacing',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#gutters',
+  link: 'https://www.w3.org/TR/css-grid-1/#gutters',
 
   desc: `<p>The <a href="https://www.w3.org/TR/css3-align/#row-gap">row-gap</a> and <a href="https://www.w3.org/TR/css3-align/#column-gap">column-gap</a> properties
 (and their <a href="https://www.w3.org/TR/css3-align/#gap">gap</a> shorthand),

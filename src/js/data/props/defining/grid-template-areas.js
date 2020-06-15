@@ -1,7 +1,7 @@
 export default {
   name: 'grid-template-areas',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#grid-template-areas-property',
+  link: 'https://www.w3.org/TR/css-grid-1/#grid-template-areas-property',
 
   initValue: 'none',
 

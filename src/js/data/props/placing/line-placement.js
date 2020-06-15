@@ -10,7 +10,7 @@ export default {
   name: 'grid-row-start, grid-column-start, grid-row-end, grid-column-end',
   alias: 'line-placement',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#line-placement',
+  link: 'https://www.w3.org/TR/css-grid-1/#line-placement',
 
   initValue: 'auto',
 

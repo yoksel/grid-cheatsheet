@@ -2,7 +2,7 @@ export default {
   name: 'grid-template',
   group: 'alignment',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#explicit-grid-shorthand',
+  link: 'https://www.w3.org/TR/css-grid-1/#explicit-grid-shorthand',
 
   initValue: 'see individual properties',
 

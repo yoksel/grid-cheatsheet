@@ -108,7 +108,8 @@ function checkLinks () {
     const hrefTail = link.getAttribute('href').split('#')[1];
 
     if (isExternal) {
-      if (elemsById[hrefTail] && href.includes('css3-grid-layout')) {
+      if (elemsById[hrefTail]
+        && (href.includes('css3-grid-layout') || href.includes('css-grid-1'))) {
         console.log('external, id exist in doc: ', hrefTail);
         link.classList.add('marked-link');
 }

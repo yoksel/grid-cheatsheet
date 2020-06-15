@@ -4,7 +4,7 @@ export default {
 
   propDemoName: 'grid-template-columns',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#valdef-grid-template-columns-length-percentage',
+  link: 'https://www.w3.org/TR/css-grid-1/#valdef-grid-template-columns-length-percentage',
 
   values: [
     {
@@ -31,7 +31,7 @@ implies an automatic minimum (i.e. ''minmax(auto, <a href="#typedef-flex" title=
 
     {
       name: 'max-content',
-      desc: 'Represents the largest <a href="https://www.w3.org/TR/css-sizing-3/#max-content-contribution">max-content contribution</a> of the <a href="https://www.w3.org/TR/css3-grid-layout/#grid-item">grid items</a> occupying the <a href="https://www.w3.org/TR/css3-grid-layout/#grid-track">grid track</a>.'
+      desc: 'Represents the largest <a href="https://www.w3.org/TR/css-sizing-3/#max-content-contribution">max-content contribution</a> of the <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> occupying the <a href="https://www.w3.org/TR/css-grid-1/#grid-track">grid track</a>.'
     },
 
     {

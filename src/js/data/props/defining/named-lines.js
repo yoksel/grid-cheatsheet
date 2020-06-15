@@ -3,7 +3,7 @@ export default {
   alias: 'named-lines',
   propDemoName: 'grid-template-columns',
 
-  link: 'https://www.w3.org/TR/css3-grid-layout/#named-lines',
+  link: 'https://www.w3.org/TR/css-grid-1/#named-lines',
 
   desc: `<p>While <a href="#grid-line">grid lines</a> can always be referred to by their numerical index, <dfn id="named-line">named lines</dfn> can make the <a href="#grid-placement-property">grid-placement properties</a> easier to understand and maintain.
 Lines can be explicitly named in the <a href="#grid-template-rows">grid-template-rows</a> and <a href="#grid-template-columns">grid-template-columns</a> properties,
