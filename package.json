@@ -11,8 +11,8 @@
     "lint:fix": "npm run js:fix && npm run css:fix",
     "js:lint": "eslint src",
     "js:fix": "eslint src --fix",
-    "css:lint": "stylelint src/**/*.scss",
-    "css:fix": "stylelint src/**/*.scss --fix",
+    "css:lint": "stylelint **/*.scss",
+    "css:fix": "stylelint **/*.scss --fix",
     "jest": "jest"
   },
   "author": "yoksel",

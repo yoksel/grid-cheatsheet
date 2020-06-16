@@ -13,7 +13,7 @@
     "declaration-block-trailing-semicolon": "always",
     "declaration-no-important": true,
     "declaration-colon-space-before": "never",
-    "declaration-colon-space-after": "always",
+    "declaration-colon-space-after": "always-single-line",
     "declaration-colon-newline-after": null,
     "property-no-vendor-prefix": true,
     "value-no-vendor-prefix": true,
@@ -29,7 +29,7 @@
     "selector-no-vendor-prefix": true,
     "media-feature-range-operator-space-before": "always",
     "media-feature-range-operator-space-after": "always",
-    "media-feature-parentheses-space-inside": "never",
+    "media-feature-parentheses-space-inside": "always",
     "media-feature-colon-space-before": "never",
     "media-feature-colon-space-after": "always"
   }
