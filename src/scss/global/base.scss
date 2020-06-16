@@ -16,7 +16,7 @@ A {
   }
 
   &[href*="http"]::after {
-    content: '';
+    content: "";
     display: inline-block;
     width: .9em;
     height: .9em;
@@ -47,16 +47,16 @@ H2,
 H3,
 H4 {
   margin-top: 0;
-  font-family: 'RobotoSlab', Georgia, serif;
+  font-family: RobotoSlab, Georgia, serif;
   font-weight: 600;
 
   @supports (font-variation-settings: normal) {
-    font-family: 'RobotoSlabVariable', Georgia, serif;
+    font-family: RobotoSlabVariable, Georgia, serif;
   }
 }
 
-LI,
-Ul {
+UL,
+LI {
   margin: 0;
   padding: 0;
 }
