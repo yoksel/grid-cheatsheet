@@ -40,14 +40,18 @@
   }
 
   &__list--inner {
-    margin-top: .4rem;
+    margin-top: .6rem;
+
+    @media ( min-width: 900px ) {
+      margin-top: .8rem;
+    }
   }
 
   &__item {
-    margin-bottom: .4rem;
+    margin-bottom: .6rem;
 
     @media ( min-width: 900px ) {
-      margin-bottom: .6rem;
+      margin-bottom: .8rem;
     }
   }
 
@@ -64,6 +68,7 @@
 
   &__item--current > &__link {
     text-decoration: none;
+    font-weight: bold;
     color: var(--nav-link-current);
   }
 }
