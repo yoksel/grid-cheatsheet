@@ -24,7 +24,7 @@ function init () {
   fillContent();
   addNavMarkerMove();
 
-  // checkLinks();
+  checkLinks();
 }
 
 function fillContent () {
