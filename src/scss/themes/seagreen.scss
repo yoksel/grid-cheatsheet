@@ -4,52 +4,52 @@
 // $col-4: #3B8686;
 // $col-5: #0B486B;
 
-[data-theme='seagreen'] {
-  --col-1-darkest: #aee65c;
-  --col-1-darker: #b9e972;
-  --col-1-dark: #c4ed88;
-  --col-1: #cff09e;
-  --col-1-light: #daf3b4;
-  --col-1-lighter: #e5f7ca;
-  --col-1-lightest: #f0fae0;
+[data-theme="seagreen"] {
+  --col-1-darkest: #AEE65C;
+  --col-1-darker: #B9E972;
+  --col-1-dark: #C4ED88;
+  --col-1: #CFF09E;
+  --col-1-light: #DAF3B4;
+  --col-1-lighter: #E5F7CA;
+  --col-1-lightest: #F0FAE0;
 
-  --col-2-darkest: #72c572;
-  --col-2-darker: #84cc84;
-  --col-2-dark: #96d496;
-  --col-2: #a8dba8;
-  --col-2-light: #bae3ba;
-  --col-2-lighter: #cceacc;
-  --col-2-lightest: #def1de;
+  --col-2-darkest: #72C572;
+  --col-2-darker: #84CC84;
+  --col-2-dark: #96D496;
+  --col-2: #A8DBA8;
+  --col-2-light: #BAE3BA;
+  --col-2-lighter: #CCEACC;
+  --col-2-lightest: #DEF1DE;
 
-  --col-3-darkest: #4d9c73;
-  --col-3-darker: #57ac80;
-  --col-3-dark: #68b58d;
-  --col-3: #79bd9a;
-  --col-3-light: #8ac5a7;
-  --col-3-lighter: #9bceb4;
-  --col-3-lightest: #acd6c1;
+  --col-3-darkest: #4D9C73;
+  --col-3-darker: #57AC80;
+  --col-3-dark: #68B58D;
+  --col-3: #79BD9A;
+  --col-3-light: #8AC5A7;
+  --col-3-lighter: #9BCEB4;
+  --col-3-lightest: #ACD6C1;
 
   --col-4-darkest: #245151;
-  --col-4-darker: #2b6262;
+  --col-4-darker: #2B6262;
   --col-4-dark: #337474;
-  --col-4: #3b8686;
+  --col-4: #3B8686;
   --col-4-light: #439898;
-  --col-4-lighter: #4aa9a9;
-  --col-4-lightest: #58b5b5;
+  --col-4-lighter: #4AA9A9;
+  --col-4-lightest: #58B5B5;
 
   --col-5-darkest: #041925;
-  --col-5-darker: #06293d;
+  --col-5-darker: #06293D;
   --col-5-dark: #093854;
-  --col-5: #0b486b;
-  --col-5-light: #0d5782;
+  --col-5: #0B486B;
+  --col-5-light: #0D5782;
   --col-5-lighter: #106799;
-  --col-5-lightest: #1276b0;
+  --col-5-lightest: #1276B0;
 
-  --col-6-dark: #01090e;
+  --col-6-dark: #01090E;
   --col-6: #041925;
-  --col-6-light: #06283c;
+  --col-6-light: #06283C;
   --col-6-lighter: #093853;
-  --col-6-lightest: #0b476a;
+  --col-6-lightest: #0B476A;
 
   --demo-featured-bg: var(--col-4);
   --demo-color: var(--col-5-dark);
