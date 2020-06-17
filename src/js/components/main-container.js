@@ -37,7 +37,7 @@ export class MainContainer {
     document.dispatchEvent(new Event('pageFilled'));
   }
 
-  _addChildren(groupComponent, sectionComponent, children) {
+  _addChildren (groupComponent, sectionComponent, children) {
     if (!children || children.length === 0) {
       return;
     }
