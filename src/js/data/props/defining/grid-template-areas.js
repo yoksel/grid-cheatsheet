@@ -5,7 +5,7 @@ export default {
 
   initValue: 'none',
 
-  appliesTo: 'container',
+  appliesTo: '<a href="#grid-container">grid containers</a>',
 
   desc: `<p>This property specifies <dfn id="named-grid-area">named grid areas</dfn>,
 which are not associated with any particular <a href="#grid-item">grid item</a>,

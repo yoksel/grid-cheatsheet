@@ -9,7 +9,7 @@ export default {
 
   initValue: 'auto',
 
-  appliesTo: 'container',
+  appliesTo: '<a href="#grid-container">grid containers</a>',
 
   desc: `<p>If a grid item is positioned into a row or column that is not explicitly sized
 by <a href="#grid-template-rows">grid-template-rows</a> or <a href="#grid-template-columns">grid-template-columns</a>, <a href="#implicit-grid-track">implicit grid tracks</a> are created to hold it.

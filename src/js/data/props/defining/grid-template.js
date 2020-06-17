@@ -6,7 +6,7 @@ export default {
 
   initValue: 'see individual properties',
 
-  appliesTo: 'container',
+  appliesTo: '<a href="#grid-container">grid containers</a>',
 
   desc: `<p>The <i>grid-template</i> property is a <a href='https://www.w3.org/TR/css-cascade-4/#shorthand-property' >shorthand</a> for setting <i>grid-template-columns</i>,
   <i>grid-template-rows</i>, and <i>grid-template-areas</i> in a single declaration. It has several distinct syntax forms:</p>

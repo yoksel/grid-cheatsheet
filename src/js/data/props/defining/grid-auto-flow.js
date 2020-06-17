@@ -5,7 +5,7 @@ export default {
 
   initValue: 'row',
 
-  appliesTo: 'container',
+  appliesTo: '<a href="#grid-container">grid containers</a>',
 
   desc: `<p><a href="#grid-item">Grid items</a> that aren’t explicitly placed are automatically placed
 into an unoccupied space in the <a href="#grid-container">grid container</a> by the <a href="#grid-item-placement-algorithm">auto-placement algorithm</a>. <a href="#grid-auto-flow">grid-auto-flow</a> controls how the <a href="#grid-item-placement-algorithm">auto-placement algorithm</a> works,

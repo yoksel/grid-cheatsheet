@@ -4,6 +4,10 @@ export default {
 
   link: 'https://www.w3.org/TR/css-grid-1/#propdef-grid-area',
 
+  initValue: 'see individual properties',
+
+  appliesTo: '<a href="#grid-item">grid items</a> and absolutely-positioned boxes whose containing block is a <a href="#grid-container">grid container</a>',
+
   desc: `<p>If four <a href="#typedef-grid-row-start-grid-line" title="Expands to: <custom-ident> | auto | span &amp;&amp; [ <integer> || <custom-ident> ] | <integer> &amp;&amp; <custom-ident>?">&lt;grid-line&gt;</a> values are specified, <a href="#grid-row-start">grid-row-start</a> is set to the first value, <a href="#grid-column-start">grid-column-start</a> is set to the second value, <a href="#grid-row-end">grid-row-end</a> is set to the third value,
 and <a href="#grid-column-end">grid-column-end</a> is set to the fourth value.</p>
 

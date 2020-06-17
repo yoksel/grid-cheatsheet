@@ -7,7 +7,7 @@ export default {
 
   link: 'https://www.w3.org/TR/css-grid-1/#placement-shorthands',
 
-  initValue: '123',
+  initValue: 'see individual properties',
 
   appliesTo: '<a href="#grid-item">grid items</a> and absolutely-positioned boxes whose containing block is a <a href="#grid-container">grid container</a>',
 

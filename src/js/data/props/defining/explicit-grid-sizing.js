@@ -12,7 +12,7 @@ export default {
 
   initValue: 'none',
 
-  appliesTo: 'container',
+  appliesTo: '<a href="#grid-container">grid containers</a>',
 
   desc: `<p>These properties specify,
 as a space-separated <dfn id="track-list">track list</dfn>,
