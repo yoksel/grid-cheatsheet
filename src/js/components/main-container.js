@@ -26,8 +26,8 @@ export class MainContainer {
 
         groupElement.append(sectionComponent.element);
 
-        this._addChildren(sectionComponent, item.demos);
-        this._addChildren(sectionComponent, item.children);
+        this._addChildren(groupComponent, sectionComponent, item.demos);
+        this._addChildren(groupComponent, sectionComponent, item.children);
       }
 
       this._container.append(groupElement);
@@ -37,7 +37,7 @@ export class MainContainer {
     document.dispatchEvent(new Event('pageFilled'));
   }
 
-  _addChildren (sectionComponent, children) {
+  _addChildren(groupComponent, sectionComponent, children) {
     if (!children || children.length === 0) {
       return;
     }
@@ -46,7 +46,7 @@ export class MainContainer {
       const section = new PropSection(child, { parentId: sectionComponent.id });
       this._sectionsComponents.push(section);
 
-      sectionComponent.element.append(section.element);
+      groupComponent.element.append(section.element);
     }
   }
 }
