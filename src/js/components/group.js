@@ -3,6 +3,7 @@ import { createElement } from '../helpers';
 export class Group {
   constructor (data) {
     this._data = data;
+    this.id = this._data.id;
     const container = createElement('<div class="group__intro container"></div>');
 
     const elements = [
@@ -26,7 +27,7 @@ export class Group {
       className += ' group--hidden-title';
     }
 
-    return createElement(`<section class="${className}" id="group-${this._data.id}"></section>`);
+    return createElement(`<section class="${className}" id="section-${this._data.id}"></section>`);
   }
 
   _getTitleElement () {

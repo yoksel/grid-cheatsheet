@@ -4,8 +4,9 @@ import { Demo } from './demo';
 export class PropSection {
   constructor (data, params = {}) {
     this._data = data;
-    this._id = data.alias || data.name;
-    this._isChild = params.isChild;
+    this.id = data.alias || data.name;
+    this.parentId = params.parentId;
+    this._isChild = !!this.parentId;
     this._hasChildren = this._data.children && this._data.children.length > 0;
     this._hasDemos = this._data.demos && this._data.demos.length > 0;
     this._hasCSS = !!this._data.cssRules;
@@ -20,9 +21,9 @@ export class PropSection {
       this._getValuesElement()
     ];
 
-    this.sectionElement = this._getSectionElement();
+    this.element = this._getSectionElement();
 
-    elements.forEach(element => this.sectionElement.append(element));
+    elements.forEach(element => this.element.append(element));
   }
 
   _getSectionElement () {
@@ -36,7 +37,7 @@ export class PropSection {
     }
 
     return createElement(`<section
-      id="section-${this._id}"
+      id="section-${this.id}"
       class="${className} container"></section>`
     );
   }
@@ -100,7 +101,7 @@ export class PropSection {
 
     for (const { name, alias, desc } of this._data.values) {
       const id = alias || name;
-      const idAttr = `${this._id}-${id}`;
+      const idAttr = `${this.id}-${id}`;
       markup += `<dt id="${idAttr}" class="prop-values__term">${name}</dt>
         <dd class="prop-values__desc">${desc}</dd>`;
     }

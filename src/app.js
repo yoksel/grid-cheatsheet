@@ -1,89 +1,22 @@
 import { groups } from './js/data/groups';
 import { Nav } from './js/components/nav';
-import { Group } from './js/components/group';
-import { PropSection } from './js/components/prop-section';
 import { ThemeSwitcher } from './js/components/theme-switcher';
-import { isVisible, debounce } from './js/helpers';
+import { MainContainer } from './js/components/main-container';
 
 import './scss/styles.scss';
 
-const sections = [];
-let nav;
+const main = document.querySelector('.l-main');
 
-init();
+const themeSwitcher = new ThemeSwitcher();
+themeSwitcher.setTheme();
+const mainContainer = new MainContainer({ container: main, groups });
+const asideContentElement = document.querySelector('.l-aside__content');
+const nav = new Nav({ groups, sectionsComponents: mainContainer.getSectionsComponents() });
 
-function init () {
-  const themeSwitcher = new ThemeSwitcher();
-  themeSwitcher.setTheme();
+asideContentElement.prepend(nav.element);
+nav.moveMarker();
 
-  nav = new Nav({
-    groups,
-    targetElement: document.querySelector('.l-aside__content')
-  });
-
-  fillContent();
-  addNavMarkerMove();
-
-  checkLinks();
-}
-
-function fillContent () {
-  const main = document.querySelector('.l-main');
-
-  for (const [id, data] of Object.entries(groups)) {
-    const groupElement = new Group({ id, ...data }).element;
-
-    for (const item of data.items) {
-      const section = new PropSection(item);
-      sections.push(section.sectionElement);
-
-      groupElement.append(section.sectionElement);
-
-      if (item.demos) {
-        for (const innerDemo of item.demos) {
-          const innerSection = new PropSection(innerDemo, { isChild: true });
-          sections.push(innerSection.sectionElement);
-
-          groupElement.append(innerSection.sectionElement);
-        }
-      }
-
-      if (item.children) {
-        for (const child of item.children) {
-          const innerSection = new PropSection(child, { isChild: true });
-          sections.push(innerSection.sectionElement);
-
-          groupElement.append(innerSection.sectionElement);
-        }
-      }
-    }
-
-    sections.push(groupElement);
-    main.append(groupElement);
-  }
-
-  // Add semitransparent grids to demos
-  document.dispatchEvent(new Event('pageFilled'));
-}
-
-function addNavMarkerMove () {
-  const navItems = document.querySelectorAll('.nav__item');
-navItems.reduce = [].reduce;
-  const navItemsById = navItems.reduce((prev, item) => {
-    prev[item.dataset.name] = item;
-    return prev;
-  }, {});
-
-  const moveNavMarker = debounce(function () {
-    for (const section of sections) {
-      if (isVisible(section) && navItemsById[section.id]) {
-          nav.setCurrentItem(navItemsById[section.id]);
-      }
-    }
-  }, 100);
-
-  window.addEventListener('scroll', moveNavMarker);
-}
+checkLinks();
 
 function checkLinks () {
   const elemsWithId = Array.from(document.querySelectorAll('[id]'));

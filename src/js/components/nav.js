@@ -1,29 +1,43 @@
-import { createElement } from '../helpers';
+import { createElement, isVisible, debounce } from '../helpers';
 
 export class Nav {
   constructor ({
     groups,
-    targetElement
+    sectionsComponents
   }) {
     this._groups = groups;
+    // While get marker position
+    // need to handle first last of sections
+    this._sectionsComponents = sectionsComponents.reverse();
     this._current = null;
+    this._isWindowScrolling = false;
 
-    const navElement = this._getNavElement();
-    const firstNavItem = navElement.querySelector('.nav__item');
+    this.element = this._getNavElement();
+    const firstNavItem = this.element.querySelector('.nav__item');
 
     this._markerElement = createElement('<span class="nav__marker"></span>');
-    navElement.prepend(this._markerElement);
-
-    targetElement.prepend(navElement);
+    this.element.prepend(this._markerElement);
 
     this.setCurrentItem(firstNavItem);
 
-    this._navClickHandler = this._navClickHandler.bind(this);
+    this._navItemsBySectionId = this._getItemsBySectionId();
 
-    navElement.addEventListener('click', this._navClickHandler);
+    this._navClickHandler = this._navClickHandler.bind(this);
+    this.moveMarker = this.moveMarker.bind(this);
+    this._windowScrollHandler = this._windowScrollHandler.bind(this);
+    this._windowScrollEndHandler = this._windowScrollEndHandler.bind(this);
+
+    this.element.addEventListener('click', this._navClickHandler);
+
+    window.addEventListener('scroll', this._windowScrollHandler);
+    window.addEventListener('scrollend', this._windowScrollEndHandler);
   }
 
   setCurrentItem (element) {
+    if (element === this._currentElement) {
+      return;
+    }
+
     if (this._currentElement) {
       this._currentElement.classList.remove('nav__item--current');
     }
@@ -33,6 +47,31 @@ export class Nav {
     element.classList.add('nav__item--current');
 
     this._currentElement = element;
+
+    this._isWindowScrolling = true;
+  }
+
+  _getItemsBySectionId () {
+    const navItems = Array.from(this.element.querySelectorAll('.nav__item, .nav__subheader'));
+
+    const navItemsById = navItems.reduce((prev, item) => {
+      prev[item.dataset.name] = item;
+
+      return prev;
+    }, {});
+
+    return this._sectionsComponents.reduce((prev, item) => {
+      const sectionId = `section-${item.id}`;
+      let navItem = navItemsById[sectionId];
+
+      if (!navItem) {
+        navItem = navItemsById[`section-${item.parentId}`];
+      }
+
+      prev[sectionId] = navItem;
+
+      return prev;
+    }, {});
   }
 
   _getNavElement () {
@@ -50,15 +89,18 @@ export class Nav {
         let markup = '';
 
         if (title) {
-          markup += `<h3 class="nav__subheader">
+          markup += `<h3
+            class="nav__subheader"
+            data-name="section-${id}"
+          >
             <a
               class="nav__subheader-link"
-              href="#group-${id}"
+              href="#section-${id}"
               >${title}</a>
           </h3>`;
         }
 
-        markup += this._getListMarkup(items);
+        markup += this._getListMarkup(id, items);
 
         return markup;
       });
@@ -66,19 +108,20 @@ export class Nav {
     return itemsList.join('');
   }
 
-  _getListMarkup (items, customClass = '') {
+  _getListMarkup (parentId, items, customClass = '') {
     const itemsList = items.map(({ alias, name, children }) => {
       const itemClass = 'nav__item';
       let itemsMarkup = '';
       const id = alias || name;
 
       if (children) {
-        itemsMarkup = this._getListMarkup(children, 'nav__list--inner');
+        itemsMarkup = this._getListMarkup(id, children, 'nav__list--inner');
       }
 
       return `<li
           class="${itemClass}"
           data-name="section-${id}"
+          data-parent-name="section-${parentId}"
         ><a
             href="#section-${id}"
             class="nav__link"
@@ -89,12 +132,37 @@ export class Nav {
   }
 
   _navClickHandler (ev) {
-    const navItem = ev.target.closest('.nav__item');
+    const navItem = ev.target.closest('.nav__item, .nav__subheader');
 
     if (!navItem) {
       return;
     }
 
     this.setCurrentItem(navItem);
+  }
+
+  moveMarker () {
+    for (const section of this._sectionsComponents) {
+      const navItemById = this._navItemsBySectionId[`section-${section.id}`];
+
+      if (isVisible(section.element) && navItemById) {
+        this.setCurrentItem(navItemById);
+        break;
+      }
+    }
+  }
+
+  _windowScrollHandler () {
+    if (this._isWindowScrolling) {
+      return;
+    }
+
+    debounce(this.moveMarker, 500)();
+  }
+
+  _windowScrollEndHandler () {
+    // Prevent running _windowScrollHandler
+    // when scroll was initiated by click
+    this._isWindowScrolling = false;
   }
 }
