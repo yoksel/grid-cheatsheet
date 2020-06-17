@@ -5,12 +5,12 @@ import { MainContainer } from './js/components/main-container';
 
 import './scss/styles.scss';
 
-const main = document.querySelector('.l-main');
+const main = document.querySelector('.page-main');
 
 const themeSwitcher = new ThemeSwitcher();
 themeSwitcher.setTheme();
 const mainContainer = new MainContainer({ container: main, groups });
-const asideContentElement = document.querySelector('.l-aside__content');
+const asideContentElement = document.querySelector('.page-aside__content');
 const nav = new Nav({ groups, sectionsComponents: mainContainer.getSectionsComponents() });
 
 asideContentElement.prepend(nav.element);

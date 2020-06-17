@@ -1,27 +1,27 @@
-.l-wrapper {
+.page-container {
   display: flex;
   width: 100%;
   min-height: 100%;
 }
 
-.l-main {
+.page-main {
   flex: 1;
 }
 
-.l-aside,
-.l-aside__content {
+.page-aside,
+.page-aside__content {
   width: 23%;
   min-width: 280px;
   max-width: 350px;
 }
 
-.l-aside {
+.page-aside {
   position: relative;
   order: -1;
   flex-shrink: 0;
 }
 
-.l-aside__content {
+.page-aside__content {
   position: fixed;
   top: 0;
   bottom: 0;
