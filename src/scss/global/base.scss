@@ -16,7 +16,8 @@ A {
   }
 
   &[href*="http"]::after {
-    content: "";
+    //  disable icon on external links
+    // content: "";
     display: inline-block;
     width: .9em;
     height: .9em;
