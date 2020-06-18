@@ -100,8 +100,7 @@ export class PropSection {
     const isTitleHidden = !this._data.desc;
 
     for (const { name, alias, desc } of this._data.values) {
-      const id = alias || name;
-      const idAttr = `${this.id}-${id}`;
+      const idAttr = alias || `${this.id}-${name}`;
       markup += `<dt id="${idAttr}" class="prop-values__term">${name}</dt>
         <dd class="prop-values__desc">${desc}</dd>`;
     }
