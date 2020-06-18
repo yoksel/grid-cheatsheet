@@ -51,7 +51,7 @@ they are <a href="https://www.w3.org/TR/css-align-3/#fallback-alignment">fallbac
 <p>The baseline alignment keywords are represented with the <a href="#typedef-baseline-position" title="Expands to: last | baseline | first">&lt;baseline-position&gt;</a> grammar term:</p>
 
 <pre id="typedef-baseline-position">
-  <code>&lt;baseline-position&gt; = [ first | last ]? baseline</code>
+  <code>&lt;baseline-position&gt; = [ first | last ] ? baseline</code>
 </pre>
 
       <p>The <a href="#justify-self-first-baseline">first</a> and <a href="#justify-self-last-baseline">last</a> values give a box a <dfn id="baseline-alignment-preference">baseline alignment preference</dfn>:

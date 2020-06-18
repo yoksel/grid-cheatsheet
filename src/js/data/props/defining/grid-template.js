@@ -20,14 +20,14 @@ export default {
     },
 
     {
-      name: '&lt;‘grid-template-rows’&gt; / &lt;‘grid-template-columns’&gt;',
+      name: '&lt;grid-template-rows&gt; / &lt;grid-template-columns&gt;',
       alias: 'grid-template-rowcol',
       desc: `Sets <a href="#section-grid-template-rows">grid-template-rows</a> and <a href="#section-grid-template-columns">grid-template-columns</a> to the specified values, respectively,
 and sets <a href="#section-grid-template-areas">grid-template-areas</a> to <a href="#valdef-grid-template-areas-none">none</a>.`
     },
 
     {
-      name: '[ &lt;line-names&gt;? &lt;string&gt; &lt;track-size&gt;? &lt;line-names&gt;? ]+ [ / &lt;explicit-track-list&gt; ]?',
+      name: '[ &lt;line-names&gt;? &lt;string&gt; &lt;track-size&gt;? &lt;line-names&gt;? ] + [ / &lt;explicit-track-list&gt; ] ?',
       alias: 'grid-template-ascii',
       desc: `<ul>
       <li>
