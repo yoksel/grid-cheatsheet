@@ -20,7 +20,9 @@ setTimeout(() => {
   nav.moveMarker();
 }, 100);
 
-checkLinks();
+if (window.location.search.includes('debug')) {
+  checkLinks();
+}
 
 function checkLinks () {
   const elemsWithId = Array.from(document.querySelectorAll('[id]'));
@@ -29,7 +31,7 @@ function checkLinks () {
     return prev;
   }, {});
   const links = document.querySelectorAll('a[href*="#"]');
-  let counter = 1;
+  let counter = 0;
 
   links.forEach((link) => {
     const href = link.getAttribute('href');
@@ -46,8 +48,11 @@ function checkLinks () {
       console.log(`id not exist ${hrefTail}`);
       link.classList.add('marked-link');
       counter++;
+    } else if (!href) {
+      link.classList.add('marked-link');
+      counter++;
     }
   });
 
-  console.log(`Total: ${counter}`);
+  console.log(`Wrong links total: ${counter}`);
 }
