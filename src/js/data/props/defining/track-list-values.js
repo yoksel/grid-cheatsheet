@@ -26,7 +26,7 @@ for the purpose of laying out the <a href="https://www.w3.org/TR/css-grid-1/#gri
 Each <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a>-sized track takes a share of the remaining space in proportion to its <a href="#grid-template-columns-flex-factor">flex factor</a>.
 See <a href="https://www.w3.org/TR/css-grid-1/#fr-unit">Flexible Lengths</a> for more details.
      <p>When appearing outside a <a href="#valdef-grid-template-columns-minmax">minmax()</a> notation,
-implies an automatic minimum (i.e. ''minmax(auto, <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a>)'').</p>`
+implies an automatic minimum (i.e. 'minmax(auto, <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a>)').</p>`
     },
 
     {

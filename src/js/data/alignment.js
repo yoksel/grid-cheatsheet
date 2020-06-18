@@ -15,7 +15,7 @@ what margins can do in block layout. <a href="https://www.w3.org/TR/css-grid-1/#
 which allow easy keyword-based alignment of items in both the <a href="https://www.w3.org/TR/css-grid-1/#row-axis">row axis</a> and <a href="https://www.w3.org/TR/css-grid-1/#column-axis">column axis</a>.</p>
 
 <p>By default, <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> stretch to fill their <a href="#section-grid-area">grid area</a>.
-However, if <a href="#section-justify-self">justify-self</a> or <a href="https://www.w3.org/TR/css3-align/#align-self">align-self</a> compute to a value other than <a href="https://www.w3.org/TR/css3-align/#valdef-justify-self-stretch">stretch</a> or margins are <a href="">auto</a>, <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> will auto-size to fit their contents.</p>`,
+However, if <a href="#section-justify-self">justify-self</a> or <a href="https://www.w3.org/TR/css3-align/#align-self">align-self</a> compute to a value other than <a href="https://www.w3.org/TR/css3-align/#valdef-justify-self-stretch">stretch</a> or margins are auto, <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> will auto-size to fit their contents.</p>`,
 
   items: [
     rowAlign,

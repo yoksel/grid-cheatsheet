@@ -10,7 +10,7 @@ export default {
       name: '&lt;custom-ident&gt;',
       alias: 'grid-placement-slot',
       desc: `First attempt to match the <a href="#section-grid-area">grid area</a>’s edge to a <a href="#named-grid-area">named grid area</a>:
-if there is a <a href="#named-line">named line</a> with the name ''<a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>-start<span class="css"> (for <a href="">grid-*-start</a>) / </span><a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>-end'' (for <a href="">grid-*-end</a>),
+if there is a <a href="#named-line">named line</a> with the name '<a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>-start<span class="css"> (for grid-*-start) / </span><a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>-end' (for grid-*-end),
 contributes the first such line to the <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid item</a>’s <a href="#grid-placement">placement</a>.
      <p class="note" role="note"><span>Note:</span> <a href="#named-grid-area">Named grid areas</a> automatically generate <a href="https://www.w3.org/TR/css-grid-1/#implicit-named-line">implicit named lines</a> of this form,
 so specifying <a href="#section-grid-row-start">grid-row-start: foo</a> will choose the start edge of that <a href="#named-grid-area">named grid area</a> (unless another line named <code>foo-start</code> was explicitly specified before it).</p>
