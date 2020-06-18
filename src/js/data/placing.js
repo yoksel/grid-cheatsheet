@@ -37,7 +37,7 @@ defaulting to 1 in each axis if it can’t be otherwise determined for that axis
 
 <p>The <dfn id="grid-placement-property">grid-placement properties</dfn>—<wbr>the longhands <a href="#section-grid-row-start">grid-row-start</a>, <a href="#section-grid-row-end">grid-row-end</a>, <a href="#section-grid-column-start">grid-column-start</a>, <a href="#section-grid-column-end">grid-column-end</a>, and their shorthands <a href="#section-grid-row">grid-row</a>, <a href="#section-grid-column">grid-column</a>, and <a href="#section-grid-area">grid-area</a>—<wbr>allow the author to specify a <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid item</a>’s <a href="#grid-placement">placement</a> by providing any (or none) of the following six pieces of information:</p>
 
-<table class="data">
+<table class="table-data">
   <thead>
     <tr>
     <td>
@@ -63,7 +63,7 @@ defaulting to 1 in each axis if it can’t be otherwise determined for that axis
 
 <p>The following table summarizes the conditions under which a grid position or span is <i data-lt="">definite</i> or <i data-lt="">automatic</i>:</p>
 
-<table class="data">
+<table class="table-data">
   <thead>
     <tr>
     <td>
@@ -83,7 +83,7 @@ defaulting to 1 in each axis if it can’t be otherwise determined for that axis
 
 <p>The <a href="#grid-placement-property">grid-placement property</a> longhands are organized into three shorthands:</p>
 
-<table class="data" id="grid-property-breakdown">
+<table class="table-data table-data--centered" id="grid-property-breakdown">
   <tbody>
     <tr>
     <td colspan="4"><a href="#section-grid-area">grid-area</a>
