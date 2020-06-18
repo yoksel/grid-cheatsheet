@@ -14,17 +14,17 @@ export default {
 
   initValue: 'auto',
 
-  appliesTo: '<a href="#grid-item">grid items</a> and absolutely-positioned boxes whose containing block is a <a href="#grid-container">grid container</a>',
+  appliesTo: '<a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> and absolutely-positioned boxes whose containing block is a <a href="#grid-container">grid container</a>',
 
-  desc: `<p>The <a href="#grid-row-start">grid-row-start</a>, <a href="#grid-column-start">grid-column-start</a>, <a href="#grid-row-end">grid-row-end</a>, and <a href="#grid-column-end">grid-column-end</a> properties
-determine a <a href="#grid-item">grid item</a>’s size and location within the <a href="#grid">grid</a> by contributing a line, a span, or nothing (automatic)
+  desc: `<p>The <a href="#section-grid-row-start">grid-row-start</a>, <a href="#section-grid-column-start">grid-column-start</a>, <a href="#section-grid-row-end">grid-row-end</a>, and <a href="#section-grid-column-end">grid-column-end</a> properties
+determine a <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid item</a>’s size and location within the <a href="https://www.w3.org/TR/css-grid-1/#grid">grid</a> by contributing a line, a span, or nothing (automatic)
 to its <a href="#grid-placement">grid placement</a>,
-thereby specifying the <a href="https://www.w3.org/TR/css-writing-modes-3/#inline-start">inline-start</a>, <a href="https://www.w3.org/TR/css-writing-modes-3/#block-start">block-start</a>, <a href="https://www.w3.org/TR/css-writing-modes-3/#inline-end">inline-end</a>, and <a href="https://www.w3.org/TR/css-writing-modes-3/#block-end">block-end</a> edges of its <a href="#grid-area">grid area</a>.</p>`,
+thereby specifying the <a href="https://www.w3.org/TR/css-writing-modes-3/#inline-start">inline-start</a>, <a href="https://www.w3.org/TR/css-writing-modes-3/#block-start">block-start</a>, <a href="https://www.w3.org/TR/css-writing-modes-3/#inline-end">inline-end</a>, and <a href="https://www.w3.org/TR/css-writing-modes-3/#block-end">block-end</a> edges of its <a href="#section-grid-area">grid area</a>.</p>`,
 
   values: [
     {
       name: '&lt;grid-line&gt;',
-      alias: 'grid-line',
+      alias: 'grid-line-value',
       desc: ''
     }
   ],

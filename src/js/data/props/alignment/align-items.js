@@ -7,9 +7,9 @@ export default {
 
   appliesTo: 'all elements',
 
-  desc: `<p>This property specifies the default <a href="#align-self">align-self</a> for all of the child boxes (including anonymous boxes) participating in this box’s formatting context.</p>
+  desc: `<p>This property specifies the default <a href="#section-align-self">align-self</a> for all of the child boxes (including anonymous boxes) participating in this box’s formatting context.</p>
 
-<p>Values have no special handling and are merely referenced by <a href="#align-self">align-self</a>.</p>`,
+<p>Values have no special handling and are merely referenced by <a href="#section-align-self">align-self</a>.</p>`,
 
   values: [
     {

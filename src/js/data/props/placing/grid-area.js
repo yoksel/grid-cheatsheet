@@ -6,21 +6,21 @@ export default {
 
   initValue: 'see individual properties',
 
-  appliesTo: '<a href="#grid-item">grid items</a> and absolutely-positioned boxes whose containing block is a <a href="#grid-container">grid container</a>',
+  appliesTo: '<a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> and absolutely-positioned boxes whose containing block is a <a href="#grid-container">grid container</a>',
 
-  desc: `<p>If four <a href="#typedef-grid-row-start-grid-line" title="Expands to: <custom-ident> | auto | span &amp;&amp; [ <integer> || <custom-ident> ] | <integer> &amp;&amp; <custom-ident>?">&lt;grid-line&gt;</a> values are specified, <a href="#grid-row-start">grid-row-start</a> is set to the first value, <a href="#grid-column-start">grid-column-start</a> is set to the second value, <a href="#grid-row-end">grid-row-end</a> is set to the third value,
-and <a href="#grid-column-end">grid-column-end</a> is set to the fourth value.</p>
+  desc: `<p>If four <a href="#section-grid-line-values" title="Expands to: <custom-ident> | auto | span &amp;&amp; [ <integer> || <custom-ident> ] | <integer> &amp;&amp; <custom-ident>?">&lt;grid-line&gt;</a> values are specified, <a href="#section-grid-row-start">grid-row-start</a> is set to the first value, <a href="#section-grid-column-start">grid-column-start</a> is set to the second value, <a href="#section-grid-row-end">grid-row-end</a> is set to the third value,
+and <a href="#section-grid-column-end">grid-column-end</a> is set to the fourth value.</p>
 
-<p>When <a href="#grid-column-end">grid-column-end</a> is omitted,
-if <a href="#grid-column-start">grid-column-start</a> is a <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>, <a href="#grid-column-end">grid-column-end</a> is set to that <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>;
+<p>When <a href="#section-grid-column-end">grid-column-end</a> is omitted,
+if <a href="#section-grid-column-start">grid-column-start</a> is a <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>, <a href="#section-grid-column-end">grid-column-end</a> is set to that <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>;
 otherwise, it is set to <a href="#grid-placement-auto">auto</a>.</p>
 
-<p>When <a href="#grid-row-end">grid-row-end</a> is omitted,
-if <a href="#grid-row-start">grid-row-start</a> is a <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>, <a href="#grid-row-end">grid-row-end</a> is set to that <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>;
+<p>When <a href="#section-grid-row-end">grid-row-end</a> is omitted,
+if <a href="#section-grid-row-start">grid-row-start</a> is a <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>, <a href="#section-grid-row-end">grid-row-end</a> is set to that <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>;
 otherwise, it is set to <a href="#grid-placement-auto">auto</a>.</p>
 
-<p>When <a href="#grid-column-start">grid-column-start</a> is omitted,
-if <a href="#grid-row-start">grid-row-start</a> is a <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>,
+<p>When <a href="#section-grid-column-start">grid-column-start</a> is omitted,
+if <a href="#section-grid-row-start">grid-row-start</a> is a <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a>,
 all four longhands are set to that value.
 Otherwise, it is set to <a href="#grid-placement-auto">auto</a>.</p>
 

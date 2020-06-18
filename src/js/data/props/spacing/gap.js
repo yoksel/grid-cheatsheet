@@ -5,7 +5,7 @@ export default {
 
   initValue: 'see individual properties',
 
-  appliesTo: '<a href="https://www.w3.org/TR/css3-multicol/#multi-column-container">multi-column containers</a>, <a href="https://www.w3.org/TR/css-flexbox-1/#flex-container">flex containers</a>, <a href="https://www.w3.org/TR/css-grid-1/#grid-container">grid containers</a>',
+  appliesTo: '<a href="https://www.w3.org/TR/css3-multicol/#multi-column-container">multi-column containers</a>, <a href="https://www.w3.org/TR/css-flexbox-1/#flex-container">flex containers</a>, <a href="#grid-container">grid containers</a>',
 
   desc: `<p>This property is a shorthand that sets row-gap and column-gap in one declaration. If &lt;‘column-gap’> is omitted, it’s set to the same value as &lt;‘row-gap’>.</p>
 

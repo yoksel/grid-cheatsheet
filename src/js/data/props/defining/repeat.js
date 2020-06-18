@@ -12,7 +12,7 @@ to be written in a more compact form.</p>
 <p>The generic form of the <a href="#funcdef-repeat">repeat()</a> syntax is, approximately,</p>
 
 <pre>
-  <code>repeat( [ <a href="">&lt;positive-integer&gt;</a> <a href="https://www.w3.org/TR/css3-values/#comb-one">|</a> auto-fill <a href="https://www.w3.org/TR/css3-values/#comb-one">|</a> auto-fit ] <a href="https://www.w3.org/TR/css3-values/#comb-comma">,</a> <a href="#typedef-track-list">&lt;track-list&gt;</a> )</code>
+  <code>repeat( [ <a href="">&lt;positive-integer&gt;</a> <a href="https://www.w3.org/TR/css3-values/#comb-one">|</a> auto-fill <a href="https://www.w3.org/TR/css3-values/#comb-one">|</a> auto-fit ] <a href="https://www.w3.org/TR/css3-values/#comb-comma">,</a> <a href="https://www.w3.org/TR/css-grid-1/#typedef-track-list">&lt;track-list&gt;</a> )</code>
 </pre>
 
 <p>The first argument specifies the number of repetitions.
@@ -25,18 +25,18 @@ However, there are some restrictions:</p>
      <p class="">The <a href="#funcdef-repeat">repeat()</a> notation can’t be nested.</p>
   </li><li>
      <p class="">Automatic repetitions (<a href="#valdef-repeat-auto-fill">auto-fill</a> or <a href="#valdef-repeat-auto-fit">auto-fit</a>)
-cannot be combined with <a href="#intrinsic-sizing-function">intrinsic</a> or <a href="#flexible-sizing-function">flexible</a> sizes.</p>
+cannot be combined with <a href="https://www.w3.org/TR/css-grid-1/#intrinsic-sizing-function">intrinsic</a> or <a href="https://www.w3.org/TR/css-grid-1/#flexible-sizing-function">flexible</a> sizes.</p>
   </li>
 </ul>
 
-<p>If the <a href="#funcdef-repeat">repeat()</a> function ends up placing two <a href="#typedef-line-names">&lt;line-names&gt;</a> adjacent to each other,
+<p>If the <a href="#funcdef-repeat">repeat()</a> function ends up placing two <a href="https://www.w3.org/TR/css-grid-1/#typedef-line-names">&lt;line-names&gt;</a> adjacent to each other,
 the name lists are merged.
 For example, <code>repeat(2, [a] 1fr [b])</code> is equivalent to <code>[a] 1fr [b a] 1fr [b]</code>.</p>
 
 <p>When <dfn id="valdef-repeat-auto-fill">auto-fill</dfn> is given as the repetition number,
 if the <a href="#grid-container">grid container</a> has a <a href="https://www.w3.org/TR/css-sizing-3/#definite">definite</a> size or max size in the relevant axis,
 then the number of repetitions is the largest possible positive integer
-that does not cause the <a href="#grid">grid</a> to overflow its <a href="#grid-container">grid container</a> (treating each track as its <a href="#max-track-sizing-function">max track sizing function</a> if that is <a href="https://www.w3.org/TR/css-sizing-3/#definite">definite</a> or as its minimum track sizing function otherwise,
+that does not cause the <a href="https://www.w3.org/TR/css-grid-1/#grid">grid</a> to overflow its <a href="#grid-container">grid container</a> (treating each track as its <a href="https://www.w3.org/TR/css-grid-1/#max-track-sizing-function">max track sizing function</a> if that is <a href="https://www.w3.org/TR/css-sizing-3/#definite">definite</a> or as its minimum track sizing function otherwise,
 and taking <a href="https://www.w3.org/TR/css3-align/#gap">gap</a> into account);
 if any number of repetitions would overflow,
 then 1 repetition.
@@ -45,7 +45,7 @@ the number of repetitions is the smallest possible positive integer that fulfill
 Otherwise, the specified <a href="#track-list">track list</a> repeats only once.</p>
 
 <p>The <dfn id="valdef-repeat-auto-fit">auto-fit</dfn> keyword behaves the same as <a href="#valdef-repeat-auto-fill">auto-fill</a>,
-except that after <a href="#auto-placement-algo">grid item placement</a> any empty repeated tracks are <a href="#collapsed-track">collapsed</a>.
+except that after <a href="https://www.w3.org/TR/css-grid-1/#auto-placement-algo">grid item placement</a> any empty repeated tracks are <a href="#collapsed-track">collapsed</a>.
 An empty track is one with no in-flow grid items placed into or spanning across it.
 (This can result in <em>all</em> tracks being <a href="#collapsed-track">collapsed</a>,
 if they’re all empty.)</p>

@@ -12,8 +12,8 @@ This is the same as establishing a block formatting context,
 except that grid layout is used instead of block layout:
 floats do not intrude into the grid container,
 and the grid container’s margins do not collapse with the margins of its contents.
-The contents of a <a href="#grid-container">grid container</a> are laid out into a <a href="#grid">grid</a>,
-with <a href="#grid-line">grid lines</a> forming the boundaries of each <a href="#grid-item">grid items</a>’ containing block.
+The contents of a <a href="#grid-container">grid container</a> are laid out into a <a href="https://www.w3.org/TR/css-grid-1/#grid">grid</a>,
+with <a href="https://www.w3.org/TR/css-grid-1/#grid-line">grid lines</a> forming the boundaries of each <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a>’ containing block.
 The <a href="https://www.w3.org/TR/css-overflow-3/#overflow">overflow</a> property applies to <a href="#grid-container">grid containers</a>.</p>
 
 <p>Grid containers are not block containers,
@@ -23,9 +23,9 @@ In particular:</p>
 
 <ul>
   <li>
-    <a href="https://www.w3.org/TR/CSS22/visuren.html#float">float</a> and <a href="https://www.w3.org/TR/CSS22/visuren.html#clear">clear</a> have no effect on a <a href="#grid-item">grid item</a>.
+    <a href="https://www.w3.org/TR/CSS22/visuren.html#float">float</a> and <a href="https://www.w3.org/TR/CSS22/visuren.html#clear">clear</a> have no effect on a <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid item</a>.
 However, the <a href="https://www.w3.org/TR/CSS22/visuren.html#float">float</a> property still affects the computed value of <a href="https://www.w3.org/TR/css-ruby-1/#display">display</a> on children of a grid container,
-as this occurs <em>before</em> <a href="#grid-item">grid items</a> are determined.
+as this occurs <em>before</em> <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> are determined.
   </li>
   <li>
     <a href="https://www.w3.org/TR/css-inline-3/#vertical-align">vertical-align</a> has no effect on a grid item.
@@ -46,11 +46,13 @@ and <a href="#valdef-display-grid">grid</a> in the "Computed Value" column.</p>`
   values: [
     {
       name: 'grid',
+      alias: 'valdef-display-grid',
       desc: 'This value causes an element to generate a block-level <a href="#grid-container">grid container</a> box.',
       current: true
     },
     {
       name: 'inline-grid',
+      alias: 'valdef-display-inline-grid',
       desc: 'This value causes an element to generate an inline-level <a href="#grid-container">grid container</a> box.'
     }
   ],

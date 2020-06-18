@@ -7,12 +7,12 @@ export default {
 
   link: 'https://www.w3.org/TR/css-grid-1/#column-align',
 
-  desc: `<p><a href="#grid-item">Grid items</a> can also be aligned in the block dimension
+  desc: `<p><a href="https://www.w3.org/TR/css-grid-1/#grid-item">Grid items</a> can also be aligned in the block dimension
 (perpendicular to the inline dimension)
-by using the <a href="https://www.w3.org/TR/css3-align/#align-self">align-self</a> property on the <a href="#grid-item">grid item</a> or <a href="https://www.w3.org/TR/css3-align/#align-items">align-items</a> property on the <a href="#grid-container">grid container</a>,
-as defined in <a href="#biblio-css-align-3">[CSS-ALIGN-3]</a>.</p>
+by using the <a href="https://www.w3.org/TR/css3-align/#align-self">align-self</a> property on the <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid item</a> or <a href="https://www.w3.org/TR/css3-align/#align-items">align-items</a> property on the <a href="#grid-container">grid container</a>,
+as defined in <a href="https://www.w3.org/TR/css-grid-1/#biblio-css-align-3">[CSS-ALIGN-3]</a>.</p>
 
-<p>If <a href="https://www.w3.org/TR/css3-align/#baseline-alignment">baseline alignment</a> is specified on a <a href="#grid-item">grid item</a> whose size in that axis depends on the size of an intrinsically-sized track
+<p>If <a href="https://www.w3.org/TR/css3-align/#baseline-alignment">baseline alignment</a> is specified on a <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid item</a> whose size in that axis depends on the size of an intrinsically-sized track
 (whose size is therefore dependent on both the item’s size and baseline alignment,
 creating a cyclic dependency),
 that item does not participate in baseline alignment,

@@ -10,63 +10,65 @@ export default {
     {
       name: '&lt;length-percentage&gt;',
       alias: 'length-percentage',
-      desc: `A non-negative length or percentage, as defined by CSS3 Values. <a href="#biblio-css3val">[CSS3VAL]</a>
-     <p><a href="https://www.w3.org/TR/css3-values/#percentage-value">&lt;percentage></a> values are relative to the <a href="https://www.w3.org/TR/css-writing-modes-3/#inline-size">inline size</a> of the <a href="#grid-container">grid container</a> in column <a href="#grid-track">grid tracks</a>,
-and the <a href="https://www.w3.org/TR/css-writing-modes-3/#block-size">block size</a> of the <a href="#grid-container">grid container</a> in row <a href="#grid-track">grid tracks</a>.
+      desc: `A non-negative length or percentage, as defined by CSS3 Values. <a href="https://www.w3.org/TR/css-grid-1/#biblio-css3val">[CSS3VAL]</a>
+     <p><a href="https://www.w3.org/TR/css3-values/#percentage-value">&lt;percentage></a> values are relative to the <a href="https://www.w3.org/TR/css-writing-modes-3/#inline-size">inline size</a> of the <a href="#grid-container">grid container</a> in column <a href="https://www.w3.org/TR/css-grid-1/#grid-track">grid tracks</a>,
+and the <a href="https://www.w3.org/TR/css-writing-modes-3/#block-size">block size</a> of the <a href="#grid-container">grid container</a> in row <a href="https://www.w3.org/TR/css-grid-1/#grid-track">grid tracks</a>.
 If the size of the <a href="#grid-container">grid container</a> depends on the size of its tracks,
-then the <a href="https://www.w3.org/TR/css3-values/#percentage-value">&lt;percentage></a> must be treated as <a href="">auto</a>,
+then the <a href="https://www.w3.org/TR/css3-values/#percentage-value">&lt;percentage></a> must be treated as <a href="#track-list-values-auto">auto</a>,
 for the purpose of calculating the intrinsic sizes of the <a href="#grid-container">grid container</a> and then resolve against that resulting <a href="#grid-container">grid container</a> size
-for the purpose of laying out the <a href="#grid">grid</a> and its items.</p>`
+for the purpose of laying out the <a href="https://www.w3.org/TR/css-grid-1/#grid">grid</a> and its items.</p>`
     },
 
     {
       name: '&lt;flex&gt;',
       alias: 'flex-fr',
-      desc: `A non-negative dimension with the unit <a href="#valdef-flex-fr">fr</a> specifying the track’s <dfn id="grid-template-columns-flex-factor">flex factor</dfn>.
-Each <a href="#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a>-sized track takes a share of the remaining space in proportion to its <a href="#grid-template-columns-flex-factor">flex factor</a>.
-See <a href="#fr-unit">Flexible Lengths</a> for more details.
+      desc: `A non-negative dimension with the unit <a href="https://www.w3.org/TR/css-grid-1/#valdef-flex-fr">fr</a> specifying the track’s <dfn id="grid-template-columns-flex-factor">flex factor</dfn>.
+Each <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a>-sized track takes a share of the remaining space in proportion to its <a href="#grid-template-columns-flex-factor">flex factor</a>.
+See <a href="https://www.w3.org/TR/css-grid-1/#fr-unit">Flexible Lengths</a> for more details.
      <p>When appearing outside a <a href="#valdef-grid-template-columns-minmax">minmax()</a> notation,
-implies an automatic minimum (i.e. ''minmax(auto, <a href="#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a>)'').</p>`
+implies an automatic minimum (i.e. ''minmax(auto, <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a>)'').</p>`
     },
 
     {
       name: 'max-content',
+      alias: 'valdef-grid-template-columns-max-content',
       desc: 'Represents the largest <a href="https://www.w3.org/TR/css-sizing-3/#max-content-contribution">max-content contribution</a> of the <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> occupying the <a href="https://www.w3.org/TR/css-grid-1/#grid-track">grid track</a>.'
     },
 
     {
       name: 'min-content',
-      desc: 'Represents the largest <a href="https://www.w3.org/TR/css-sizing-3/#min-content-contribution">min-content contribution</a> of the <a href="#grid-item">grid items</a> occupying the <a href="#grid-track">grid track</a>.'
+      alias: 'valdef-grid-template-columns-min-content',
+      desc: 'Represents the largest <a href="https://www.w3.org/TR/css-sizing-3/#min-content-contribution">min-content contribution</a> of the <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> occupying the <a href="https://www.w3.org/TR/css-grid-1/#grid-track">grid track</a>.'
     },
 
     {
       name: 'minmax(min, max)',
-      alias: 'minmax',
+      alias: 'valdef-grid-template-columns-minmax',
       desc: `Defines a size range
 greater than or equal to <var>min</var> and less than or equal to <var>max</var>.
 If <var>max</var> &lt; <var>min</var>,
 then <var>max</var> is ignored and <code>minmax(min,max)</code> is treated as <var>min</var>.
-As a maximum, a <a href="#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a> value sets the track’s <a href="#grid-template-columns-flex-factor">flex factor</a>;
+As a maximum, a <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a> value sets the track’s <a href="#grid-template-columns-flex-factor">flex factor</a>;
 it is invalid as a minimum.
-     <p class="note" role="note"><span>Note:</span> A future level of this spec may allow <a href="#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a> minimums,
-and will update the <a href="#track-sizing-algorithm">track sizing algorithm</a> to account for this correctly</p>`
+     <p class="note" role="note"><span>Note:</span> A future level of this spec may allow <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a> minimums,
+and will update the <a href="https://www.w3.org/TR/css-grid-1/#track-sizing-algorithm">track sizing algorithm</a> to account for this correctly</p>`
     },
 
     {
       name: 'auto',
       desc: `As a maximum, identical to <a href="#valdef-grid-template-columns-max-content">max-content</a>.
 As a minimum, represents the largest minimum size (as specified by <a href="https://www.w3.org/TR/CSS21/visudet.html#min-width">min-width</a>/<a href="https://www.w3.org/TR/CSS21/visudet.html#min-height">min-height</a>)
-of the <a href="#grid-item">grid items</a> occupying the <a href="#grid-track">grid track</a>.
-     <p class="note" role="note"><span>Note:</span> <a href="#valdef-grid-template-columns-auto">auto</a> track sizes (and only <a href="#valdef-grid-template-columns-auto">auto</a> track sizes)
-can be stretched by the <a href="https://www.w3.org/TR/css3-align/#align-content">align-content</a> and <a href="https://www.w3.org/TR/css3-align/#justify-content">justify-content</a> properties.</p>`
+of the <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> occupying the <a href="https://www.w3.org/TR/css-grid-1/#grid-track">grid track</a>.
+     <p class="note" role="note"><span>Note:</span> <a href="#track-list-values-auto">auto</a> track sizes (and only <a href="#track-list-values-auto">auto</a> track sizes)
+can be stretched by the <a href="#section-align-content">align-content</a> and <a href="#section-justify-content">justify-content</a> properties.</p>`
     },
 
     {
       name: 'fit-content(&lt;length-percentage&gt;)',
       alias: 'fit-content',
-      desc: `Represents the formula <code>min(<a href="#valdef-grid-template-columns-max-content">max-content</a>, max(<a href="#valdef-grid-template-columns-auto">auto</a>, <var>argument</var>))</code>,
+      desc: `Represents the formula <code>min(<a href="#valdef-grid-template-columns-max-content">max-content</a>, max(<a href="#track-list-values-auto">auto</a>, <var>argument</var>))</code>,
 which is calculated like <code>minmax(auto, max-content)</code>,
-except that the track size is clamped at <var>argument</var> if it is greater than the <a href="#valdef-grid-template-columns-auto">auto</a> minimum.`
+except that the track size is clamped at <var>argument</var> if it is greater than the <a href="#track-list-values-auto">auto</a> minimum.`
     }
   ],
 

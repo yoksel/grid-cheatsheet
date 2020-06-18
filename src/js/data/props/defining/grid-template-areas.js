@@ -8,10 +8,10 @@ export default {
   appliesTo: '<a href="#grid-container">grid containers</a>',
 
   desc: `<p>This property specifies <dfn id="named-grid-area">named grid areas</dfn>,
-which are not associated with any particular <a href="#grid-item">grid item</a>,
+which are not associated with any particular <a href="https://www.w3.org/TR/css-grid-1/#grid-item">grid item</a>,
 but can be referenced from the <a href="#grid-placement-property">grid-placement properties</a>.
-The syntax of the <a href="#grid-template-areas">grid-template-areas</a> property also provides a visualization
-of the structure of the <a href="#grid">grid</a>,
+The syntax of the <a href="#section-grid-template-areas">grid-template-areas</a> property also provides a visualization
+of the structure of the <a href="https://www.w3.org/TR/css-grid-1/#grid">grid</a>,
 making the overall layout of the <a href="#grid-container">grid container</a> easier to understand.</p>`,
 
   values: [
@@ -21,15 +21,15 @@ making the overall layout of the <a href="#grid-container">grid container</a> ea
       desc: `Indicates that no <a href="#named-grid-area">named grid areas</a>,
 and likewise no <a href="#explicit-grid">explicit grid</a> tracks,
 are defined by this property
-(though <a href="#explicit-grid">explicit grid</a> tracks could still be created by <a href="#grid-template-columns">grid-template-columns</a> or <a href="#grid-template-rows">grid-template-rows</a>).
-     <p class="note" role="note"><span>Note:</span> In the absence of an <a href="#explicit-grid">explicit grid</a> any rows/columns will be <a href="#implicit-grids">implicitly generated</a>,
-and their size will be determined by the <a href="#grid-auto-rows">grid-auto-rows</a> and <a href="#grid-auto-columns">grid-auto-columns</a> properties.</p>`
+(though <a href="#explicit-grid">explicit grid</a> tracks could still be created by <a href="#section-grid-template-columns">grid-template-columns</a> or <a href="#section-grid-template-rows">grid-template-rows</a>).
+     <p class="note" role="note"><span>Note:</span> In the absence of an <a href="#explicit-grid">explicit grid</a> any rows/columns will be <a href="https://www.w3.org/TR/css-grid-1/#implicit-grids">implicitly generated</a>,
+and their size will be determined by the <a href="#section-grid-auto-rows">grid-auto-rows</a> and <a href="#section-grid-auto-columns">grid-auto-columns</a> properties.</p>`
     },
 
     {
       name: '&lt;string&gt;+',
       alias: 'valdef-grid-template-areas-string',
-      desc: `A row is created for every separate string listed for the <a href="#grid-template-areas">grid-template-areas</a> property,
+      desc: `A row is created for every separate string listed for the <a href="#section-grid-template-areas">grid-template-areas</a> property,
 and a column is created for each cell in the string,
 when parsed as follows:
      <p>Tokenize the string into a list of the following tokens,
@@ -56,7 +56,7 @@ using longest-match semantics:</p>
         <p class="note" role="note"><span>Note:</span> These rules can produce cell names that do not match the <a href="https://www.w3.org/TR/css3-values/#typedef-ident">&lt;ident&gt;</a> syntax,
     such as "1st 2nd 3rd",
     which requires escaping when referencing those areas by name in other properties,
-    like <a href="#grid-row">grid-row: 1st;</a> to reference the area named <code>1st</code>.</p>
+    like <a href="#section-grid-row">grid-row: 1st;</a> to reference the area named <code>1st</code>.</p>
         <ul>
       <li>
         A <a href="#grid-template-areas-null-cell-token">null cell token</a> represents an unnamed area in the <a href="#grid-container">grid container</a>.
@@ -64,7 +64,7 @@ using longest-match semantics:</p>
       <li>
         A <a href="#grid-template-areas-named-cell-token">named cell token</a> creates a <a href="#named-grid-area">named grid area</a> with the same name.
     Multiple <a href="#grid-template-areas-named-cell-token">named cell tokens</a> within and between rows
-    create a single <a href="#named-grid-area">named grid area</a> that spans the corresponding <a href="#grid-cell">grid cells</a>.
+    create a single <a href="#named-grid-area">named grid area</a> that spans the corresponding <a href="https://www.w3.org/TR/css-grid-1/#grid-cell">grid cells</a>.
       </li>
       <li>
         A <a href="#grid-template-areas-trash-token">trash token</a> is a syntax error,
@@ -74,7 +74,7 @@ using longest-match semantics:</p>
 
      <p>All strings must have the same number of columns,
 or else the declaration is invalid.
-If a <a href="#named-grid-area">named grid area</a> spans multiple <a href="#grid-cell">grid cells</a>,
+If a <a href="#named-grid-area">named grid area</a> spans multiple <a href="https://www.w3.org/TR/css-grid-1/#grid-cell">grid cells</a>,
 but those cells do not form a single filled-in rectangle,
 the declaration is invalid.</p>
      <p class="note" role="note"><span>Note:</span> Non-rectangular or disconnected regions may be permitted in a future version of this module.</p>`

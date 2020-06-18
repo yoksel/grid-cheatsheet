@@ -5,9 +5,9 @@ export default {
 
   initValue: 'legacy',
 
-  appliesTo: '<a href="https://www.w3.org/TR/css3-multicol/#multi-column-container">multi-column containers</a>, <a href="https://www.w3.org/TR/css-flexbox-1/#flex-container">flex containers</a>, <a href="https://www.w3.org/TR/css-grid-1/#grid-container">grid containers</a>',
+  appliesTo: '<a href="https://www.w3.org/TR/css3-multicol/#multi-column-container">multi-column containers</a>, <a href="https://www.w3.org/TR/css-flexbox-1/#flex-container">flex containers</a>, <a href="#grid-container">grid containers</a>',
 
-  desc: '<p>This property specifies the default <a href="#justify-self">justify-self</a> for all of the child boxes (including anonymous boxes) participating in this box’s formatting context.</p>',
+  desc: '<p>This property specifies the default <a href="#section-justify-self">justify-self</a> for all of the child boxes (including anonymous boxes) participating in this box’s formatting context.</p>',
 
   values: [
     {

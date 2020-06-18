@@ -16,14 +16,14 @@ export default {
     {
       name: 'none',
       alias: 'valdef-grid-template-none',
-      desc: 'Sets all three properties to their initial values (<a href="#valdef-grid-template-rows-none">none</a>).'
+      desc: 'Sets all three properties to their initial values (<a href="#track-sizing-none">none</a>).'
     },
 
     {
       name: '&lt;‘grid-template-rows’&gt; / &lt;‘grid-template-columns’&gt;',
       alias: 'grid-template-rowcol',
-      desc: `Sets <a href="#grid-template-rows">grid-template-rows</a> and <a href="#grid-template-columns">grid-template-columns</a> to the specified values, respectively,
-and sets <a href="#grid-template-areas">grid-template-areas</a> to <a href="#valdef-grid-template-areas-none">none</a>.`
+      desc: `Sets <a href="#section-grid-template-rows">grid-template-rows</a> and <a href="#section-grid-template-columns">grid-template-columns</a> to the specified values, respectively,
+and sets <a href="#section-grid-template-areas">grid-template-areas</a> to <a href="#valdef-grid-template-areas-none">none</a>.`
     },
 
     {
@@ -31,14 +31,14 @@ and sets <a href="#grid-template-areas">grid-template-areas</a> to <a href="#val
       alias: 'grid-template-ascii',
       desc: `<ul>
       <li>
-       <p>Sets <a href="#grid-template-areas">grid-template-areas</a> to the strings listed.</p>
+       <p>Sets <a href="#section-grid-template-areas">grid-template-areas</a> to the strings listed.</p>
   </li><li>
-       <p>Sets <a href="#grid-template-rows">grid-template-rows</a> to the <a href="#typedef-track-size">&lt;track-size&gt;</a>s following each string
-(filling in <a href="#valdef-grid-template-columns-auto">auto</a> for any missing sizes),
+       <p>Sets <a href="#section-grid-template-rows">grid-template-rows</a> to the <a href="https://www.w3.org/TR/css-grid-1/#typedef-track-size">&lt;track-size&gt;</a>s following each string
+(filling in <a href="#track-list-values-auto">auto</a> for any missing sizes),
 and splicing in the named lines defined before/after each size.</p>
   </li><li>
-       <p>Sets <a href="#grid-template-columns">grid-template-columns</a> to the track listing specified after the slash
-(or <a href="#valdef-grid-template-rows-none">none</a>, if not specified).</p>
+       <p>Sets <a href="#section-grid-template-columns">grid-template-columns</a> to the track listing specified after the slash
+(or <a href="#track-sizing-none">none</a>, if not specified).</p>
   </li>
 </ul>
      <p>This syntax allows the author to align track names and sizes inline with their respective grid areas.</p>

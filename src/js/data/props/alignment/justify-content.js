@@ -5,7 +5,7 @@ export default {
 
   initValue: 'normal',
 
-  appliesTo: '<a href="https://www.w3.org/TR/css3-multicol/#multi-column-container">multi-column containers</a>, <a href="https://www.w3.org/TR/css-flexbox-1/#flex-container">flex containers</a>, and <a href="https://www.w3.org/TR/css-grid-1/#grid-container">grid containers</a>',
+  appliesTo: '<a href="https://www.w3.org/TR/css3-multicol/#multi-column-container">multi-column containers</a>, <a href="https://www.w3.org/TR/css-flexbox-1/#flex-container">flex containers</a>, and <a href="#grid-container">grid containers</a>',
 
   desc: '',
 

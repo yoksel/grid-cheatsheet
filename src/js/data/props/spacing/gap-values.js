@@ -9,7 +9,7 @@ export default {
       desc: `<p class="">Specifies a gap between “rows” or “columns”,
 as defined by the layout modes to which it applies;
 see subsections below for details.</p>
-     <p>Negative values are invalid. <a href="https://www.w3.org/TR/css-sizing-3/#percentage-sizing">As in the min size properties and margins/paddings</a> <a href="#biblio-css-sizing-3">[CSS-SIZING-3]</a>,
+     <p>Negative values are invalid. <a href="https://www.w3.org/TR/css-sizing-3/#percentage-sizing">As in the min size properties and margins/paddings</a> <a href="https://www.w3.org/TR/css-grid-1/#biblio-css-sizing-3">[CSS-SIZING-3]</a>,
 percentages resolve against zero
 for determining intrinsic size contributions,
 but resolve against the box’s content box

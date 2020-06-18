@@ -9,14 +9,14 @@ export default {
 
   appliesTo: 'flex items, grid items, and absolutely-positioned boxes',
 
-  desc: `<p>Aligns the box (as the <a href="#alignment-subject">alignment subject</a>)
-within its containing block (as the <a href="#alignment-container">alignment container</a>)
+  desc: `<p>Aligns the box (as the <a href="https://www.w3.org/TR/css-align-3/#alignment-subject">alignment subject</a>)
+within its containing block (as the <a href="https://www.w3.org/TR/css-align-3/#alignment-container">alignment container</a>)
 along the block/column/cross axis of the alignment container:
-the box’s outer edges are aligned within its alignment container <a href="#alignment-values">as described by its alignment value</a></p>
+the box’s outer edges are aligned within its alignment container <a href="https://www.w3.org/TR/css-align-3/#alignment-values">as described by its alignment value</a></p>
 
 <p class="note" role="note"><span>Note:</span> <code>auto</code> margins,
 because they effectively adjust the size of the margin area,
-take precedence over <a href="#align-self">align-self</a>.</p>`,
+take precedence over <a href="#section-align-self">align-self</a>.</p>`,
 
   values: [
     {

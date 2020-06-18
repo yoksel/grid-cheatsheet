@@ -12,10 +12,10 @@ export default {
   appliesTo: '<a href="#grid-container">grid containers</a>',
 
   desc: `<p>If a grid item is positioned into a row or column that is not explicitly sized
-by <a href="#grid-template-rows">grid-template-rows</a> or <a href="#grid-template-columns">grid-template-columns</a>, <a href="#implicit-grid-track">implicit grid tracks</a> are created to hold it.
+by <a href="#section-grid-template-rows">grid-template-rows</a> or <a href="#section-grid-template-columns">grid-template-columns</a>, <a href="#implicit-grid-track">implicit grid tracks</a> are created to hold it.
 This can happen either by explicitly positioning into a row or column that is out of range,
-or by the <a href="#grid-item-placement-algorithm">auto-placement algorithm</a> creating additional rows or columns.
-The <a href="#grid-auto-columns">grid-auto-columns</a> and <a href="#grid-auto-rows">grid-auto-rows</a> properties specify the size of such implicitly-created tracks.</p>
+or by the <a href="https://www.w3.org/TR/css-grid-1/#grid-item-placement-algorithm">auto-placement algorithm</a> creating additional rows or columns.
+The <a href="#section-grid-auto-columns">grid-auto-columns</a> and <a href="#section-grid-auto-rows">grid-auto-rows</a> properties specify the size of such implicitly-created tracks.</p>
 
 <p>If multiple track sizes are given, the pattern is repeated as necessary
 to find the size of the implicit tracks.
