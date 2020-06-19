@@ -1,10 +1,10 @@
 const themes = [
-  'gray',
+  'sunny',
   'seagreen',
   'winter',
   'warm',
-  'sunny',
-  'brown'
+  'brown',
+  'gray'
 ];
 
 export class ThemeSwitcher {
