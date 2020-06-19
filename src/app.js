@@ -3,6 +3,7 @@ import { Nav } from './js/components/nav';
 import { ThemeSwitcher } from './js/components/theme-switcher';
 import { MainContainer } from './js/components/main-container';
 
+import './screenshot.png';
 import './scss/styles.scss';
 
 const main = document.querySelector('.page-main');
