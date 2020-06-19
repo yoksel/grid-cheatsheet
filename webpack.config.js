@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = () => {
@@ -19,20 +18,19 @@ module.exports = () => {
             'style-loader',
             'css-loader',
             'postcss-loader',
-            'sass-loader',
+            'sass-loader'
           ]
         },
         {
           test: /\.(png|svg|jpg|gif|ttf)$/,
           use: [
-            'url-loader',
-          ],
-        },
+            'url-loader'
+          ]
+        }
       ]
     },
     devtool: 'inline-source-map',
     devServer: {
-      contentBase: './dist',
       contentBase: path.join(__dirname, 'dist'),
       compress: true,
       port: 9000
@@ -41,7 +39,7 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: 'src/index-tmpl.html'
-      }),
+      })
     ]
-  }
+  };
 };

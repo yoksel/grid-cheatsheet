@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -19,15 +18,16 @@ module.exports = () => {
           use: [
             MiniCssExtractPlugin.loader,
             'css-loader',
-            'sass-loader',
+            'postcss-loader',
+            'sass-loader'
           ]
         },
         {
-          test: /\.(png|svg|jpg|gif)$/,
+          test: /\.(png|svg|jpg|gif|ttf)$/,
           use: [
-            'file-loader',
-          ],
-        },
+            'url-loader'
+          ]
+        }
       ]
     },
     plugins: [
@@ -35,12 +35,12 @@ module.exports = () => {
         // Options similar to the same options in webpackOptions.output
         // all options are optional
         filename: 'styles.css',
-        ignoreOrder: false, // Enable to remove warnings about conflicting order
+        ignoreOrder: false // Enable to remove warnings about conflicting order
       }),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: 'src/index-tmpl.html'
-      }),
+      })
     ]
-  }
+  };
 };
