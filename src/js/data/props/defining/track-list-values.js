@@ -6,9 +6,25 @@ export default {
 
   link: 'https://www.w3.org/TR/css-grid-1/#valdef-grid-template-columns-length-percentage',
 
+  desc: `<p>The syntax of a <a href="#track-list">track list</a> is:</p>
+
+<pre>
+<code><dfn id="typedef-track-list">&lt;track-list></dfn>          = [ <a href="#typedef-line-names">&lt;line-names></a> ? [ <a href="#typedef-track-size">&lt;track-size></a> | <a href="#typedef-track-repeat">&lt;track-repeat></a> ] ] + <a href="#typedef-line-names">&lt;line-names></a> ?
+<dfn id="typedef-auto-track-list">&lt;auto-track-list></dfn>     = [ <a href="#typedef-line-names">&lt;line-names></a> ? [ <a href="#typedef-fixed-size">&lt;fixed-size></a> | <a href="#typedef-fixed-repeat">&lt;fixed-repeat></a> ] ] * <a href="#typedef-line-names">&lt;line-names></a> ? <a href="#typedef-auto-repeat">&lt;auto-repeat></a>
+                        [ <a href="#typedef-line-names">&lt;line-names></a> ? [ <a href="#typedef-fixed-size">&lt;fixed-size></a> | <a href="#typedef-fixed-repeat">&lt;fixed-repeat></a> ] ] * <a href="#typedef-line-names">&lt;line-names></a> ?
+<dfn id="typedef-explicit-track-list">&lt;explicit-track-list></dfn> = [ <a href="#typedef-line-names">&lt;line-names></a> ? <a href="#typedef-track-size">&lt;track-size></a> ] + <a href="#typedef-line-names">&lt;line-names></a> ?
+
+<dfn id="typedef-track-size">&lt;track-size></dfn>          = <a href="#typedef-track-breadth">&lt;track-breadth></a> | minmax( <a href="#typedef-inflexible-breadth">&lt;inflexible-breadth></a> <a href="https://www.w3.org/TR/css3-values/#comb-comma">,</a> <a href="#typedef-track-breadth">&lt;track-breadth></a> ) | fit-content( <a href="https://www.w3.org/TR/css3-values/#typedef-length-percentage">&lt;length-percentage></a> )
+<dfn id="typedef-fixed-size">&lt;fixed-size></dfn>          = <a href="#typedef-fixed-breadth">&lt;fixed-breadth></a> | minmax( <a href="#typedef-fixed-breadth">&lt;fixed-breadth></a> <a href="https://www.w3.org/TR/css3-values/#comb-comma">,</a> <a href="#typedef-track-breadth">&lt;track-breadth></a> ) | minmax( <a href="#typedef-inflexible-breadth">&lt;inflexible-breadth></a> <a href="https://www.w3.org/TR/css3-values/#comb-comma">,</a> <a href="#typedef-fixed-breadth">&lt;fixed-breadth></a> )
+<dfn id="typedef-track-breadth">&lt;track-breadth></dfn>       = <a href="https://www.w3.org/TR/css3-values/#typedef-length-percentage">&lt;length-percentage></a> | <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex></a> | min-content | max-content | auto
+<dfn id="typedef-inflexible-breadth">&lt;inflexible-breadth></dfn>  = <a href="https://www.w3.org/TR/css3-values/#typedef-length-percentage">&lt;length-percentage></a> | min-content | max-content | auto
+<dfn id="typedef-fixed-breadth">&lt;fixed-breadth></dfn>       = <a href="https://www.w3.org/TR/css3-values/#typedef-length-percentage">&lt;length-percentage></a>
+<dfn id="typedef-line-names">&lt;line-names></dfn>          = '[' <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident></a> * ']'
+</code></pre>`,
+
   values: [
     {
-      name: '&lt;length-percentage&gt;',
+      name: '&lt;length-percentage>',
       alias: 'length-percentage',
       desc: `A non-negative length or percentage, as defined by CSS3 Values. <a href="https://www.w3.org/TR/css-grid-1/#biblio-css3val">[CSS3VAL]</a>
      <p><a href="https://www.w3.org/TR/css3-values/#percentage-value">&lt;percentage></a> values are relative to the <a href="https://www.w3.org/TR/css-writing-modes-3/#inline-size">inline size</a> of the <a href="#grid-container">grid container</a> in column <a href="https://www.w3.org/TR/css-grid-1/#grid-track">grid tracks</a>,
@@ -20,13 +36,13 @@ for the purpose of laying out the <a href="https://www.w3.org/TR/css-grid-1/#gri
     },
 
     {
-      name: '&lt;flex&gt;',
+      name: '&lt;flex>',
       alias: 'flex-fr',
       desc: `A non-negative dimension with the unit <a href="https://www.w3.org/TR/css-grid-1/#valdef-flex-fr">fr</a> specifying the track’s <dfn id="grid-template-columns-flex-factor">flex factor</dfn>.
-Each <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a>-sized track takes a share of the remaining space in proportion to its <a href="#grid-template-columns-flex-factor">flex factor</a>.
+Each <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex></a>-sized track takes a share of the remaining space in proportion to its <a href="#grid-template-columns-flex-factor">flex factor</a>.
 See <a href="https://www.w3.org/TR/css-grid-1/#fr-unit">Flexible Lengths</a> for more details.
      <p>When appearing outside a <a href="#valdef-grid-template-columns-minmax">minmax()</a> notation,
-implies an automatic minimum (i.e. 'minmax(auto, <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a>)').</p>`
+implies an automatic minimum (i.e. 'minmax(auto, <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex></a>)').</p>`
     },
 
     {
@@ -48,9 +64,9 @@ implies an automatic minimum (i.e. 'minmax(auto, <a href="https://www.w3.org/TR/
 greater than or equal to <var>min</var> and less than or equal to <var>max</var>.
 If <var>max</var> &lt; <var>min</var>,
 then <var>max</var> is ignored and <code>minmax(min,max)</code> is treated as <var>min</var>.
-As a maximum, a <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a> value sets the track’s <a href="#grid-template-columns-flex-factor">flex factor</a>;
+As a maximum, a <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex></a> value sets the track’s <a href="#grid-template-columns-flex-factor">flex factor</a>;
 it is invalid as a minimum.
-     <p class="note" role="note"><span>Note:</span> A future level of this spec may allow <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex&gt;</a> minimums,
+     <p class="note" role="note"><span>Note:</span> A future level of this spec may allow <a href="https://www.w3.org/TR/css-grid-1/#typedef-flex" title="Expands to: fr">&lt;flex></a> minimums,
 and will update the <a href="https://www.w3.org/TR/css-grid-1/#track-sizing-algorithm">track sizing algorithm</a> to account for this correctly</p>`
     },
 
@@ -64,7 +80,7 @@ can be stretched by the <a href="#section-align-content">align-content</a> and <
     },
 
     {
-      name: 'fit-content(&lt;length-percentage&gt;)',
+      name: 'fit-content(&lt;length-percentage>)',
       alias: 'fit-content',
       desc: `Represents the formula <code>min(<a href="#valdef-grid-template-columns-max-content">max-content</a>, max(<a href="#track-list-values-auto">auto</a>, <var>argument</var>))</code>,
 which is calculated like <code>minmax(auto, max-content)</code>,

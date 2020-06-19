@@ -24,7 +24,7 @@ otherwise, it is set to <a href="#grid-placement-auto">auto</a>.</p>`,
 
   values: [
     {
-      name: '&lt;grid-line&gt; [ / &lt;grid-line&gt; ] ?',
+      name: '<a href="#section-grid-line-values">&lt;grid-line&gt;</a> [ / <a href="#section-grid-line-values">&lt;grid-line&gt;</a> ] ?',
       alias: 'grid-line-grid-line',
       desc: ''
     }

@@ -12,8 +12,8 @@ to be written in a more compact form.</p>
 <p>The generic form of the <a href="#funcdef-repeat">repeat()</a> syntax is, approximately,</p>
 
 <pre>
-  <code>repeat( [ &lt;positive-integer&gt; | auto-fill | auto-fit ] , <a href="https://www.w3.org/TR/css-grid-1/#typedef-track-list">&lt;track-list&gt;</a> )</code>
-</pre>
+<code>repeat( [ <a href="">&lt;positive-integer></a> | auto-fill | auto-fit ], <a href="#typedef-track-list">&lt;track-list></a> )
+</code></pre>
 
 <p>The first argument specifies the number of repetitions.
 The second argument is a <a href="#track-list">track list</a>,
@@ -22,14 +22,36 @@ However, there are some restrictions:</p>
 
 <ul>
     <li>
-     <p class="">The <a href="#funcdef-repeat">repeat()</a> notation can’t be nested.</p>
+     <p>The <a href="#funcdef-repeat">repeat()</a> notation can’t be nested.</p>
   </li><li>
-     <p class="">Automatic repetitions (<a href="#valdef-repeat-auto-fill">auto-fill</a> or <a href="#valdef-repeat-auto-fit">auto-fit</a>)
+     <p>Automatic repetitions (<a href="#valdef-repeat-auto-fill">auto-fill</a> or <a href="#valdef-repeat-auto-fit">auto-fit</a>)
 cannot be combined with <a href="https://www.w3.org/TR/css-grid-1/#intrinsic-sizing-function">intrinsic</a> or <a href="https://www.w3.org/TR/css-grid-1/#flexible-sizing-function">flexible</a> sizes.</p>
   </li>
 </ul>
 
-<p>If the <a href="#funcdef-repeat">repeat()</a> function ends up placing two <a href="https://www.w3.org/TR/css-grid-1/#typedef-line-names">&lt;line-names&gt;</a> adjacent to each other,
+<p>Thus the precise syntax of the <a href="#funcdef-repeat">repeat()</a> notation
+has several forms:</p>
+
+<pre>
+<code><dfn id="typedef-track-repeat"><a href="#typedef-track-repeat">&lt;track-repeat></a></dfn> = repeat( [ <a href="">&lt;positive-integer></a> ], [ <a href="#typedef-line-names">&lt;line-names></a> ? <a href="#typedef-track-size">&lt;track-size></a> ] + <a href="#typedef-line-names">&lt;line-names></a> ? )
+<dfn id="typedef-auto-repeat"><a href="#typedef-auto-repeat">&lt;auto-repeat></a></dfn>  = repeat( [ auto-fill | auto-fit ], [ <a href="#typedef-line-names">&lt;line-names></a> ? <a href="#typedef-fixed-size">&lt;fixed-size></a> ] + <a href="#typedef-line-names">&lt;line-names></a> ? )
+<dfn id="typedef-fixed-repeat"><a href="#typedef-fixed-repeat">&lt;fixed-repeat></a></dfn> = repeat( [ <a href="">&lt;positive-integer></a> ], [ <a href="#typedef-line-names">&lt;line-names></a> ? <a href="#typedef-fixed-size">&lt;fixed-size></a> ] + <a href="#typedef-line-names">&lt;line-names></a> ? )
+</code></pre>
+
+<ul>
+  <li>
+    <p class="">The <a href="#typedef-track-repeat">&lt;track-repeat></a> variant can represent the repetition of any <a href="#typedef-track-size">&lt;track-size></a>,
+but is limited to a fixed number of repetitions.</p>
+  </li>
+  <li>
+    <p>The <a href="#typedef-auto-repeat">&lt;auto-repeat></a> variant can repeat automatically to fill a space,
+but requires <a href="https://www.w3.org/TR/css-sizing-3/#definite">definite</a> track sizes so that the number of repetitions can be calculated.
+It can only appear once in the <a href="#track-list">track list</a>,
+but the same <a href="#track-list">track list</a> can also contain <a href="#typedef-fixed-repeat">&lt;fixed-repeat></a>s.</p>
+  </li>
+</ul>
+
+<p>If the <a href="#funcdef-repeat">repeat()</a> function ends up placing two <a href="#typedef-line-names">&lt;line-names></a> adjacent to each other,
 the name lists are merged.
 For example, <code>repeat(2, [a] 1fr [b])</code> is equivalent to <code>[a] 1fr [b a] 1fr [b]</code>.</p>
 

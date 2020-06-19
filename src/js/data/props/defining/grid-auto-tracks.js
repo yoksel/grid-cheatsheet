@@ -24,7 +24,7 @@ and the last <a href="#implicit-grid-track">implicit grid track</a> before the <
 
   values: [
     {
-      name: '&lt;track-size>+',
+      name: '<a href="#typedef-track-size">&lt;track-size></a>+',
       alias: 'autotracks-track-size',
       desc: ''
     }

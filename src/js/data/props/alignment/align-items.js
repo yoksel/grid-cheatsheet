@@ -13,7 +13,7 @@ export default {
 
   values: [
     {
-      name: 'normal | stretch | &lt;baseline-position> | [ &lt;overflow-position>? &lt;self-position> ]',
+      name: '<a href="#justify-self-normal">normal</a> | <a href="#justify-self-stretch">stretch</a> | <a href="#baseline-position">&lt;baseline-position></a> | [ <a href="#overflow-position">&lt;overflow-position></a> ? <a href="#self-position">&lt;self-position></a> ]',
       alias: 'align-items-value',
       desc: ''
     }

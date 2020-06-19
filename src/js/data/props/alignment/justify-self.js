@@ -20,7 +20,7 @@ take precedence over <a href="#section-justify-self">justify-self</a>.</p>`,
 
   values: [
     {
-      name: 'auto | normal | stretch | &lt;baseline-position&gt; | &lt;overflow-position&gt; ? [ &lt;self-position&gt; | left | right ]',
+      name: '<a href="#justify-self-auto">auto</a> | <a href="#justify-self-normal">normal</a> | <a href="#justify-self-stretch">stretch</a> | <a href="#baseline-position">&lt;baseline-position></a> | <a href="#overflow-position">&lt;overflow-position></a> ? [ <a href="#self-position">&lt;self-position></a> | left | right ]',
       alias: 'justify-self-value',
       desc: ''
     }

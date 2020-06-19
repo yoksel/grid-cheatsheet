@@ -27,13 +27,13 @@ and sets <a href="#section-grid-template-areas">grid-template-areas</a> to <a hr
     },
 
     {
-      name: '[ &lt;line-names&gt;? &lt;string&gt; &lt;track-size&gt;? &lt;line-names&gt;? ] + [ / &lt;explicit-track-list&gt; ] ?',
+      name: '[ <a href="#typedef-line-names">&lt;line-names></a> ? &lt;string&gt; <a href="#typedef-track-size">&lt;track-size></a> ? <a href="#typedef-line-names">&lt;line-names></a>? ] + [ / <a href="#typedef-explicit-track-list">&lt;explicit-track-list></a> ] ?',
       alias: 'grid-template-ascii',
       desc: `<ul>
       <li>
        <p>Sets <a href="#section-grid-template-areas">grid-template-areas</a> to the strings listed.</p>
   </li><li>
-       <p>Sets <a href="#section-grid-template-rows">grid-template-rows</a> to the <a href="https://www.w3.org/TR/css-grid-1/#typedef-track-size">&lt;track-size&gt;</a>s following each string
+       <p>Sets <a href="#section-grid-template-rows">grid-template-rows</a> to the <a href="#typedef-track-size">&lt;track-size></a>s following each string
 (filling in <a href="#track-list-values-auto">auto</a> for any missing sizes),
 and splicing in the named lines defined before/after each size.</p>
   </li><li>

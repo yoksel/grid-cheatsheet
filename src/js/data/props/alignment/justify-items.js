@@ -11,7 +11,7 @@ export default {
 
   values: [
     {
-      name: 'normal | stretch | <baseline-position> | &lt;overflow-position&gt;? [ &lt;self-position&gt; | left | right ] | legacy | legacy && [ left | right | center ]',
+      name: '<a href="#justify-self-normal">normal</a> | <a href="#justify-self-stretch">stretch</a> | <a href="#baseline-position">&lt;baseline-position></a> | <a href="#overflow-position">&lt;overflow-position></a> ? [ <a href="#self-position">&lt;self-position></a> | left | right ] | <a href="#justify-items-legacy">legacy</a> | <a href="#justify-items-legacy">legacy</a> && [ left | right | center ]',
       alias: 'justify-items-value',
       desc: ''
     }

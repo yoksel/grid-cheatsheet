@@ -11,7 +11,7 @@ export default {
 
   values: [
     {
-      name: 'normal | &lt;baseline-position> | &lt;content-distribution> | &lt;overflow-position>? &lt;content-position>',
+      name: '<a href="#justify-self-normal">normal</a> | <a href="#baseline-position">&lt;baseline-position></a> | <a href="#content-distribution">&lt;content-distribution></a> | <a href="#overflow-position">&lt;overflow-position></a> ? <a href="#content-position">&lt;content-position></a>',
       alias: 'align-content-value',
       desc: ''
     }

@@ -10,7 +10,7 @@ Lines can be explicitly named in the <a href="#section-grid-template-rows">grid-
 or <a href="https://www.w3.org/TR/css-grid-1/#implicit-named-lines">implicitly named</a> by creating <a href="#named-grid-area">named grid areas</a> with the <a href="#section-grid-template-areas">grid-template-areas</a> property.</p>
 
 <p>A line name cannot be <code>span</code>,
-i.e. the <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a> in the <a href="https://www.w3.org/TR/css-grid-1/#typedef-line-names">&lt;line-names&gt;</a> production
+i.e. the <a href="https://www.w3.org/TR/css3-values/#identifier-value">&lt;custom-ident&gt;</a> in the <a href="#typedef-line-names">&lt;line-names&gt;</a> production
 excludes the keyword <code>span</code>.</p>`,
 
   htmlMarkup: `<div class="parent">

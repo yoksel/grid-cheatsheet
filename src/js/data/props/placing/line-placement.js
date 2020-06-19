@@ -23,7 +23,7 @@ thereby specifying the <a href="https://www.w3.org/TR/css-writing-modes-3/#inlin
 
   values: [
     {
-      name: '&lt;grid-line&gt;',
+      name: '<a href="#section-grid-line-values">&lt;grid-line&gt;</a>',
       alias: 'grid-line-value',
       desc: ''
     }

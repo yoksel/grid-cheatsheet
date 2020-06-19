@@ -11,7 +11,7 @@ export default {
 
   values: [
     {
-      name: 'normal | &lt;content-distribution> | &lt;overflow-position>? [ &lt;content-position> | left | right ]',
+      name: '<a href="#justify-self-normal">normal</a> | <a href="#content-distribution">&lt;content-distribution></a> | <a href="#overflow-position">&lt;overflow-position></a> ? [ <a href="#content-position">&lt;content-position></a> | left | right ]',
       alias: 'justify-content-value',
       desc: ''
     }

@@ -30,6 +30,14 @@ the opposite direction of the related 4-edge properties using physical direction
 
   isFeaturedHighlighted: true,
 
+  values: [
+    {
+      name: '<a href="#section-grid-line-values">&lt;grid-line&gt;</a> [ / <a href="#section-grid-line-values">&lt;grid-line&gt;</a> ]{0,3}',
+      alias: 'grid-line-grid-line',
+      desc: ''
+    }
+  ],
+
   customValues: [
     {
       name: '1',

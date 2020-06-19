@@ -32,7 +32,7 @@ as <a href="https://www.w3.org/TR/css3-align/#row-gap">row-gap</a>, <a href="htt
 and their size will be determined by the <a href="#section-grid-auto-rows">grid-auto-rows</a> and <a href="#section-grid-auto-columns">grid-auto-columns</a> properties.</p>`
     },
     {
-      name: '&lt;track-list> | &lt;auto-track-list>',
+      name: '<a href="#section-track-list-values">&lt;track-list></a> | <a href="#section-auto-tracks">&lt;auto-track-list></a>',
       alias: 'track-listing',
       desc: `Specifies the <a href="#track-list">track list</a> as a series of <a href="#grid-template-rows-track-sizing-function">track sizing functions</a> and line names.
 Each <dfn id="grid-template-rows-track-sizing-function">track sizing function</dfn> can be specified as a length,

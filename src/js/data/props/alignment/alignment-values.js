@@ -118,10 +118,10 @@ The fallback alignment is also used to align the <a href="https://www.w3.org/TR/
     },
 
     {
-      name: '&lt;overflow-position&gt;',
+      name: '&lt;overflow-position>',
       alias: 'overflow-position',
       desc: `<pre>
-  <code>&lt;overflow-position&gt;</dfn> = unsafe | safe</code>
+  <code>&lt;overflow-position></dfn> = unsafe | safe</code>
 </pre>
 
 <dl>
@@ -156,13 +156,13 @@ by biasing any remaining overflow to the opposite side.
 </dl>`
     },
     {
-      name: '&lt;self-position&gt;',
+      name: '&lt;self-position>',
       alias: 'self-position',
       desc: `This set is used by <a href="#section-justify-self">justify-self</a> and <a href="#section-align-self">align-self</a> to align the box within its <a href="https://www.w3.org/TR/css-align-3/#alignment-container">alignment container</a>,
 and also by <a href="#section-justify-items">justify-items</a> and <a href="#section-align-items">align-items</a> (to specify default values for <code>justify-self</code> and <code>align-self</code>).
 
 <pre>
-  <code><dfn id="self-position">&lt;self-position&gt;</dfn> = center | start | end | self-start | self-end | flex-start | flex-end</code>
+  <code><dfn id="self-position">&lt;self-position></dfn> = center | start | end | self-start | self-end | flex-start | flex-end</code>
 </pre>`
     },
     {
@@ -230,6 +230,15 @@ so that the combined size exactly fills the alignment container.
 
 <pre>
   <code><dfn id="typedef-content-distribution">&lt;content-distribution&gt;</dfn> = space-between | space-around | space-evenly | stretch</code>
+</pre>`
+    },
+    {
+      name: '&lt;content-position>',
+      alias: 'content-position',
+      desc: `<p>This set is used by <a href="#section-justify-content">justify-content</a> and <a href="#section-align-content">align-content</a> to align the box’s contents within itself.</p>
+
+<pre>
+  <code><dfn id="typedef-content-position">&lt;content-position&gt;</dfn> = center | start | end | flex-start | flex-end</code>
 </pre>`
     },
     {
