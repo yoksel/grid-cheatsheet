@@ -1,4 +1,4 @@
-[data-theme="default"] {
+[data-theme="gray"] {
   --col-1-darkest: #D1D1D1;
   --col-1-darker: #E0E0E0;
   --col-1-dark: #F0F0F0;
@@ -47,6 +47,10 @@
   --nav-link-hover: var(--col-6);
   --nav-link-current: var(--col-6-dark);
   --demo-bg: var(--col-2-dark);
+
+  --control-bg: var(--col-4-light);
+  --control-color: var(--col-2-light);
+  --control-current-bg: var(--col-5-dark);
 
   --demo-featured-bg: var(--col-3-light);
   --demo-code-bg: var(--col-1-dark);

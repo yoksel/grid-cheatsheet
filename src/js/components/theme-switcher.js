@@ -1,5 +1,5 @@
 const themes = [
-  'default',
+  'gray',
   'seagreen',
   'winter',
   'warm',
