@@ -106,7 +106,10 @@ export class PropSection {
     }
 
     return createElement(`<div
-      class="prop-values">
+      class="
+        prop-values
+        ${isTitleHidden ? 'prop-values--title-hidden' : ''}
+      ">
       <h4 class="
         prop-values__title
         ${isTitleHidden ? 'visually-hidden' : ''}

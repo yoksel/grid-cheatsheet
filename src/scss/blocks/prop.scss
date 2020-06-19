@@ -65,6 +65,11 @@
 
 .prop-values__list {
   margin-left: 1rem;
+
+  .prop-values--title-hidden & {
+    margin-left: 0;
+    margin-top: 0;
+  }
 }
 
 .prop-values__term {
