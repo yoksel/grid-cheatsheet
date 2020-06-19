@@ -7,18 +7,15 @@ export class Nav {
   }) {
     this._groups = groups;
     // While get marker position
-    // need to handle first last of sections
+    // need to handle first the last of sections
     this._sectionsComponents = sectionsComponents.reverse();
     this._current = null;
     this._isWindowScrolling = false;
 
     this.element = this._getNavElement();
-    const firstNavItem = this.element.querySelector('.nav__item');
 
     this._markerElement = createElement('<span class="nav__marker"></span>');
     this.element.prepend(this._markerElement);
-
-    this.setCurrentItem(firstNavItem);
 
     this._navItemsBySectionId = this._getItemsBySectionId();
 

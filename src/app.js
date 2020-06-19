@@ -14,11 +14,7 @@ const asideContentElement = document.querySelector('.page-aside__content');
 const nav = new Nav({ groups, sectionsComponents: mainContainer.getSectionsComponents() });
 
 asideContentElement.prepend(nav.element);
-
-setTimeout(() => {
-  // Delay for correct detecting current section
-  nav.moveMarker();
-}, 100);
+nav.moveMarker();
 
 if (window.location.search.includes('debug')) {
   checkLinks();
