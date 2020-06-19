@@ -1,4 +1,5 @@
 const getQuantityFromString = (str) => {
+  // Remove named lines
   str = str.replace(/\[[^[]{0,}\]/g, '');
 
   const items = str

@@ -52,6 +52,8 @@
 
 .parent {
   position: relative;
+  grid-auto-columns: 1fr;
+  overflow: hidden;
   border: 1px dashed var(--parent-border);
 
   &--grid-view {
