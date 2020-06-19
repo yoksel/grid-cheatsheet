@@ -22,7 +22,8 @@ export class StylesController {
   }
 
   _getStylesElement () {
-    const element = createElement(`<style id="style-${this._data.name}"></style>`);
+    const id = this._data.alias || this._data.name;
+    const element = createElement(`<style id="style-${id}"></style>`);
     document.head.append(element);
 
     return element;
