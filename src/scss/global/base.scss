@@ -111,3 +111,18 @@ P:first-child {
 .table-data--centered {
   text-align: center;
 }
+
+.self-link {
+  opacity: 0;
+  color: inherit;
+
+  &::before {
+    content: "#";
+  }
+
+  DT:hover &,
+  H2:hover &,
+  H3:hover & {
+    opacity: 1;
+  }
+}

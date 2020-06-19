@@ -52,7 +52,10 @@ export class PropSection {
   }
 
   _getTitleElement () {
-    return createElement(`<h3 class="prop__title">${this._data.name}</h3>`);
+    return createElement(`<h3 class="prop__title">
+      ${this._data.name}
+      <a class="self-link" href="#section-${this.id}"></a>
+    </h3>`);
   }
 
   _getLinkElement () {
@@ -100,8 +103,14 @@ export class PropSection {
     const isTitleHidden = !this._data.desc;
 
     for (const { name, alias, desc } of this._data.values) {
-      const idAttr = alias || `${this.id}-${name}`;
-      markup += `<dt id="${idAttr}" class="prop-values__term">${name}</dt>
+      const id = alias || `${this.id}-${name}`;
+
+      markup += `<dt
+        id="${id}"
+        class="prop-values__term">
+        ${name}
+        <a class="self-link" href="#${id}"></a>
+      </dt>
         <dd class="prop-values__desc">${desc}</dd>`;
     }
 

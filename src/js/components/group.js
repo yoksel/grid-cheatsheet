@@ -43,7 +43,10 @@ export class Group {
       className = 'visually-hidden';
     }
 
-    return createElement(`<h2 class="${className}">${title}</h2>`);
+    return createElement(`<h2 class="${className}">
+      ${title}
+      <a class="self-link" href="#section-${this.id}"></a>
+    </h2>`);
   }
 
   _getDescElement () {
