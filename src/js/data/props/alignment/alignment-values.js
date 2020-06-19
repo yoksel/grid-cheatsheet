@@ -162,7 +162,7 @@ by biasing any remaining overflow to the opposite side.
 and also by <a href="#section-justify-items">justify-items</a> and <a href="#section-align-items">align-items</a> (to specify default values for <code>justify-self</code> and <code>align-self</code>).
 
 <pre>
-  <code><dfn id="self-position">&lt;self-position></dfn> = center | start | end | self-start | self-end | flex-start | flex-end</code>
+  <code><dfn>&lt;self-position></dfn> = center | start | end | self-start | self-end | flex-start | flex-end</code>
 </pre>`
     },
     {
