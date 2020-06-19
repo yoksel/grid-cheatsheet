@@ -43,11 +43,12 @@
   }
 
   PRE {
-    margin: 0;
+    margin: 1em 0;
     white-space: normal;
 
     CODE {
       display: block;
+      width: fit-content;
       white-space: pre-line;
       padding: 4px;
     }
