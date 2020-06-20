@@ -1,6 +1,6 @@
 # Grid Cheatsheet
 
-Demos for W3C Specification [CSS Grid](https://www.w3.org/TR/css-grid-1)
+Demos for W3C [CSS Grid Specification](https://www.w3.org/TR/css-grid-1)
 
 https://yoksel.github.io/grid-cheatsheet/
 

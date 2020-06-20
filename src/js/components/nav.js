@@ -11,6 +11,7 @@ export class Nav {
     this._sectionsComponents = sectionsComponents.reverse();
     this._current = null;
     this._isWindowScrolling = false;
+    this._scrollTimeOut = null;
 
     this.element = this._getNavElement();
 
@@ -22,12 +23,10 @@ export class Nav {
     this._navClickHandler = this._navClickHandler.bind(this);
     this.moveMarker = this.moveMarker.bind(this);
     this._windowScrollHandler = this._windowScrollHandler.bind(this);
-    this._windowScrollEndHandler = this._windowScrollEndHandler.bind(this);
 
     this.element.addEventListener('click', this._navClickHandler);
 
     window.addEventListener('scroll', this._windowScrollHandler);
-    window.addEventListener('scrollend', this._windowScrollEndHandler);
   }
 
   setCurrentItem (element) {
@@ -152,16 +151,18 @@ export class Nav {
   }
 
   _windowScrollHandler () {
+    // Instead of scrollend (doesn't work in FF)
+    // https://gomakethings.com/detecting-when-a-visitor-has-stopped-scrolling-with-vanilla-javascript/
+    clearTimeout(this._scrollTimeOut);
+
+    this._scrollTimeOut = setTimeout(() => {
+      this._isWindowScrolling = false;
+    }, 100);
+
     if (this._isWindowScrolling) {
       return;
     }
 
     debounce(this.moveMarker, 500)();
-  }
-
-  _windowScrollEndHandler () {
-    // Prevent running _windowScrollHandler
-    // when scroll was initiated by click
-    this._isWindowScrolling = false;
   }
 }
