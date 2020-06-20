@@ -68,7 +68,7 @@ take precedence over <a href="#section-align-self">align-self</a>.</p>`,
   ],
 
   htmlMarkup: `<div class="parent parent--fade-children">
-    <div class="child">Ut enim ad minim veniam commodo consequat exercitation ullamco</div>
+    <div class="child">Ut enim ad minim veniam commodo consequat exercitation</div>
     <div class="child child--featured">Duis aute irure dolor</div>
     <div class="child">Quis nostrud exercitation ullamco laboris nisi ut</div>
     <div class="child">Excepteur</div>
@@ -79,7 +79,7 @@ take precedence over <a href="#section-align-self">align-self</a>.</p>`,
       selector: '.parent',
       props: {
         display: 'grid',
-        'grid-template': '150px 150px / 150px 150px'
+        'grid-template': '150px 150px / 120px 120px'
       }
     },
     {

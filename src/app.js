@@ -11,11 +11,17 @@ const main = document.querySelector('.page-main');
 const themeSwitcher = new ThemeSwitcher();
 themeSwitcher.setTheme();
 const mainContainer = new MainContainer({ container: main, groups });
+const asideElement = document.querySelector('.page-aside');
 const asideContentElement = document.querySelector('.page-aside__content');
+const asideTogglerElement = document.querySelector('.page-aside__toggler');
 const nav = new Nav({ groups, sectionsComponents: mainContainer.getSectionsComponents() });
 
 asideContentElement.prepend(nav.element);
 nav.moveMarker();
+
+asideTogglerElement.addEventListener('click', () => {
+  asideElement.classList.toggle('page-aside--collapsed');
+});
 
 if (window.location.search.includes('debug')) {
   checkLinks();

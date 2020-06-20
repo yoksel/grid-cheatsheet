@@ -70,6 +70,10 @@
     margin-left: 0;
     margin-top: 0;
   }
+
+  @media ( max-width: 768px ) {
+    margin-left: 0;
+  }
 }
 
 .prop-values__term {
@@ -81,4 +85,8 @@
   margin-top: .5rem;
   margin-bottom: 1rem;
   margin-left: 2rem;
+
+  @media ( max-width: 768px ) {
+    margin-left: 1rem;
+  }
 }

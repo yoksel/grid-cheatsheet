@@ -10,11 +10,19 @@
     font-size: 2em;
     font-weight: 500;
     color: var(--group-title-color);
+
+    @media ( max-width: 768px ) {
+      margin-bottom: .5em;
+    }
   }
 
   &__link {
     display: inline-block;
     margin: 0 0 2em;
+
+    @media ( max-width: 768px ) {
+      margin-bottom: 1.5em;
+    }
   }
 
   TABLE {
@@ -24,6 +32,10 @@
   TH,
   TD {
     padding: .5em;
+
+    @media ( max-width: 375px ) {
+      padding: .5em .15em;
+    }
   }
 
   TR:not(:last-child) {
