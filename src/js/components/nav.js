@@ -84,15 +84,16 @@ export class Nav {
     const itemsList = Object.entries(this._groups)
       .map(([id, { title, items }]) => {
         let markup = '';
+        const sectionId = `section-${id}`;
 
         if (title) {
           markup += `<h3
             class="nav__subheader"
-            data-name="section-${id}"
+            data-name="${sectionId}"
           >
             <a
               class="nav__subheader-link"
-              href="#section-${id}"
+              href="#${sectionId}"
               >${title}</a>
           </h3>`;
         }
@@ -110,6 +111,7 @@ export class Nav {
       const itemClass = 'nav__item';
       let itemsMarkup = '';
       const id = alias || name;
+      const sectionId = `section-${id}`;
 
       if (children) {
         itemsMarkup = this._getListMarkup(id, children, 'nav__list--inner');
@@ -117,10 +119,10 @@ export class Nav {
 
       return `<li
           class="${itemClass}"
-          data-name="section-${id}"
+          data-name="${sectionId}"
           data-parent-name="section-${parentId}"
         ><a
-            href="#section-${id}"
+            href="#${sectionId}"
             class="nav__link"
           >${name}</a>${itemsMarkup}</li>`;
     });

@@ -3,7 +3,7 @@ import { createElement } from '../helpers';
 export class Group {
   constructor (data) {
     this._data = data;
-    this.id = this._data.id;
+    this._sectionId = `section-${this._data.id}`;
     const container = createElement('<div class="group__intro container"></div>');
 
     const elements = [
@@ -27,7 +27,7 @@ export class Group {
       className += ' group--hidden-title';
     }
 
-    return createElement(`<section class="${className}" id="section-${this._data.id}"></section>`);
+    return createElement(`<section class="${className}" id="${this._sectionId}"></section>`);
   }
 
   _getTitleElement () {
@@ -45,7 +45,7 @@ export class Group {
 
     return createElement(`<h2 class="${className}">
       ${title}
-      <a class="self-link" href="#section-${this.id}"></a>
+      <a class="self-link" href="#${this._sectionId}"></a>
     </h2>`);
   }
 

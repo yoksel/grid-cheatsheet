@@ -5,11 +5,13 @@ export class PropSection {
   constructor (data, params = {}) {
     this._data = data;
     this.id = data.alias || data.name;
+    this._sectionId = `section-${this.id}`;
     this.parentId = params.parentId;
     this._isChild = !!this.parentId;
-    this._hasChildren = this._data.children && this._data.children.length > 0;
-    this._hasDemos = this._data.demos && this._data.demos.length > 0;
-    this._hasCSS = !!this._data.cssRules;
+    const { children, demos, cssRules } = this._data;
+    this._hasChildren = children && children.length > 0;
+    this._hasDemos = demos && demos.length > 0;
+    this._hasCSS = !!cssRules;
 
     const elements = [
       this._getTitleElement(),
@@ -37,7 +39,7 @@ export class PropSection {
     }
 
     return createElement(`<section
-      id="section-${this.id}"
+      id="${this._sectionId}"
       class="${className} container"></section>`
     );
   }
@@ -54,18 +56,20 @@ export class PropSection {
   _getTitleElement () {
     return createElement(`<h3 class="prop__title">
       ${this._data.name}
-      <a class="self-link" href="#section-${this.id}"></a>
+      <a class="self-link" href="#${this._sectionId}"></a>
     </h3>`);
   }
 
   _getLinkElement () {
-    if (!this._data.link) {
+    const link = this._data.link;
+
+    if (!link) {
       return '';
     }
 
-    var text = this._data.link.replace('http://www.', '');
+    var text = link.replace('http://www.', '');
 
-    return createElement(`<a class="prop__link" href="${this._data.link}">${text}</a>`);
+    return createElement(`<a class="prop__link" href="${link}">${text}</a>`);
   }
 
   _getDescElement () {
@@ -94,15 +98,16 @@ export class PropSection {
   }
 
   _getValuesElement () {
-    if (!this._data.values) {
+    const { values, desc } = this._data;
+    if (!values) {
       return '';
     }
 
     let markup = '';
-    const title = getPlurals(this._data.values.length, ['Value', 'Values']);
-    const isTitleHidden = !this._data.desc;
+    const title = getPlurals(values.length, ['Value', 'Values']);
+    const isTitleHidden = !desc;
 
-    for (const { name, alias, desc } of this._data.values) {
+    for (const { name, alias, desc } of values) {
       const id = alias || `${this.id}-${name}`;
 
       markup += `<dt
