@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/yoksel/grid-cheatsheet",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
+    "@babel/cli": "^7.10.3",
     "@babel/core": "^7.8.4",
     "@babel/polyfill": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
@@ -46,15 +46,15 @@
     "jest": "^25.1.0",
     "jest-transform-stub": "^2.0.0",
     "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.2",
     "stylelint": "^13.0.0",
     "stylelint-config-standard": "^19.0.0",
     "url-loader": "^4.1.0",
-    "webpack": "^4.42.1",
+    "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.1"
+    "webpack-dev-server": "^3.11.0"
   }
 }
