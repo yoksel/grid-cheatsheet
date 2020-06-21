@@ -20,6 +20,7 @@
   --mob-expanded-width: 320px;
   --mob-hidden-width: calc((var(--mob-expanded-width) - var(--mob-collapsed-width)) * -1);
   --stripe-width: 10px;
+  --duration: .2s;
 
   position: relative;
   order: -1;
@@ -68,11 +69,11 @@
     --stripe-width: 6px;
 
     width: var(--mob-expanded-width);
+    transition: transform var(--duration);
 
     .page-aside--collapsed & {
       transform: translateX(var(--mob-hidden-width));
       overflow: hidden;
-      transition: transform .15s;
 
       .nav {
         opacity: 0;
@@ -87,20 +88,21 @@
 
 .page-aside__toggler {
   --button-size: 2rem;
-  --offset: calc((var(--mob-expanded-width) - var(--button-size)));
+  --offset: calc((var(--mob-expanded-width) - var(--button-size)) - 12px);
 
   display: none;
   position: fixed;
   z-index: 1;
   top: 0;
   bottom: 0;
-  left: var(--offset);
+  left: 0;
+  transform: translateX(var(--offset));
   width: var(--button-size);
-  margin-left: -12px;
   padding: 0;
   border: 0;
   outline: none;
   background: none;
+  transition: transform var(--duration);
 
   &::before {
     content: "";
@@ -115,12 +117,11 @@
     mask-repeat: no-repeat;
     mask-position: 50% 50%;
     background: var(--nav-link);
-    transition: transform .15s;
+    transition: transform var(--duration);
   }
 
   .page-aside--collapsed & {
-    left: 0;
-    margin-left: 0;
+    transform: translateX(0);
 
     &::before {
       transform: rotate(180deg);
