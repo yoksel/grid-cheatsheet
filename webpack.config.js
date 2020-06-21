@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const constants = require('./constants.js');
+
 module.exports = () => {
   return {
     mode: 'development',
@@ -37,7 +39,9 @@ module.exports = () => {
       port: 9000
     },
     plugins: [
+      // Fill template with global constants
       new HtmlWebpackPlugin({
+        ...constants,
         filename: 'index.html',
         template: 'src/index-tmpl.html'
       })

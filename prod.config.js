@@ -2,6 +2,8 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const constants = require('./constants.js');
+
 module.exports = () => {
   return {
     mode: 'production',
@@ -38,7 +40,9 @@ module.exports = () => {
         filename: 'styles.css',
         ignoreOrder: false // Enable to remove warnings about conflicting order
       }),
+      // Fill template with global constants
       new HtmlWebpackPlugin({
+        ...constants,
         filename: 'index.html',
         template: 'src/index-tmpl.html'
       })

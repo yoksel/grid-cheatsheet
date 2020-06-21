@@ -1,22 +1,22 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Grid Cheatsheet</title>
+    <title><%= htmlWebpackPlugin.options.TITLE %></title>
     <meta name="description"
-      content="Demos for W3C CSS Grid Specification https://www.w3.org/TR/css-grid-1">
+      content="<%= htmlWebpackPlugin.options.DESC %>">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
-    <meta property="og:title" content="Grid Cheatsheet">
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.TITLE %>">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yoksel.github.io/grid-cheatsheet/">
-    <meta property="og:image" content="//yoksel.github.io/grid-cheatsheet/screenshot.png">
+    <meta property="og:url" content="<%= htmlWebpackPlugin.options.URL %>">
+    <meta property="og:image" content="<%= htmlWebpackPlugin.options.IMAGE %>">
     <meta property="og:description"
-      content="Demos for W3C CSS Grid Specification https://www.w3.org/TR/css-grid-1">
+      content="<%= htmlWebpackPlugin.options.DESC %>">
   </head>
 
   <body class="page" data-theme="sunny">
-    <h1 class="visually-hidden">Grid Cheatsheet</h1>
+    <h1 class="visually-hidden"><%= htmlWebpackPlugin.options.TITLE %></h1>
 
     <div class="page-container">
       <main class="page-main"></main>
@@ -28,7 +28,7 @@
 
         <div class="page-aside__content">
           <div class="project-links">
-            <a href="https://github.com/yoksel/grid-cheatsheet/" class="project-link project-link--git" title="Project on github">Project on github</a>
+            <a href="<%= htmlWebpackPlugin.options.GITHUB %>" class="project-link project-link--git" title="Project on github">Project on github</a>
             <a href="https://twitter.com/yoksel_en" class="project-link project-link--twitter" title="Twitter @yoksel_en">@yoksel_en</a>
           </div>
         </div>
@@ -54,11 +54,6 @@
       </div>
     </template>
 
-    <!-- Yandex.Metrika counter -->
-    <script
-      type="text/javascript"> (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) }; m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a) })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(65001319, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, trackHash: true }); </script>
-    <noscript>
-      <div><img src="https://mc.yandex.ru/watch/65001319" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript> <!-- /Yandex.Metrika counter -->
+    <%= htmlWebpackPlugin.options.COUNTER %>
   </body>
 </html>
