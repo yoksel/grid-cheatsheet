@@ -1,4 +1,4 @@
-import { groups } from './js/data/groups';
+import { groups } from './data/groups';
 import { Nav } from './js/components/nav';
 import { ThemeSwitcher } from './js/components/theme-switcher';
 import { MainContainer } from './js/components/main-container';
