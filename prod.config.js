@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -45,7 +46,9 @@ module.exports = () => {
         ...constants,
         filename: 'index.html',
         template: 'src/index-tmpl.html'
-      })
+      }),
+      // Pass global constants to components
+      new webpack.DefinePlugin(constants)
     ]
   };
 };

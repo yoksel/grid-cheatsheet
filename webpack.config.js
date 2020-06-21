@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const constants = require('./constants.js');
@@ -44,7 +45,9 @@ module.exports = () => {
         ...constants,
         filename: 'index.html',
         template: 'src/index-tmpl.html'
-      })
+      }),
+      // Pass global constants to components
+      new webpack.DefinePlugin(constants)
     ]
   };
 };

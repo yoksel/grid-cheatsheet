@@ -1,3 +1,5 @@
+/* global HIGHLIGHT_GRID */
+
 import { createElement, getCellsQuantity } from '../helpers';
 import { StylesController } from './styles-controller';
 
@@ -195,6 +197,10 @@ export class Demo {
   }
 
   _hightlightGrid () {
+    if (!HIGHLIGHT_GRID) {
+      return;
+    }
+
     const parentElemStyles = getComputedStyle(this._parentElement);
     const oldCellsQuantity = this._cellsQuantity;
     this._cellsQuantity = getCellsQuantity(parentElemStyles);
