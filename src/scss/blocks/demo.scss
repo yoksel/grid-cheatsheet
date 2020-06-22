@@ -97,6 +97,10 @@
   &--rtl {
     direction: rtl;
   }
+
+  &--huge-text {
+    font-size: 30px;
+  }
 }
 
 .child::before {
