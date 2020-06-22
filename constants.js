@@ -10,6 +10,7 @@ type="text/javascript"> (function (m, e, t, r, i, k, a) { m[i] = m[i] || functio
 <div><img src="https://mc.yandex.ru/watch/65001319" style="position:absolute; left:-9999px;" alt="" /></div>
 </noscript> <!-- /Yandex.Metrika counter -->`;
 const HIGHLIGHT_GRID = 1;
+const STORAGE_KEY = '"gdchTheme"';
 
 module.exports = {
   TITLE,
@@ -18,5 +19,6 @@ module.exports = {
   IMAGE,
   GITHUB,
   COUNTER,
-  HIGHLIGHT_GRID
+  HIGHLIGHT_GRID,
+  STORAGE_KEY
 };
