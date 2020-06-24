@@ -11,6 +11,7 @@ type="text/javascript"> (function (m, e, t, r, i, k, a) { m[i] = m[i] || functio
 </noscript> <!-- /Yandex.Metrika counter -->`;
 const HIGHLIGHT_GRID = 1;
 const STORAGE_KEY = '"gdchTheme"';
+const CLARIFICATION = 'All text content belongs to <a href="https://www.w3.org/TR/css-grid-1">W3C CSS Grid Specification</a>,<br>I only added interactive demos';
 
 module.exports = {
   TITLE,
@@ -20,5 +21,6 @@ module.exports = {
   GITHUB,
   COUNTER,
   HIGHLIGHT_GRID,
-  STORAGE_KEY
+  STORAGE_KEY,
+  CLARIFICATION
 };
